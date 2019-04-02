@@ -1,0 +1,63 @@
+{include file="inc/header.html"}
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+	// 微信分享
+	var wx_title = '{$data.share.wx_title}';
+	var wx_desc = '{$data.share.wx_desc}'; // 分享描述
+	var wx_link = '{$data.share.wx_link}';
+	var wx_img = '{$data.share.img}'; // 分享图标
+		
+    var signature = '{$data.signPackage.signature}';
+    var nonceStr = '{$data.signPackage.nonceStr}';
+    var timestamp = '{$data.signPackage.timestamp}';
+    var url = '{$data.signPackage.url}';
+    var appid = '{$data.signPackage.appId}';
+
+	wx.config({
+        //debug: true,
+		appId:appid,
+		timestamp:timestamp,
+		nonceStr:nonceStr,
+		signature:signature,
+		url:url,
+		jsApiList:[
+			//'checkJsApi',
+			'onMenuShareTimeline',
+			'onMenuShareAppMessage'
+		]
+	});
+</script>
+<div class="content page-user_center-invite">
+	<div class="wbg tc">
+		<div class="sharetip">
+			{$data.data.content}
+		</div>
+	</div>
+	<div class="wbg tc">
+		<div class="ewmbox">
+			<img alt="" src="{$data.data.img}" />
+		</div>
+		<div class="yqm">邀请码：{$data.data.invite_id}</div>
+	</div>
+<!-- 	<div class="btit">分享给好友</div>
+	<div class="bconbox flex-box">
+		<div class="bcon flex-1"><i class="iconfont wx J-fx active" data-type="wx">&#xe978;</i></div>
+		<div class="bcon flex-1"><i class="iconfont fx J-fx" data-type="wx_circle">&#xe977;</i></div>
+	</div> -->
+	<div class="nbg">
+		<a class="button button-fill button-theme J-share">分享</a>
+	</div>
+</div>
+<div class="share-tip">
+	<div class="icon">
+		<i></i>
+	</div>
+	<span>点击右上角分享</span>
+</div>
+<script type="text/javascript">
+
+	var data = {
+		share_type: 'wx'
+	}
+</script>
+{include file="inc/footer.html"}

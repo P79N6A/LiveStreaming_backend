@@ -1,0 +1,144 @@
+<load href='__TMPL__Common/js/jquery.js' />
+
+<div class="main_title"><a href="{:u("Question/index")}" class="back_list">{%BACK_LIST}</a></div>
+<div class="main">
+<script type="text/javascript">
+    function openbox(id){
+        $(".cm_input").show();
+        $("#input_id").val(id);
+    }
+
+</script>
+<div id="main_question">
+    <div id="content">
+        <h3 style="border-bottom: 1px dashed #D2D2D2;">{$data['title']}</h3>
+        {$data['content']}
+        <a class="open_reply" href="#" onclick="openbox({$data['id']});">回复</a>
+    </div>
+    <div id="cm-header"><h4>回答</h4></div>
+    <ul class="comment_ul">
+        <volist name="answer_list" id="vo">
+            <li>
+                {$vo.answer_user_name} & 回复 &nbsp {$vo.question_user_name }
+                <a class="open_reply" href="#" value="{$vo.id}" onclick="openbox({$vo.id});">回复</a>
+                <br>
+                {$vo.content}<br>
+            </li>
+        </volist> 
+    </ul>
+    <div class="display_flex flex_1 cm_input" style="display: none">
+        <form name="edit" action="__APP__" method="post" enctype="multipart/form-data">
+            <textarea class="cm_text" id="cm_comment" name="answer" placeholder="回答"></textarea>
+            <input type="hidden" name="pid" value="{$data_question.id}">
+            <input type="hidden" id="input_id" name="id" value="{$data_question.id}">
+            <input type="hidden" value="Question" name="m" />
+            <input type="hidden" value="answer" name="a" />
+            <input type="submit" class="button" value="{%EDIT}" />
+        </form>
+    </div>
+</div>
+
+</div>
+<style type="text/css">
+p,h4{margin:0;}
+ul{list-style:none;}
+ul,input{padding:0;}
+input[type='button']::-moz-focus-inner{border-color:transparent;}
+/* css reset end
+  ------------------------- */
+body { 
+	background-color: #F2F2F2; 
+	font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif; 
+}
+*{
+ 	-webkit-tap-highlight-color: rgba(0,0,0,0);
+ 	-webkit-user-select:none;
+ 	-webkit-touch-callout:none;
+ 	
+ 	-webkit-box-sizing: border-box;
+ 	-moz-box-sizing:border-box; 
+ 	-o-box-sizing:border-box; 
+}
+.open_reply{
+    float: right;
+    margin-right: 10px;
+}
+
+.display_flex{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.flex_1{
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
+
+#main_question{
+    width: 960px;
+    margin: 0 auto;
+    background: #F5F5F5;
+    border: 1px solid #d3d1c7;
+    overflow: hidden;
+    padding: 10px 10px 0;
+    margin-top: 10px;
+}
+#content{
+    margin-bottom: 20px;
+    width: 940px;
+    overflow: hidden;
+}
+#cm-header{
+    width: 960px;
+    margin: 0 auto;
+    font-weight: bold;
+    font-size: 14px;
+    color: #555;
+    line-height: 30px;
+    padding: 0 12px;
+}
+.comment_ul{
+    width: 960px;
+    margin:0 auto;
+}
+
+.comment_ul li{
+    border-top: 1px dashed #D2D2D2;
+    padding: 10px;
+}
+.cm_writer {
+    color: #0f74a8;
+    width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.button{
+    width: 12%;
+    height: 30px;
+    background-color: #607B8B;
+    border: 0px;
+    color: #FFFFFF;
+    margin-top: 5px;
+}
+
+.cm_input{
+    border-top: 1px dashed #D2D2D2;
+    padding: 10px;
+}
+.cm_writer{
+    padding: 2px;
+    width: 500px;
+    border: 1px solid #ccc;
+}
+.cm_text{
+    margin-top: 5px;
+    width: 500px;
+    height: 70px;
+    border: 1px solid #ccc;
+}
+</style>

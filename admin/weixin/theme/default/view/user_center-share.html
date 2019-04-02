@@ -1,0 +1,58 @@
+{include file="inc/header.html"}
+<div class="content">
+	<div class="content-block">
+		{foreach from=$data.list item=item}
+  		<div class="card">
+  			<a href='{url r="share#detail" p="id=$item.id"}'>
+			    <div class="card-content">
+			      	<div class="card-content-inner">
+			      		<div class="user-pic">
+			      			<img src="{$item.head_image}">
+			      			<p class="f13">{$user_info.nick_name}</p>
+			      		</div>
+			      		<div class="user-inner">
+			      			<div class="inner-text">
+				      			<div class="text-top">
+				      				<!-- adopt 通过 -->
+				      				<!-- not_through 不通过 -->
+				      				<!-- pending_audit 不通过 -->
+				      				<h3 class="f13">
+					      				<span>{$item.title}</span>
+					      				{if $item.audit_status eq 0}
+					      				<span class="auditing pending_audit">待审核</span>
+					      				{elseif $item.audit_status eq 1}
+					      				<span class="auditing adopt">通过</span>
+					      				{else}
+					      				<span class="auditing not_through">未通过</span>
+					      				{/if}
+				      				</h3>
+				      				<p>{$item.content}</p>
+				      				<div class="state">
+				      					<div class="details">
+				      						<span>{$item.create_time}</span>
+			      						</div>
+				      					<div class="link">
+				      						<span class="look">
+				      							<i class="iconfont f18">&#xe967;</i>{$item.watch_count}
+				      						</span>
+				      						<span>
+				      							<i class="iconfont active">&#xe95f;</i>{$item.praise_count}
+				      						</span>
+				      						<span>
+				      							<i class="iconfont">&#xe966;</i>{$item.reply_count}
+				      						</span>
+				      					</div>
+				      				</div>
+				      			</div>
+		      				</div>
+			      		</div>
+			      	</div>
+			    </div>
+		    </a>
+	  	</div>
+	  	{foreachelse}
+	  	<div class="null-data">暂无数据</div>
+	  	{/foreach}
+  	</div>
+</div>
+{include file="inc/footer.html"}

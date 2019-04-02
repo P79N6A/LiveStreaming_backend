@@ -1,0 +1,144 @@
+@import (once) "public/variable.less";
+.page-course-vip{
+& .content-block{
+		margin: 0;
+		padding: 0;
+		margin-bottom: 0.5rem;
+		background: #fff;
+	}
+	& .m-user{
+		padding:0.625rem 0.5rem;
+
+		& .block-user{
+			display: -webkit-flex;
+			display: flex;
+			& .user-pic{
+				margin-right: 0.5rem;
+				width: 2.25rem;
+				height: 2.25rem;
+				& img{
+					width: 100%;
+					height: 100%;
+					border-radius: 5rem;
+				}
+			}
+			& .user-text{
+				& .name{
+					color: #333;
+					line-height: 1.2rem;
+				}
+				& .txt{
+					color: #999;
+					line-height: 1.1rem;
+					font-size: @fs-smaller;
+				}
+			}
+		}
+	}
+	& .m-vip-price{
+		padding: 0.5rem;
+		& .vip-price{
+			display: -webkit-flex;
+			display: flex;
+			-webkit-justify-content: space-between;
+			justify-content: space-between;
+			-webkit-align-items: center;
+			align-items: center;
+			& .vip-time{
+				color: #333;
+				line-height: 0.65rem;
+				& p{
+					font-size: @fs-smaller;
+					color: #999;
+					margin-top: 0.5rem;
+				}
+			}
+			& .vip-money{
+				font-size: 1.1rem;
+				color: @color-theme;
+				& span{
+					font-size: @fs-small;
+					margin-left: 0.1rem;
+				}
+			}
+		}
+	}
+	& .active{
+		position: relative;
+		&:before{
+			content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 1px solid @color-theme;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+		}
+	}
+	.item-content{
+		padding: 0;
+		overflow: hidden;
+		.item-inner{
+			padding: 0.5rem;
+			background-position: calc(98%) center;
+			line-height: 1.4rem;
+			width: 100%;
+			.item-title{
+				i{
+				    font-size: 1.4rem;
+					color: #58b64b;
+				}
+			}
+		}
+		&:last-child{
+				&:after{
+					display: none;
+				}
+		}
+	}
+	.card{
+		padding: 0.8rem 0.5rem;
+		.card-header{
+			min-height: 0;
+			padding: 0;
+			margin-bottom: 0.3rem;
+		}
+		.card-content{
+			.card-content-inner{
+				background-size: 100%;
+				width: 100%;
+				padding: 0;
+				*{
+					max-width: 100%;
+					height: auto;
+				}
+				& img[src=""]{
+					opacity: 0;
+				}
+			}
+		}
+	}
+	.m-button{
+		padding: 0 0.5rem;
+	}
+	.footer-btn-bar{
+		position:absolute;
+		bottom:0;
+		left:0;
+		width:100%;
+		z-index:999;
+		.button{
+			border-radius:0;
+			font-weight:700;
+			font-size:@fs-middle;
+		}
+	}
+	.content{
+		bottom:2rem;
+		padding-bottom:0.75rem;
+	}
+}

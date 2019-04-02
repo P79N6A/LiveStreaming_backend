@@ -1,0 +1,22 @@
+@import (once) "modules/m-sidebar.less";
+.footer{
+	background: #fff;
+	color: #aaa;
+	text-align: center;
+	margin-top:20px;
+	& .footer-top{
+		height:80px;
+		line-height:80px;
+		& a{
+			color: @fcolor-main;
+			margin:0 20px;
+		}
+	}
+	& .footer-bottom{
+        background: #333;
+		padding: 20px;
+		font-size: @fs-small;
+		color: #808080;
+		line-height: 30px;
+	}
+}

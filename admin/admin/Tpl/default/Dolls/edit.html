@@ -1,0 +1,211 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<div class="main">
+<div class="main_title">{%EDIT} <a href="{:u("Dolls/index")}" class="back_list">{%BACK_LIST}</a></div>
+<div class="blank5"></div>
+<form name="edit" action="__APP__" method="post" enctype="multipart/form-data">
+<table class="form" cellpadding=0 cellspacing=0>
+	<tr>
+		<td colspan=2 class="topTd"></td>
+	</tr>
+	<tr>
+		<td class="item_title">类型:</td>
+		<td class="item_input">
+			<select name="type" class="require">
+				<!-- <option value="0" <if condition="$vo['type'] eq 0">selected="selected"</if>>腾讯云</option>
+				<option value="1" <if condition="$vo['type'] eq 1">selected="selected"</if>>千秀云</option> -->
+				<option value="2" <if condition="$vo['type'] eq 2">selected="selected"</if>>快速流-自建控制器</option>
+				<option value="3" <if condition="$vo['type'] eq 3">selected="selected"</if>>互动流-腾讯控制器</option>
+				<option value="4" <if condition="$vo['type'] eq 4">selected="selected"</if>>互动流-自建控制器(需要由"互动流-腾讯控制器"切换)</option>
+				<!-- <option value="5" <if condition="$vo['type'] eq 5">selected="selected"</if>>快速流-安卓主板控制器</option> -->
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="item_title">娃娃名称:</td>
+		<td class="item_input">
+		<select name="cate_id" class="require" id="cate_id">
+			<option value="0">==未选取娃娃==</option>
+			<foreach name="cate_tree" item="cate_item">
+				<option value="{$cate_item.id}"  rel="{$cate_item.type_id}" <if condition="$vo['cate_id'] eq $cate_item['id']">selected="selected"</if>>{$cate_item.title}</option>
+			</foreach>
+		</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="item_title">抓娃娃价格:</td>
+		<td class="item_input"><input type="text" class="textbox require" name="price" value="{$vo.price}" /></td>
+	</tr>
+	<tr>
+		<td class="item_title">分类:</td>
+		<td class="item_input">
+		<select name="classified_id" id="classified_id">
+			<option value="0">==未选择分类==</option>
+			<foreach name="classified_tree" item="classified_item">
+				<option value="{$classified_item.id}"  rel="{$classified_item.type_id}" <if condition="$vo['classified_id'] eq $classified_item['id']">selected="selected"</if>>{$classified_item.title}</option>
+			</foreach>
+		</select>
+		</td>
+	</tr>
+	<tr class="tencent2">
+		<td class="item_title">直播间ID:</td>
+		<td class="item_input"><input type="text" class="textbox require" name="room_id"  value="{$vo.room_id}" /></td>
+	</tr>
+	<tr class="tencent tencent2">
+		<td class="item_title">正面推流账号:</td>
+		<td class="item_input"><input type="text" class="textbox" name="front_push_user" value="{$vo.front_push_user}" /></td>
+	</tr>
+	<tr class="tencent tencent2">
+		<td class="item_title">侧面推流账号:</td>
+		<td class="item_input"><input type="text" class="textbox" name="side_push_user" value="{$vo.side_push_user}" /></td>
+	</tr>
+	<tr class="fanwe">
+		<td class="item_title">fanWe Access ID:</td>
+		<td class="item_input"><input type="text" class="textbox require" name="access_id" /></td>
+	</tr>
+	<tr class="fanwe">
+		<td class="item_title">fanWe Secret ID:</td>
+		<td class="item_input"><input type="text" class="textbox require" name="secret_id" /></td>
+	</tr>
+	<tr class="self-build">
+		<td class="item_title">app端socket接口地址</td>
+		<td class="item_input"><input type="text" class="textbox require" name="socket_address" value="{$vo.socket_address}"/></td>
+	</tr>
+	<tr class="self-build">
+		<td class="item_title">服务端socket接口地址</td>
+		<td class="item_input"><input type="text" class="textbox require" name="socket_address2" value="{$vo.socket_address2}"/></td>
+	</tr>
+	<tr class="self-build">
+		<td class="item_title">mac地址</td>
+		<td class="item_input"><input type="text" class="textbox require" name="mac" value="{$vo.mac}"/></td>
+	</tr>
+	<tr class="self-build tencent2">
+		<td class="item_title">成功率：单位%</td>
+		<td class="item_input"><input type="text" class="textbox require" name="success_rate" value="{$vo.success_rate}"/></td>
+	</tr>
+	<tr class="self-build tencent2">
+		<td class="item_title">游戏时长：单位秒</td>
+		<td class="item_input"><input type="text" class="textbox require" name="round_time" value="{$vo.round_time}"/></td>
+	</tr>
+	<tr>
+		<td class="item_title">{%SORT}:</td>
+		<td class="item_input"><input type="text" class="textbox" name="sort" value="{$vo.sort}" /></td>
+	</tr>
+	<tr class="tencent2">
+		<td class="item_title">正面推流账号usersig加密串</td>
+		<td class="item_input"><input type="text" class="textbox require" name="front_push_usersig" value="{$vo.front_push_usersig}" /></td>
+	</tr>
+	<tr class="tencent2">
+		<td class="item_title">正面摄像头名称+"/0"</td>
+		<td class="item_input"><input type="text" class="textbox require" name="front_push_camara_match" value="{$vo.front_push_camara_match}" /></td>
+	</tr>
+	<tr>
+		<td class="item_title">正面摄像头旋转修正角度（0-90-180-270）</td>
+		<td class="item_input"><input type="text" class="textbox" name="front_push_angle" value="{$vo.front_push_angle}" /></td>
+	</tr>
+	<tr>
+		<td class="item_title">正面摄像头机位（01234-正右后左顶）</td>
+		<td class="item_input"><input type="text" class="textbox" name="front_push_position" value="{$vo.front_push_position}" /></td>
+	</tr>
+	<tr class="tencent2">
+		<td class="item_title">侧面推流账号usersig加密串</td>
+		<td class="item_input"><input type="text" class="textbox require" name="side_push_usersig"  value="{$vo.side_push_usersig}"/></td>
+	</tr>
+	<tr class="tencent2">
+		<td class="item_title">侧面摄像头名称+"/1"</td>
+		<td class="item_input"><input type="text" class="textbox require" name="side_push_camara_match" value="{$vo.side_push_camara_match}" /></td>
+	</tr>
+	<tr>
+		<td class="item_title">侧面摄像头旋转修正角度（0-90-180-270）</td>
+		<td class="item_input"><input type="text" class="textbox" name="side_push_angle"  value="{$vo.side_push_angle}"/></td>
+	</tr>
+	<tr>
+		<td class="item_title">侧面摄像头机位（01234-正右后左顶）</td>
+		<td class="item_input"><input type="text" class="textbox" name="side_push_position"  value="{$vo.side_push_position}"/></td>
+	</tr>
+	<tr class="self-build tencent2">
+		<td class="item_title">是否可预约:</td>
+		<td class="item_input">
+		<select name="is_reserve" id="is_reserve">
+			<option value="0" <if condition="$vo['is_reserve'] eq 0">selected="selected"</if>>否</option>
+			<option value="1" <if condition="$vo['is_reserve'] eq 1">selected="selected"</if>>是</option>
+		</select>
+		</td>
+	</tr>
+	<tr class="self-build tencent2">
+		<td class="item_title">观众是否可以侧面观看:</td>
+		<td class="item_input">
+		<select name="is_side"  id="is_side">
+			<option value="0" <if condition="$vo['is_side'] eq 0">selected="selected"</if>>否</option>
+			<option value="1" <if condition="$vo['is_side'] eq 1">selected="selected"</if>>是</option>
+		</select>
+		</td>
+	</tr>
+	<tr>
+        <td class="item_title">音乐下载/播放地址</td>
+        <td class="item_input"><html:fileUpload  name="music" id='music' value=""/>
+        <span>注：背景音乐必须为<bold style="color:red">mp3</bold>格式</span>
+        <br/>
+    	<br/>
+        <span style="float:left">当前地址：{$vo.music}</span>
+        </td>
+    </tr>
+	<tr>
+		<td class="item_title"></td>
+		<td class="item_input">
+			<!--隐藏元素-->
+			<input type="hidden" name="{:conf("VAR_MODULE")}" value="Dolls" />
+			<input type="hidden" name="{:conf("VAR_ACTION")}" value="update" />
+			<input type="hidden" name="id" value="{$vo.id}" />
+			<!--隐藏元素-->
+			<input type="submit" class="button" value="{%EDIT}" />
+			<input type="reset" class="button" value="{%RESET}" />
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2 class="bottomTd"></td>
+	</tr>
+</table>	 
+</form>
+</div>
+<script>
+$('select[name="type"]').change(function(){
+	var v = $(this).val();
+	switch (v) {
+		case "0":
+			$('.fanwe').hide().find('input').removeClass('require');
+			$('.self-build').hide().find('input').removeClass('require');
+			$('.tencent2').hide().find('input').removeClass('require');
+			$('.tencent').show().find('input').addClass('require');
+			
+			break;
+		case "1":
+			$('.tencent').hide().find('input').removeClass('require');
+			$('.self-build').hide().find('input').removeClass('require');
+			$('.tencent2').hide().find('input').removeClass('require');
+			$('.fanwe').show().find('input').addClass('require');
+			
+			break;
+		case "2":
+		case "4":
+		case "5":
+			$('.tencent').hide().find('input').removeClass('require');
+			$('.fanwe').hide().find('input').removeClass('require');
+			$('.tencent2').hide().find('input').removeClass('require');
+			$('.self-build').show().find('input').addClass('require');
+			
+			break;
+		case "3":
+			$('.tencent').hide().find('input').removeClass('require');
+			$('.fanwe').hide().find('input').removeClass('require');
+			$('.self-build').hide().find('input').removeClass('require');
+			$('.tencent2').show().find('input').addClass('require');
+			break;
+	}
+}).change();
+</script>
+<include file="Public:footer" />

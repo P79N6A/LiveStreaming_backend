@@ -1,0 +1,316 @@
+{include file="inc/header.html"}
+<?php
+	$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/society-apply_sociaty.css";
+	$this->_var['apply_pagejs'][] = $this->_var['TMPL_REAL']."/js/society-apply_sociaty.js";
+   	$this->_var['apply_cpagejs'][] = $this->_var['TMPL_REAL']."/js/society-apply_sociaty.js";
+?>
+    <link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$dpagecss"}" />
+    <script type="text/javascript" src="{function name="parse_script" v="$apply_pagejs" c="apply_cpagejs"}"></script>
+    {include file="inc/upload-config.html"}
+    <div class="wrapper apply">
+        <div class="m-wrapper-top clearfix">
+            <h3>公会申请</h3>
+            <p>以下信息均为必填项，为了保证您的利益，请如实填写</p>
+        </div>
+        <div class="m-wrapper-content">
+            <div class="tag-head-content">
+                <span class="tag-head">申请公会</span>
+            </div>
+            <div class="fw-form-group">
+                <label for="papersnumb">申请类型：</label>
+                <div class="form-radio  clearfix">
+                    <div class="group-radio">
+                        <input type="radio" name="guildtype" checked="checked" value="0">
+                        <span class="radio-disc">申请公会</span>
+                    </div>
+                    <!-- <div class="group-radio">
+                        <input type="radio" name="guildtype" value="1">
+                        <span class="radio-disc">申请经纪人</span>
+                    </div> -->
+                </div>
+                <p class="fw-form-after">
+                    如以公司名义申请，请选择“申请公会”，你需要提供公司营业执照及对公账户；
+                    <br> 如以个人名义申请，请选择“申请经纪人”，你需要提供身份证信息及本人银行卡信息
+                </p>
+            </div>
+            <form class="J-sociaty" ms-controller="ms_sociaty" id="ms_sociaty">
+                <div class="tag-head-content">
+                    <span class="tag-head">公会基本资料</span>
+                </div>
+                <div class="fw-form-group">
+                    <label for="guildname1">公会名称：</label>
+                    <input type="text" class="fw-form-control" id="guildname1" name="guildname1" ms-duplex="@guildname1" placeholder="请输入公会名称">
+                    <p class="fw-form-after">公会名称请谨慎填写，审核通过后，工会名称不可更改</p>
+                </div>
+                <div class="tag-head-content">
+                    <span class="tag-head">公会认证资料</span>
+                </div>
+                <div class="fw-form-group clearfix">
+                    <label for="accountbank1">开户银行：</label>
+                    <div class="group-radio">
+                        <input type="radio" name="bank1" value="0">
+                        <span class="radio-disc">选择开户行</span>
+                    </div>
+                    <div class="group-radio">
+                        <input type="radio" name="bank1" value="1" checked="checked">
+                        <span class="radio-disc">输入银行名称</span>
+                    </div>
+                </div>
+                <div class="fw-form-group J-bank_name1">
+                    <label for="bankname1">银行名称：</label>
+                    <select class="fw-form-selset" id="bankname1" ms-duplex="@bankname1">
+                        <option value=""></option>
+                        <option value="1">中国银行</option>
+                        <option value="2">北京银行</option>
+                        <option value="3">建设银行</option>
+                        <option value="4">中国工商银行</option>
+                        <option value="5">中国农业银行</option>
+                        <option value="6">中信银行</option>
+                        <option value="7">民生银行</option>
+                        <option value="8">中国交通银行</option>
+                        <option value="9">中国邮政储蓄银行</option>
+                        <option value="10">招商银行</option>
+                        <option value="11">中国光大银行</option>
+                        <option value="12">兴业银行</option>
+                    </select>
+                </div>
+                <div class="fw-form-group">
+                    <label for="bankaddress1">开户地：</label>
+                    <div id="demo1" class="citys">
+                        <p class="clearfix">
+                            <select name="province" ms-duplex="@province1"></select>
+                            <select name="city" ms-duplex="@city1"></select>
+                            <select name="area" ms-duplex="@area1"></select>
+                        </p>
+                    </div>
+                </div>
+                <div class="fw-form-group">
+                    <label for="subb_name1">支行名称：</label>
+                    <input type="text" class="fw-form-control" id="subb_name1" name="subb_name1" ms-duplex="@subb_name1" placeholder="请填写完整的支行信息">
+                </div>
+                <div class="fw-form-group">
+                    <label for="acc_numb1">开户账号：</label>
+                    <input type="text" class="fw-form-control" id="acc_numb1" name="acc_numb1" ms-duplex="@acc_numb1" placeholder="请输入您的开户账号">
+                    <p class="fw-form-after">开户账号必须是公司对公账号</p>
+                </div>
+                <div class="fw-form-group">
+                    <label for="acc_name">开户名称：</label>
+                    <input type="text" class="fw-form-control" id="acc_name" name="acc_name" ms-duplex="@acc_name" placeholder="请输入您的开户名称">
+                    <p class="fw-form-after">开户名称必须与公司全称一致</p>
+                </div>
+                <div class="fw-form-group">
+                    <label for="contacts">联系人：</label>
+                    <input type="text" class="fw-form-control" id="contacts" name="contacts" ms-duplex="@contacts" placeholder="请输入真实的姓名以便联系">
+                </div>
+                <div class="fw-form-group">
+                    <label for="tel1">联系电话：</label>
+                    <input type="number" class="fw-form-control" id="tel1" name="tel1" ms-duplex-number="@tel1" placeholder="请输入真实的电话号码以便联系">
+                </div>
+                <div class="fw-form-group">
+                    <label for="corporation">法人：</label>
+                    <input type="text" class="fw-form-control" id="corporation" name="corporation" ms-duplex="@corporation" placeholder="请输入真实的法人代表">
+                </div>
+                <div class="fw-form-group">
+                    <label for="comp_name">公司全称：</label>
+                    <input type="text" class="fw-form-control" id="comp_name" name="comp_name" ms-duplex="@comp_name" placeholder="请输入真实的公司全称">
+                </div>
+                <div class="fw-form-group">
+                    <label for="regis_address">注册地址：</label>
+                    <input type="text" class="fw-form-control" id="regis_address" name="regis_address" ms-duplex="@regis_address" placeholder="请输入真实的注册地址">
+                </div>
+                <div class="fw-form-group">
+                    <label for="cont_address">联系地址：</label>
+                    <input type="text" class="fw-form-control" id="cont_address" name="cont_address" ms-duplex="@cont_address" placeholder="请输入真实的联系地址">
+                </div>
+                <div class="fw-form-group">
+                    <label for="invoice">可开发票税点</label>
+                    <select class="fw-form-selset" id="invoice" ms-duplex="@invoice">
+                        <option value="0"></option>
+                        <option value="1">3%</option>
+                        <option value="2">6%</option>
+                    </select>
+                </div>
+                <div class="tag-head-content">
+                    <span class="tag-head">营业执照</span>
+                </div>
+                <div class="star_submit clearfix" style="width: 100%">
+                    <div class="field_input file-idcard">
+                        <div class="upload_pic">
+                            <div class="plus_icon"></div>
+                            <div class="plus_text">上传营业执照</div>
+                            <div class="plus_subhead">小于1MB</div>
+                        </div>
+                        <div class="pic_container" id="frontpicture_con">
+                            <img id="screenshot-image" src="" width="288" height="220">
+                        </div>
+                        <div class="uploadimg_poster" id="screenshot">
+                            <input type="hidden" required="" ng-model="brokerModel.frontpicture" value="" name="frontpicture" id="screenshot-url" ms-duplex="@business_photo">
+                            <input type="file" id="frontpicture_file" name="img">
+                        </div>
+                    </div>
+                </div>
+                <div class="error_tips business_tips">
+                    <span class="business">请确认经营范围能提供以下类目发票：文化创意服务费、信息服务费、演艺服务费、文化策划服务费，税率为6%或3%的增值税专用发票</span>
+                </div>
+                <div class="submit-button" style="text-align:center;">
+                    <button type="button" id="submit_btn" class="star_btn_confirm" ms-click="@creates()">提交</button>
+                    <button class="star_btn_cancel">取消</button>
+                </div>
+            </form>
+            <form class="J-agent" ms-controller="ms_agent" id="ms_agent">
+                <div class="tag-head-content">
+                    <span class="tag-head">公会基本资料</span>
+                </div>
+                <div class="fw-form-group">
+                    <label for="guildname">公会名称：</label>
+                    <input type="text" class="fw-form-control" id="guildname" name="guildname" ms-duplex="@guildname" placeholder="请输入公会名称">
+                    <p class="fw-form-after">公会名称请谨慎填写，审核通过后，工会名称不可更改</p>
+                </div>
+                <div class="tag-head-content">
+                    <span class="tag-head">基本资料</span>
+                </div>
+                <div class="fw-form-group">
+                    <label for="realname">真实姓名：</label>
+                    <input type="text" class="fw-form-control" id="realname" name="realname" ms-duplex="@realname" placeholder="请输入您的真实姓名">
+                </div>
+                <div class="fw-form-group">
+                    <label for="telephone">联系电话：</label>
+                    <input type="number" class="fw-form-control" name="tel" ms-duplex-number="@tel" id="telephone" placeholder="请输入真实的电话号码以便联系">
+                </div>
+                <div class="fw-form-group">
+                    <label for="paperstype">证件类型：</label>
+                    <select class="fw-form-selset" id="paperstype" ms-duplex="@paperstype">
+                        <option value=""></option>
+                        <option value="1">身份证</option>
+                        <option value="2">港澳居民来往内地通行证</option>
+                        <option value="3">香港、澳门身份证</option>
+                        <option value="4">台胞证</option>
+                        <option value="5">护照</option>
+                    </select>
+                </div>
+                <div class="fw-form-group">
+                    <label for="papersnumb">证件号：</label>
+                    <input type="text" class="fw-form-control" name="papersnumb" ms-duplex="@papersnumb" id="papersnumb" placeholder="请输入您的证件号">
+                </div>
+                <div class="fw-form-group clearfix">
+                    <label for="accountbank">开户银行：</label>
+                    <div class="group-radio">
+                        <input type="radio" name="bank" value="0">
+                        <span class="radio-disc">选择开户行</span>
+                    </div>
+                    <div class="group-radio">
+                        <input type="radio" name="bank" value="1" checked="checked">
+                        <span class="radio-disc">输入银行名称</span>
+                    </div>
+                </div>
+                <div class="fw-form-group J-bank_name">
+                    <label for="bankname">银行名称：</label>
+                    <select class="fw-form-selset" ms-duplex="@bankname" id="bankname">
+                        <option value=""></option>
+                        <option value="1">中国银行</option>
+                        <option value="2">北京银行</option>
+                        <option value="3">建设银行</option>
+                        <option value="4">中国工商银行</option>
+                        <option value="5">中国农业银行</option>
+                        <option value="6">中信银行</option>
+                        <option value="7">民生银行</option>
+                        <option value="8">中国交通银行</option>
+                        <option value="9">中国邮政储蓄银行</option>
+                        <option value="10">招商银行</option>
+                        <option value="11">中国光大银行</option>
+                        <option value="12">兴业银行</option>
+                    </select>
+                </div>
+                <div class="fw-form-group">
+                    <label for="bankaddress">开户地：</label>
+                    <div id="demo" class="citys">
+                        <p class="clearfix">
+                            <select name="province" ms-duplex="@province"></select>
+                            <select name="city" ms-duplex="@city"></select>
+                            <select name="area" ms-duplex="@area"></select>
+                        </p>
+                    </div>
+                </div>
+                <div class="fw-form-group">
+                    <label for="subb_name">支行名称：</label>
+                    <input type="text" class="fw-form-control" name="subb_name" ms-duplex="@subb_name" id="subb_name" placeholder="请填写完整的支行信息">
+                </div>
+                <div class="fw-form-group">
+                    <label for="acc_numb">开户账号：</label>
+                    <input type="text" class="fw-form-control" name="acc_numb" ms-duplex="@acc_numb" id="acc_numb" placeholder="请输入您的开户账号">
+                </div>
+                <div class="tag-head-content">
+                    <span class="tag-head">身份证</span>
+                </div>
+                <div class="star_submit clearfix" style="width: 100%">
+                    <div class="field_input file-idcard">
+                        <div class="upload_pic">
+                            <div class="plus_icon"></div>
+                            <div class="plus_text">身份证正面</div>
+                            <div class="plus_subhead">小于2MB</div>
+                        </div>
+                        <div class="pic_container">
+                            <img id="screenshot_id-image" src="" width="288" height="220">
+                        </div>
+                        <div class="uploadimg_poster" id="screenshot_id">
+                            <input type="hidden" required="" ng-model="brokerModel.frontpicture" value="" name="frontpicture" id="screenshot_id-url" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required">
+                            <input type="file" id="frontpicture_file" name="img">
+                        </div>
+                    </div>
+                    <div class="field_input file-idcard">
+                        <div class="upload_pic">
+                            <div class="plus_icon"></div>
+                            <div class="plus_text">身份证反面</div>
+                            <div class="plus_subhead">小于2MB</div>
+                        </div>
+                        <div class="pic_container">
+                            <img id="screenshot_id1-image" src="" width="288" height="220">
+                        </div>
+                        <div class="uploadimg_poster" id="screenshot_id1">
+                            <input type="hidden" required="" ng-model="brokerModel.backpicture" value="" name="backpicture" id="screenshot_id1-url" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required">
+                            <input type="file" id="backpicture_file" name="img">
+                        </div>
+                    </div>
+                    <div class="field_input file-idcard">
+                        <div class="upload_pic">
+                            <div class="plus_icon"></div>
+                            <div class="plus_text">手持身份证</div>
+                            <div class="plus_subhead">小于2MB</div>
+                        </div>
+                        <div class="pic_container">
+                            <img id="screenshot_id2-image" src="" width="288" height="220">
+                        </div>
+                        <div class="uploadimg_poster" id="screenshot_id2">
+                            <input type="hidden" required="" ng-model="brokerModel.pictureinhand" value="" name="pictureinhand" id="screenshot_id2-url" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required">
+                            <input type="file" id="pictureinhand_file" name="img">
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="error_tips text-center">
+                    <span class="ng-hide">身份证照不能为空</span>
+                </div>
+                <div class="submit-button" style="text-align:center;">
+                    <button type="button" id="submit_btn" class="star_btn_confirm" ms-click="@create()">提交</button>
+                    <button class="star_btn_cancel">取消</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+    get_file_fun('screenshot');
+    get_file_fun('screenshot_id');
+    get_file_fun('screenshot_id1');
+    get_file_fun('screenshot_id2');
+    $('#demo').citys({
+        province: '北京',
+        city: '东城区',
+        area: ''
+    });
+    $('#demo1').citys({
+        province: '北京',
+        city: '东城区',
+        area: ''
+    });
+    </script>
+    {include file="inc/footer.html"}

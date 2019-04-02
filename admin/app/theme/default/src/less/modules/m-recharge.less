@@ -1,0 +1,131 @@
+.m-recharge{
+    padding:0 10px;
+    margin-top: -10px;
+    .form-group{
+        padding:0;
+        margin-bottom:10px;
+        & .control-content {
+            & .number-txt {
+                display: block;
+                font-size: 14px;
+                height: 30px;
+                line-height: 30px;
+                box-sizing: content-box;
+                color: #b1aab1;
+            }
+        }
+    }
+    & .control-label{
+        font-size: @fs-middle;
+        color: #909090;
+    }
+    & .pay_type{
+        border: 1px solid @bdcolor-input;
+        float: left;
+        margin-right: 20px;
+        position: relative;
+        
+        & .pay-label{
+            margin: 0;
+            & .pay-input{
+                position: absolute;
+                top: 0;
+                left: 0;
+                filter:alpha(opacity=0); 
+                -moz-opacity:0; 
+                -khtml-opacity:0; 
+                opacity: 0
+                
+            }
+            & img{
+                cursor: pointer;
+            }
+        }
+    }
+    & .checked{
+        border: 1px solid @bgcolor-theme;
+        &:after{
+            background: url(../images/icon-choose.png) no-repeat;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            height: 13px;
+            width: 13px;
+            display: block;
+            content: "";
+        }
+        
+    }
+    & .money-list{
+        margin: -10px;
+        width: 100%;
+        & li{
+            padding:10px;
+            float:left;
+            overflow:hidden;
+            width:230px;
+            & span{
+            display: block;
+            font-size: @fs-main;
+            height: 30px;
+            line-height: 30px;
+            box-sizing : content-box; 
+            -moz-box-sizing : content-box;
+            }
+            & .money-label{
+                padding: 0 15px;
+                border: 1px solid @bdcolor-input;
+                color: @fcolor-title;
+                margin:0 10px 0 0;
+                cursor: pointer;
+                float: left;
+                position: relative;
+                & .pay-input{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    
+                    filter:alpha(opacity=0); 
+                    -moz-opacity:0; 
+                    -khtml-opacity:0; 
+                    opacity: 0
+                }
+            }
+            & .checked{
+                border: 2px solid @bgcolor-theme;
+                padding: 0 14px;
+                height: 28px;
+                line-height: 28px;
+                box-sizing : content-box; 
+                -moz-box-sizing : content-box;
+                & span{
+                    height: 28px;
+                    line-height: 28px;
+                    box-sizing : content-box; 
+                    -moz-box-sizing : content-box;
+                }
+            }
+            & .number-txt{
+                color: #b1aab1;
+                float: left;
+            }
+        }
+    }
+    & .form-control{
+        width: 103px;
+        text-align: center;
+        box-sizing : content-box; 
+        -moz-box-sizing : content-box;
+        height: 16px;
+        margin-right:10px;
+    }
+    & .submit-group{
+        margin-top: 24px;
+        & .btn-primary{
+            padding: 8px 53px;
+            font-size: @fs-middle;
+        }
+    }
+    
+}
+.m-exchange .money-list li{width:250px;}

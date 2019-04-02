@@ -1,0 +1,75 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<php>
+    function show_time($show_time)
+    {
+        return empty($show_time)?'':date('Y-m-d H:i:s', $show_time);
+    }
+</php>
+<div class="main">
+<div class="main_title">{%EDIT} <a href="{:u("GuardianRecord/index")}" class="back_list">{%BACK_LIST}</a></div>
+<div class="blank5"></div>
+<form name="edit" action="__APP__" method="post" enctype="multipart/form-data">
+<table class="form" cellpadding=0 cellspacing=0>
+	<tr>
+		<td colspan=2 class="topTd"></td>
+	</tr>
+    <tr>
+        <td class="item_title">守护:</td>
+        <td class="item_input">
+        <select name="guard_id" class="require">
+            <option value="0">请选择守护</option>
+            <foreach name="guards" item="g">
+                <option value="{$g.id}" <if condition="intval($vo['guard_id']) eq $g['id']">selected="selected"</if>>{$g.name}</option>
+            </foreach>
+        </select>
+        </td>
+    </tr>
+    <tr>
+        <td class="item_title">用户ID:</td>
+        <td class="item_input"><input type="text" class="textbox require" name="user_id" value="{$vo.user_id}" readonly="readonly" /></td>
+    </tr>
+    <tr>
+        <td class="item_title">主播ID:</td>
+        <td class="item_input"><input type="text" class="textbox require" name="anchor_id" value="{$vo.anchor_id}" readonly="readonly"/></td>
+    </tr>
+    <tr>
+        <td class="item_title">开始时间:</td>
+        <td class="item_input">
+            <input type="text" class="textbox require" name="start_time" id="start_time" value="{:show_time($vo['start_time'])}" onfocus="this.blur(); return showCalendar('start_time', '%Y-%m-%d %H:%M:%S', false, false, 'btn_start_time');" />
+            <input type="button" class="button" id="btn_start_time" value="{%SELECT_TIME}" onclick="return showCalendar('start_time', '%Y-%m-%d %H:%M:%S', false, false, 'btn_start_time');" />
+            <input type="button" class="button" value="{%CLEAR_TIME}" onclick="$('#start_time').val('');" />
+        </td>
+    </tr>
+    <tr>
+        <td class="item_title">到期时间:</td>
+        <td class="item_input">
+            <input type="text" class="textbox require" name="end_time" id="end_time" value="{:show_time($vo['end_time'])}" onfocus="this.blur(); return showCalendar('end_time', '%Y-%m-%d %H:%M:%S', false, false, 'btn_end_time');" />
+            <input type="button" class="button" id="btn_end_time" value="{%SELECT_TIME}" onclick="return showCalendar('end_time', '%Y-%m-%d %H:%M:%S', false, false, 'btn_end_time');" />
+            <input type="button" class="button" value="{%CLEAR_TIME}" onclick="$('#end_time').val('');" />
+        </td>
+    </tr>
+	<tr>
+		<td class="item_title"></td>
+		<td class="item_input">
+			<!--隐藏元素-->
+			<input type="hidden" name="{:conf("VAR_MODULE")}" value="GuardianRecord" />
+			<input type="hidden" name="{:conf("VAR_ACTION")}" value="update" />
+			<input type="hidden" name="id" value="{$vo.id}" />
+			<!--隐藏元素-->
+			<input type="submit" class="button" value="{%EDIT}" />
+			<input type="reset" class="button" value="{%RESET}" />
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2 class="bottomTd"></td>
+	</tr>
+</table>
+    <input name="ticket_name" id="ticket_name" type="hidden" value="{%TICKET_NUMBER}"/>
+</form>
+</div>
+<include file="Public:footer" />

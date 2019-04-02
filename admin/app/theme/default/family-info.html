@@ -1,0 +1,156 @@
+{include file="inc/header.html"}
+<?php
+	$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/family-info.css";
+?>
+<link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$dpagecss"}" />
+<!--内容区域-->
+<div class="wrapper">
+    <div class="layout-family clearfix">
+        <div class="layout-family-left mr-20 f-l">
+            <!-- 推荐主播 -->
+            <div class="m-live clearfix">
+                <h2 class="m-common-title">
+                    <div class="container-fluid">
+                        <i class="icon iconfont c-1">&#xe603;</i><strong>推荐主播</strong>
+                    </div>
+                </h2>
+                {if $data.is_recommend}
+                <ul class="m-live-list clearfix">
+                    {foreach from=$data.is_recommend item=item key=key name=is_recommend}
+                    <li class="block-live">
+                        <a href="{$item.video_url}">
+					        <span class="block-live-img">
+						        <img src="{$item.live_image}" class="block-live-img" />
+					        </span>
+                            <div class="block-live-info clearfix">
+                                <div class="live-name clearfix">
+                                    <img src="{$item.head_image}" class="avatar-normal" />
+                                    <p title="{$item.title}">{$item.title}</p>
+                                    <p class="sub f-l">{$item.nick_name}</p>
+                                    <span class="watch-num f-r"><i class="icon iconfont">&#xe60a;</i>{$item.watch_number}</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    {/foreach}
+                </ul>
+                {else}
+                    <p class="null-data">暂无推荐主播</p>
+                {/if}
+            </div>
+            <!--家族热门-->
+            <div class="m-live clearfix">
+                <h2 class="m-common-title">
+                    <div class="container-fluid">
+                        <i class="icon iconfont c-4">&#xe606;</i><strong>家族直播</strong>
+                    </div>
+                </h2>
+                {if $data.list}
+                    <ul class="m-live-list clearfix">
+                        {foreach from=$data.list item=item key=key name=list}
+                        <li class="block-live">
+                            <a href='{$item.video_url}'>
+    					        <span class="block-live-img">
+    						        <img src="{$item.live_image}" class="block-live-img" />
+    					        </span>
+                                <div class="block-live-info clearfix">
+                                    <div class="live-name clearfix">
+                                        <img src="{$item.head_image}" class="avatar-normal" />
+                                        <p title="大长腿欧尼~十一去哪里">{$item.title}</p>
+                                        <p class="sub f-l">{$item.nick_name}</p>
+                                        <span class="watch-num f-r"><i class="icon iconfont">&#xe60a;</i>{$item.watch_number}</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        {/foreach}
+                    </ul>
+                {else}
+                    <p class="null-data">暂无家族直播</p>
+                {/if}
+            </div>
+        </div>
+        <div class="layout-family-right f-l">
+            <!--家族详情-->
+            <div class="m-family-details mt-20">
+                <div class="block-family-mark">
+                    <img src="{$data.family_info.family_logo}" alt="" class="family-img">
+                    <p class="block-title" title="{$data.family_info.family_name}">{$data.family_info.family_name}</p>
+                    <p class="block-inner">族长：<em>{$data.family_info.user.nick_name}</em></p>
+                    <p class="block-inner">创建时间：<em>{function name="to_date" v=$data.family_info.create_time}</em></p>
+                </div>
+                <div class="block-family-level clearfix">
+                    <div class="grade f-l">
+                        <img src="{$data.level.level_ico}" width="38" height="16" class="f-l" />
+                    </div>
+                    <div class="level f-l">
+                        <div class="line-color" style="width: {$data.level.progress}%">
+                            {$data.level.progress}%
+                        </div>
+                    </div>
+                    <div class="grade f-l">
+                        {if $data.level.next_level}
+                        <img src="{$data.level.next_level_ico}" width="38" height="16" class="f-l" />
+                        {/if}
+                    </div>
+                </div>
+                <div class="block-family-about clearfix">
+                    <div class="block-related f-l">
+                        <p class="field field-orange">{$data.family_info.contribution}{$ticket_name}</p>
+                        <span class="field field-gray">家族收益</span>
+                    </div>
+                    <div class="block-related f-l">
+                        <p class="field field-orange">{$data.family_info.video_time}</p>
+                        <span class="field field-gray">直播时间</span>
+                    </div>
+                    <div class="block-related border-0 f-l">
+                        <p class="field field-orange">{$data.family_info.user_count}人</p>
+                        <span class="field field-gray">家族成员</span>
+                    </div>
+                </div>
+            </div>
+            <!--家族宣言-->
+            <div class="m-family-slogan mt-20">
+                <h2 class="m-common-title">
+                    <div class="container-fluid">
+                        <i class="icon iconfont c-7">&#xe632;</i><strong>家族宣言</strong>
+                    </div>
+                </h2>
+                <div class="block-family-slogan">
+                    {$data.family_info.family_manifesto}
+                </div>
+            </div>
+            <!--家族排行-->
+            <div class="m-Top mt-20">
+                <h2 class="m-common-title">
+                    <div class="container-fluid">
+                        <i class="icon iconfont c-1">&#xe636;</i><strong>家族排行</strong>
+                    </div>
+                </h2>
+                <ul class="m-Top-list">
+                    {foreach from=$data.ranking item=item key=key name=ranking}
+                    {if $smarty.foreach.ranking.iteration lte 10}
+                    <li>
+                        <div class="block-family-rank">
+                            <a href='{url r="family#info" p="family_id=$item.family_id"}' target="_blank">
+                                {if $smarty.foreach.ranking.iteration lte 3}
+                                <i class="star star-{$smarty.foreach.ranking.iteration}"></i>
+                                {else}
+                                <i class="star-number">{$smarty.foreach.ranking.iteration}</i>
+                                {/if}
+                                <div class="info">
+                                    <img src="{$item.family_logo}" class="avatar-normal" />
+                                    <p class="family-case">{$item.family_name}</p>
+                                    <p class="family-case">人数：{$item.user_count}</p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    {/if}
+                    {/foreach}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="inc/footer.html"}

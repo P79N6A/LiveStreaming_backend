@@ -1,0 +1,33 @@
+input[type=number] {  
+    -moz-appearance:textfield;  
+}  
+input[type=number]::-webkit-inner-spin-button,  
+input[type=number]::-webkit-outer-spin-button {  
+    -webkit-appearance: none;  
+    margin: 0;  
+}  
+.m-page .m-page-con{
+	+display: inline;
+	+zoom:1;
+}
+.header .block-search .btn{
+	+line-height: 27px;
+}
+.header .block-search .block-search-user .search-user-icon{
+	margin-top:4px\0; /* ie8-9 */
+	+margin-top:4px;
+}
+.header .block-search .block-search-user .search-user{
+	+border: 1px solid #eee;
+}
+.header .block-search .block-search-user .search-user .search-user-info .user-info-txt .logname a.user-name{
+
+	margin-top:3px\0; /* ie8-9 */
+}
+.bg-user-center .m-uc-content .content-pd20 .container-fluid .block-uc-info .block-family-name .family-name-btn .btn-primary{
+	+line-height: 36px;
+}
+.m-uc-content .content-pd20 .m-common-item .m-common-title .field{
+	+padding-bottom: 8px; 
+}
+img[src=""]{opacity: 0;}

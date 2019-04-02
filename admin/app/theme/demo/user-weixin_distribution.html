@@ -1,0 +1,31 @@
+{include file="inc/header.html"}
+<?php
+    $this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/user.css";
+    $this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/user-message.css";
+?>
+<link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$dpagecss"}" />
+<div class="wrapper">
+    <div class="user-main bg-user-center mt-20 clearfix">
+        <!--左侧菜单区 -->
+        {include file="inc/inc-user-left.html"}
+        <!-- 右侧内容区 -->
+        <div class="layout-user-r">
+            <div class="user-r-main">
+                {if $data.type eq 0}
+                    {include file="inc/inc-user-weixin_distribution.html"}
+                {/if}
+                {if $data.type eq 1}
+                    {include file="inc/inc-user-weixin_distribution.html"}
+                {/if}
+                {if $data.type eq 2}
+                    {include file="inc/inc-user-weixin_game.html"}
+                {/if}
+                {if $data.type eq 3}
+                    {include file="inc/inc-user-weixin_prop.html"}
+                {/if}
+            </div>
+        </div>
+    </div>
+</div>
+
+{include file="inc/footer.html"}

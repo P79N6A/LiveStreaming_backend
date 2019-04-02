@@ -1,0 +1,114 @@
+{include file="inc/header.html"}
+<?php
+	$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/app_download-index.css";
+?>
+<link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$dpagecss"}" />
+<style>
+    .layout-app-down .list-down li.ios-down{
+        position: relative;
+    }
+    .layout-app-down .list-down li.ios-down .down-ewm-bg {
+        position: absolute;
+        filter: alpha(opacity=0);
+        -moz-opacity: 0;
+        -khtml-opacity: 0;
+        opacity: 0;
+        top: 62px;
+        left: 40px;
+        z-index: 98;
+        width: 167px;
+        height: 0;
+        background-color: #fff;
+        border-radius: 5px;
+        -webkit-transition: ease .3s;
+        -moz-transition: ease .3s;
+        -o-transition: ease .3s;
+        transition: ease .3s
+    }
+
+    .layout-app-down .list-down li.ios-down .down-ewm {
+        position: absolute;
+        filter: alpha(opacity=0);
+        -moz-opacity: 0;
+        -khtml-opacity: 0;
+        opacity: 0;
+        top: 67px;
+        left: 45px;
+        z-index: 99;
+        width: 147px;
+        height: 0;
+        padding: 5px;
+        background-color: #fff;
+        overflow: hidden;
+        border-radius: 3px;
+        -webkit-transition: ease .3s;
+        -moz-transition: ease .3s;
+        -o-transition: ease .3s;
+        transition: ease .3s
+    }
+
+    .layout-app-down .list-down li.ios-down:hover .down-ewm {
+        top: 87px;
+        height: 147px;
+        filter: alpha(opacity=100);
+        -moz-opacity: 1;
+        -khtml-opacity: 1;
+        opacity: 1
+    }
+
+    .layout-app-down .list-down li.ios-down:hover .down-ewm-bg {
+        top: 82px;
+        height: 167px;
+        filter: alpha(opacity=30);
+        -moz-opacity: .3;
+        -khtml-opacity: .3;
+        opacity: .3
+    }
+</style>
+<div class="layout-app-down">
+    <div class="bg-font" style="background:none;color: #fff;font-size:{$slogan_size}px;font-family: Microsoft YaHei;text-align: center;">
+    <p>{$slogan}</p>
+    </div>
+    <ul class="list-down">
+        {if $data.list.ios.has_ios eq 1}
+        <li class="ios-down f-l">
+            <div class="down-ewm-bg"></div>
+            <div class="down-ewm" id="ios"></div>
+            <!-- <a href="{$data.list.ios.ios_down_url}"></a> -->
+        </li>
+        {/if}
+        {if $data.list.android.has_android eq 1}
+        <li class="android-down f-l">
+            <a href="{$data.list.android.android_down_url}"></a>
+        </li>
+        {/if}
+        {if $data.list.wechat.has_wechat eq 1}
+        <li class="app-down f-l">
+            <div class="down-ewm-bg"></div>
+            <div class="down-ewm" id="qrcode"></div>
+        </li>
+        {/if}
+        <li class="other-down f-l">
+            <a href="{$obs_download}"></a>
+        </li>
+    </ul>
+</div>
+<?php
+    $this->_var['dpagejs'][] = $this->_var['TMPL_REAL']."/dist/qrcode.js";
+?>
+<script type="text/javascript" src="{function name="parse_script" v="$dpagejs"}"></script>
+<script type="text/javascript">
+    window.onload =function(){
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            width : 147, //设置宽高
+            height : 147
+        });
+        qrcode.makeCode('{$data.list.wechat.url}');
+        var qrcode = new QRCode(document.getElementById("ios"), {
+            width : 147, //设置宽高
+            height : 147
+        });
+        qrcode.makeCode('{$data.list.ios.ios_down_url}');
+    }
+</script>
+{include file="inc/footer.html"}

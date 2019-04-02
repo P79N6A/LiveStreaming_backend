@@ -1,0 +1,28 @@
+{include file="inc/header.html"}
+<?php
+	$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/user_center-info.css";
+	$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/article.css";
+?>
+<link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$dpagecss"}" />
+
+<div class="wrapper">
+	<div class="mt-20 bg-user-center clearfix">
+		<!--左侧菜单区 -->
+		{include file="inc/inc-article-left.html"}
+		<!-- 右侧内容区 -->
+		<div class="m-uc-content f-l">
+			<div class="block-content">
+				<div class="content-text">
+					<div class="text-title">
+						<h3>{$data.article.title}</h3>
+						<span class="list-time">{function name="to_date" v=$data.article.create_time}</span>
+					</div>
+					<div class="text-txt">
+						{$data.article.content}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{include file="inc/footer.html"}

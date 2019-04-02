@@ -1,0 +1,75 @@
+.m-create-family{
+    padding:0 15px 15px;
+    margin-top: -10px;
+    text-align: center;
+    & .create-family-cue{
+        padding: 30px 0 45px;
+        text-align: center;
+        & span{
+            font-size: @fs-middle;
+            color: #909090;
+        }
+    }
+    & .btn-groups{
+        & .btn{
+            padding: 8px 42px;
+            box-sizing: content-box;
+            -moz-box-sizing: content-box;
+            font-size: @fs-middle;
+            
+            float: left;
+        }
+        & a.btn-primary{
+        	margin-right: 27px;
+        	border-radius: 3px;
+        }
+        & a.btn-create{
+            margin: 0;
+            float: none;
+            
+        }
+    }
+    & .create-portrait{
+        padding: 30px;
+    	& .portrait{
+    		height: 111px;
+    		width: 111px;
+    		margin: 0 auto 10px;
+    		background: url(../images/icon-portrait.png) no-repeat;
+    		cursor: pointer;
+    		overflow: hidden;
+            & img{
+                width:100%;
+                height:100%;
+                overflow:hidden;
+                border-radius:50%;
+            }
+            & img[src=""]{
+                opacity: 0;
+            }
+    	}
+    	& .create-portrait-txt{
+    	    font-size: @fs-middle;
+    	}
+    }
+    & .input-name{
+        width: 258px;
+        box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        height: 22px;
+        border: 1px solid #ddd;
+        padding: 3px 10px;
+        color: @fcolor-main;
+    }
+    & .input-enounce{
+        width: 258px;
+        box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        height: 151px;
+        border: 1px solid #ddd;
+        padding: 3px 10px;
+        color: @fcolor-main;
+        display: block;
+        margin: 0 auto 20px;
+    }
+}

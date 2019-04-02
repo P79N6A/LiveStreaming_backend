@@ -1,0 +1,113 @@
+{include file="inc/header.html"}
+<script type="text/javascript">
+ var course = <?php echo json_encode($this->_var['data']);?>;
+ var APP_ROOT = "{$APP_ROOT}";
+ var default_id =  course.data.id;
+</script>
+<div id="vscope-course_detail">
+	<div class="content">
+		<div class="video-box">
+			{if $data.data.is_vip}
+			<span class="video_type" :class="{'hide':is_hide_video_type}">付费</span>
+			{/if}
+			<!-- 播放器 -->
+			<div id="video-top" :class="{'tran-hide': is_show_err_pop}"></div>
+			<!-- 播放器背景图 -->
+			<div class="video-bg-box" :class="{'show': is_show_video_bg && !is_audio}">
+	        	<img :src="img" class="video-bg">
+	        	<span class="mask-bg"></span>
+	        	<span class="play-btn" @click="play"></span>
+	        </div>
+			<!-- 没有视频的提示 -->
+		 	<div class="no-player-tip" :class="{'show': no_video}">
+	            <div class="finish-text" style="">出错了，本集未上传视频</div>
+	            <div class="finish-follow-tip">您可以尝试观看其他视频</div>
+	        </div>
+	        <!-- VIP的提示 -->
+		 	<div class="no-player-tip" :class="{'show': canot_view}">
+	            <div class="finish-text" style="">该视频需要成为VIP会员才能观看</div>
+	            <a href='{url r="course#vip" p="pid=$data.course.id"}' class="button button-big">马上去付费</a>
+	        </div>
+	        <!-- 出错信息 -->
+			<div class="video-cover" :class="{'isErr': is_show_err}">
+				<div style="position:absolute;top:50%;width:100%;text-align:center;color:#fff" v-html="show_err_text"></div>
+			</div>
+			<!-- 音频播放背景图 -->
+			<div class="audio-bg-box" v-show="is_audio">
+	        	<i class="icon iconfont" v-show="playing_audio">&#xe627;</i>
+	        	<span class="play-btn" @click="play" v-show="!playing_audio"></span>
+	        </div>
+			<div class="change-audio" :class="{'hide':is_hide_change_audio}" @click="change_audio({$data.id})">
+				<template v-if="is_audio">切换视频</template>
+				<template v-else>切换音频</template>
+			</div>
+		</div>
+		<div class="other-con">
+			<div class="J-show-content" :class="{'v-hide': is_show_all_count}">
+				<div class="m-video-list">
+					<div class="flex-box list-tit j-show-more b-line">
+						<div class="flex-1 list-tit-lab">选集</div>
+						<div class="update-to">
+							<em class="r-line">更新至{$data.course.count}集&nbsp;&nbsp;</em>
+							<span @click="show_all_count">&nbsp;&nbsp;全部<i class="iconfont">&#xe607;</i></span>
+						</div>
+					</div>
+					<div class="vedio-list j-vedio-list ">
+						<div class="list-con">
+						{foreach from="$data.list" item="vedio_list" name="vedio_list"}
+							<div class="vedio-item r-line j-change-vedio {if $data.data.id eq $vedio_list.id}active{/if}" data-id="{$vedio_list.id}" rel="{$vedio_list.id}" @click="change_course({$vedio_list.id}, $event)">{$vedio_list.season}</div>
+						{/foreach}
+						</div>
+					</div>
+				</div>
+				<div class="m-class-bief">
+					<a class="bief-tit flex-box b-line">
+						<div class="">课程简介</div>
+						<div class="show-more j-show-more-bief" @click="show_more_bief">
+							<template v-if="is_show_more_bief">收起详情</template>
+							<template v-else>查看详情</template>
+						</div>
+					</a>
+					<div class="bief-con" :class="{'show-more': is_show_more_bief}">
+						<span class="bief-inner" v-html="course_content"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="err-pop" :class="{'z-open': is_show_err_pop}">
+		<div class="err-con">
+			<div class="err-txt">
+				<div class="err-tip">该课程付费后才能观看</div>
+				<div class="err-op">知识付费光荣</div>
+			</div>
+			<div class="flex-box btn-list">
+				<div class="flex-1 err-btn btn-cannel" @click="cannel_err_pop">取消</div>
+				<a href='{url r="course#vip" p="pid=$data.course.id"}' class="flex-1 err-btn btn-ok">确认</a>
+			</div>
+		</div>
+	</div>
+	<div class="pop-up" :class="{'z-open': is_show_all_count}">
+		<div class="m-all-vedio">
+			<div class="all-vedio-tit flex-box b-line">
+				<div class="flex-1">选集</div>
+				<i class="iconfont close-all-vedio j-close-all-vedio" @click="hide_all_count">&#xe635;</i>
+			</div>
+			<div class="all-vedio-con">
+			{foreach from="$data.list" item="vedio_list" name="vedio_list"}
+				<div class="all-vedio-item j-change-vedio {if $data.data.id eq $vedio_list.id}active{/if}" data-id="{$vedio_list.id}" rel="{$vedio_list.id}" @click="change_course({$vedio_list.id}, $event)">
+					<div class="item-con-pos"></div>
+					<em class="item-con">{$vedio_list.season}</em>
+				</div>
+			{/foreach}
+			</div>
+		</div>
+	</div>
+</div>
+<script src="{$TMPL}/dist/frames/jwplayer-7.8.6/jwplayer.js"></script>
+<script>jwplayer.key = "hKsQZ9OU2ouXErJ9z9j94t9xSGg+hOCmm0cAUw==";</script>
+<script type="text/javascript">
+	var playerInit = jwplayer('video-top');
+	var course_content = course.data.content;
+</script>
+{include file="inc/footer.html"}

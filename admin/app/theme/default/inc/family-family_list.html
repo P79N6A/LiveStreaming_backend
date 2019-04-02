@@ -1,0 +1,72 @@
+<?php
+	$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/family-family_list.css";
+?>
+<link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$dpagecss"}" />
+<style type="text/css">
+	.table .family_logo{
+		width:40px;
+		height:40px;
+		overflow:hidden;
+		border-radius:50%;
+	}
+	.table .m-page-con{padding:0;}
+	.table>thead>tr>th{border-bottom: 2px solid #eee;}
+	.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{text-align:center;border-top: 1px solid #eee;}
+	.table>tbody>tr>td{color:#666;line-height:40px;}
+	.common-select input{width:228px;padding:3px 10px;box-sizing:content-box;-moz-box-sizing:content-box;border:1px solid #ddd;line-height:22px;height:22px;font-size:12px}
+</style>
+<div class="common-select">
+	<input type="text" name="family_name" value="{$data.keyword}" placeholder="请输入关键字搜索家族" /><a style="position: relative; left: -20px; cursor: pointer;" class="btn-search" onclick="pop_join_family('family_name')"><i class="icon iconfont">&#xe600;</i></a>
+</div>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-hover">
+	<thead>
+		<tr>
+			<th width="15%">家族logo</th>
+			<th width="25%">家族名称</th>
+			<th width="20%">成员人数</th>
+			<th width="20%">创建时间</th>
+			<th width="20%">操作</th>
+		</tr>
+	</thead>
+	<tbody class="j-ajax-page" ms-controller="join_family" id="join_family">
+		{foreach from=$data.list item=item key=key name=list}
+		<tr>
+			<td class="lf">
+				<img src="{$item.family_logo}" class="family_logo" />
+			</td>
+			<td>
+				<span>{function name="msubstr" v=$item.family_name b=0 e=8}</span>
+			</td>
+			<td>
+				<span>{$item.user_count}</span>
+			</td>
+			<td>
+				<span>{function name="to_date" v=$item.create_time f="Y-m-d"}</span>
+			</td>
+			<td>
+				{if $item.is_apply eq 0}
+					<span onclick="join_family('{$item.family_id}',this)" class="btn btn-primary btn-xs">申请加入</span>
+				{elseif $item.is_apply eq 1}
+					<span class="btn btn-disabled btn-xs">申请中</span>
+				{else}
+					<span class="btn btn-disabled btn-xs">已加入</span>
+				{/if}
+			</td>
+		</tr>
+		{/foreach}
+		<tr>
+			<td colspan="5">
+				<div class="m-page clearfix">
+					<div class="m-page-con">
+					{$data.page}   
+					</div>
+				</div>	
+			</td>
+		</tr>
+	</tbody>
+</table>
+<?php
+	$this->_var['dpagejs'][] = $this->_var['TMPL_REAL']."/js/family-family_list.js";
+	$this->_var['dcpagejs'][] = $this->_var['TMPL_REAL']."/js/family-family_list.js";
+?>
+<script type="text/javascript" src="{function name="parse_script" v="$dpagejs" c="$dcpagejs"}"></script>

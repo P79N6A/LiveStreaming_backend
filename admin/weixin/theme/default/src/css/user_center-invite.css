@@ -1,0 +1,113 @@
+/*界面主题色*/
+/*背景色*/
+/*背景色（深）*/
+/*模块背景色*/
+/*主题风格色*/
+/*主题辅助风格色*/
+/*字体颜色*/
+/*主要字色*/
+/*浅色*/
+/*更浅色（适用：二级标题、简介）*/
+/*更更浅色（适用：icon图标）*/
+/*标题*/
+/*字体大小*/
+/*线条颜色*/
+/*主要线条颜色*/
+/*更深线条颜色*/
+/*更浅线条颜色*/
+/*文本输入框边框颜色*/
+/*各类间距，高度*/
+/*横向间距*/
+/*纵向间距*/
+.page-user_center-invite .nbg {
+  padding: 0.5rem 0.75rem;
+  margin: 0.5rem 0;
+}
+.page-user_center-invite .wbg {
+  background: #fff;
+  padding: 1rem 0.75rem;
+  margin: 0.5rem 0;
+}
+.page-user_center-invite .tc {
+  text-align: center;
+}
+.page-user_center-invite .sharetip {
+  font-size: 0.7rem;
+  line-height: 1.3rem;
+}
+.page-user_center-invite .sharetip h2 {
+  font-size: 0.7rem;
+  line-height: 1.3rem;
+}
+.page-user_center-invite .sharetip h2 strong {
+  color: #f1383f;
+}
+.page-user_center-invite .ewmbox {
+  width: 6rem;
+  height: 6rem;
+  margin: 0 auto;
+}
+.page-user_center-invite .ewmbox img {
+  width: 100%;
+}
+.page-user_center-invite .yqm {
+  font-size: 0.6rem;
+  color: #999;
+  padding-top: .5rem;
+}
+.page-user_center-invite .btit {
+  height: 2rem;
+  line-height: 2rem;
+  background: #fff;
+  padding: 0 0.75rem;
+  border-bottom: 1px solid #efefee;
+}
+.page-user_center-invite .bcon {
+  background: #fff;
+  width: 50%;
+  line-height: 4rem;
+  text-align: center;
+}
+.page-user_center-invite .bcon i {
+  font-size: 2rem;
+  color: #b8c0cc;
+}
+.page-user_center-invite .bcon i.wx.active {
+  color: #17c40f;
+}
+.page-user_center-invite .bcon i.fx.active {
+  color: #f1383f;
+}
+.page-user_center-invite .share-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0.75em 1rem;
+  text-align: right;
+  color: #fff;
+  font-size: 0.85rem;
+  display: none;
+}
+.page-user_center-invite .share-tip .icon {
+  width: 100%;
+  height: 4rem;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  margin-bottom: 0.5rem;
+}
+.page-user_center-invite .share-tip i {
+  width: 4rem;
+  height: 4rem;
+  background: url(../dist/statics/images/icon-share-tip.png) no-repeat;
+  background-size: 100%;
+  display: block;
+}
+.page-user_center-invite .share-tip.show {
+  display: block;
+}

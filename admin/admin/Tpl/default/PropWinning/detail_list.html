@@ -1,0 +1,32 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<include file="Public:new" />
+<load href='__TMPL__Common/js/jquery.bgiframe.js' />
+<load href='__TMPL__Common/js/jquery.weebox.js' />
+<load href='__TMPL__Common/js/user.js' />
+<load href='__TMPL__Common/style/weebox.css' />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<div class="main">
+<div class="main_title_list"><div class="list-line-ico"></div>奖品道具消耗明细 <a href="{:U('PropWinning/index')}" title="返回列表 ">返回列表</a></div>
+<div class="search_row">
+	<form name="search" action="__APP__" method="get">
+		使用者ID ：<input type="text" class="textbox" name="from_user_id" value="{:trim($_REQUEST['from_user_id'])}" />
+		接收者ID ：<input type="text" class="textbox" name="to_user_id" value="{:trim($_REQUEST['to_user_id'])}" />
+		使用时间 ：<input style="margin: 0;width:130px" type="text" class="textbox" size="8" name="start_time" id="start_time" value="{:trim($_REQUEST['start_time'])}" onfocus="return showCalendar('start_time', '%Y-%m-%d %H:%M:%S', false, false, 'start_time');" /> - <input type="text" style="width:130px" class="textbox" size="8" name="end_time" id="end_time" value="{:trim($_REQUEST['end_time'])}" onfocus="return showCalendar('end_time', '%Y-%m-%d %H:%M:%S', false, false, 'end_time');" />
+		<input type="hidden" value="PropWinning" name="m" /><input type="hidden" value="detail_list" name="a" /><input type="hidden" value="{:trim($_REQUEST['winning_num'])}" name="winning_num" /><input type="hidden" value="{:trim($_REQUEST['prop_id'])}" name="prop_id" /><input type="submit" class="button" value="{%SEARCH}" />
+		<span></span>
+	</form>
+</div>
+<html:list
+	id="dataTable"
+	style="dataTable"
+	name="winning_list"
+	action="true"
+	datasource="list"
+	show="create_date:日期|10%,user_id:赠送者ID|10%,user_nick_name:赠送者昵称|10%,user_level:赠送者等级|15%,name:礼物名称,to_user_id:接收者ID|10%,to_user_nick_name:接收者昵称|15%,to_user_level:接收者等级,award_num:中奖次数|10%"
+	actionlist="id|null|无" />
+<div class="page">{$page}</div>
+<include file="Public:footer" />

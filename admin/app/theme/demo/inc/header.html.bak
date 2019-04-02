@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="renderer" content="webkit" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <?php
+        $this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/dist/Bootstrap/css/bootstrap.min.css";
+        $this->_var['cpagecss'][] = $this->_var['TMPL_REAL']."/dist/Bootstrap/css/bootstrap.min.css";
+        $this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/dist/Weebox/weebox.css";
+        $this->_var['cpagecss'][] = $this->_var['TMPL_REAL']."/dist/Weebox/weebox.css";
+        $this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/dist/cropper/cropper.min.css";
+        $this->_var['cpagecss'][] = $this->_var['TMPL_REAL']."/dist/cropper/cropper.min.css";
+        $this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/dist/cropper/main.css";
+        $this->_var['cpagecss'][] = $this->_var['TMPL_REAL']."/dist/cropper/main.css";
+        $this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/css/public.css";
+        $this->_var['cpagecss'][] = $this->_var['TMPL_REAL']."/css/public.css";
+        $this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/css/public-units.css";
+        $this->_var['cpagecss'][] = $this->_var['TMPL_REAL']."/css/public-units.css";
+        $this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/css/banner.css";
+        $this->_var['cpagecss'][] = $this->_var['TMPL_REAL']."/css/banner.css";
+        $this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/css/header.css";
+        $this->_var['cpagecss'][] = $this->_var['TMPL_REAL']."/css/header.css";
+        $this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/css/footer.css";
+        $this->_var['cpagecss'][] = $this->_var['TMPL_REAL']."/css/footer.css";
+        $this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/css/css-hack.css";        
+        $this->_var['cpagecss'][] = $this->_var['TMPL_REAL']."/css/css-hack.css";        
+        $this->_var['pagejs'][] = $this->_var['TMPL_REAL']."/dist/Bootstrap/js/jquery.min.js";
+        $this->_var['cpagejs'][] = $this->_var['TMPL_REAL']."/dist/Bootstrap/js/jquery.min.js";
+        $this->_var['pagejs'][] = $this->_var['TMPL_REAL']."/dist/area/jquery.citys.js";
+        $this->_var['cpagejs'][] = $this->_var['TMPL_REAL']."/dist/area/jquery.citys.js";
+        $this->_var['pagejs'][] = $this->_var['TMPL_REAL']."/dist/fanweUI.js";
+        $this->_var['cpagejs'][] = $this->_var['TMPL_REAL']."/dist/fanweUI.js";
+        $this->_var['pagejs'][] = $this->_var['TMPL_REAL']."/dist/jquery.SuperSlide.2.1.js";
+        $this->_var['cpagejs'][] = $this->_var['TMPL_REAL']."/dist/jquery.SuperSlide.2.1.js";
+        $this->_var['pagejs'][] = $this->_var['TMPL_REAL']."/dist/plupload/plupload.full.min.js";
+        $this->_var['cpagejs'][] = $this->_var['TMPL_REAL']."/dist/plupload/plupload.full.min.js";
+        $this->_var['pagejs'][] = $this->_var['TMPL_REAL']."/js/common.js";
+        $this->_var['cpagejs'][] = $this->_var['TMPL_REAL']."/js/common.js";
+        $this->_var['pagejs'][] = $this->_var['TMPL_REAL']."/js/auto-layout.js";
+        $this->_var['cpagejs'][] = $this->_var['TMPL_REAL']."/js/auto-layout.js";
+        
+        $this->_var['avalonjs'][] = $this->_var['TMPL_REAL']."/dist/avalon.min.js";
+
+		$m_config = load_auto_cache("m_config");
+		$this->_var['short_name'] = empty($m_config['short_name']) ? '千秀直播' : $m_config['short_name'];
+        $this->_var['ticket_name'] = empty($m_config['ticket_name']) ? '秀票' : $m_config['ticket_name'];
+        $this->_var['app_name']=empty($m_config['app_name']) ? '千秀互动直播' : $m_config['app_name'];
+        $slogan = empty($m_config['pc_download_slogan']) ? '随时看，随时播，就下载千秀互动直播APP' : $m_config['pc_download_slogan'];
+        $this->_var['slogan']=$slogan;
+        $slogan_size=60 - mb_strlen($slogan) * 3 + 55;
+        $this->_var['slogan_size']=$slogan_size;
+        $tim_user_id = intval($GLOBALS['user_info']['id']);
+        $usersig = load_auto_cache("usersig", array("id" => $tim_user_id > 0 ? $tim_user_id : 0));
+        $this->_var['tim'] = array(
+            'sdkappid' => $m_config['tim_sdkappid'],
+            'account_type' => $m_config['tim_account_type'],
+            'usersig' => $usersig['usersig'],
+        );
+        $this->_var['SITE_LICENSE']=app_conf('SITE_LICENSE');
+        $this->_var['NETWORK_FOR_RECORD']=app_conf('NETWORK_FOR_RECORD');
+        $sql = "SELECT id as user_id,nick_name FROM " . DB_PREFIX . "user where is_admin=1";
+        $system_user = $GLOBALS['db']->getAll($sql, true, true);
+        $this->_var['system_uid'] = $system_user;
+        $this->_var['pc_logo'] = empty($m_config['pc_logo']) ? $this->_var['TMPL'] . '/images/logo.png' : $m_config['pc_logo'];
+        $this->_var['seo_title']=$m_config['seo_title'];
+        $this->_var['pc_has_private_chat']=$m_config['pc_has_private_chat'];
+        $this->_var['site_name']=app_conf('SITE_NAME');
+        $this->_var['open_pc_history']=OPEN_PC_HISTORY;
+    ?>
+    <title>{if $data.page_title neq ''}{$data.page_title}-{/if}{$data.site_name } {$data.seo_title}</title>
+    <script type="text/javascript" src="{function name="parse_script" v="$avalonjs"}"></script>
+    <script type="text/javascript">
+                    var SITE_LICENSE='{$SITE_LICENSE}';
+    var NETWORK_FOR_RECORD='{$NETWORK_FOR_RECORD}';
+        var TMPL = '{$TMPL}';
+        var APP_ROOT = '{$APP_ROOT}';
+        var __HASH_KEY__ = "{$hash_key}";
+		var TICKET_NAME = "{$ticket_name}";
+        var APP_NAME="{$app_name}";
+        var loginInfo = {
+            'sdkAppID': '{$tim.sdkappid}',
+            'appIDAt3rd': '{$tim.sdkappid}',
+            'accountType': '{$tim.account_type}',
+            'identifier': '{$user_info.id}',
+            'identifierNick': '{$user_info.nick_name}',
+            'userSig': '{$tim.usersig}',
+            'head_image': '{$user_info.head_image}',
+            'user_level': '{$user_info.user_level}'
+        };
+        var system_uid=	JSON.parse('<?php echo json_encode($this->_var['system_uid']); ?>');
+    </script>
+    <link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$pagecss" c="$cpagecss"}" />
+    <script type="text/javascript" src="{function name="parse_script" v="$pagejs" c="cpagejs"}"></script>
+    <!--[if lt IE 9]>
+        <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div id="headerwrapper" class="full_display_none">
+        <div class="header">
+            <div class="wrapper" id="mainheader">
+                <div class="block-logo">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td style="height:51px;"><a href='{url r="index#index"}'><img src="{$pc_logo}" /></a></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="block-menu">
+                    <a href='{url r="index#index"}' {if $ctl eq 'index' && $act eq 'index'}class="active"{/if}>首页</a>
+                    <a href='{url r="video#video_list"}' {if $ctl eq 'video' && $act eq 'video_list'}class="active"{/if}>直播</a>
+                    <a href='{url r="user#rank"}' {if $ctl eq 'user' && $act eq 'rank'}class="active"{/if}>排行榜</a>
+                    <a href='{url r="family#index"}' {if $ctl eq 'family' && $act eq 'index'}class="active"{/if}>家族</a>
+                    <a href='{url r="app_download#index"}' {if $ctl eq 'app_download' && $act eq 'index'}class="active"{/if}>APP下载</a>
+                </div>
+                <div class="block-search" ms-controller="login_tip" id="login_tip">
+                    <input type="text" placeholder="昵称/房间号" name="search_key" ms-duplex="@search_key" class="header-input" /><a href="javascript:void(0);" class="btn-search" ms-click="@search"><i class="icon iconfont">&#xe600;</i></a>
+                    {if $user_info.id}
+                	<div class="block-search-user clearfix">
+                        <a href='{url r="user#letter"}' class="search-user-icon f-l mr-20">
+                            <i class="icon iconfont">&#xe640;</i>
+                            <span id="unread_msg">0</span>
+                        </a>
+                		<a href='{url r="user#userinfo"}' class="search-user-name f-l">
+
+                			<img src="{$user_info.head_image}" class="avatar-normal mr-5"/>
+	                		
+                		</a>
+                		<div class="search-user">
+                			<div class="null"></div>
+                			<div class="search-user-info clearfix">
+                				<div class="user-info-txt">
+	                				<div class="logname clearfix">
+	                					<a href="javascript:void(0);" class="user-name f-l">{$user_info.nick_name}</a>
+                                        <a href="javascript:void(0);"title="{if $user_info.is_authentication eq 0}尚未认证{elseif $user_info.is_authentication eq 1}认证中{elseif $user_info.is_authentication eq 2}已认证{else}认证失败{/if}"  class="uname-aut icon-btn">
+                                            <i class="icon iconfont {if $user_info.is_authentication eq 2}uname{/if}">&#xe614;</i>
+                                        </a>
+                                        <a href="javascript:void(0);" title="{if $user_info.mobile}已绑定手机{else}未绑定手机{/if}" class="mobile-aut icon-btn">
+                                            <i class="icon iconfont {if $user_info.mobile}uname{/if}">&#xe613;</i>
+                                        </a>
+                                        <div class="clear"></div>
+	                				</div>
+                				</div>
+                                <div class="clear"></div>
+                			</div>
+                			<div class="search-user-grade">
+                				<div class="grade clearfix">
+                					<span class="icon-grade mr-5 f-l">
+                                        Lv.{$user_level_info.level}
+                                    </span>
+                					<div class="progress-grade f-l">
+                						<div class="progress-grade-num" style="width:{$user_level_info.progress}%"></div>
+                					</div>
+                                    <div class="clear"></div>
+                				</div>
+                			</div>
+                			<div class="search-user-money">
+                				<p>我的钱包
+                					<a href="javascript:void(0);" onclick="pop_recharge();">充值</a>
+                				</p>
+                				<div class="money">
+                					<div class="gift mb-10">
+                						<i class="jewel"></i>
+                						<span>秀豆<em>{$user_info.diamonds}</em></span>
+                					</div>
+                					<div class="gift">
+                						<i class="ticket"></i>
+                						<span>{$ticket_name}<em>{$user_info.useable_ticket}</em></span>
+                					</div>
+                				</div>
+                			</div>
+                			<div class="search-user-data clearfix">
+                                <a href="javascript:pop_live();">
+                                    我要直播
+                                </a>
+                				<a href='{url r="user#userinfo"}' class="mt-20 mb-20">
+                					个人中心
+                				</a>
+                				<a href='{url r="user#focus"}'>
+                                    我的关注
+	                			</a>
+	                			<div class="clear"></div>
+                			</div>
+                            <div class="search-user-out">
+                                <a href="javascript:void(0);" class="btn-out" onclick="login_out();">退出登录</a>
+                            </div>
+                		</div>
+                	</div>
+                    {else}
+                    <a href="javascript:void(0)" class="btn btn-primary btn-circle" onclick="login();">登录</a>
+                    {/if}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="bodywrapper">

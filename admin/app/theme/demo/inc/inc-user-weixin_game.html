@@ -1,0 +1,117 @@
+
+<div class="user-r-title clearfix">
+    <div class="common-title f-l">
+        <span {if $data.type eq 0} class="field"{/if}>
+            <a href="/index.php?ctl=user&act={$data.act}">游戏分销</a>
+        </span>
+        <span {if $data.type eq 1} class="field"{/if}>
+            <a href="/index.php?ctl=user&act={$data.act}&type=1">礼物分销</a>
+        </span>
+        <span {if $data.type eq 2} class="field"{/if}>
+            <a href="/index.php?ctl=user&act={$data.act}&type=2">游戏消费</a>
+        </span>
+        <span {if $data.type eq 3} class="field"{/if}>
+            <a href="/index.php?ctl=user&act={$data.act}&type=3">礼物消费</a>
+        </span>
+    </div>
+</div>
+<div class="user-r-content clearfix j-ajax-page">
+    <form action="/index.php" method="get" accept-charset="utf-8">
+        <input type="hidden" name="ctl" value="user"/>
+        <input type="hidden" name="act" value="weixin_distribution"/>
+        <input type="hidden" name="type" value="{$data.type}"/>
+        <table style="width: 100%">
+            <thead>
+                <tr class="form-head">
+                    <th>年份</th>
+                    <th>月份</th>
+                    <th>用户id</th>
+                    <th>游戏id</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="form-body">
+                    <td>
+                        <select name="year" style="-webkit-appearance: none;padding: 6px 10px;border: 1px solid #ddd;">
+                            <option value="0">未选择</option>
+                            {foreach from=$data.years item=item}
+                            <option value="{$item}"{if $data.year eq $item} selected="selected"{/if}>{$item}</option>
+                            {/foreach}
+                        </select>
+                    </td>
+                    <td>
+                        <select name="month" style="-webkit-appearance: none;padding: 6px 10px;border: 1px solid #ddd;">
+                            <option value="0">未选择</option>
+                            {foreach from=$data.months item=item}
+                            <option value="{$item}"{if $data.month eq $item} selected="selected"{/if}>{$item}</option>
+                            {/foreach}
+                        </select>
+                    </td>
+                    <td><input type="number" min="0" style="border: 1px solid #d9d9d9;width: 80%;padding: 0 10px;" step="1" name="user_id" value="{$data.user_id}" /></td>
+                    <td><input type="number" min="0" style="border: 1px solid #d9d9d9;width: 80%;padding: 0 10px;" step="1" name="game_log_id" value="{$data.game_log_id}" /></td>
+                    <td><input class="btn btn-s btn-primary" type="submit" value="搜索"/></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    <table style="width: 100%">
+        <thead>
+            <tr class="form-head">
+                <th>一级分销人数</th>
+                <th>二级分销人数</th>
+                <th>总分销人数</th>
+                <th>总下注金额</th>
+                <th>总收益金额</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="form-body">
+                <td>{$data.sum_first}</td>
+                <td>{$data.sum_second}</td>
+                <td>{$data.sum_child}</td>
+                <td>{$data.sum_bet}</td>
+                <td>{$data.sum_gain}</td>
+            </tr>
+        </tbody>
+    </table>
+    <table style="width: 100%">
+        <thead>
+            <tr class="form-head">
+                <th>用户id</th>
+                <th>昵称</th>
+                <th>游戏id</th>
+                <th>下注金额</th>
+                <th>收益</th>
+                <th>创建时间</th>
+            </tr>
+        </thead>
+        {if $data.list}
+        <tbody>
+            {foreach from=$data.list item=item key=key name=list}
+            <tr class="form-body" data-read="{$item.is_read}">
+                <td>{$item.user_id}</td>
+                <td>{$item.nick_name}</td>
+                <td>{$item.game_log_id}</td>
+                <td>{$item.bet}</td>
+                <td>{$item.gain}</td>
+                <td class="content-font">{function name="to_date" v=$item.create_time}</td>
+            </tr>
+            {/foreach}
+        </tbody>
+        {else}
+        <tbody>
+            <tr>
+                <td colspan="4">
+                    <p class="null-data">暂无消息</p>
+                </td>
+            </tr>
+        </tbody>
+        {/if}
+    </table>
+    <div class="m-page clearfix">
+        <div class="m-page-con">
+            {$data.page}
+        </div>
+    </div>
+</div>

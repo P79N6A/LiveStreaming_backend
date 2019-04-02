@@ -1,0 +1,1803 @@
+执行日期：2018-12-12-15：37：00
+array (
+  'screen_width' => '1080',
+  'screen_height' => '2076',
+  'sdk_type' => 'android',
+  'sdk_version_name' => '1.1.8',
+  'sdk_version' => '20180928',
+  'ctl' => 'login',
+  'act' => 'do_update',
+  'type' => '0',
+  'id' => '40',
+  'nick_name' => '40',
+  'sex' => '1',
+  'i_type' => '',
+)
+
+执行日期：2018-12-12-15：37：00
+array (
+  'id' => '40',
+  'nick_name' => '40',
+  'sex' => 1,
+  'head_image' => 'http://admin.huajianws.com/public/attachment/201812/09/17/5c0ce58377a53.png',
+)
+
+执行日期：2018-12-12-15：37：00
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '40',
+)
+
+执行日期：2018-12-12-15：43：02
+array (
+  'screen_width' => '720',
+  'screen_height' => '1280',
+  'sdk_type' => 'android',
+  'sdk_version_name' => '1.1.8',
+  'sdk_version' => '20180928',
+  'ctl' => 'login',
+  'act' => 'do_update',
+  'type' => '0',
+  'id' => '41',
+  'nick_name' => '41',
+  'sex' => '1',
+  'i_type' => '',
+)
+
+执行日期：2018-12-12-15：43：02
+array (
+  'id' => '41',
+  'nick_name' => '41',
+  'sex' => 1,
+  'head_image' => 'http://admin.huajianws.com/public/attachment/201812/09/17/5c0ce58377a53.png',
+)
+
+执行日期：2018-12-12-15：43：02
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '41',
+)
+
+执行日期：2018-12-15-19：40：11
+array (
+  'screen_width' => '1080',
+  'screen_height' => '1920',
+  'sdk_type' => 'android',
+  'sdk_version_name' => '1.1.8',
+  'sdk_version' => '20180928',
+  'ctl' => 'login',
+  'act' => 'do_update',
+  'type' => '0',
+  'id' => '42',
+  'nick_name' => '42',
+  'sex' => '1',
+  'i_type' => '',
+)
+
+执行日期：2018-12-15-19：40：11
+array (
+  'id' => '42',
+  'nick_name' => '42',
+  'sex' => 1,
+  'head_image' => 'http://admin.huajianws.com/public/attachment/201812/09/17/5c0ce58377a53.png',
+)
+
+执行日期：2018-12-15-19：40：11
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '42',
+)
+
+执行日期：2018-12-15-20：54：03
+array (
+  'screen_width' => '1080',
+  'screen_height' => '2030',
+  'sdk_type' => 'android',
+  'sdk_version_name' => '1.1.8',
+  'sdk_version' => '20180928',
+  'ctl' => 'login',
+  'act' => 'do_update',
+  'type' => '0',
+  'id' => '43',
+  'nick_name' => '4311',
+  'sex' => '1',
+  'head_image' => './public/attachment/201812/15/20/origin/43154487843918613514.jpg',
+  'i_type' => '',
+)
+
+执行日期：2018-12-15-20：54：03
+array (
+  'id' => '43',
+  'nick_name' => '4311',
+  'sex' => 1,
+  'head_image' => './public/attachment/201812/15/20/origin/43154487843918613514.jpg',
+)
+
+执行日期：2018-12-15-20：54：03
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '43',
+)
+
+执行日期：2018-12-15-21：20：46
+array (
+  'screen_width' => '1080',
+  'screen_height' => '1920',
+  'sdk_type' => 'android',
+  'sdk_version_name' => '1.1.8',
+  'sdk_version' => '20180928',
+  'ctl' => 'login',
+  'act' => 'do_update',
+  'type' => '0',
+  'id' => '44',
+  'nick_name' => '44',
+  'sex' => '1',
+  'i_type' => '',
+)
+
+执行日期：2018-12-15-21：20：46
+array (
+  'id' => '44',
+  'nick_name' => '44',
+  'sex' => 1,
+  'head_image' => 'http://admin.huajianws.com/public/attachment/201812/09/17/5c0ce58377a53.png',
+)
+
+执行日期：2018-12-15-21：20：47
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '44',
+)
+
+执行日期：2018-12-16-00：42：10
+array (
+  'screen_width' => '1080',
+  'screen_height' => '1920',
+  'sdk_type' => 'android',
+  'sdk_version_name' => '1.1.8',
+  'sdk_version' => '20180928',
+  'ctl' => 'login',
+  'act' => 'do_update',
+  'type' => '0',
+  'id' => '45',
+  'nick_name' => '45',
+  'sex' => '1',
+  'i_type' => '',
+)
+
+执行日期：2018-12-16-00：42：10
+array (
+  'id' => '45',
+  'nick_name' => '45',
+  'sex' => 1,
+  'head_image' => 'http://admin.huajianws.com/public/attachment/201812/09/17/5c0ce58377a53.png',
+)
+
+执行日期：2018-12-16-00：42：10
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '45',
+)
+
+执行日期：2018-12-16-12：28：44
+array (
+  'screen_width' => '1080',
+  'screen_height' => '1812',
+  'sdk_type' => 'android',
+  'sdk_version_name' => '1.1.8',
+  'sdk_version' => '20180928',
+  'ctl' => 'login',
+  'act' => 'do_update',
+  'type' => '0',
+  'id' => '46',
+  'nick_name' => '46',
+  'sex' => '1',
+  'i_type' => '',
+)
+
+执行日期：2018-12-16-12：28：44
+array (
+  'id' => '46',
+  'nick_name' => '46',
+  'sex' => 1,
+  'head_image' => 'http://admin.huajianws.com/public/attachment/201812/09/17/5c0ce58377a53.png',
+)
+
+执行日期：2018-12-16-12：28：44
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '46',
+)
+
+执行日期：2018-12-16-12：29：05
+array (
+  'screen_width' => '720',
+  'screen_height' => '1280',
+  'sdk_type' => 'android',
+  'sdk_version_name' => '1.1.8',
+  'sdk_version' => '20180928',
+  'ctl' => 'login',
+  'act' => 'do_update',
+  'type' => '0',
+  'id' => '47',
+  'nick_name' => '47',
+  'sex' => '1',
+  'i_type' => '',
+)
+
+执行日期：2018-12-16-12：29：05
+array (
+  'id' => '47',
+  'nick_name' => '47',
+  'sex' => 1,
+  'head_image' => 'http://admin.huajianws.com/public/attachment/201812/09/17/5c0ce58377a53.png',
+)
+
+执行日期：2018-12-16-12：29：06
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '47',
+)
+
+执行日期：2018-12-16-13：10：44
+array (
+  'screen_width' => '1080',
+  'screen_height' => '1812',
+  'sdk_type' => 'android',
+  'sdk_version_name' => '1.1.8',
+  'sdk_version' => '20180928',
+  'ctl' => 'login',
+  'act' => 'do_update',
+  'type' => '0',
+  'id' => '48',
+  'nick_name' => '48',
+  'sex' => '1',
+  'i_type' => '',
+)
+
+执行日期：2018-12-16-13：10：44
+array (
+  'id' => '48',
+  'nick_name' => '48',
+  'sex' => 1,
+  'head_image' => 'http://admin.huajianws.com/public/attachment/201812/09/17/5c0ce58377a53.png',
+)
+
+执行日期：2018-12-16-13：10：44
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '48',
+)
+
+执行日期：2018-12-16-13：42：43
+array (
+  'screen_width' => '720',
+  'screen_height' => '1280',
+  'sdk_type' => 'android',
+  'sdk_version_name' => '1.1.8',
+  'sdk_version' => '20180928',
+  'ctl' => 'login',
+  'act' => 'do_update',
+  'type' => '0',
+  'id' => '49',
+  'nick_name' => '49',
+  'sex' => '1',
+  'i_type' => '',
+)
+
+执行日期：2018-12-16-13：42：43
+array (
+  'id' => '49',
+  'nick_name' => '49',
+  'sex' => 1,
+  'head_image' => 'http://admin.huajianws.com/public/attachment/201812/09/17/5c0ce58377a53.png',
+)
+
+执行日期：2018-12-16-13：42：44
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '49',
+)
+
+执行日期：2018-12-16-18：48：22
+array (
+  'screen_width' => '1080',
+  'screen_height' => '2016',
+  'sdk_type' => 'android',
+  'sdk_version_name' => '1.1.8',
+  'sdk_version' => '20180928',
+  'ctl' => 'login',
+  'act' => 'do_update',
+  'type' => '0',
+  'id' => '50',
+  'nick_name' => 'olnho',
+  'sex' => '1',
+  'head_image' => './public/attachment/201812/16/18/origin/50154495729468712816.jpg',
+  'i_type' => '',
+)
+
+执行日期：2018-12-16-18：48：22
+array (
+  'id' => '50',
+  'nick_name' => 'olnho',
+  'sex' => 1,
+  'head_image' => './public/attachment/201812/16/18/origin/50154495729468712816.jpg',
+)
+
+执行日期：2018-12-16-18：48：22
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '50',
+)
+
+执行日期：2018-12-16-19：20：31
+array (
+  'screen_width' => '720',
+  'screen_height' => '1280',
+  'sdk_type' => 'android',
+  'sdk_version_name' => '1.1.8',
+  'sdk_version' => '20180928',
+  'ctl' => 'login',
+  'act' => 'do_update',
+  'type' => '0',
+  'id' => '51',
+  'nick_name' => '51',
+  'sex' => '1',
+  'i_type' => '',
+)
+
+执行日期：2018-12-16-19：20：31
+array (
+  'id' => '51',
+  'nick_name' => '51',
+  'sex' => 1,
+  'head_image' => 'http://admin.huajianws.com/public/attachment/201812/09/17/5c0ce58377a53.png',
+)
+
+执行日期：2018-12-16-19：20：31
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '51',
+)
+
+执行日期：2018-12-16-21：01：36
+array (
+  'screen_width' => '720',
+  'screen_height' => '1280',
+  'sdk_type' => 'android',
+  'sdk_version_name' => '1.1.8',
+  'sdk_version' => '20180928',
+  'ctl' => 'login',
+  'act' => 'do_update',
+  'type' => '0',
+  'id' => '52',
+  'nick_name' => '52',
+  'sex' => '1',
+  'i_type' => '',
+)
+
+执行日期：2018-12-16-21：01：36
+array (
+  'id' => '52',
+  'nick_name' => '52',
+  'sex' => 1,
+  'head_image' => 'http://admin.huajianws.com/public/attachment/201812/09/17/5c0ce58377a53.png',
+)
+
+执行日期：2018-12-16-21：01：36
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '52',
+)
+
+执行日期：2019-01-10-10：27：54
+array (
+  'screen_width' => '1080',
+  'screen_height' => '2220',
+  'sdk_type' => 'android',
+  'sdk_version_name' => '1.1.8',
+  'sdk_version' => '20180928',
+  'xpoint' => '123.414352',
+  'ypoint' => '42.623126',
+  'ctl' => 'login',
+  'act' => 'do_update',
+  'type' => '0',
+  'id' => '67',
+  'nick_name' => '67',
+  'sex' => '1',
+  'i_type' => '',
+)
+
+执行日期：2019-01-10-10：27：54
+array (
+  'id' => '67',
+  'nick_name' => '67',
+  'sex' => 1,
+  'head_image' => 'http://zb.98m4.com/public/attachment/201901/10/10/5c36a7ee90888.png',
+)
+
+执行日期：2019-01-10-10：27：54
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '67',
+)
+
+执行日期：2019-01-10-11：52：27
+array (
+  'screen_width' => '1080',
+  'screen_height' => '2094',
+  'sdk_type' => 'android',
+  'sdk_version_name' => '1.1.8',
+  'sdk_version' => '20180928',
+  'xpoint' => '123.414352',
+  'ypoint' => '42.623126',
+  'ctl' => 'login',
+  'act' => 'do_update',
+  'id' => '63',
+  'oss_path' => './public/attachment/201901/63/1547092345812.png',
+  'type' => '1',
+  'i_type' => '',
+)
+
+执行日期：2019-01-10-11：52：27
+array (
+  'id' => '63',
+  'sex' => '2',
+  'head_image' => './public/attachment/201901/63/1547092345812.png',
+)
+
+执行日期：2019-01-10-11：52：27
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '63',
+)
+
+执行日期：2019-01-10-11：53：02
+array (
+  'screen_width' => '1080',
+  'screen_height' => '2136',
+  'sdk_type' => 'android',
+  'sdk_version_name' => '5.9.7',
+  'sdk_version' => '20190110',
+  'xpoint' => '114.530082',
+  'ypoint' => '23.483151',
+  'ctl' => 'login',
+  'act' => 'do_update',
+  'id' => '66',
+  'oss_path' => './public/attachment/201901/66/1547092381592.png',
+  'type' => '1',
+  'i_type' => '',
+)
+
+执行日期：2019-01-10-11：53：02
+array (
+  'id' => '66',
+  'sex' => '2',
+  'head_image' => './public/attachment/201901/66/1547092381592.png',
+)
+
+执行日期：2019-01-10-11：53：03
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '66',
+)
+
+执行日期：2019-01-10-11：53：13
+array (
+  'screen_width' => '1080',
+  'screen_height' => '2136',
+  'sdk_type' => 'android',
+  'sdk_version_name' => '5.9.7',
+  'sdk_version' => '20190110',
+  'xpoint' => '114.530082',
+  'ypoint' => '23.483151',
+  'ctl' => 'login',
+  'act' => 'do_update',
+  'id' => '66',
+  'oss_path' => './public/attachment/201901/66/1547092392562.png',
+  'type' => '1',
+  'i_type' => '',
+)
+
+执行日期：2019-01-10-11：53：13
+array (
+  'id' => '66',
+  'sex' => '2',
+  'head_image' => './public/attachment/201901/66/1547092392562.png',
+)
+
+执行日期：2019-01-10-11：53：13
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '66',
+)
+
+执行日期：2019-01-10-11：54：15
+array (
+  'screen_width' => '1080',
+  'screen_height' => '2136',
+  'sdk_type' => 'android',
+  'sdk_version_name' => '5.9.7',
+  'sdk_version' => '20190110',
+  'xpoint' => '114.530082',
+  'ypoint' => '23.483151',
+  'ctl' => 'login',
+  'act' => 'do_update',
+  'id' => '66',
+  'oss_path' => './public/attachment/201901/66/1547092454545.png',
+  'type' => '1',
+  'i_type' => '',
+)
+
+执行日期：2019-01-10-11：54：15
+array (
+  'id' => '66',
+  'sex' => '2',
+  'head_image' => './public/attachment/201901/66/1547092454545.png',
+)
+
+执行日期：2019-01-10-11：54：15
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '66',
+)
+
+执行日期：2019-01-10-11：54：22
+array (
+  'screen_width' => '1080',
+  'screen_height' => '2094',
+  'sdk_type' => 'android',
+  'sdk_version_name' => '1.1.8',
+  'sdk_version' => '20180928',
+  'xpoint' => '123.414352',
+  'ypoint' => '42.623126',
+  'ctl' => 'login',
+  'act' => 'do_update',
+  'id' => '63',
+  'oss_path' => './public/attachment/201901/63/1547092460698.png',
+  'type' => '1',
+  'i_type' => '',
+)
+
+执行日期：2019-01-10-11：54：22
+array (
+  'id' => '63',
+  'sex' => '2',
+  'head_image' => './public/attachment/201901/63/1547092460698.png',
+)
+
+执行日期：2019-01-10-11：54：22
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '63',
+)
+
+执行日期：2019-01-10-11：54：45
+array (
+  'screen_width' => '1080',
+  'screen_height' => '2136',
+  'sdk_type' => 'android',
+  'sdk_version_name' => '5.9.7',
+  'sdk_version' => '20190110',
+  'xpoint' => '114.530082',
+  'ypoint' => '23.483151',
+  'ctl' => 'login',
+  'act' => 'do_update',
+  'id' => '66',
+  'oss_path' => './public/attachment/201901/66/1547092484965.png',
+  'type' => '1',
+  'i_type' => '',
+)
+
+执行日期：2019-01-10-11：54：45
+array (
+  'id' => '66',
+  'sex' => '2',
+  'head_image' => './public/attachment/201901/66/1547092484965.png',
+)
+
+执行日期：2019-01-10-11：54：46
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '66',
+)
+
+执行日期：2019-01-10-11：55：10
+array (
+  'screen_width' => '1080',
+  'screen_height' => '2136',
+  'sdk_type' => 'android',
+  'sdk_version_name' => '5.9.7',
+  'sdk_version' => '20190110',
+  'xpoint' => '114.530082',
+  'ypoint' => '23.483151',
+  'ctl' => 'login',
+  'act' => 'do_update',
+  'id' => '66',
+  'oss_path' => './public/attachment/201901/66/1547092509868.png',
+  'type' => '1',
+  'i_type' => '',
+)
+
+执行日期：2019-01-10-11：55：10
+array (
+  'id' => '66',
+  'sex' => '2',
+  'head_image' => './public/attachment/201901/66/1547092509868.png',
+)
+
+执行日期：2019-01-10-11：55：10
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '66',
+)
+
+执行日期：2019-01-10-11：55：17
+array (
+  'screen_width' => '1080',
+  'screen_height' => '2094',
+  'sdk_type' => 'android',
+  'sdk_version_name' => '1.1.8',
+  'sdk_version' => '20180928',
+  'xpoint' => '123.414352',
+  'ypoint' => '42.623126',
+  'ctl' => 'login',
+  'act' => 'do_update',
+  'id' => '63',
+  'oss_path' => './public/attachment/201901/63/1547092516115.png',
+  'type' => '1',
+  'i_type' => '',
+)
+
+执行日期：2019-01-10-11：55：17
+array (
+  'id' => '63',
+  'sex' => '2',
+  'head_image' => './public/attachment/201901/63/1547092516115.png',
+)
+
+执行日期：2019-01-10-11：55：18
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '63',
+)
+
+执行日期：2019-01-10-11：56：12
+array (
+  'screen_width' => '1080',
+  'screen_height' => '2136',
+  'sdk_type' => 'android',
+  'sdk_version_name' => '5.9.7',
+  'sdk_version' => '20190110',
+  'xpoint' => '114.530082',
+  'ypoint' => '23.483151',
+  'ctl' => 'login',
+  'act' => 'do_update',
+  'id' => '66',
+  'oss_path' => './public/attachment/201901/66/1547092571791.png',
+  'type' => '1',
+  'i_type' => '',
+)
+
+执行日期：2019-01-10-11：56：12
+array (
+  'id' => '66',
+  'sex' => '2',
+  'head_image' => './public/attachment/201901/66/1547092571791.png',
+)
+
+执行日期：2019-01-10-11：56：12
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '66',
+)
+
+执行日期：2019-01-10-11：58：37
+array (
+  'screen_width' => '1080',
+  'screen_height' => '2136',
+  'sdk_type' => 'android',
+  'sdk_version_name' => '5.9.7',
+  'sdk_version' => '20190110',
+  'xpoint' => '114.530082',
+  'ypoint' => '23.483151',
+  'ctl' => 'login',
+  'act' => 'do_update',
+  'id' => '66',
+  'oss_path' => './public/attachment/201901/66/1547092716974.png',
+  'type' => '1',
+  'i_type' => '',
+)
+
+执行日期：2019-01-10-11：58：37
+array (
+  'id' => '66',
+  'sex' => '2',
+  'head_image' => './public/attachment/201901/66/1547092716974.png',
+)
+
+执行日期：2019-01-10-11：58：38
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '66',
+)
+
+执行日期：2019-01-11-22：06：29
+array (
+  'requestData' => 'nND8N0WDsBFT5oI13pTTz5oKPRdB9e9dU3OhoDzcU8jjBvBjmtH2h3LYdRZkOOgwgpvyX1E6hR9W
+DnX3kKRBZBuCw17vIU8pJ/xnd9eB1ID9AcksTsRUFPDA0yRWiviMonuaakKSTN3AiH6/dT0ZS6Uw
+a8UyVjjuFRnAKxke80fIi1zL9FiL7ckG08hvGWMWwev9CuQ8Zbtb0xiMMtvCcrDjKryQTtATizQt
+DXXq0UuvlLORhCoRHRkPe7ZWrEaCVRsczifJqnzlQOvsdpGDVKnuJWxeHvJlzFA/YxvDDCBfOl73
+41LpxWy4ZtkdGfei1jGmPCCeV1vGJhI3rv+0KQ==',
+  'i_type' => '1',
+  'ctl' => 'login',
+  'act' => 'do_update',
+  'screen_width' => '1080',
+  'screen_height' => '2030',
+  'sdk_type' => 'android',
+  'sdk_version_name' => '3.5.5',
+  'sdk_version' => '2018111101',
+  'xpoint' => '108.911122',
+  'ypoint' => '34.288549',
+  'type' => '0',
+  'id' => '82',
+  'nick_name' => '简单机械',
+  'sex' => '1',
+)
+
+执行日期：2019-01-11-22：06：29
+array (
+  'id' => '82',
+  'nick_name' => '简单机械',
+  'sex' => 1,
+  'head_image' => 'http://zb.98m4.com/public/attachment/201901/10/10/5c36a7ee90888.png',
+)
+
+执行日期：2019-01-11-22：06：29
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '82',
+)
+
+执行日期：2019-01-12-11：42：27
+array (
+  'screen_width' => '1080',
+  'screen_height' => '2218',
+  'sdk_type' => 'android',
+  'sdk_version_name' => '5.9.8',
+  'sdk_version' => '20190110',
+  'xpoint' => '123.434915',
+  'ypoint' => '41.944901',
+  'ctl' => 'login',
+  'act' => 'do_update',
+  'type' => '0',
+  'id' => '93',
+  'nick_name' => '93',
+  'sex' => '1',
+  'i_type' => '',
+)
+
+执行日期：2019-01-12-11：42：27
+array (
+  'id' => '93',
+  'nick_name' => '93',
+  'sex' => 1,
+  'head_image' => 'http://zb.98m4.com/public/attachment/201901/10/10/5c36a7ee90888.png',
+)
+
+执行日期：2019-01-12-11：42：27
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '93',
+)
+
+执行日期：2019-01-13-17：49：07
+array (
+  'screen_width' => '1080',
+  'screen_height' => '2136',
+  'sdk_type' => 'android',
+  'sdk_version_name' => '5.9.8',
+  'sdk_version' => '20190110',
+  'xpoint' => '114.530064',
+  'ypoint' => '23.483232',
+  'ctl' => 'login',
+  'act' => 'do_update',
+  'id' => '66',
+  'oss_path' => './public/attachment/201901/66/1547372946957.png',
+  'type' => '1',
+  'i_type' => '',
+)
+
+执行日期：2019-01-13-17：49：07
+array (
+  'id' => '66',
+  'sex' => '2',
+  'head_image' => './public/attachment/201901/66/1547372946957.png',
+)
+
+执行日期：2019-01-13-17：49：08
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '66',
+)
+
+执行日期：2019-02-05-20：02：39
+array (
+  'screen_width' => '720',
+  'screen_height' => '1360',
+  'sdk_type' => 'android',
+  'sdk_version_name' => '2.6.0',
+  'sdk_version' => '2019012212',
+  'xpoint' => '112.070803',
+  'ypoint' => '38.69618',
+  'ctl' => 'login',
+  'act' => 'do_update',
+  'type' => '0',
+  'id' => '164',
+  'nick_name' => '164',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：02：39
+array (
+  'id' => '164',
+  'nick_name' => '164',
+  'sex' => 2,
+  'head_image' => 'http://zb.98m4.com/public/attachment/201901/10/10/5c36a7ee90888.png',
+)
+
+执行日期：2019-02-05-20：02：40
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '164',
+)
+
+执行日期：2019-02-05-20：05：21
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '伸怪手的坏叔叔',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：05：21
+array (
+  'id' => '165',
+  'nick_name' => '伸怪手的坏叔叔',
+  'sex' => 2,
+  'head_image' => 'http://zb.98m4.com/public/attachment/201901/10/10/5c36a7ee90888.png',
+)
+
+执行日期：2019-02-05-20：05：21
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '165',
+)
+
+执行日期：2019-02-05-20：05：27
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '伸怪手的坏叔叔',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：05：29
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '伸怪手的坏叔叔',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：05：31
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '伸怪手的坏叔叔',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：05：32
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '伸怪手的坏叔叔',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：05：48
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '伸怪手的坏姐姐',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：05：48
+array (
+  'id' => '165',
+  'nick_name' => '伸怪手的坏姐姐',
+  'sex' => 2,
+  'head_image' => 'http://zb.98m4.com/public/attachment/201901/10/10/5c36a7ee90888.png',
+)
+
+执行日期：2019-02-05-20：05：48
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '165',
+)
+
+执行日期：2019-02-05-20：05：52
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '伸怪手的坏姐姐',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：05：54
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '伸怪手的坏姐姐',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：06：15
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '伸怪手坏叔叔',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：06：15
+array (
+  'id' => '165',
+  'nick_name' => '伸怪手坏叔叔',
+  'sex' => 2,
+  'head_image' => 'http://zb.98m4.com/public/attachment/201901/10/10/5c36a7ee90888.png',
+)
+
+执行日期：2019-02-05-20：06：15
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '165',
+)
+
+执行日期：2019-02-05-20：06：18
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '伸怪手坏叔叔',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：06：38
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '伸怪手的叔叔',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：06：38
+array (
+  'id' => '165',
+  'nick_name' => '伸怪手的叔叔',
+  'sex' => 2,
+  'head_image' => 'http://zb.98m4.com/public/attachment/201901/10/10/5c36a7ee90888.png',
+)
+
+执行日期：2019-02-05-20：06：38
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '165',
+)
+
+执行日期：2019-02-05-20：06：40
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '伸怪手的叔叔',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：06：42
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '伸怪手的叔叔',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：06：51
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '伸怪手的结局',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：06：51
+array (
+  'id' => '165',
+  'nick_name' => '伸怪手的结局',
+  'sex' => 2,
+  'head_image' => 'http://zb.98m4.com/public/attachment/201901/10/10/5c36a7ee90888.png',
+)
+
+执行日期：2019-02-05-20：06：51
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '165',
+)
+
+执行日期：2019-02-05-20：06：53
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '伸怪手的结局',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：07：06
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '伸怪手的大叔',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：07：06
+array (
+  'id' => '165',
+  'nick_name' => '伸怪手的大叔',
+  'sex' => 2,
+  'head_image' => 'http://zb.98m4.com/public/attachment/201901/10/10/5c36a7ee90888.png',
+)
+
+执行日期：2019-02-05-20：07：06
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '165',
+)
+
+执行日期：2019-02-05-20：07：15
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '伸怪手的大姐姐',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：07：15
+array (
+  'id' => '165',
+  'nick_name' => '伸怪手的大姐姐',
+  'sex' => 2,
+  'head_image' => 'http://zb.98m4.com/public/attachment/201901/10/10/5c36a7ee90888.png',
+)
+
+执行日期：2019-02-05-20：07：15
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '165',
+)
+
+执行日期：2019-02-05-20：07：17
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '伸怪手的大姐姐',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：07：31
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '伸怪手的小叔叔',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：07：31
+array (
+  'id' => '165',
+  'nick_name' => '伸怪手的小叔叔',
+  'sex' => 2,
+  'head_image' => 'http://zb.98m4.com/public/attachment/201901/10/10/5c36a7ee90888.png',
+)
+
+执行日期：2019-02-05-20：07：33
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '165',
+)
+
+执行日期：2019-02-05-20：07：36
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '伸怪手的小叔叔',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：07：47
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '伸怪手的小姐姐',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：07：47
+array (
+  'id' => '165',
+  'nick_name' => '伸怪手的小姐姐',
+  'sex' => 2,
+  'head_image' => 'http://zb.98m4.com/public/attachment/201901/10/10/5c36a7ee90888.png',
+)
+
+执行日期：2019-02-05-20：07：48
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '165',
+)
+
+执行日期：2019-02-05-20：07：52
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '伸怪手的小姐姐',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '1',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：08：50
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '伸怪手的怪叔叔',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：08：50
+array (
+  'id' => '165',
+  'nick_name' => '伸怪手的怪叔叔',
+  'sex' => 2,
+  'head_image' => 'http://zb.98m4.com/public/attachment/201901/10/10/5c36a7ee90888.png',
+)
+
+执行日期：2019-02-05-20：08：50
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '165',
+)
+
+执行日期：2019-02-05-20：08：53
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '伸怪手的怪叔叔',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：09：12
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '伸怪手的怪姐姐',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：09：12
+array (
+  'id' => '165',
+  'nick_name' => '伸怪手的怪姐姐',
+  'sex' => 2,
+  'head_image' => 'http://zb.98m4.com/public/attachment/201901/10/10/5c36a7ee90888.png',
+)
+
+执行日期：2019-02-05-20：09：12
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '165',
+)
+
+执行日期：2019-02-05-20：09：14
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '伸怪手的怪姐姐',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：09：21
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '伸怪手的怪姐姐姐',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：09：21
+array (
+  'id' => '165',
+  'nick_name' => '伸怪手的怪姐姐姐',
+  'sex' => 2,
+  'head_image' => 'http://zb.98m4.com/public/attachment/201901/10/10/5c36a7ee90888.png',
+)
+
+执行日期：2019-02-05-20：09：21
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '165',
+)
+
+执行日期：2019-02-05-20：09：35
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '伸怪手的怪姐姐姐说叔',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：09：35
+array (
+  'id' => '165',
+  'nick_name' => '伸怪手的怪姐姐姐说叔',
+  'sex' => 2,
+  'head_image' => 'http://zb.98m4.com/public/attachment/201901/10/10/5c36a7ee90888.png',
+)
+
+执行日期：2019-02-05-20：09：35
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '165',
+)
+
+执行日期：2019-02-05-20：09：37
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '伸怪手的怪姐姐姐说叔',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：09：39
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '伸怪手的怪姐姐姐说叔',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：09：41
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '伸怪手的怪姐姐姐说叔',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：10：11
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '想几个名字都被占了',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：10：11
+array (
+  'id' => '165',
+  'nick_name' => '想几个名字都被占了',
+  'sex' => 2,
+  'head_image' => 'http://zb.98m4.com/public/attachment/201901/10/10/5c36a7ee90888.png',
+)
+
+执行日期：2019-02-05-20：10：12
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '165',
+)
+
+执行日期：2019-02-05-20：10：13
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '想几个名字都被占了',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：10：39
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '想几个名字都被占了咋整',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：10：39
+array (
+  'id' => '165',
+  'nick_name' => '想几个名字都被占了咋整',
+  'sex' => 2,
+  'head_image' => 'http://zb.98m4.com/public/attachment/201901/10/10/5c36a7ee90888.png',
+)
+
+执行日期：2019-02-05-20：10：39
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '165',
+)
+
+执行日期：2019-02-05-20：10：41
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '想几个名字都被占了咋整',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：11：00
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '想几个名字都被占用咋整',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：11：00
+array (
+  'id' => '165',
+  'nick_name' => '想几个名字都被占用咋整',
+  'sex' => 2,
+  'head_image' => 'http://zb.98m4.com/public/attachment/201901/10/10/5c36a7ee90888.png',
+)
+
+执行日期：2019-02-05-20：11：00
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '165',
+)
+
+执行日期：2019-02-05-20：11：12
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '想几个',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：11：12
+array (
+  'id' => '165',
+  'nick_name' => '想几个',
+  'sex' => 2,
+  'head_image' => 'http://zb.98m4.com/public/attachment/201901/10/10/5c36a7ee90888.png',
+)
+
+执行日期：2019-02-05-20：11：13
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '165',
+)
+
+执行日期：2019-02-05-20：11：15
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '想几个',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：11：31
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '……',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：11：31
+array (
+  'id' => '165',
+  'nick_name' => '……',
+  'sex' => 2,
+  'head_image' => 'http://zb.98m4.com/public/attachment/201901/10/10/5c36a7ee90888.png',
+)
+
+执行日期：2019-02-05-20：11：31
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '165',
+)
+
+执行日期：2019-02-05-20：11：33
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '……',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：11：35
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '……',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-20：11：38
+array (
+  'act' => 'do_update',
+  'ctl' => 'login',
+  'head_image' => '',
+  'id' => '165',
+  'nick_name' => '……',
+  'sdk_type' => 'ios',
+  'sdk_version' => '2019012212',
+  'sdk_version_name' => '2.5.0',
+  'sex' => '2',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-23：45：04
+array (
+  'screen_width' => '720',
+  'screen_height' => '1280',
+  'sdk_type' => 'android',
+  'sdk_version_name' => '1.1.9',
+  'sdk_version' => '20190203',
+  'ctl' => 'login',
+  'act' => 'do_update',
+  'id' => '166',
+  'oss_path' => './public/attachment/201902/166/1549381470806.png',
+  'type' => '1',
+  'i_type' => '',
+)
+
+执行日期：2019-02-05-23：45：04
+array (
+  'id' => '166',
+  'sex' => '1',
+  'head_image' => './public/attachment/201902/166/1549381470806.png',
+)
+
+执行日期：2019-02-05-23：45：04
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '166',
+)
+
+执行日期：2019-02-08-02：39：30
+array (
+  'screen_width' => '720',
+  'screen_height' => '1280',
+  'sdk_type' => 'android',
+  'sdk_version_name' => '5.1.9',
+  'sdk_version' => '20190203',
+  'xpoint' => '100.564665',
+  'ypoint' => '28.998014',
+  'ctl' => 'login',
+  'act' => 'do_update',
+  'type' => '0',
+  'id' => '99',
+  'nick_name' => '99',
+  'sex' => '1',
+  'i_type' => '',
+)
+
+执行日期：2019-02-08-02：39：30
+array (
+  'id' => '99',
+  'nick_name' => '99',
+  'sex' => 1,
+  'head_image' => 'http://zb.98m4.com/public/attachment/201901/10/10/5c36a7ee90888.png',
+)
+
+执行日期：2019-02-08-02：39：30
+array (
+  'status' => 1,
+  'error' => '',
+  'data' => '99',
+)
+

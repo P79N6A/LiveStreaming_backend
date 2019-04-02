@@ -1,0 +1,18 @@
+.page-index-index .searchbar input::-webkit-input-placeholder { 
+	color:#888;
+}
+.page-user_center-add_feedback form textarea::-webkit-input-placeholder { 
+	color:#888;
+}
+.page-share-detail .suggest-button .input input::-webkit-input-placeholder { 
+	color:#d9d9d9;
+}
+.page-share-add .content-block textarea::-webkit-input-placeholder { 
+	color:#cfcfcf;
+}
+.page-share-add .content-block input::-webkit-input-placeholder { 
+	color:#cfcfcf;
+}
+.page-course-vip_exchange .content-block input::-webkit-input-placeholder { 
+	color:#cfcfcf;
+}

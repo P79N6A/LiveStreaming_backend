@@ -1,0 +1,54 @@
+{//引入标签库s }
+<tagLib name="html" />
+<include file="Public:header" />
+<div class="main">
+    <php>
+        function get_audit_status($tag)
+        {
+            if($tag == 0){
+                return "<span>未审核</span>";
+            }else if($tag == 1){
+                return "<span>审核通过</span>";
+            }else if($tag == 2){
+                return "<span>审核未通过</span>";
+            }
+        }
+
+        function detail($id){
+            return "<a href='javascript:detail(".$id.");'>审核</a>";
+        }
+    </php>
+    <script type="text/javascript">
+        function detail(id) {
+            location.href = ROOT+"?"+VAR_MODULE+"=Share&"+VAR_ACTION+"=detail&id="+id;
+        }
+    </script>
+    <div class="main_title_list"><div class="list-line-ico"></div>分享列表</div>
+        <div class="search_row">
+        <form name="search" action="__APP__" method="get">
+            状态：<select name="audit_status">
+            <option value="">全部</option>
+            <option value="0" <if condition="$_REQUEST['audit_status']!='' && $_REQUEST['audit_status'] eq 0">selected="selected"</if>>未审核</option>
+            <option value="1" <if condition="$_REQUEST['audit_status'] eq 1">selected="selected"</if>>已通过</option>
+            <option value="2" <if condition="$_REQUEST['audit_status'] eq 2">selected="selected"</if>>未通过</option>
+        </select>
+            <input type="hidden" value="Share" name="m" />
+            <input type="hidden" value="index" name="a" />
+            <input type="submit" class="button" value="{%SEARCH}" />
+        </form>
+    </div>
+    <html:list
+            id="dataTable"
+            style="dataTable"
+            name="share"
+            action="true"
+            datasource="list"
+            show="id:编号
+            ,title:标题
+            ,nick_name:作者昵称
+            ,create_time:提问时间
+            ,audit_status|get_audit_status:审核状态"
+            actionlist="detail:审核,foreverdel:删除" />
+
+    <div class="page">{$page}</div>
+<include file="Public:footer" />

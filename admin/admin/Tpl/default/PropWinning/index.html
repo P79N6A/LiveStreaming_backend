@@ -1,0 +1,48 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<include file="Public:new" />
+<load href='__TMPL__Common/js/jquery.bgiframe.js' />
+<load href='__TMPL__Common/js/jquery.weebox.js' />
+<load href='__TMPL__Common/js/user.js' />
+<load href='__TMPL__Common/style/weebox.css' />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<PHP>
+	function winning($value,$column,$date,$prop_id = 0)
+	{
+		if(!is_null($value)){
+			return "<a href='javascript:jump(\"".$column."\",\"". $date. "\",\"".$prop_id."\");'>$value</a>";
+		}
+	}
+</PHP>
+<script type="text/javascript">
+	function jump(winning_num,create_date,prop_id){
+		location.href = ROOT+"?"+VAR_MODULE+"=PropWinning&"+VAR_ACTION+"=detail_list&winning_num="+winning_num+"&create_date="+create_date+"&prop_id="+prop_id;
+	}
+</script>
+<div class="main">
+<div class="main_title_list"><div class="list-line-ico"></div>中奖统计列表</div>
+<div class="search_row">
+	<form name="search" action="__APP__" method="get">
+		道具名称：<select name="prop_id">
+			<option value="0">全部</option>
+			<foreach name="prop_list" item="prop">
+				<option value="{$prop.id}" <if condition="$_REQUEST['prop_id'] eq $prop['id']">selected="selected"</if>>{$prop.name}</option>
+			</foreach>
+		</select>
+		时间 ：<input style="margin: 0;width:130px" type="text" class="textbox" size="8" name="create_ym" id="create_ym" value="{:trim($_REQUEST['create_ym'])}" onfocus="return showCalendar('create_ym', '%Y-%m', false, false, 'create_ym');" />
+		<input type="hidden" value="PropWinning" name="m" /><input type="hidden" value="index" name="a" /><input type="submit" class="button" value="{%SEARCH}" />
+	</form>
+</div>
+<html:list
+	id="dataTable"
+	style="dataTable"
+	name="winning"
+	action="false"
+	datasource="list"
+	show="$column_str"
+	actionlist="id|null|无" />
+<div class="page">{$page}</div>
+<include file="Public:footer" />

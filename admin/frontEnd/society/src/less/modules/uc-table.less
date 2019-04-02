@@ -1,0 +1,63 @@
+@import (once) "../public/variable.less";
+.uc-table{
+    text-align: center;
+    width: 100%;
+    thead{
+        tr{
+            background: @bgcolor;
+            .icon-gray {
+                font-size: 18px;
+                color: #d2d2d2;
+            }
+            th {
+                text-align: center;
+                padding: 10px;
+                line-height: 12px;
+                font-size: @fs-small;
+                color: @fcolor-main;
+                font-weight: 500;
+            }
+        }
+    }
+    tbody{
+        tr{
+            border-bottom: 1px dashed #dbddde;
+            td {
+                font-size: @fs-small;
+                color: @fcolor-light;
+                padding: 10px;
+                a {
+                    &:hover {
+                        color: #fea01e;
+                    }
+                }
+            }
+            .table-link {
+                color: @bgcolor-theme;
+            }
+            .img-circle {
+                width: 28px;
+                height: 28px;
+                border-radius: 14px;
+                overflow: hidden;
+            }
+            .sender {
+                font-size: @fs-small;
+                color: #fea01e;
+            }
+            .icon-orange {
+                font-size: 18px;
+                color: @bgcolor-theme;
+            }
+            .icon-green {
+                font-size: 18px;
+                color: @color-green;
+            }
+            .font-length {
+                width: 398px;
+                display: block;
+                line-height: 2;
+            }
+        }
+    }
+}

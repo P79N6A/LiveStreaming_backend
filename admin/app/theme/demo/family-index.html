@@ -1,0 +1,203 @@
+{include file="inc/header.html"}
+<?php
+    $this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/index.css";
+$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/family-index.css";
+$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/dist/jquery-bxslider/jquery.bxslider.css";
+$this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/dist/jquery-bxslider/jquery.bxslider.js";
+$this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/dist/jquery-bxslider/jquery.bxslider.js";
+$this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/js/index.js";
+$this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/js/index.js";
+?>
+<link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$dpagecss"}" />
+
+<div class="wrapper">
+    <div class="m-wrapper-top clearfix">
+        <!-- 家族热门直播 -->
+        <div class="m-live f-l clearfix">
+            <h2 class="m-common-title mt-20">
+                <div class="container-fluid">
+                    <i class="common-icon c-4"></i><strong>家族热门直播</strong>
+                    <a href="{$data.is_family_hot_more_url}" target="_blank" class="btn btn-default btn-circle view-more f-r">查看更多</a>
+                </div>
+            </h2>
+            <ul class="m-live-list clearfix">
+                {foreach from=$data.is_family_hot item=item key=key name=is_family_hot}
+                <li class="block-live">
+                    <a href="{$item.video_url}" target="_blank">
+                        <span class="block-live-img">
+                            <img alt="{$item.title}" data-original="{$item.live_image}" class="block-live-img lazy" />
+                        </span>
+                        <div class="block-live-info clearfix">
+                            <div class="live-name clearfix">
+                                <img alt="{$item.nick_name}" src="{$item.thumb_head_image}" class="avatar-normal" />
+                                <p title="{$item.title}">{$item.title}</p>
+                                <p class="sub f-l" title="{$item.nick_name}">{$item.nick_name}</p>
+                                <span class="watch-num f-r"><i class="icon iconfont">&#xe60a;</i>{$item.watch_number}</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                {/foreach}
+                <div class="clear"></div>
+            </ul>
+            <div class="clear"></div>
+            <!-- 家族热门直播 end -->
+        </div>
+        <!-- 家族排行榜 -->
+        <div class="layout-3 f-l">
+            <div class="layout-3-list clearfix">
+                <div class="m-Top clearfix" id="J-ranking-charm">
+                    <h2 class="m-common-title">
+                        <div class="container-fluid">
+                            <i class="common-icon c-4"></i><strong>家族榜</strong>
+                            <span class="top-selects hd">
+                                    <a href="javascript:void(0);" class="active">日榜</a>
+                                    <a href="javascript:void(0);">周榜</a>
+                                    <a href="javascript:void(0);">月榜</a>
+                                    <a href="javascript:void(0);">总榜</a>
+                                </span>
+                        </div>
+                    </h2>
+                    <div class="bd">
+                        <!-- 日榜 -->
+                        <ul class="m-Top-list clearfix">
+                            {foreach from=$data.ranking.day item=item key=key name=ranking_day}
+                            {if $smarty.foreach.ranking_day.iteration lte 6}
+                            <li class="list-{$key}">
+                                <a href='{url r="family#info" p="family_id=$item.family_id"}' title="{$item.family_name}" target="_blank" class="clearfix">
+                                    <p class="grade-img">No.{$smarty.foreach.ranking_day.iteration}</p>
+                                    <img src="{$item.family_logo}" alt="" class="top-img">
+                                    <p class="list-name">{$item.family_name}</p>
+                                </a>
+                            </li>
+                            {/if}
+                            {/foreach}
+                        </ul>
+                        <!-- 周榜 -->
+                        <ul class="m-Top-list clearfix">
+                            {foreach from=$data.ranking.weeks item=item key=key name=ranking_week}
+                            {if  $smarty.foreach.ranking_week.iteration lte 6}
+                            <li class="list-{$key}">
+                                <a href='{url r="family#info" p="family_id=$item.family_id"}' title="{$item.family_name}" target="_blank" class="clearfix">
+                                    <p class="grade-img">No.{$smarty.foreach.ranking_week.iteration}</p>
+                                    <img src="{$item.family_logo}" alt="" class="top-img">
+                                    <p class="list-name">{$item.family_name}</p>
+                                </a>
+                            </li>
+                            {/if}
+                            {/foreach}
+                        </ul>
+                        <!-- 月榜 -->
+                        <ul class="m-Top-list clearfix">
+                            {foreach from=$data.ranking.month  item=item key=key name=ranking_month}
+                            {if  $smarty.foreach.ranking_month.iteration  lte 6}
+                            <li class="list-{$key}">
+                                <a href='{url r="family#info" p="family_id=$item.family_id"}' title="{$item.family_name}" target="_blank" class="clearfix">
+                                    <p class="grade-img">No.{$smarty.foreach.ranking_month.iteration}</p>
+                                    <img src="{$item.family_logo}" alt="" class="top-img">
+                                    <p class="list-name">{$item.family_name}</p>
+                                </a>
+                            </li>
+                            {/if}
+                            {/foreach}
+                        </ul>
+                        <!-- 总榜 -->
+                        <ul class="m-Top-list clearfix">
+                            {foreach from=$data.ranking.all item=item key=key name=ranking_all}
+                            {if  $smarty.foreach.ranking_all.iteration  lte 6}
+                            <li class="list-{$key}">
+                                <a href='{url r="family#info" p="family_id=$item.family_id"}' title="{$item.family_name}" target="_blank" class="clearfix">
+                                    <p class="grade-img">No.{$smarty.foreach.ranking_all.iteration}</p>
+                                    <img src="{$item.family_logo}" alt="" class="top-img">
+                                    <p class="list-name">{$item.family_name}</p>
+                                </a>
+                            </li>
+                            {/if}
+                            {/foreach}
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <!--家族排行 end-->
+    </div>
+    <!--广告区 1-->
+    {if $data.ad_list.0}
+    <div class="advertisement">
+        <a href="{$data.ad_list.0.url}" target="_blank">
+            <img src="{$data.ad_list.0.image}" alt="">
+        </a>
+    </div>
+    {/if}
+    <!-- 最新家族-->
+    <div class="m-live clearfix">
+        <h2 class="m-common-title">
+            <div class="container-fluid">
+                <i class="common-icon c-3"></i><strong>最新家族</strong>
+                <a href='{url r="family#lists" p="type=new"}'  target="_blank" class="btn btn-default btn-circle view-more f-r">查看更多</a>
+            </div>
+        </h2>
+        <ul class="m-live-list clearfix">
+            {foreach from=$data.new item=item key=key}
+            <li class="block-live">
+                <a href='{url r="family#info" p="family_id=$item.family_id"}' target="_blank">
+                    <span>
+                        <img alt="{$item.title}" data-original="{$item.family_logo}" class="block-live-img lazy" />
+                    </span>
+                    <div class="block-live-info clearfix">
+                        <div class="live-name clearfix">
+                            <div class="family-title" title="{$item.family_name}">{$item.family_name}</div>
+                            <span class="watch-num family-leader f-l" title="{$item.nick_name}">{$item.nick_name}</span>
+                            <span class="watch-num f-r">人数：{$item.user_count}</span>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            {/foreach}
+            <div class="clear"></div>
+        </ul>
+        <div class="clear"></div>
+    </div>
+    <!-- 最新家族 end -->
+    <!--广告区 2-->
+    {if $data.ad_list.0}
+    <div class="advertisement">
+        <a href="{$data.ad_list.0.url}" target="_blank">
+            <img src="{$data.ad_list.0.image}" alt="">
+        </a>
+    </div>
+    {/if}
+    <!-- 热门家族-->
+    <div class="m-live clearfix">
+        <h2 class="m-common-title">
+            <div class="container-fluid">
+                <i class="common-icon c-2"></i><strong>热门家族</strong>
+                <a href='{url r="family#lists" p="type=hot"}' target="_blank" class="btn btn-default btn-circle view-more f-r">查看更多</a>
+            </div>
+        </h2>
+        <ul class="m-live-list clearfix">
+            {foreach from=$data.hot item=item key=key}
+            <li class="block-live">
+                <a href='{url r="family#info" p="family_id=$item.family_id"}' target="_blank">
+                    <span>
+                        <img alt="{$item.title}" data-original="{$item.family_logo}" class="block-live-img lazy" />
+                    </span>
+                    <div class="block-live-info clearfix">
+                        <div class="live-name clearfix">
+                            <div class="family-title" title="{$item.family_name}">{$item.family_name}</div>
+                            <span class="watch-num family-leader f-l" title="{$item.nick_name}">{$item.nick_name}</span>
+                            <span class="watch-num f-r">人数：{$item.user_count}</span>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            {/foreach}
+            <div class="clear"></div>
+        </ul>
+        <div class="clear"></div>
+    </div>
+    <!-- 热门家族 end -->
+</div>
+{include file="inc/footer.html"}

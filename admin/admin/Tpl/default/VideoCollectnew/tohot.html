@@ -1,0 +1,45 @@
+﻿{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<div class="main">
+<div class="main_title_list"><div class="list-line-ico"></div>快速推送至热门</div>
+
+<form method="post" enctype="multipart/form-data">
+
+	<table class="dataTable">
+		<tbody>
+			<tr>
+                <td style="color:red">房间号码：</td>
+                <td>
+					<input type="text" name="id" value=""/>
+				</td>
+            </tr>
+			<tr>
+                <td>排序号</td>
+                <td>
+					<input type="text" name="sort" value=""/>
+				</td>
+            </tr>
+			<tr >
+                <td>热门值</td>
+                <td>
+					<input type="text" name="sort_num" value="200000000"/>最大为2147483647
+				</td>
+            </tr>
+			<tr>
+                <td></td>
+                <td>
+					<input type="submit"/>
+				</td>
+            </tr>
+		</tbody>
+	</table>
+	
+</form>
+	
+</div>
+
+<include file="Public:footer" />

@@ -1,0 +1,49 @@
+{include file="inc/header.html"}
+<?php
+    $this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/user_center-info.css";
+    $this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/user_center-family.css";
+    $this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/user-letter.css";
+?>
+<link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$dpagecss"}" />
+<div class="wrapper">
+    <div class="mt-20 bg-user-center clearfix">
+        <!--左侧菜单区 -->
+        {include file="inc/inc-user-left.html"}
+        <!-- 右侧内容区 -->
+        <div class="m-uc-content f-l">
+            <div class="content-pd20">
+                {include file="inc/inc-user-letter.html"}
+            </div>
+        </div>
+    </div>
+</div>
+<div id="chat_panel" style="position: absolute; left: -999px;">{include file="inc/user-letter_chat.html"}</div>
+
+<?php
+	$this->_var['dpagejs'][] = $this->_var['TMPL_REAL']."/sdk/json2.js";
+	$this->_var['dcpagejs'][] = $this->_var['TMPL_REAL']."/sdk/json2.js";
+	$this->_var['dpagejs'][] = $this->_var['TMPL_REAL']."/sdk/webim.js";
+	$this->_var['dcpagejs'][] = $this->_var['TMPL_REAL']."/sdk/webim.js";
+	$this->_var['dpagejs'][] = $this->_var['TMPL_REAL']."/js/emotions.js";
+	$this->_var['dcpagejs'][] = $this->_var['TMPL_REAL']."/js/emotions.js";
+	$this->_var['dpagejs'][] = $this->_var['TMPL_REAL']."/js/im-message.js";
+	$this->_var['dcpagejs'][] = $this->_var['TMPL_REAL']."/js/im-message.js";
+	$this->_var['dpagejs'][] = $this->_var['TMPL_REAL']."/js/user-letter.js";
+	$this->_var['dcpagejs'][] = $this->_var['TMPL_REAL']."/js/user-letter.js";
+?>
+<script type="text/javascript">
+var loginInfo = {
+	'sdkAppID': '{$data.tim_sdkappid}',
+	'appIDAt3rd': '{$data.tim_sdkappid}',
+	'accountType': '{$data.tim_account_type}',
+	'identifier': '{$user_info.id}',
+	'identifierNick': '{$user_info.nick_name}',
+	'userSig': '{$data.usersig}',
+	'head_image': '{$user_info.head_image}',
+    'user_level': '{$user_info.user_level}',
+};
+var friends = JSON.parse('<?php echo json_encode($this->_var['data']['friends']); ?>');
+var system_uid=	JSON.parse('<?php echo json_encode($this->_var['data']['system_uid']); ?>');
+</script>
+<script type="text/javascript" src="{function name="parse_script" v="$dpagejs" c="$dcpagejs"}"></script>
+{include file="inc/footer.html"}

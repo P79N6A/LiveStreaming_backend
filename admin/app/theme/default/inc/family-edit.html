@@ -1,0 +1,24 @@
+<div class="m-create-family" ms-controller="family_edit" id="family_edit">
+    <div class="create-portrait">
+        <div class="portrait" onclick='open_avatar_view(150,150,"family_logo");'>
+            <img src="{$data.family_info.family_logo}" id="family_logo" />
+            <input type="hidden" name="family_logo" ms-duplex="@data.family_logo" value="{$data.family_info.family_logo}" />
+        </div>
+        <p class="create-portrait-txt">编辑家族头像</p>
+    </div>
+    <input type="text" placeholder="请输入您的家族名" value="{$data.family_info.family_name}"maxlength="15" name="family_name" ms-duplex="@data.family_name" class="input-name mb-20 {if $data.family_info.family_name}disable{/if}" {if $data.family_info.family_name && ($data.family_info.status eq 1 || $data.family_info.status eq 2)}readonly="readonly"{/if} />
+    <textarea type="text" placeholder="请输入家族宣言,字数不超过110字" name="family_manifesto" ms-duplex="@data.family_manifesto" class="input-enounce mb-20">{$data.family_info.family_manifesto}</textarea>
+    <div class="btn-groups clearfix">
+    {if $data.family_info.family_id}
+        <a href="javascript:void(0);" class="btn btn-primary btn-create" ms-click="@create(1)">保存修改</a>
+    {else}
+        <a href="javascript:void(0);" class="btn btn-primary btn-create" ms-click="@create(0)">确定创建</a>
+    {/if}
+    <input type="hidden" name="family_id" value="{$data.family_info.family_id}" />
+   </div>
+</div>
+<?php
+    $this->_var['dpagejs'][] = $this->_var['TMPL_REAL']."/js/family-edit.js";
+    $this->_var['dcpagejs'][] = $this->_var['TMPL_REAL']."/js/family-edit.js";
+?>
+<script type="text/javascript" src="{function name="parse_script" v="$dpagejs" c="$dcpagejs"}"></script>

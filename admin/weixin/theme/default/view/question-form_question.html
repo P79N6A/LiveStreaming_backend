@@ -1,0 +1,21 @@
+{include file="inc/header.html"}
+<div class="content">
+	<div id="vscope-question">
+		<div class="m-question-lab">请写下你的问题并以“?”结尾</div>
+		<div class="m-question-input">
+			<input type="text" name="title" placeholder="请填写问题标题" v-model="title" />
+		</div>
+		<div class="m-question-input">
+			<textarea placeholder="请填写问题描述，表达越清楚，越容易获得答案" maxlength="140" v-model="question"></textarea>
+			<div class="flex-box secret-question j-secret-question">
+				<div class="flex-1"></div>
+				<div class="check-box" :class="[!is_open ? 'isSecret' : '']" @click="select_open">私密提问</div>
+			</div>
+		</div>
+		<div class="question-btn-list flex-box">
+			<div class="flex-1 question-btn btn-cannel" @click="cancel">取消</div>
+			<div class="flex-1 question-btn btn-ok" @click="submit">确认</div>
+		</div>
+	</div>
+</div>
+{include file="inc/footer.html"}

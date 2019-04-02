@@ -1,0 +1,180 @@
+/*界面主题色*/
+/*背景色*/
+/*背景色（深）*/
+/*模块背景色*/
+/*主题风格色*/
+/*主题辅助风格色*/
+/*字体颜色*/
+/*主要字色*/
+/*浅色*/
+/*更浅色（适用：二级标题、简介）*/
+/*更更浅色（适用：icon图标）*/
+/*标题*/
+/*字体大小*/
+/*线条颜色*/
+/*主要线条颜色*/
+/*更深线条颜色*/
+/*更浅线条颜色*/
+/*文本输入框边框颜色*/
+/*各类间距，高度*/
+/*横向间距*/
+/*纵向间距*/
+.page-user_center-balance .content {
+  bottom: 3rem;
+}
+.page-user_center-balance .content .content-block {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+.page-user_center-balance .content .content-block .card .card-content-inner {
+  padding: 1.25rem 0;
+  text-align: center;
+}
+.page-user_center-balance .content .content-block .card .card-content-inner p {
+  margin: 0.5rem 0;
+}
+.page-user_center-balance .content .content-block .card .card-content-inner .inner-text {
+  color: #333;
+}
+.page-user_center-balance .content .content-block .card .card-content-inner .inner-money {
+  font-size: 1.75rem;
+  color: #f1383f;
+  font-family: Arial;
+}
+.page-user_center-balance .content .content-block .card .card-content-inner .inner-money em {
+  font-size: 1.6rem;
+  margin-right: 0.2rem;
+}
+.page-user_center-balance .content .content-block .card .card-footer:before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  border-top: 1px solid #ececec;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(0.5, 0.5);
+  -ms-transform: scale(0.5, 0.5);
+  -o-transform: scale(0.5, 0.5);
+  transform: scale(0.5, 0.5);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  top: 0;
+  pointer-events: none;
+  background: none;
+}
+.page-user_center-balance .content .content-block .card .card-footer div {
+  width: 50%;
+  text-align: center;
+  line-height: 1.05rem;
+  color: #333;
+}
+.page-user_center-balance .content .content-block .card .card-footer .income {
+  position: relative;
+}
+.page-user_center-balance .content .content-block .card .card-footer .income:after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 0.8rem;
+  position: absolute;
+  top: 33%;
+  width: 200%;
+  height: 1.6rem;
+  border-right: 1px solid #cfcfcf;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(0.5, 0.5);
+  -ms-transform: scale(0.5, 0.5);
+  -o-transform: scale(0.5, 0.5);
+  transform: scale(0.5, 0.5);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+.page-user_center-balance .content .content-block .card .card-footer .footer-money {
+  color: #f1383f;
+  font-family: Arial;
+}
+.page-user_center-balance .content .content-block .list-block {
+  margin: 0;
+}
+.page-user_center-balance .content .content-block .list-block .item-content {
+  padding: 0;
+}
+.page-user_center-balance .content .content-block .list-block .item-content:after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  border-top: 1px solid #ececec;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(0.5, 0.5);
+  -ms-transform: scale(0.5, 0.5);
+  -o-transform: scale(0.5, 0.5);
+  transform: scale(0.5, 0.5);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background: none;
+}
+.page-user_center-balance .content .content-block .list-block .item-content .item-inner {
+  padding: 0 0.5rem;
+  min-height: 0;
+  line-height: 2.45rem;
+}
+.page-user_center-balance .content .content-block .list-block .item-content .item-inner:after {
+  display: none;
+}
+.page-user_center-balance .content .content-block .list-block .item-content-list {
+  display: block;
+  padding: 0.5rem;
+}
+.page-user_center-balance .content .content-block .list-block .item-content-list .item-inner {
+  padding: 0;
+  min-height: 0;
+  font-size: 0.6rem;
+  color: #999;
+  line-height: 0.8rem;
+}
+.page-user_center-balance .content .content-block .list-block .item-content-list .item-inner .item-title {
+  color: #999;
+}
+.page-user_center-balance .content .content-block .list-block .item-content-list .item-inner .item-after {
+  max-height: inherit;
+}
+.page-user_center-balance .content .content-block .list-block .item-content-list .consume .item-title {
+  font-size: 0.65rem;
+  color: #333;
+}
+.page-user_center-balance .content .content-block .list-block .item-content-list .trade_num {
+  margin: 0.5rem 0;
+}
+.page-user_center-balance .content .content-block .list-block .item-content-list .remainder .reduce {
+  color: #f1383f;
+}
+.page-user_center-balance .content .content-block .list-block .item-content-list .remainder .plus {
+  color: #47cf4a;
+}
+.page-user_center-balance .m-button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

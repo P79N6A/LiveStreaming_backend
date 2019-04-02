@@ -1,0 +1,111 @@
+/*界面主题色*/
+/*背景色*/
+/*背景色（深）*/
+/*模块背景色*/
+/*主题风格色*/
+/*主题辅助风格色*/
+/*字体颜色*/
+/*主要字色*/
+/*浅色*/
+/*更浅色（适用：二级标题、简介）*/
+/*更更浅色（适用：icon图标）*/
+/*标题*/
+/*字体大小*/
+/*线条颜色*/
+/*主要线条颜色*/
+/*更深线条颜色*/
+/*更浅线条颜色*/
+/*文本输入框边框颜色*/
+/*各类间距，高度*/
+/*横向间距*/
+/*纵向间距*/
+.page-user_center-user_center nav {
+  display: none;
+}
+.page-user_center-user_center .list-block {
+  margin: 0.5rem 0;
+  font-size: 0.7rem;
+}
+.page-user_center-user_center .list-block .item-inner {
+  min-height: 2.4rem;
+}
+.page-user_center-user_center .list-block .item-content {
+  overflow: hidden;
+}
+.page-user_center-user_center .list-block .item-content a {
+  width: 100%;
+}
+.page-user_center-user_center .list-block .item-content:last-child:after {
+  display: none;
+}
+.page-user_center-user_center .list-block .item-after {
+  font-size: 0.6rem;
+  max-width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  color: #898989;
+}
+.page-user_center-user_center .list-block .pic {
+  background: none;
+  padding: 0;
+  padding-right: 0.5rem;
+}
+.page-user_center-user_center .list-block .pic .item-after {
+  display: -webkit-flex;
+  display: flex;
+}
+.page-user_center-user_center .list-block .avatar .item-after {
+  max-height: initial;
+}
+.page-user_center-user_center .list-block .avatar .item-after img {
+  border: 0;
+  border-radius: 50px;
+}
+.page-user_center-user_center .list-block ul:before {
+  height: 0;
+}
+.page-user_center-user_center .list-block ul:after {
+  height: 0;
+}
+.page-user_center-user_center .list-block input {
+  height: inherit;
+  text-align: right;
+  font-size: 0.6rem;
+  color: #898989;
+}
+.page-user_center-user_center .popup-setting .content-block {
+  margin: 0 0 .5rem;
+  padding: 0;
+}
+.page-user_center-user_center .popup-setting .content-block-title {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.page-user_center-user_center .popup-setting .close-popup {
+  display: inline-block;
+  height: 1.35rem;
+  line-height: 1.35rem;
+  font-size: 0.7rem;
+}
+.page-user_center-user_center .popup-setting .iconfont {
+  color: #ef4f4f;
+}
+.page-user_center-user_center .popup-setting .list-block .item-title.label {
+  width: initial;
+}
+.page-user_center-user_center .popup-setting .list-block ul:after,
+.page-user_center-user_center .popup-setting .list-block ul:before {
+  height: 1px;
+}
+.page-user_center-user_center .popup-setting input {
+  font-size: 0.7rem;
+}

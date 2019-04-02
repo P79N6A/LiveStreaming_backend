@@ -1,0 +1,93 @@
+@import (once) "public/variable.less";
+@import (once) "public/csstree.less";
+.m-uc-content {
+    .content-pd20 {
+        padding: 30px 20px 20px 20px;
+        .container-fluid {
+            padding: 0;
+            overflow: hidden;
+        }
+        .m-common-item {
+            margin-top: 0px;
+            .m-common-title {
+                height: 40px;
+                .field{
+                    line-height: 39px;
+                    padding: 0 28px;
+                }
+                .block-font{
+                    width: 155px;
+                    height:40px;
+                    line-height: 40px;
+                    .operation{
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        .common-content{
+            .block-check{
+                padding-left: 15px;
+                box-sizing: content-box;
+                .input-check{
+                    margin: 0;
+                }
+            }
+            .form-head{
+                background: @bgcolor;
+                .icon-gray{
+                    font-size: 18px;
+                    color: #d2d2d2;
+                }
+                & th{
+                    padding: 10px;
+                    line-height:12px;
+                    font-size: @fs-small;
+                    color: @fcolor-main;
+                    font-weight: 500;
+                }
+            }
+            .form-body{
+                border-bottom: 1px dashed #dbddde;
+                & td{
+                    padding: 10px;
+                    a{
+                        display: block;
+                        line-height: 30px;
+                        &:hover{
+                            color:#fea01e;
+                        }
+                    }
+                }
+                .img-circle{
+                    width: 28px;
+                    height: 28px;
+                    border-radius: 14px;
+                    overflow: hidden;
+                }
+                .sender{
+                    font-size: @fs-small;
+                    color: #fea01e;
+                }
+                .icon-orange{
+                    font-size: 18px;
+                    color: @bgcolor-theme;
+                }
+                .icon-green{
+                    font-size: 18px;
+                    color: @color-green;
+                }
+                .font-length{
+                    width: 398px;
+                    display: block;
+                    line-height: 2;
+                }
+                .content-font{
+                    font-size: @fs-small;
+                    color: @fcolor-light;
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,80 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<load href='__TMPL__Common/js/conf.js' />
+<script type="text/javascript" src="__ROOT__/public/region.js"></script>
+<load href='__TMPL__Common/js/user_edit.js' />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<div class="main">
+<div class="main_title">{%EDIT} </div>
+<div class="blank5"></div>
+<form name="edit" action="__APP__" method="post" enctype="multipart/form-data" onsubmit="return submit_check();">
+<table class="form conf_tab" cellpadding=0 cellspacing=0 >
+	<tr>
+		<td colspan=2 class="topTd"></td>
+	</tr>
+    <tr>
+        <td class="item_title">{%ID}:</td>
+        <td class="item_input">{$vo.id}</td>
+    </tr>
+    <tr>
+        <td class="item_title">{%CREATE_TIME}:</td>
+        <td class="item_input">{$vo.create_time}</td>
+    </tr>
+	<tr>
+		<td class="item_title">{%NICK_NAME}:</td>
+		<td class="item_input"><input disabled type="text" name="nick_name" class="textbox" value="{$vo.nick_name}"  /></td>
+	</tr>
+
+
+	<tr>
+		<td class="item_title">推荐人ID:</td>
+		<td class="item_input"><input type="text" name="parent_id" class="textbox" value="{$vo.parent_id}" readonly /></td>
+	</tr>
+
+
+	<?php if( $vo['admin_user_data'] == 4){ ?>
+	<tr>
+		<td class="item_title">状态:</td>
+		<td class="item_input">
+			<label>审核未通过<input type="radio" name="user_status" value="0" <if condition="$vo['user_status'] eq 0">checked="checked"</if> /></label>
+			<label>审核通过<input type="radio" name="user_status" value="1" <if condition="$vo['user_status'] eq 1 ">checked="checked"</if>/></label>
+		</td>
+	</tr>
+	<?php } ?>
+
+	<tr>
+		<td colspan=2 class="bottomTd"></td>
+	</tr>
+</table>
+
+<div class="blank5"></div>
+	<table class="form" cellpadding=0 cellspacing=0>
+		<tr>
+			<td colspan=2 class="topTd"></td>
+		</tr>
+
+		<?php if( $vo['admin_user_data'] == 4 && ($vo['user_iden_id'] == 2 || $vo['user_iden_id'] == 1) ){ ?>
+		<tr>
+			<td class="item_title"></td>
+			<td class="item_input">
+			<!--隐藏元素-->
+			<input type="hidden" name="{:conf("VAR_MODULE")}" value="User" />
+			<input type="hidden" name="{:conf("VAR_ACTION")}" value="update" />
+			<input type="hidden" name="id" value="{$vo.id}" />
+ 			<input type="hidden" name="wx_openid" value="{$vo.wx_openid}" />
+			<!--隐藏元素-->
+			<input type="submit" class="button" value="{%EDIT}" />
+			<input type="reset" class="button" value="{%RESET}" />
+			</td>
+		</tr>
+		<?php } ?>
+		<tr>
+			<td colspan=2 class="bottomTd"></td>
+		</tr>
+	</table>
+</form>
+</div>
+<include file="Public:footer" />

@@ -1,0 +1,200 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<div class="main">
+<div class="main_title">
+    <a href="{:u('Course/index',array('type'=>$_REQUEST['type']))}" class="back_list">
+        <if condition="$_REQUEST['type'] eq 1">齐家学堂<else/>余世维说</if>课程列表
+    </a>&gt;&gt;
+    <a href="{:u('Course/edit',array('id'=>$pid,'type'=>$_REQUEST['type']))}" class="back_list">
+        课程"{:$course['title']}"
+    </a>&gt;&gt;
+    <a href="{:u("CourseSeason/index",array('id'=>$pid,'type'=>$_REQUEST['type']))}" class="back_list">
+        分集列表
+    </a>&gt;&gt;分集编辑</div>
+<div class="blank5"></div>
+<form name="edit" action="__APP__" method="post" enctype="multipart/form-data" style="display: none;">
+<table class="form" cellpadding=0 cellspacing=0>
+    <tr>
+        <td colspan=2 class="topTd"></td>
+    </tr>
+    <tr>
+        <td class="item_title">分集编号:</td>
+        <td class="item_input">{$vo.id}</td>
+        <input type="hidden" name="pid" value="{$pid}"/>
+    </tr>
+    <tr>
+        <td class="item_title">分集名称:</td>
+        <td class="item_input"><input type="text" class="textbox require" name="title" value="{$vo.title}"/></td>
+    </tr>
+    <tr>
+        <td class="item_title">封面:</td>
+        <td class="item_input"><html:imgUpload  name="image" id='image' value="$vo.img"/>
+            <span class='tip_span'>&nbsp;[封面规格为：750 × 418 px]</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="item_title">分集视频:</td>
+        <td class="item_input">
+        <div>
+            <label class="radio-inline"><input type="radio" id="fill_redio" name="vedio_method" />填写视频地址</label>
+            <label class="radio-inline"><input type="radio" id="upload_redio" name="vedio_method" checked="checked" />上传视频</label>
+        </div>
+            <video id="video" controls="controls" src="{$video_url}" class="img-thumbnail" style="max-height: 200px;">
+            </video>
+            <div id="upload">
+                <div class="alert alert-warning" role="alert">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <strong>注意：</strong>根据腾讯云提供的服务，您的浏览器如出现<img src="/admin/Tpl/default/Common/img/flash_error.png"/>提示，请始终允许本站运行flash！
+                </div>
+                <div class="alert alert-danger" role="alert" id="error" style="display: none;">
+                </div>
+                <input type="checkbox" id="auto_save"/>上传完成后自动保存
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="progress" style="display: none;" id="progress">
+                            <div id="up" class="progress-bar progress-bar-success progress-bar-striped active">
+                                <span></span>
+                            </div>
+                            <div id="sha" class="progress-bar progress-bar-warning progress-bar-striped active">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="input-group file-caption-main">
+                            <div tabindex="500" class="form-control file-caption  kv-fileinput-caption" id="file_name">
+                            </div>
+                            <div class="input-group-btn">
+                                <button class="btn btn-default fileinput-upload fileinput-upload-button" type="button" id="start_upload" style="display: none;"><i class="glyphicon glyphicon-upload"></i>&nbsp;  <span class="hidden-xs">上传</span></button>
+                                <button class="btn btn-primary fileinput-upload fileinput-upload-button" type="button" id="btn_upload2"><i class="glyphicon glyphicon-folder-open"></i>&nbsp;  <span class="hidden-xs">选择 …</span></button>
+                            </div>
+                        </div>
+                        <button type="button" id="btn_upload" style="display: none;"></button>
+                    </div>
+                </div>
+            </div>
+            <div id="fill" style="display: none;">
+                <div class="alert alert-warning" role="alert">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <strong>注意：</strong>请填写腾讯云后台-云视频管理-源文件URL列表-MP4手机源地址
+                </div>
+                <input type="text" class="form-control" name="video_url" id="video_url" value="{$vo.video_url}"/>
+            </div>
+        </td>
+    </tr>
+    <tr  id="general">
+        <td class="item_title">音频:</td>
+        <td class="item_input">
+            <audio id="audio" controls="controls" src="{$vo.sound_url}">
+            </audio>
+            <div class="row">
+                <div class="col-md-6">
+                    <div id="errorBlock" class="help-block">
+                    </div>
+                    <input type="file" class="file" id="test-upload" accept="audio/mpeg"/>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr  id="general">
+        <td class="item_title">内容:</td>
+        <td class="item_input">
+             <html:editor id="editor" name="content" type="KINDEDITOR" content="{$vo.content}" />
+        </td>
+    </tr>
+    <tr>
+        <td class="item_title">集数:</td>
+        <td class="item_input"><input type="text" class="textbox" name="season" value="{$vo.season}"/></td>
+    </tr>
+
+    <tr>
+        <td class="item_title">会员节目:</td>
+        <td class="item_input">
+        <label class="radio-inline"><input type="radio" name="is_vip" value="1"  <if condition="$vo['is_vip']">checked="checked"</if> />是</label>
+        <label class="radio-inline"><input type="radio" name="is_vip" value="0"  <if condition="$vo['is_vip'] eq 0">checked="checked"</if> />否</label>
+        </td>
+    </tr>
+    <tr>
+        <td class="item_title"></td>
+        <td class="item_input">
+            <input type="hidden" name="file_id" id="file_id" value="{$vo.file_id}"/>
+            <input type="hidden" name="long_time" id="long_time" value="{$vo.long_time}"/>
+            <input type="hidden" name="sound_url" id="sound_url" value="{$vo.sound_url}"/>
+            <!--隐藏元素-->
+            <input type="hidden" name="id" value="{$vo.id}" />
+            <input type="button" class="button" value="{%EDIT}"
+            onclick="insert_video_tx();"/>
+            <input type="reset" class="button" value="{%RESET}" />
+        </td>
+    </tr>
+</table>
+
+</form>
+</div>
+<script>
+qcloud_secret_id = '{$qcloud_secret_id}';
+qcloud_secret_key = '{$qcloud_secret_key}';
+APP_ROOT = '<?php echo get_domain(); ?>/';
+</script>
+<script src="//qzonestyle.gtimg.cn/open/qcloud/js/vod/sdk/uploaderh5.js" charset="utf-8"></script>
+<load href='__TMPL__Common/js/course.js' />
+<load href='__TMPL__Common/js/jquery.weebox.js' />
+<load href='__TMPL__Common/js/fileinput.min.js' />
+<load href='__TMPL__Common/js/locales/zh.js' />
+<load href='__TMPL__Common/style/weebox.css' />
+<load href='__TMPL__Common/css/bootstrap.min.css' />
+<load href='__TMPL__Common/css/fileinput.min.css' />
+<script>
+    function insert_video_tx() {
+        if (!$('#video')[0].duration) {
+            alert('请确保视频上传成功或您所填写的视频地址无误');
+            return false;
+        }
+        $('#long_time').val($('#video')[0].duration);
+        var form_data = $("form").serialize();
+        $.post("{:u('CourseSeason/update')}", form_data, function(result) {
+            if (result.status == '1' && result.status != 'undefine') {
+                alert(result.error);
+                location.href = "{:u('CourseSeason/index',array('id'=>$pid,'type'=>$_REQUEST['type']))}";
+            } else {
+                alert(result.error);
+            }
+        }, 'json');
+    }
+    $("#test-upload").fileinput({
+        uploadUrl: "{:u('PublicFile/do_upload',array('dir'=>'media'))}",
+        language: 'zh',
+        showPreview: false,
+        maxFileSize: {$max_size},
+        allowedFileTypes: ['audio'],
+        elErrorContainer: '#errorBlock'
+    }).on('fileuploaded', function(event, data) {
+        if (data.response) {
+            $('#sound_url').val(data.response.result);
+            $('#video_url').val(data.response.result);
+        }
+    });
+    $('#fill_redio,#upload_redio').on('change',function () {
+        if ($('#fill_redio').prop('checked')) {
+            $('#fill').show();
+            $('#upload').hide();
+        } else {
+            $('#fill').hide();
+            $('#upload').show();
+        }
+    })
+
+    $('#video_url').on('change', function () {
+        $('#video').attr('src',$(this).val());
+    })
+    $('#btn_upload2').on('click', function() {
+        $('input[id^=html5]').attr({accept:"video/mp4,video/ogg"})
+        $('#btn_upload').click();
+    })
+    $(document).ready(function() {
+        $('form').show();
+        $('.alert').on('click', '.close', function () {
+            $(this).parent().hide('slow')
+        })
+    })
+</script>
+<include file="Public:footer" />

@@ -1,0 +1,183 @@
+{include file="inc/header.html"}
+<div class="content">
+    <div class="userbox">
+        <a class="imgboxa" href='{url r="user_center#user_center" p="itype=wx"}'>
+            <div class="imgbox">
+                <img alt="" src="{$data.user.head_image}" />
+            </div>
+            {if $data.vip_info}
+            <i class="icon-vip"></i>
+            {/if}
+        </a>
+        <h3>{$data.user.nick_name}</h3>
+        <a href='{url r="course#vip" p="itype=wx"}' class="become-vip">{if $data.vip_info}在线支付{else}成为会员{/if}</a>
+    </div>
+    <div class="dbox flex-box">
+<!--         <a class="flex-1" href='{url r="user_center#balance"}'>
+            <h2>余额</h2>
+            <h3>&yen;{$data.user.money}</h3>
+        </a> -->
+        <a  class="flex-1" href="">
+            <h2>积分</h2>
+            <h3>{$data.user.score}</h3>
+        </a>
+        <a class="flex-1" href='{if $data.vip_info}{url r="user_center#vip"}{else}{url r="course#vip"}{/if}'>
+            <h2>会员等级</h2>
+            <h3>{if $data.vip_info}{$data.vip_info.name}{else}注册会员{/if}</h3>
+        </a>
+    </div>
+   <!--  <div class="list-block">
+        <div class="orderBox flex-box">
+            <a class="orderShow flex-1" href="{$data.user.user_order_url}">
+                <div class="iconBox">
+                    <i class="iconfont">&#xe970;</i>
+                    {if $data.user.user_order_wait_pay}<em class="s_number">{$data.user.user_order_wait_pay}</em>{/if}
+                </div>
+                <h3>待付款</h3>
+            </a>
+            <a class="orderShow flex-1" href="{$data.user.user_order_url}">
+                <div class="iconBox">
+                    <i class="iconfont">&#xe96b;</i>
+                    {if $data.user.user_order_wait_send}<em class="s_number">{$data.user.user_order_wait_send}</em>{/if}
+                </div>
+                <h3>待发货</h3>
+            </a>
+            <a class="orderShow flex-1" href="{$data.user.user_order_url}">
+                <div class="iconBox">
+                    <i class="iconfont">&#xe96d;</i>
+                    {if $data.user.user_order_wait_final}<em class="s_number">{$data.user.user_order_wait_final}</em>{/if}
+                </div>
+                <h3>待收货</h3>
+            </a>
+            <a class="orderShow flex-1" href="{$data.user.user_order_url}">
+                <div class="iconBox">
+                    <i class="iconfont">&#xe975;</i>
+                    {if $data.user.user_order_final}<em class="s_number">{$data.user.user_order_final}</em>{/if}
+                </div>
+                <h3>已完成</h3>
+            </a>
+        </div>
+        <ul id="vscope-checkLogin">
+            <li>
+                <a href="{$data.user.user_order_url}" class="item-content">
+                    <div class="item-media"><i class="iconfont">&#xe973;</i></div>
+                    <div class="item-inner">
+                        <div class="item-title">我的订单</div>
+                        <div class="item-after">查看全部订单</div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="{$data.user.user_address_url}" class="item-content item-link">
+                    <div class="item-media"><i class="iconfont">&#xe96c;</i></div>
+                    <div class="item-inner">
+                        <div class="item-title">收货地址</div>
+                        <div class="item-after"></div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div> -->
+    <div class="list-block">
+        <ul>
+            <li>
+                <a href='{url r="question#index" p="type=mine"}' class="item-content item-link">
+                    <div class="item-media"><i class="iconfont">&#xe96e;</i></div>
+                    <div class="item-inner">
+                        <div class="item-title">我的提问</div>
+                        <div class="item-after"></div>
+                    </div>
+                </a>
+            </li>
+            <!--@qiuf 2017-02-28 16:35:24-->
+            {if $data.vip_info}
+            <li>
+                <a href='{url r="user_center#vipcode" p="type=mine"}' class="item-content item-link">
+                    <div class="item-media"><i class="iconfont">&#xe61f;</i></div>
+                    <div class="item-inner">
+                        <div class="item-title">激活码</div>
+                        <div class="item-after"></div>
+                    </div>
+                </a>
+            </li>
+            {/if}
+            <!--@qiuf 结束  2017-02-28 16:36:26-->
+            <li>
+                <a href='{url r="user_center#date_list"}' class="item-content item-link">
+                    <div class="item-media"><i class="iconfont">&#xe971;</i></div>
+                    <div class="item-inner">
+                        <div class="item-title">我的预约</div>
+                        <div class="item-after"></div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href='{url r="user_center#share"}' class="item-content item-link">
+                    <div class="item-media"><i class="iconfont">&#xe974;</i></div>
+                    <div class="item-inner">
+                        <div class="item-title">管理文摘</div>
+                        <div class="item-after"></div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href='{url r="course#vip"}' class="item-content item-link">
+                    <div class="item-media"><i class="iconfont">&#xe684;</i></div>
+                    <div class="item-inner">
+                        <div class="item-title">成为会员</div>
+                        <div class="item-after"></div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href='{url r="course#vip_exchange"}' class="item-content item-link">
+                    <div class="item-media"><i class="iconfont">&#xe61f;</i></div>
+                    <div class="item-inner">
+                        <div class="item-title">会员激活</div>
+                        <div class="item-after"></div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href='{url r="user_center#invite"}' class="item-content item-link">
+                    <div class="item-media"><i class="iconfont">&#xe96a;</i></div>
+                    <div class="item-inner">
+                        <div class="item-title">邀请朋友</div>
+                        <div class="item-after"></div>
+                    </div>
+                </a>
+            </li>
+<!--             <li>
+                <a href='{url r="user_center#vipcode"}' class="item-content item-link">
+                    <div class="item-media"><i class="iconfont">&#xe671;</i></div>
+                    <div class="item-inner">
+                        <div class="item-title">会员激活码</div>
+                        <div class="item-after"></div>
+                    </div>
+                </a>
+            </li> -->
+            <li>
+                <a href='{url r="user_center#add_feedback"}' class="item-content item-link">
+                    <div class="item-media"><i class="iconfont">&#xe96f;</i></div>
+                    <div class="item-inner">
+                        <div class="item-title">用户反馈</div>
+                        <div class="item-after"></div>
+                    </div>
+                </a>
+            </li>
+<!--             <li>
+                <a href="javascriot:void(0)" class="item-content item-link">
+                    <div class="item-media"><i class="iconfont">&#xe972;</i></div>
+                    <div class="item-inner">
+                        <div class="item-title">关于我们</div>
+                        <div class="item-after"></div>
+                    </div>
+                </a>
+            </li> -->
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    var check_login_url = '{$data.user.user_login_url}';
+</script>
+{include file="inc/footer.html"}

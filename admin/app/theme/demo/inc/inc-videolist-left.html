@@ -1,0 +1,41 @@
+<div id="left-list" class="full_display_none">
+	<ul>
+		<li class="all-live">
+			<a href='{if $data.type} /index.php?ctl=video&act=video_list&{$data.type}=1{else}{url r="video#video_list"}{/if}' key="{$data.type}" class="left-item j-left-item {if ($ctl eq 'video' && $act eq 'video_list') && !($data.jump_type)}active{/if}">
+				<i class="iconfont">&#xe629;</i>
+				<p>直播</p>
+			</a>
+		</li>
+		<li class="topic">
+			<a href=' {url r="video#video_list" p="jump_type=1"}' data-src="{$APP_ROOT}/index.php?ctl=video&act=video_list" class="left-item j-left-item j-topic-live {if $data.jump_type eq 1}active{/if}">
+				<i class="iconfont">&#xe637;</i>
+				<p>话题</p>
+			</a>
+		</li>
+		<li class="{if $user_info.id}follow{/if}">
+			<a href=' {if ($ctl eq "live" && $act eq "show") && $user_info.id}{url r="video#video_list" p="jump_type=2"}{else}javascript:void(0){/if}' data-scr="{$APP_ROOT}/index.php?ctl=video&act=focus_list" class="left-item {if $data.jump_type eq 2}active{/if} {if $user_info.id}j-left-item j-focus-live{/if}" {if !$user_info.id} onclick="login();"{/if}>
+				<i class="iconfont">&#xe61a;</i>
+				<p>关注</p>
+			</a>
+		</li>
+		{if $user_info.id && $open_pc_history eq 1}
+		<li class="history">
+			<a href=' {if ($ctl eq "live" && $act eq "show") && $user_info.id}{url r="video#video_list" p="jump_type=3"}{else}javascript:void(0){/if}'   class="left-item {if $data.jump_type eq 3}active{/if} {if $user_info.id}j-left-item j-history-live{/if}" {if !$user_info.id} onclick="login();"{/if}>
+				<i class="iconfont">&#xe655;</i>
+				<p>历史</p>
+			</a>
+		</li>
+		{/if}
+		{if $data.qq_wpa_key}
+		<li class="history">
+			<a href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&key={$data.qq_wpa_key}" target="_blank" class="left-item j-left-item">
+				<i class="iconfont">&#xe668;</i>
+				<p>客服</p>
+			</a>
+		</li>
+		{/if}
+	</ul>
+</div>
+<script>
+    var jump_type = '{$data.jump_type}';
+</script>

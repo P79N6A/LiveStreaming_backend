@@ -1,0 +1,98 @@
+<!--家族介绍-->
+<div class="container-fluid clearfix">
+	<div class="head-photo f-l">
+		<img id="image-logo" alt="{$data.family_info.family_name}" src="{$data.family_info.family_logo}" width="120" height="120">
+		<input type="hidden" name="image-logo" value="" />
+	</div>
+	<div class="block-uc-info f-l">
+		<div class="block-family-name clearfix">
+			<div class="family-name f-l">
+				<h3 title="{$data.family_info.family_name}">{$data.family_info.family_name}</h3>
+				<p>成员数量：<span>{$data.family_info.user_count}</span></p>
+			</div>
+			<div class="family-name-btn f-r">
+				{if $data.family_info.status eq 1}
+					<a href='{url r="family#info" p="family_id=$data.family_info.family_id"}' target="_blank" class="btn btn-primary">家族主页</a>
+				{elseif $data.family_info.status eq 2}
+					<a href='javascript:void(0);' class="btn btn-primary">家族审核失败</a>
+				{else}
+					<a href='javascript:void(0);' class="btn btn-primary">家族审核中</a>
+				{/if}
+				{if $data.family_info.status eq 1 && $user_info.family_chieftain neq 1}
+				<a href="javascript:void(0);" onclick="user_family.logout();" class="btn btn-disabled ml-5">退出家族</a>
+				{/if}
+			</div>
+		</div>
+		<div class="block-user-level clearfix">
+			<p><span title="{$data.family_info.family_manifesto}">家族宣言:{function name="msubstr" v=$data.family_info.family_manifesto b=0 e=110}</span>
+				{if $user_info.family_chieftain eq 1 && ($data.family_info.status eq 1 || $data.family_info.status eq 2)}<em onclick="create_family(1);"><i class="icon iconfont">&#xe62b;</i>修改家族</em>{/if}
+			</p>
+		</div>
+	</div>
+</div>
+
+<!--成员列表-->
+<div class="m-common-item m-common-list">
+	<div class="m-common-title clearfix">
+		<div class="common-title f-l hd">
+			<a href='{url r="user#family"}' {if !$data.is_apply}class="active"{/if}>家族成员（<em>{$data.rs_count}</em>）</a>
+			{if $user_info.family_chieftain eq 1 && ($data.family_info.status eq 1)}
+			<a href='{url r="user#family" p="is_apply=1"}' {if $data.is_apply}class="active"{/if}>申请人员（<em>{$data.apply_count}</em>）</a>
+			{/if}
+		</div>
+		{if $data.family_info.status eq 1}
+			{if $user_info.family_chieftain eq 1}
+				<div class="common-select f-r" ms-controller="family_search" id="family_search">
+					<input type="text" name="nick_name" ms-duplex="@nick_name" placeholder="请输入关键字搜索成员" />
+					<i class="icon iconfont icon-family-search" id="do_family_search">&#xe600;</i>
+					<a href="javascript:void(0);"  class="supervise J-supervise">成员管理</a>
+				</div>
+			{else}
+				<div class="common-select f-r" ms-controller="family_search" id="family_search">
+					<input type="text" name="nick_name" ms-duplex="@nick_name" placeholder="请输入关键字搜索成员" />
+					<i class="icon iconfont icon-family-search" id="do_family_search">&#xe600;</i>
+				</div>
+			{/if}
+		{/if}
+	</div>
+	<div class="bd">
+		<div class="common-content clearfix">
+			<div class="common-block mt-20 mr-20">
+				{if $data.list}
+				<ul class="common-block-list clearfix">
+					{foreach from=$data.list item=item key=key}
+					<li class="block-list f-l">
+						<span class="user-img">
+							<img alt="成员头像" src="{$item.head_image}" class="block-list-img">
+							{if $item.family_chieftain}<p class="shaikh">族长</p>{/if}
+						</span>
+						{if $data.is_apply}
+						<!-- 申请成员 -->
+							<a href="javascript:void(0);" class="btn-icon icon-tick" onclick="user_family.review({$item.user_id},1)"><i class="icon iconfont">&#xe631;</i></a>
+							<a href="javascript:void(0);" class="btn-icon icon-delete" onclick="user_family.review({$item.user_id},2)"><i class="icon iconfont">&#xe630;</i></a>
+						{else}
+						<!-- 家族成员 -->
+							{if $item.family_chieftain eq 0}
+							<a href="javascript:void(0);" class="btn-icon icon-cross" onclick="user_family.del({$item.user_id})"><i class="icon iconfont">&#xe630;</i></a>
+							{/if}
+						{/if}
+						<p class="member-name">{$item.nick_name}</p>
+					</li>
+					{/foreach}
+				</ul>
+				{else}
+					<p class="null-data">暂无任何数据</p>
+				{/if}
+			</div>
+			<div class="m-page clearfix">
+				<div class="m-page-con">
+				{$data.page}   
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	var data_list = JSON.parse('<?php echo json_encode($this->_var['data']['list']); ?>');
+	var is_apply = '{$data.is_apply}';
+</script>

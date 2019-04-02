@@ -1,0 +1,103 @@
+<script type="text/javascript">
+    var ROOT = '{$APP_ROOT}/{$URL_NAME}';
+    var VAR_MODULE = "m";
+    var VAR_ACTION = "a";
+    var WEB_SESSION_ID = '<?php echo es_session::id(); ?>';
+    var EMOT_URL = '{$APP_ROOT}/public/emoticons/';
+    var MAX_FILE_SIZE =  '5120000b';
+    var UPLOAD_URL ='{$APP_ROOT}/m.php?m=PublicFile&a=do_upload&upload_type=1&dir=image';
+    var UPLOAD_SWF='{$TMPL}/js/plupload/Moxie.swf';
+    var UPLOAD_XAP='{$TMPL}/js/plupload/Moxie.xap';
+    var ALLOW_IMAGE_EXT= "gif,jpg,jpeg,png,bmp";
+    var MAX_IMAGE_SIZE= '5120000b';
+    function get_file_fun(name, callback){
+        $("#"+name).ui_upload({
+            multi:false,
+            FilesAdded:function(){
+                $.showPreloader('图片上传中');
+            },
+            FileUploaded:function(ajaxobj){
+                if(ajaxobj.state==200) {
+                    var img_url = ajaxobj.fullname;
+                    
+                    $("#"+name+"-url").val(img_url);
+                    $("#"+name+"-image").attr('src',img_url);
+
+                    if(typeof(callback) == 'function'){
+                        callback.call(this);
+                    }
+                }else{
+                    $.toast(ajaxobj.message);
+                }
+                $.hidePreloader();
+            },Error:function(error){
+                if(error.code==-600){
+                    $.toast("您上传的文件太大，最大允许上传1M");
+                }else{
+                    $.toast(error.message);
+                }
+            }
+        });
+    }
+    function get_file_more_fun(name,num){
+        $("#"+name).ui_upload({
+            multi:false,
+            FilesAdded:function(){
+                $.showPreloader('图片上传中');
+            },
+            FileUploaded:function(ajaxobj){
+                if($("#image_box .image_item").length>=num) {
+                    $.toast("最多只能上传"+num+"张图片");
+                }
+                else if(ajaxobj.state==200) {
+                    var img_url = ajaxobj.fullname;
+
+                    $("#image_box").append(
+                        '<div class="image_item">'+
+                            '<div class="remove_image bg_red" data-url="'+img_url+'"><i class="icon iconfont">&#xe635;</i></div>'+
+                            '<img src="'+img_url+'" width=60 height=60 class="b_radius6" />'+
+                        '</div>'
+                    );
+                    imgs.push(img_url);
+
+                    console.log(imgs);
+
+                    bind_del_image(); // 删除已上传的图片
+                    hide_imgupload(num); // 上传4张图片后，隐藏上传图片按钮
+
+                }
+                else {
+                    $.toast("上传图片出错");
+                }
+                $.hidePreloader();
+            },Error:function(error) {
+                if(error.code==-600){
+                    $.showErr("您上传的文件太大，最大允许上传{$max_size}");
+                }else{
+                    $.showErr(error.message);
+                }
+            }
+        });
+    }
+
+    // 删除已上传的图片
+    function bind_del_image() {
+        $(".image_item").find(".remove_image").on("click",function() {
+            var self = $(this), img_url = self.attr("data-url");
+            del_image(self, img_url);
+            hide_imgupload();
+        });
+    }
+
+    function del_image(o, img_url) {
+        $(o).parent().remove();
+        removeByValue(imgs, img_url);
+    }
+
+    // 上传4张图片后，隐藏上传图片按钮
+    function hide_imgupload(num) {
+        var pic_box_num = $("#image_box").find(".image_item").length;
+        var $fileupload_box = $(".upload-img-block");
+        pic_box_num == num ? $fileupload_box.hide() : $fileupload_box.show();
+    }
+</script>

@@ -1,0 +1,113 @@
+.list-block{margin:0.75rem 0;}
+.list-block .item-media, .list-block .item-inner{
+	padding-top:0.5rem;
+	padding-bottom:0.5rem;
+}
+.list-block .item-after{
+	color: @fc-light;
+}
+.card{
+	margin:0;
+	box-shadow:none;
+}
+.card-header{
+	font-size: @fs-normal;
+	&:after{
+		background-color:@bdcolor;
+	}
+}
+.card-footer{
+	:before{
+		background-color:@bdcolor;
+	}
+	color: @fc-light;
+}
+
+.buttons-tab .button.active{
+	color: @color-theme;
+	border-color: @color-theme;
+}
+
+.button{
+    border: 1px solid @color-theme;
+    color: @color-theme;
+}
+.button.button-fill{
+	background:@color-theme;
+}
+
+.button.button-fill.button-big{
+	height: 2rem;
+	line-height: 2rem;
+}
+.button.button-fill.active, .button.button-fill:active{
+	background:darken(@color-theme, 6.5%);
+}
+.actions-modal{
+	max-height: 10.75rem;
+	overflow: scroll;
+}
+.actions-modal-group{
+	margin: 0;
+	.actions-modal-button{
+		font-size: 0.65rem;
+		color: #999;
+		&:first-child{
+			border-radius: 0;
+		}
+		&:last-child{
+			border-radius: 0;
+		}
+	}
+}
+.actions-modal-button.color-danger{
+	color: #cfcfcf;
+	background: #f7f7f7;
+}
+
+.searchbar-box{
+	.searchbar{
+		display: block;
+        padding: .35rem .5rem;
+        background: #fff;
+        height: 2.25rem;
+		.search-input{
+			.icon-search{
+				width: auto;
+				height: auto;
+				color: @fc-light;
+				padding:0;
+				top: 0.35rem;
+				left: 39%;
+				line-height: 1;
+		        -webkit-transition: all .3s;
+			    transition: all .3s;
+			    -webkit-transform: translate3d(0,0,0);
+			    transform: translate3d(0,0,0);
+			}
+			input{
+				background: #f2f2f2;
+				text-align: center;
+				padding-left: 1.5rem;
+				-webkit-transition: all .3s;
+			    transition: all .3s;
+			    -webkit-transform: translate3d(0,0,0);
+			    transform: translate3d(0,0,0);
+			}
+		}
+		&.searchbar-active{
+			.search-input{
+				.icon-search{
+					left: 0.25rem;
+				}
+				input#search{
+					text-align: left;
+				}
+			}
+		}
+	}
+	&:after{
+		background:none;
+	}
+}
+.bar-footer~.pull-to-refresh-content, .bar-nav~.pull-to-refresh-content, .bar-tab~.pull-to-refresh-content{top:-2.2rem;}

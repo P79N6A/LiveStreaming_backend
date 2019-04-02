@@ -1,0 +1,44 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<load href='__TMPL__Common/js/paigoods.js' />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<div class="main">
+<div class="main_title_list"><div class="list-line-ico"></div>分销统计 共计<span style='color:red;font-size: 20px'>{$count}</span>个用户拥有下线</div>
+<php>
+	function distribution_detail($id){
+		return "<span onclick='distribution_detail(".$id.");'></span>";
+	}
+</php>
+<script type="text/javascript">
+	function distribution_detail(id){
+		location.href = ROOT+"?"+VAR_MODULE+"=Index&"+VAR_ACTION+"=distribution_detail&id="+id;
+	}
+</script>
+<div class="search_row">
+	<form name="search" action="__APP__" method="get">
+		ID：<input type="text" class="textbox" name="id" value="{:trim($_REQUEST['id'])}" />
+		昵称：<input type="text" class="textbox" name="nick_name" value="{:trim($_REQUEST['nick_name'])}" />
+		注册时间：<span><input type="text" class="textbox" name="begin_time" id="begin_time" value="{:trim($_REQUEST['begin_time'])}" onfocus="return showCalendar('begin_time', '%Y-%m-%d %H:%M:%S', false, false, 'btn_begin_time');" />
+		<input type="button" class="button" id="btn_begin_time" value="{%SELECT_TIME}" onclick="return showCalendar('begin_time', '%Y-%m-%d %H:%M:%S', false, false, 'btn_begin_time');" /></span>
+		-
+		<span><input type="text" class="textbox" name="end_time" id="end_time" value="{:trim($_REQUEST['end_time'])}" onfocus="return showCalendar('end_time', '%Y-%m-%d %H:%M:%S', false, false, 'btn_end_time');" /><input type="button" class="button" id="btn_end_time" value="{%SELECT_TIME}" onclick="return showCalendar('end_time', '%Y-%m-%d %H:%M:%S', false, false, 'btn_end_time');" /></span>
+
+		<input type="hidden" value="Indexs" name="m" />
+		<input type="hidden" value="distribution_statistics" name="a" />
+		<input type="submit" class="button" value="{%SEARCH}" />
+	</form>
+</div>
+<html:list
+	id="dataTable"
+	style="dataTable"
+	name="dista"
+	action="true"
+	datasource="list"
+	show="id:用户ID|10%,nick_name:昵称|10%,sub_nums:下级用户数|10%,recharge_nums:充值用户数|10%,recharge_count:充值总额(元)|15%,ticket_income:分销总收入(秀票)|15%,create_time:注册时间|20%"
+	actionlist="id|distribution_detail|查看明细" />
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

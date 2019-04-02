@@ -1,0 +1,49 @@
+<style type="text/css">
+	.errortip{
+		position: absolute;
+		top: 32px;
+		left: 0;
+		color:red;
+		font-size:12px;
+		line-height:13px;
+		white-space: nowrap;
+	}
+	.errortip i{
+		margin: 0 3px;
+		font-size:13px;
+	}
+	.errortip i:before{
+		content: "\e62d";
+	}
+	.m-login .block-login-content .left .send-code.disabled{
+		background-color: #ECECEC;
+		color: #999;
+	}
+</style>
+<div class="m-login">
+	<div class="block-login-content clearfix">
+		<div class="left">
+			<form role="form" action="" id="j-form-set-pwd">
+				<div class="form-group form-vertical">
+					<label for="pwd" class="control-label">设置密码<span class="errortip"></span></label>
+					<div class="control-content control-content-auto">
+						<input id="pwd" type="password" :class="[@is_errorinput && 'errorinput']" class="form-control mb-20" name="pass" placeholder="请输入密码" ms-duplex="@pwd" ms-blur="@check($event)" />
+						<div class="verify clearfix">
+							<input id="yzm" type="text" class="form-control input-verify f-l"  name="verify_coder" placeholder="请输入验证码" ms-duplex="@verify_coder" ms-blur="@verify($event)" />
+							<a :class="[@is_disabled && 'disabled']" class="send-code f-l" id="j-send-code" href="javascript:void(0)" ms-on-click="@send_code">发送验证码</a>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="submit-group t-c">
+					<a href="javascript:void(0)" class="btn btn-primary" ms-on-click="@set">保存密码</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<?php
+   	$this->_var['login_pagejs'][] = $this->_var['TMPL_REAL']."/js/set-pwd.js";
+   	$this->_var['login_cpagejs'][] = $this->_var['TMPL_REAL']."/js/set-pwd.js";
+?>
+<script type="text/javascript" src="{function name="parse_script" v="$login_pagejs" c="login_cpagejs"}"></script>

@@ -1,0 +1,161 @@
+{include file="inc/header.html"}
+<div class="buttons-tab cate-tab">
+	<div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+            	<a href='{url r="share#index"}' class="{if $data.cate_id eq 0}active{/if} button">精选</a>
+            </div>
+            {foreach from=$data.cate_list item=item key=key name=cate_list}
+            <div class="swiper-slide">
+            	<a href='{url r="share#index" p="cate_id=$item.id"}' class="{if $data.cate_id eq $item.id}active{/if} button">{$item.cate_name}</a>
+            </div>
+            {/foreach}
+        </div>
+        <div class="swiper-scrollbar"></div>
+    </div>
+</div>
+<div class="content pull-to-refresh-content infinite-scroll">
+	<!-- 默认的下拉刷新层 -->
+    <div class="pull-to-refresh-layer">
+        <div class="preloader"></div>
+        <div class="pull-to-refresh-arrow"></div>
+    </div>
+    <div id="vm-vscope">
+	  	<div class="content-block">
+	  		<div class="share-list">
+	  			<div v-for="list in share_list">
+	  				<div class="card">
+	  					<div class="card-content">
+					      	<div class="card-content-inner">
+					      		<div class="user-pic">
+					      			<img :src="list.head_image" />
+					      		</div>
+					      		<div class="user-inner">
+				      				<div class="inner-user">
+				      					<p class="name f13" v-html="list.nick_name"></p>
+					      				<p>
+					      					<span v-html="list.v_explain"></span>
+					      					<span v-html="list.create_time"></span>
+				      					</p>
+				      				</div>
+				      				<div class="inner-text">
+				      					<div class="text-top">
+				      						<h3 class="f13" v-html="list.title"></h3>
+					      					<p v-html="list.content"></p>
+					      					<p class="list-img">
+					      						<template v-for="img in list.imgs">
+					      							<img :src="img" />
+					      						</template>
+						      				</p>
+						      				<div class="state">
+						      					<div class="details">
+						      						<a :href='list.detail_url'>阅读全文</a>
+					      						</div>
+						      					<div class="link">
+						      						<span class="look">
+						      							<i class="iconfont f18">&#xe967;</i>{{list.watch_count}}
+						      						</span>
+						      						<span>
+						      							<i :class="{'active': list.is_praised == '1'}" class="iconfont" @click="praise(list.id, list, list.praise_list, $event)">&#xe95f;</i>
+						      							<em id="item-praise">{{list.praise_count}}</em>
+						      						</span>
+						      						<span @click="pop_comment(0, list)">
+						      							<i class="iconfont">&#xe966;</i>{{list.reply_count}}
+						      						</span>
+						      					</div>
+						      				</div>
+				      					</div>
+				      					<div class="text-comment">
+				      						<div class="praise" v-if="list.praise_count">
+						      					<p class="praise-name">
+							      					<template v-for="praise_list in list.praise_list">
+							      						{{praise_list.nick_name}}、
+							      					</template>
+						      					</p>
+						      					<p>&nbsp;等<span>{{list.praise_count}}</span>人赞过</p>
+						      				</div>
+						      				<div class="comment-area" v-if="list.reply_list.length">
+						      					<div class="comment-area-block">
+						      						<template v-for="reply_list in list.reply_list">
+						      							<template v-if="reply_list.user_id == user_id">
+							      							<p @click="delete_reply(reply_list, list)">
+									      						<span>
+									      							{{reply_list.nick_name}}<template v-if="!reply_list.reply_user_name">：</template></span>
+									      						<template v-if="reply_list.reply_user_name">
+								      								回复<span>{{reply_list.reply_user_name}}：</span>
+									      						</template>
+									      						{{reply_list.content}}
+									      					</p>
+								      					</template>
+								      					<template v-else>
+									      					<p @click="pop_comment(1, list)">
+									      						<span>
+									      							{{reply_list.nick_name}}<template v-if="!reply_list.reply_user_name">：</template></span>
+									      						<template v-if="reply_list.reply_user_name">
+								      								回复<span>{{reply_list.reply_user_name}}：</span>
+									      						</template>
+									      						{{reply_list.content}}
+									      					</p>
+									      				</template>
+						      						</template>
+						      					</div>
+						      					<a :href='list.detail_url' class="button">查看全部{{list.reply_count}}条评论</a>
+						      				</div>
+				      					</div>
+				      				</div>
+				      			</div>
+				      		</div>
+				      	</div>
+	  				</div>
+	  			</div>
+			  	<div class="null-data" v-if="share_list.length<=0">暂无数据</div>
+		  	</div>
+	  	</div>
+	  	<template v-if="share_list">
+		  	<!-- 加载提示符 -->
+		    <div class="infinite-scroll-preloader" v-if="total_page>1 && page<=total_page">
+		        <div class="preloader"></div>
+		    </div>
+		    <div class="infinite-scroll-preloader data-null" v-if="page>total_page">
+		        <span style="color:#999;font-size:0.75rem;">无更多数据</span>
+		    </div>
+	    </template>
+    </div>
+</div>
+<div id="vscope-float_comment">
+	<div class="m-float-comment" v-show="show_float_comment">
+		<div class="float-comment-mask" @click="close_comment"></div>
+		<div class="float-comment">
+		    <textarea name="content" id="comment-info" placeholder="写评论..."></textarea>
+		    <a class="button button-fill" @click="send_comment">发送</a>
+		</div>
+	</div>
+	<div class="float-add-share" v-if="is_star_share">
+		<a href='{url r="share#add_share"}' class="add-share">+</a>
+	</div>
+</div>
+<script type="text/javascript">
+	var data = {
+		user_id: {$user_info.id},
+		user_name: '{$user_info.nick_name}',
+		id: "",
+		list: [],
+		item_reply: "",
+		content: "",
+		type: 0,
+		share_list: "",
+		item_id: '',
+		show_float_comment: false,
+		loading: false,
+		page: 2,
+		total_page: Number('{$data.total_page}')
+	}
+</script>
+<script type="text/javascript">
+
+    var paramet = {
+        cate_id: GetQueryString("cate_id"),
+    },ajax_url,new_paramet;
+
+</script>
+{include file="inc/footer.html"}

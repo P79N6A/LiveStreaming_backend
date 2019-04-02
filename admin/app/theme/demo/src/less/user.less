@@ -1,0 +1,135 @@
+@import (once) "public/variable.less";
+@import (once) "public/csstree.less";
+.user-main{
+    width: 100%;
+    height: auto;
+    background: @bdcolor;
+}
+.layout-user-l{
+    width: 240px;
+    float:left;
+}
+.layout-user-r{
+    width: 960px;
+    min-height: 771px;
+    overflow: hidden;
+    background: #fff;
+    float:left;
+}
+.user-r-main{
+    padding:20px;
+    overflow:hidden;
+}
+.m-title-list{
+    width: 100%;
+    height: 100%;
+    background: @bdcolor;
+    overflow: hidden;
+    .active{
+        color: #fff;
+        background: @bgcolor-theme;
+        & a{
+            color: #fff;
+            .iconfont{
+                color:#fff;
+            }
+            &.anchor{
+                position: relative;
+            }
+            
+        }
+    }
+    .act{
+        .anchor-inner{
+            height: 146px;
+        }
+        .income{
+            height: 195px;
+        }
+        .illegal{
+            height: 97px;
+        }
+        .iconfont.right{
+                display: none;
+            }
+            .iconfont.bottom{
+                display: inline-block;
+            }
+    }
+    & li{
+        padding-left: 58px;
+        line-height:48px;
+        overflow: hidden;
+        white-space: nowrap;
+        & a{
+            font-size: @fs-middle;
+            color: @fcolor-main;
+            cursor: pointer;
+            display: block;
+            
+            .iconfont{
+                padding-right: 12px;
+                color:@fcolor-lighterer;
+                font-size: @fs-big;
+                vertical-align: bottom;
+            }
+            .iconfont.right{
+                position: absolute;
+                right: -5px;
+                font-size: 18px;
+                top: 0;
+            }
+            .iconfont.bottom{
+                position: absolute;
+                right: -4px;
+                top: 2px;
+                font-size: 18px;
+                display: none;
+            }
+            &.anchor{
+                position: relative;
+                width: 100%;
+            }
+        }
+        & .anchor-inner{
+            margin-left: -58px;
+            text-align: center;
+            background: #fff;
+            overflow: hidden;
+            height: 0;
+            transition: height 1s;
+            -moz-transition: height 1s;  /* Firefox 4 */
+            -webkit-transition: height 1s;   /* Safari 和 Chrome */
+            -o-transition: height 1s;
+            & a{
+                border-bottom: 1px solid @bgcolor;
+                color: #555;
+                &:last-child{
+                    border:0;
+                }
+            }
+            & .actived{
+                color: @bgcolor-theme;
+            }
+        }
+    }
+}
+.user-r-title{
+    border-bottom: 1px solid @bdcolor;
+    position: relative;
+    .field{
+        position: relative;
+        padding:0 28px 8px;
+        *padding: 0 28px 6px;
+        box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        line-height: 40px;
+        font-size: 18px;
+        color: @fcolor-title;
+        font-weight: 500;
+        border-bottom: 2px solid @bgcolor-theme;
+    }
+}
+.user-r-content{
+    margin-top:20px;
+}

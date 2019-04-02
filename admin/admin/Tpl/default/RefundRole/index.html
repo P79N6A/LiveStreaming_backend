@@ -1,0 +1,26 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<div class="main">
+<div class="main_title_list"><div class="list-line-ico"></div>等级提现规则列表</div>
+	<html:list
+		id="dataTable"
+		style="dataTable"
+		name="refund"
+		checkbox="true"
+		action="true"
+		datasource="list"
+		show="id:{%ID},ticket_catty_ratio:提现比例,level:等级"
+		actionlist="edit:编辑,foreverdel:删除" />
+	<table class="dataTable">
+		<tbody>
+			<td colspan="9">
+				<input type="button" class="button button-add" value="{%ADD}" onclick="add();" />
+				<input type="button" class="button button-del" value="{%DEL}" onclick="foreverdel();" />
+			</td>
+		</tbody>
+	</table>
+<div class="blank5"></div>
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

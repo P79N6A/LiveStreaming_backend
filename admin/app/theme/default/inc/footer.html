@@ -1,0 +1,63 @@
+</div>
+<div id="footerwrapper">
+	<div class="footer">
+		<div class="wrapper">
+			<div class="footer-top">
+				<a href="{$APP_ROOT}/index.php?ctl=article&act=faq&faq_group=关于我们">关于我们</a>|
+				<a href="{$APP_ROOT}/index.php?ctl=article&act=faq&faq_group=主播招聘">主播招聘</a>|
+				<a href="{$APP_ROOT}/index.php?ctl=article&act=faq&faq_group=联系我们">联系我们</a>|
+				<a href="{$APP_ROOT}/index.php?ctl=article&act=faq">帮助中心</a>
+			</div>
+			<div class="footer-bottom">
+				<p>{$NETWORK_FOR_RECORD}</p>
+				<p> {$SITE_LICENSE}© 2005-2016 </p>
+			</div>
+		</div>
+	</div>
+</div>
+<?php
+   	$this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/dist/Bootstrap/js/bootstrap.min.js";
+   	$this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/dist/Bootstrap/js/bootstrap.min.js";
+   	$this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/dist/jquery.lazyload.min.js";
+   	$this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/dist/jquery.lazyload.min.js";
+	$this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/dist/Weebox/bgiframe.js";
+	$this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/dist/Weebox/bgiframe.js";
+	$this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/dist/Weebox/weebox.js";
+	$this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/dist/Weebox/weebox.js";
+    $this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/dist/cropper/cropper.min.js";
+    $this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/dist/cropper/cropper.min.js";
+   	$this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/js/pages.js";
+   	$this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/js/pages.js";
+   	$this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/js/pages-user.js";
+   	$this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/js/pages-user.js";
+   	$this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/js/public.js";
+   	$this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/js/public.js";
+?>
+<script type="text/javascript" src="{function name="parse_script" v="$foot_pagejs" c="foot_cpagejs"}"></script>
+<script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+<script type="text/javascript"> 
+	if(!$(".banner_cont ul").has('li').length){ 
+		$("#banner").css("display","none");
+	} 
+	
+	if($(".banner_cont ul").find('li').length==1){ 
+		$(".btn_tit").css("display","none");
+	}
+	else if($(".banner_cont ul").find('li').length>1){
+		$(".btn_tit").css("display","block");
+	}
+	if($(".banner_cont ul").find('li').length>1){
+		jQuery("#banner").slide({mainCell:".banner_cont ul",titCell:".effect_hd span",effect:"leftLoop",easing:"easeInOutQuint",delayTime:500,autoPlay:true});
+		$("#banner").mousemove(function(){
+			$(this).find(".prev").show();
+			$(this).find(".next").show();
+		}).mouseout(function(){
+			$(this).find(".prev").hide();
+			$(this).find(".next").hide();
+		});
+	}
+
+	$("img.lazy").lazyload({effect: "fadeIn"});
+</script>
+</body>
+</html>

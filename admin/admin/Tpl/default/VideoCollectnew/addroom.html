@@ -1,0 +1,45 @@
+﻿{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<div class="main">
+<div class="main_title_list"><div class="list-line-ico"></div>单个添加房间</div>
+
+<form method="post" enctype="multipart/form-data">
+
+	<table class="dataTable">
+		<tbody>
+			<tr>
+                <td>房间名字</td>
+                <td>
+					<input type="text" name="name" value=""/>
+				</td>
+            </tr>
+			<tr>
+                <td>房间缩略图</td>
+                <td>
+					<input type="file" name="img" value=""/>
+				</td>
+            </tr>
+			<tr style="display:none">
+                <td>视频流地址</td>
+                <td>
+					<input type="hidden" name="url" value="http://11116450.liveplay.myqcloud.com/live/16450_9611b126315_8ee7cfc5f33521244dba.flv"/>
+				</td>
+            </tr>
+			<tr>
+                <td></td>
+                <td>
+					<input type="submit"/>
+				</td>
+            </tr>
+		</tbody>
+	</table>
+	
+</form>
+	
+</div>
+
+<include file="Public:footer" />

@@ -1,0 +1,56 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<PHP>
+	function tips()
+	{
+		return "<a sytle='text-decoration:none;'>无</a>";
+	}
+	function get_payment_user_name($uid)
+	{
+		return M("User")->where("id=".$uid)->getField("nick_name");
+	}
+</PHP>
+<include file="Public:header" />
+<load href='__TMPL__Common/js/jquery.bgiframe.js' />
+<load href='__TMPL__Common/js/jquery.weebox.js' />
+
+<load href='__TMPL__Common/style/weebox.css' />
+<div class="main">
+<div class="main_title_list"><div class="list-line-ico"></div>守护购买记录</div>
+<div class="search_row">
+	<form name="search" action="__APP__" method="get" class="clearfix">
+		<div>主播ID：<input type="text" class="textbox" name="user_id" value="{:trim($_REQUEST['user_id'])}" style="width:100px" /></div>
+		<div>{%NICK_NAME}：<input type="text" class="textbox" name="nick_name" value="{:trim($_REQUEST['nick_name'])}" style="width:100px;" /></div>
+		<div>创建时间 ：
+			<input style="margin: 0" type="text" class="textbox" name="start_time" id="start_time" value="{:trim($_REQUEST['start_time'])}" onfocus="return showCalendar('start_time', '%Y-%m-%d', false, false, 'start_time');" /> - <input type="text" class="textbox" name="end_time" id="end_time" value="{:trim($_REQUEST['end_time'])}" onfocus="return showCalendar('end_time', '%Y-%m-%d', false, false, 'end_time');" />
+		</div>
+		<div>
+			<input type="hidden" value="GuardPayHistory" name="m" />
+			<input type="hidden" value="index" name="a" />
+			<input type="submit" class="button" value="{%SEARCH}" />
+		</div>
+	</form>
+</div>
+<html:list
+	id="dataTable"
+	style="dataTable"
+	name="deal"
+	action="true"
+	datasource="list"
+	show="id:{%ID}
+		,user_id:用户ID
+		,user_id|get_payment_user_name:用户昵称
+		,to_user_id:主播ID
+		,diamonds:消费秀豆
+		,score:获得积分
+		,log_time|to_date:创建时间
+		,log_info:备注
+		"
+	actionlist="tips:无" />
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

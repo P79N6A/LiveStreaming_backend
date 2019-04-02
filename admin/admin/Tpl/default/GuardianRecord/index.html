@@ -1,0 +1,52 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<php>
+    function nick_name($user_id)
+    {
+        return $GLOBALS['db']->getOne("select `nick_name` from ".DB_PREFIX."user where id = ".$user_id);
+    }
+    function show_time($show_time)
+    {
+        return empty($show_time)?'暂无':date('Y-m-d H:i:s', $show_time);
+    }
+</php>
+<div class="main">
+<div class="main_title_list"><div class="list-line-ico"></div>守护列表</div>
+    <div class="search_row">
+        <form name="search" action="__APP__" method="get">
+            守护：<select style="width: 100px;margin:0" name="guard_id">
+                    <option value="-1">全部</option>
+                <foreach name="guards" item="g">
+                    <option value="{$g.id}" <if condition="intval($_REQUEST['guard_id']) eq $g['id']">selected="selected"</if>>{$g.name}</option>
+                </foreach>
+            </select>
+            用户ID：<input type="text" class="textbox" name="user_id" value="{:trim($_REQUEST['user_id'])}" />
+            主播ID：<input type="text" class="textbox" name="anchor_id" value="{:trim($_REQUEST['anchor_id'])}" />
+            <input type="hidden" value="GuardianRecord" name="m" />
+            <input type="hidden" value="index" name="a" />
+            <input type="submit" class="button" value="{%SEARCH}" />
+        </form>
+    </div>
+	<html:list
+			id="dataTable"
+			style="dataTable"
+			name="mount"
+			checkbox="true"
+			action="true"
+			datasource="list"
+			show="id:{%ID},name:守护,user_id:用户ID,user_id|nick_name:用户昵称,anchor_id:主播ID,anchor_id|nick_name:主播昵称,level:等级,start_time|show_time:开始时间,end_time|show_time:结束时间"
+			actionlist="edit:编辑,foreverdel:删除" />
+
+	<table class="dataTable">
+		<tbody>
+			<td colspan="9">
+				<input type="button" class="button button-add" value="{%ADD}" onclick="add();" />
+				<input type="button" class="button button-del" value="{%DEL}" onclick="foreverdel();" />
+			</td>
+		</tbody>
+	</table>
+<div class="blank5"></div>
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

@@ -1,0 +1,97 @@
+{include file="inc/header.html"}
+<?php
+	$m_config = load_auto_cache("m_config");
+ 	$this->_var['wx_web_secrit'] = $m_config['wx_web_secrit'];
+	$this->_var['sina_web_app_key'] = $m_config['sina_web_app_key'];
+	$this->_var['qq_web_app_key'] = $m_config['qq_web_app_key'];
+	$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/login-pop.css";
+?>
+<link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$dpagecss"}" />
+<style type="text/css">
+	.errortip{
+		color:red;
+		font-size:12px;
+		line-height:13px;
+		white-space: nowrap;
+	}
+	input.errorinput{
+		border-color: red;
+	}
+	.m-login .block-login-content .left .send-code.disabled{
+		background-color: #ECECEC;
+		color: #999;
+	}
+	.m-login .block-login-content .left .form-group, .m-login .block-login-content .right .form-group{
+		    width: 340px;
+    		margin: 0 auto;
+	}
+	.m-login{
+		padding: 214px 10px;
+		margin-top: 20px;
+	}
+</style>
+<div class="wrapper">
+<div class="m-login">
+	<div class="block-login-content clearfix">
+		<div class="left" ms-controller="login" id="login">
+			<form role="form" action="" id="j-form-loginmobile">
+				<div class="form-group form-vertical">
+					<label for="mobile" class="control-label">
+						<span>公会登录</span>
+					</label>
+					<span class="errortip"></span>
+					<div class="control-content control-content-auto">
+						<input id="mobile" type="text" :class="[@is_errorinput && 'errorinput']"  class="form-control mb-20" name="mobile" placeholder="请输入您的手机号码" ms-duplex="@mobile" ms-blur="@check($event)" />
+						<div class="verify clearfix">
+							<input id="yzm" type="text" class="form-control input-verify f-l" name="verify_coder" placeholder="请输入验证码" ms-duplex="@verify_coder" />
+							<a :class="[@is_disabled && 'disabled']" class="send-code f-l" id="j-send-code" href="javascript:void(0)" ms-on-click="@send_code">发送验证码</a>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="submit-group t-c">
+					<a href="javascript:void(0)" class="btn btn-primary" ms-on-click="@login">登录账号</a>
+				</div>
+			</form>
+		</div>
+		<div class="right">
+			<div class="form-group form-vertical">
+				<label class="control-label">
+					<span>请选择快捷方式登录</span>
+				</label>
+				<div class="control-content control-content-auto">
+					{if $wx_web_secrit neq ''}
+					<div onclick="society_wx_login()" class="part-account green f-l">
+						<i class="iconfont">&#xe621;</i>
+					</div>
+					{/if}
+					{if $qq_web_app_key neq ''}
+					<a href="{$APP_ROOT}/index.php?ctl=society&act=qq_entry">
+						<div class="part-account blue f-l">
+							<i class="iconfont">&#xe620;</i>
+						</div>
+					</a>
+					{/if}
+					{if $sina_web_app_key neq ''}
+					<a href="{$APP_ROOT}/index.php?ctl=login&act=sina_login">
+						<div class="part-account pink f-l">
+							<i class="iconfont">&#xe622;</i>
+						</div>
+					</a>
+					{/if}
+					<div class="line"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<script type="text/javascript">
+	var society_id = getQueryString("society_id");
+</script>
+<?php
+   	$this->_var['login_pagejs'][] = $this->_var['TMPL_REAL']."/js/society-mobile_login.js";
+   	$this->_var['login_cpagejs'][] = $this->_var['TMPL_REAL']."/js/society-mobile_login.js";
+?>
+<script type="text/javascript" src="{function name="parse_script" v="$login_pagejs" c="login_cpagejs"}"></script>
+{include file="inc/footer.html"}

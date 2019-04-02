@@ -1,0 +1,455 @@
+{include file="inc/header.html"}
+<?php
+	$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/index.css";
+$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/sidebar.css";
+	$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/dist/jquery-bxslider/jquery.bxslider.css";
+   	$this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/dist/jquery-bxslider/jquery.bxslider.js";
+   	$this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/dist/jquery-bxslider/jquery.bxslider.js";
+   	$this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/js/index.js";
+   	$this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/js/index.js";
+?>
+<link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$dpagecss"}" />
+<style type="text/css">
+	.index-shuffer .bx-viewport {
+	    overflow: inherit!important;
+	}
+</style>
+<script src="//imgcache.qq.com/open/qcloud/video/vcplayer/TcPlayer.js" charset="utf-8"></script>
+<!--推荐直播区域开始  -->
+<div class="banner" style="background:url({$data.banner.0.image}) no-repeat;">
+	<div class="m-room clearfix" id="j-select_video">
+		<div class="bd f-l">
+			<div class="room-video" id="js_room_video"></div>
+			<!--<div class="float-video" id="live-loading">
+				<div class="float-video-main">
+					<img src="/public/images/live_loading.gif" />
+				</div>
+			</div>-->
+		</div>
+		{if $data.live_video}
+		<a href="{$data.live_video.0.video_url}" class="enter-link">进入直播间</a>
+		<div class="room-pic f-l hd">
+			<div class="slider-arrow"></div>
+			<div class="j-room-a">
+				{foreach from=$data.live_video item=item key=key}
+				<a href="{$item.video_url}" class="active">
+					<img src="{$item.live_image}" alt="">
+				</a>
+				{/foreach}
+			</div>
+		</div>
+		{/if}
+		<div class="clear"></div>
+	</div>
+	<div class="m-hot index-shuffer">
+		<div class="hot-title"><a href="javascript:void(0)">热门<span>新秀</span>推荐</a></div>
+		<div class="bw">
+			<div class="stars-wall">
+				<div class="wall-layer wall-layer-left"></div>
+				<div class="hot-list" style="overflow:visible;">
+					<div class="hot-wrapper">
+						<ul class="stars-lists clearfix">
+							{foreach from=$data.recommend_anchor item=item key=key}
+							<li>
+								<a href="{$item.video_url}" target="_blank">
+									<img src="{$item.head_image}" alt="">
+									<div class="info">
+			                            <div class="info-bg"></div>
+			                            <div class="info-liveing">
+				                            <p class="username">{$item.nick_name}</p>
+				                            <p class="user-comment">{$item.group_id}</p>
+				                            {if $item.live_in eq 1}<p class="user-liveing">直播中</p> {elseif $item.live_in eq 3}<p class="user-liveing">回放</p> {/if}
+				                        </div>
+										{if $item.watch_number}
+			                            <p class="follow"><i class="icon iconfont">&#xe645;</i>{$item.watch_number}</p>
+										{/if}
+			                        </div>
+			                        <div class="cover"></div>
+								</a>
+							</li>
+							{/foreach}
+						</ul>
+			        </div>
+				</div>
+				<div class="wall-layer wall-layer-right"></div>
+			</div>
+			<div class="arrows">
+                <i class="arrow arrow-left"><a class="bx-prev" href="javascript:void(0);"></a></i>
+                <i class="arrow arrow-right"><a class="bx-next" href="javascript:void(0);"></a></i>
+            </div>
+        </div>
+	</div>
+</div>
+<!--  推荐直播区域开始  -->
+<div class="wrapper">
+	<div class="m-wrapper-top clearfix">
+		<!-- 推荐 -->
+		<div class="m-live f-l">
+			<h2 class="m-common-title">
+				<div class="container-fluid">
+					<i class="common-icon c-1"></i><strong>推荐</strong>
+					<a href="{$data.is_recommend_more_url}" target="_blank" class="btn btn-default btn-circle view-more f-r">查看更多</a>
+				</div>
+			</h2>
+			{if $data.is_recommend}
+			<ul class="m-live-list clearfix">
+				{foreach from=$data.is_recommend item=item key=key name=is_recommend}
+				{if $smarty.foreach.is_recommend.iteration gt $data.recommend_offset and $smarty.foreach.is_recommend.iteration  lte $data.recommend_offset + 4 }
+				<li class="block-live">
+					<a href="{$item.video_url}" target="_blank">
+						<span class="block-live-img">
+							<img alt="{$item.title}" data-original="{$item.live_image}" class="block-live-img lazy" />
+						</span>
+						<div class="block-live-info clearfix">
+							<div class="live-name clearfix">
+								<img alt="{$item.nick_name}" src="{$item.head_image}" class="avatar-normal" />
+								<p title="{$item.title}">{$item.title}</p>
+								<p class="sub f-l" title="{$item.nick_name}">{$item.nick_name}</p>
+								<span class="watch-num f-r"><i class="icon iconfont">&#xe60a;</i>{$item.watch_number}</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				{/if}
+				{/foreach}
+				<div class="clear"></div>
+			</ul>
+			{else}
+			<p class="null-data">暂无数据</p>
+			{/if}
+		</div>
+		<!-- 推荐结束 -->
+		<div class="layout-3 f-l">
+			<div class="layout-3-list clearfix">
+				<!-- 富豪排行榜 -->
+				<div class="m-Top" id="J-ranking-plute">
+					<h2 class="m-common-title">
+						<div class="container-fluid">
+							<i class="common-icon c-6"></i><strong>富豪榜</strong>
+							<span class="top-selects hd">
+								<a href="javascript:void(0);">日榜</a>
+								<a href="javascript:void(0);">周榜</a>
+								<a href="javascript:void(0);">月榜</a>
+								<a href="javascript:void(0);" class="active">总榜</a>
+							</span>
+						</div>
+					</h2>
+					<div class="bd">
+						<!-- 日榜 -->
+						<ul class="m-Top-list clearfix j-list-day">
+							{foreach from=$data.rich_list.day item=item key=key name=rich_list}
+							{if  $smarty.foreach.rich_list.iteration lte 6}
+							<li class="list-{$key}">
+								<a href="{$item.video_url}" title="{$item.nick_name}" target="_blank" class="clearfix">
+									<p class="grade-img">No.{$smarty.foreach.rich_list.iteration}</p>
+									<img src="{$item.head_image}" alt="" class="top-img">
+									<p class="list-name">{$item.nick_name}</p>
+								</a>
+							</li>
+							{/if}
+							{/foreach}
+						</ul>
+						<!-- 周榜 -->
+						<ul class="m-Top-list clearfix j-list-week">
+							{foreach from=$data.rich_list.weeks item=item key=key name=rich_list}
+							{if  $smarty.foreach.rich_list.iteration lte 6}
+							<li class="list-{$key}">
+								<a href="{$item.video_url}" title="{$item.nick_name}" target="_blank" class="clearfix">
+									<p class="grade-img">No.{$smarty.foreach.rich_list.iteration}</p>
+									<img src="{$item.head_image}" alt="" class="top-img">
+									<p class="list-name">{$item.nick_name}</p>
+								</a>
+							</li>
+							{/if}
+							{/foreach}
+						</ul>    
+						<!-- 月榜 -->
+						<ul class="m-Top-list clearfix j-list-month">
+							{foreach from=$data.rich_list.month item=item key=key name=rich_list}
+							{if  $smarty.foreach.rich_list.iteration lte 6}
+							<li class="list-{$key}">
+								<a href="{$item.video_url}" title="{$item.nick_name}" target="_blank" class="clearfix">
+									<p class="grade-img">No.{$smarty.foreach.rich_list.iteration}</p>
+									<img src="{$item.head_image}" alt="" class="top-img">
+									<p class="list-name">{$item.nick_name}</p>
+								</a>
+							</li>
+							{/if}
+							{/foreach}
+						</ul>
+						<!-- 总榜 -->
+						<ul class="m-Top-list clearfix j-list-total">
+							{foreach from=$data.rich_list.all item=item key=key name=rich_list}
+							{if  $smarty.foreach.rich_list.iteration lte 6}
+							<li class="list-{$key}">
+								<a href="{$item.video_url}" title="{$item.nick_name}" target="_blank" class="clearfix">
+									<p class="grade-img">No.{$smarty.foreach.rich_list.iteration}</p>
+									<img src="{$item.head_image}" alt="" class="top-img">
+									<p class="list-name">{$item.nick_name}</p>
+								</a>
+							</li>
+							{/if}
+							{/foreach}
+						</ul>
+					</div>
+				</div>
+				<!-- 魅力主播排行榜 -->
+				<div class="m-Top clearfix" id="J-ranking-charm">
+					<h2 class="m-common-title">
+						<div class="container-fluid">
+							<i class="common-icon c-5"></i><strong>魅力榜</strong>
+							<span class="top-selects hd">
+								<a href="javascript:void(0);">日榜</a>
+								<a href="javascript:void(0);">周榜</a>
+								<a href="javascript:void(0);">月榜</a>
+								<a href="javascript:void(0);" class="active">总榜</a>
+							</span>
+						</div>
+					</h2>
+					<div class="bd">
+						<!-- 日榜 -->
+						<ul class="m-Top-list clearfix">
+							{foreach from=$data.charm_podcast.day item=item key=key name=charm_podcast}
+							{if  $smarty.foreach.charm_podcast.iteration lte 6}
+							<li class="list-{$key}">
+								<a href="{$item.video_url}" title="{$item.nick_name}" target="_blank" class="clearfix">
+									<p class="grade-img">No.{$smarty.foreach.charm_podcast.iteration}</p>
+									<img src="{$item.head_image}" alt="" class="top-img">
+									<p class="list-name">{$item.nick_name}</p>
+								</a>
+							</li>
+							{/if}
+							{/foreach}
+						</ul>
+						<!-- 周榜 -->
+						<ul class="m-Top-list clearfix">
+							{foreach from=$data.charm_podcast.weeks item=item key=key name=charm_podcast}
+							{if  $smarty.foreach.charm_podcast.iteration lte 6}
+							<li class="list-{$key}">
+								<a href="{$item.video_url}" title="{$item.nick_name}" target="_blank" class="clearfix">
+									<p class="grade-img">No.{$smarty.foreach.charm_podcast.iteration}</p>
+									<img src="{$item.head_image}" alt="" class="top-img">
+									<p class="list-name">{$item.nick_name}</p>
+								</a>
+							</li>
+							{/if}
+							{/foreach}
+						</ul>
+						<!-- 月榜 -->
+						<ul class="m-Top-list clearfix">
+							{foreach from=$data.charm_podcast.month  item=item key=key name=charm_podcast}
+							{if  $smarty.foreach.charm_podcast.iteration  lte 6}
+							<li class="list-{$key}">
+								<a href="{$item.video_url}" title="{$item.nick_name}" target="_blank" class="clearfix">
+									<p class="grade-img">No.{$smarty.foreach.charm_podcast.iteration}</p>
+									<img src="{$item.head_image}" alt="" class="top-img">
+									<p class="list-name">{$item.nick_name}</p>
+								</a>
+							</li>
+							{/if}
+							{/foreach}
+						</ul>
+						<!-- 总榜 -->
+						<ul class="m-Top-list clearfix">
+							{foreach from=$data.charm_podcast.all item=item key=key name=charm_podcast}
+							{if  $smarty.foreach.charm_podcast.iteration  lte 6}
+							<li class="list-{$key}">
+								<a href="{$item.video_url}" title="{$item.nick_name}" target="_blank" class="clearfix">
+									<p class="grade-img">No.{$smarty.foreach.charm_podcast.iteration}</p>
+									<img src="{$item.head_image}" alt="" class="top-img">
+									<p class="list-name">{$item.nick_name}</p>
+								</a>
+							</li>
+							{/if}
+							{/foreach}
+						</ul>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+		{if $data.ad_list.0}
+		<div class="advertisement">
+			<a href="{$data.ad_list.0.url}" target="_blank">
+				<img src="{$data.ad_list.0.image}" alt="">
+			</a>
+		</div>
+		{/if}
+	<!-- 热门 -->
+	<div class="m-wrapper-content clearfix">
+		<div class="m-live f-l">
+			<h2 class="m-common-title">
+				<div class="container-fluid">
+					<i class="common-icon c-2"></i><strong>热门</strong>
+					<a href="{$data.is_hot_more_url}" target="_blank" class="btn btn-default btn-circle view-more f-r">查看更多</a>
+				</div>
+			</h2>
+			<ul class="m-live-list clearfix">
+			{foreach from=$data.is_hot item=item key=key name=is_hot}
+				{if  $smarty.foreach.is_hot.iteration  lte 6 }
+				<li class="block-live">
+					<a href="{$item.video_url}" target="_blank">
+						<span class="block-live-img">
+							<img alt="{$item.title}" data-original="{$item.live_image}" class="block-live-img lazy" />
+						</span>
+						<div class="block-live-info clearfix">
+							<div class="live-name clearfix">
+								<img alt="{$item.nick_name}" src="{$item.head_image}" class="avatar-normal" />
+								<p title="{$item.title}">{$item.title}</p>
+								<p class="sub f-l" title="{$item.nick_name}">{$item.nick_name}</p>
+								<span class="watch-num f-r"><i class="icon iconfont">&#xe60a;</i>{$item.watch_number}</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				{/if}
+			{foreachelse}
+			<p class="null-data">暂无数据</p>
+			{/foreach}
+				<div class="clear"></div>
+			</ul>
+		</div><!-- 热门 end -->
+		
+		<div class="layout-3 f-l">
+			<div class="layout-3-list clearfix">
+				<div class="m-news">
+					<h2 class="m-common-title">
+						<div class="container-fluid">
+							<i class="common-icon c-7"></i><strong>新闻公告</strong>
+							<a href="{$data.news.news_more}" target="_blank" class="btn btn-default btn-circle view-more f-r">查看更多</a>
+						</div>
+					</h2>
+					<ul class="m-news-list">
+					{foreach from=$data.news.news_list item=item key=key name=news_list}
+					{if  $smarty.foreach.news_list.iteration  lt 10}
+					<li {if $smarty.foreach.news_list.last}class="last"{/if}>
+						<i></i>
+						<a href="{$item.url}" target="_blank">{$item.title}</a>
+					</li>
+					{/if}
+					{/foreach}
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	
+		{if $data.ad_list.1}
+		<div class="advertisement">
+			<a href="{$data.ad_list.1.url}" target="_blank">
+				<img src="{$data.ad_list.1.image}" alt="">
+			</a>
+		</div>
+		{/if}
+	<!-- 最新 -->
+	
+	<div class="m-live clearfix">
+		<h2 class="m-common-title">
+			<div class="container-fluid">
+				<i class="common-icon c-3"></i><strong>最新</strong>
+				<span class="topic">
+				{foreach from=$data.is_new.cate_top item=item key=key name=cate_top}
+					{if $item.cate_id}
+					<a href='{url r="video#video_list" p="cate_id=$item.cate_id&jump_type=1"}'>{$item.title}</a>
+					{/if}
+				{/foreach}
+				</span>
+				<a href="{$data.is_new.is_new_more_url}" target="_blank" class="btn btn-default btn-circle view-more f-r">查看更多</a>
+			</div>
+		</h2>
+		<ul class="m-live-list clearfix">
+		{foreach from=$data.is_new.list item=item key=key name=is_new}
+			<li class="block-live">
+				<a href="{$item.video_url}" target="_blank">
+					<span class="block-live-img">
+						<img alt="{$item.title}" data-original="{$item.live_image}"  class="block-live-img lazy" />
+					</span>
+					<div class="block-live-info clearfix">
+						<div class="live-name clearfix">
+							<img alt="{$item.nick_name}" src="{$item.head_image}" class="avatar-normal" />
+							<p title="{$item.title}">{$item.title}</p>
+							<p class="sub f-l" title="{$item.nick_name}">{$item.nick_name}</p>
+							<span class="watch-num f-r"><i class="icon iconfont">&#xe60a;</i>{$item.watch_number}</span>
+						</div>
+					</div>
+				</a>
+			</li>
+		{foreachelse}
+			<p class="null-data">暂无数据</p>
+		{/foreach}
+			<div class="clear"></div>
+		</ul>
+		<div class="clear"></div>
+	</div><!-- 最新 end -->
+	
+	
+		{if $data.ad_list.2}
+		<div class="advertisement">
+			<a href="{$data.ad_list.2.url}" target="_blank">
+				<img src="{$data.ad_list.2.image}" alt="">
+			</a>
+		</div>
+		{/if}
+	{if $data.is_family_hot}
+	<!-- 家族热门直播 -->
+	<div class="m-live clearfix">
+		<h2 class="m-common-title">
+			<div class="container-fluid">
+				<i class="common-icon c-4"></i><strong>家族热门直播</strong>
+				<a href="{$data.is_family_hot_more_url}" target="_blank" class="btn btn-default btn-circle view-more f-r">查看更多</a>
+			</div>
+		</h2>
+		<ul class="m-live-list clearfix">
+			{foreach from=$data.is_family_hot item=item key=key name=is_family_hot}
+			<li class="block-live">
+				<a href="{$item.video_url}" target="_blank">
+					<span class="block-live-img">
+						<img alt="{$item.title}" data-original="{$item.live_image}"  class="block-live-img lazy" />
+					</span>
+					<div class="block-live-info clearfix">
+						<div class="live-name clearfix">
+							<img alt="{$item.nick_name}" src="{$item.head_image}" class="avatar-normal" />
+							<p title="{$item.title}">{$item.title}</p>
+							<p class="sub f-l" title="{$item.nick_name}">{$item.nick_name}</p>
+							<span class="watch-num f-r"><i class="icon iconfont">&#xe60a;</i>{$item.watch_number}</span>
+						</div>
+					</div>
+				</a>
+			</li>
+			{/foreach}
+			<div class="clear"></div>
+		</ul>
+		<div class="clear"></div>
+	</div>
+	{/if}
+</div>
+<script type="text/javascript">
+	var live_video = JSON.parse('<?php echo json_encode($this->_var["data"]["live_video"]); ?>');
+
+	var playerInfo = new Array();
+	for(var i in live_video){
+		if(live_video[i].live_in == 1){
+	   		playerInfo.push({
+			   "m3u8": live_video[i].play_hls,
+			   "flv": live_video[i].play_flv,
+			   "autoplay": true,
+			   "live": true,
+		   });
+
+		} else {
+	   		playerInfo.push({
+			   "flv": live_video[i].play_url,
+			   "mp4": live_video[i].play_mp4,
+			   "autoplay": true,
+			   "live": false,
+		   });
+
+		}
+	}
+</script>
+{include file="inc/footer.html"}

@@ -1,0 +1,52 @@
+
+<div class="user-r-title clearfix">
+    <div class="common-title f-l">
+        <span class="field">违规主播</span>
+    </div>
+<!--         <div class="block-font f-r">
+<span class="operation mr-20">标记为已读</span>
+<span class="operation">删除消息</span>
+</div> -->
+</div>
+<div class="user-r-content clearfix j-ajax-page">
+    <div class="search">
+        <input type="" name="" placeholder="请输入主播ID"><a href="javascript:void(0)" class="btn btn-primary btn-circle">搜索</a>
+    </div>
+    <table>
+        <thead>
+            <tr class="form-head">
+                <th>MOMOID</th>
+                <th>主播昵称</th>
+                <th>触犯违规类型</th>
+                <th>违规时间</th>
+                <th>处罚</th>
+            </tr>
+        </thead>
+        {if $data.list}
+        <tbody>
+       {foreach from=$data.list item=item key=key name=list}
+            <tr class="form-body">
+                <td class="content-font">{$item.user_id}</td>
+                <td class="content-font">{$item.nick_name}</td>
+                <td class="content-font">{$item.tipoff_type}</td>
+                <td class="content-font">{$item.create_date}</td>
+                <td class="content-font">{$item.remark}</td>
+            </tr>
+        {/foreach}
+        </tbody>
+        {else}
+        <tbody>
+            <tr>
+                <td colspan="8">
+                    <p class="null-data">暂无消息</p>
+                </td>
+            </tr>
+        </tbody>
+        {/if}
+    </table>
+    <div class="m-page clearfix">
+        <div class="m-page-con">
+        {$data.page}
+        </div>
+    </div>
+</div>

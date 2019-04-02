@@ -1,0 +1,75 @@
+.m-vip-card{
+	position:relative;
+	color:#ab8e63;
+	.vip-card-bg{
+		display:block;
+	}
+	.vip-card{
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		padding:0.6rem 0.9rem;
+		display:webket-flex;
+		display:flex;
+		flex-warp:warp;
+		flex-direction:column;
+		align-content:space-between;
+		align-self:center;
+	}
+	.vip-card-title{
+		display:webkit-flex;
+		display:flex;
+		justify-content:space-between;
+		font-size:0.5rem;
+		.sp-l{
+			display:webkit-flex;
+			display:flex;
+			line-height:1.3;
+			&:before{
+				content:'';
+				display:block;
+				background:url(../dist/statics/images/icon-vip.png) no-repeat;
+				background-size:contain;
+				width:0.75rem;
+				height:0.675rem;
+				margin-right:0.3rem;
+			}
+
+		}
+	}
+	.vip-card-content{
+		position:absolute;
+		text-align:center;
+		margin-top:1.5rem;
+		bottom:0.75rem;
+		left:0;
+		width:100%;
+		.logo{
+			width:3.5rem;
+			height:3.5rem;
+			margin:0 auto;
+			img{
+				width:100%;
+				height:100%;
+				border-radius:50%;
+			}
+		}
+		.name{
+			margin-top:0.75rem;
+			font-size:0.5rem;
+		}
+		.code{
+			font-size:0.8rem;
+		}
+	}
+}
+@media screen and (max-width: 320px) {
+	.m-vip-card .vip-card-content{
+		bottom:0.5rem;
+	}
+	.m-vip-card .vip-card-content .name{
+		margin-top:0.5rem;
+	}
+}

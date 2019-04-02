@@ -1,0 +1,434 @@
+@import (once) "public/variable.less";
+@import (once) "public/csstree.less";
+.container-fluid{
+    padding-left: 0;
+    padding-right: 0;
+    overflow: hidden;
+    .head-photo{
+        width: 120px;
+        height: 120px;
+        margin-right: 10px;
+        position: relative;
+        text-align: center;
+        overflow: hidden;
+        &:hover .block-change{
+            top: 0;
+            -webkit-transition: ease .3s;
+            -moz-transition: ease .3s;
+            -o-transition: ease .3s;
+            transition: ease .3s;
+        }
+        .block-change{
+            position: absolute;
+            top: -120px;
+            left: 0;
+            .change-bg{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 120px;
+                height: 120px;
+                background: #000;
+                filter:alpha(opacity=50);
+                -moz-opacity:0.5;
+                -khtml-opacity: 0.5;
+                opacity: 0.5;
+            }
+            .change-photo{
+                width: 70px;
+                position: absolute;
+                top:22px;
+                left: 27px;
+                cursor: pointer;
+                z-index: 99;
+                .iconfont{
+                    color:#fff;
+                    font-size: 40px;
+                }
+                & p{
+                    position: absolute;
+                    top:58px;
+                    left: 3px;
+                    color: #fff;
+                    font-size: @fs-middle;
+                    line-height: 16px;
+                    height: 16px;
+                }
+            }
+        }
+    }
+    .block-uc-info{
+        .block-uc-name{
+            & a {
+                margin-right: 5px;
+                line-height: 20px;
+                font-size: @fs-big;
+                color: @fcolor-title;
+            }
+            & em{
+                font-size: @fs-small;
+                color: @bgcolor-theme;
+                cursor: pointer;
+                .iconfont{
+                    font-size: 18px;
+                }
+            }
+        }
+        .block-user-level{
+            margin: 5px 0 20px 0;
+            .block-barline{
+                position: relative;
+                margin-left: 10px;
+                margin-top: 3px;
+                height: 10px;
+                .barline{
+                    position: relative;
+                    width: 500px;
+                    height: 10px;
+                    overflow: hidden;
+                    background: @bdcolor-input;
+                    .border-radius(5px);
+                    .line-color{
+                        width: 0;
+                        height: 10px;
+                        background: @bgcolor-theme;
+                        .border-radius(5px);
+                    }
+                }
+                .percent{
+                    position: absolute;
+                    top: -5px;
+                    font-size: @fs-main;
+                    color: @fcolor-light;
+                }
+            }
+        }
+        .btn-m{
+            padding: 6px 32px;
+            font-size: @fs-middle;
+            .border-radius(0px);
+        }
+    }
+}
+.m-common-item{
+    margin-top: 15px;
+    min-height: 150px;
+    .m-common-title{
+        border-bottom: 1px solid @bdcolor;
+        position: relative;
+        .field{
+            position: relative;
+            padding:0 28px 8px;
+            *padding: 0 28px 6px;
+            box-sizing: content-box;
+            -moz-box-sizing: content-box;
+            line-height: 40px;
+            font-size: 18px;
+            color: @fcolor-title;
+            font-weight: 500;
+            border-bottom: 2px solid @bgcolor-theme;
+        }
+    }
+    .common-content{
+        overflow: hidden;
+        .common-block{
+            width: 450px;
+            overflow: hidden;
+            background: @bgcolor;
+            .common-block-pd{
+                padding:20px;
+                .common-flied{
+                    font-size: @fs-main;
+                    color: @fcolor-title;
+                    font-weight: 500;
+                }
+                .common-number{
+                    font-size: @fs-main;
+                    .btn-s{
+                        padding: 2px 10px;
+                        .border-radius(0px);
+                    }
+                    .btn-green{
+                        background: #65dca6;
+                        color: #fff;
+                    }
+                    .number-fs{
+                        font-size: 15px;
+                    }
+                    & span{
+                        margin-right: 10px;
+                        color: @bgcolor-theme;
+                        font-size: @fs-main;
+                        font-weight: 600;
+                        .iconfont{
+                            margin-right: 5px;
+                            font-size: @fs-middle;
+                        }
+                    }
+                    & .bound{
+                        color:@color-green;
+                    }
+                    & em{
+                        color:@fcolor-lighter;
+                        margin-right: 15px;
+                    }
+                }
+                .block-img{
+                    &.checked{
+                        background:@color-green;
+                    }
+                    position: relative;
+                    width: 80px;
+                    height: 80px;
+                    .border-radius(3px);
+                    background: @bgcolor-deep;
+                    .iconfont{
+                        position: absolute;
+                        top:3px;
+                        left: 17px;
+                        font-size: 47px;
+                        color: #fff;
+                    }
+                }
+                .block-field{
+                    width: 320px;
+                    .block-title{
+                        margin-bottom: 7px;
+                    }
+                    .field-weight{
+                        font-size: @fs-main;
+                        color: #000;
+                        font-weight: bolder;
+                    }
+                    .common-sentence{
+                        font-weight: 600;
+                        line-height: 40px;
+                        color: @fcolor-title;
+                        font-size: @fs-small;
+                    }
+                    .strong-field{
+                        line-height: 20px;
+                        color: @fcolor-main;
+                        font-size: @fs-small;
+                    }
+                }
+                .adv-list{
+                    & li{
+                        position: relative;
+                        margin-left: 10px;
+                        width: 42%;
+                        float: left;
+                        font-size: @fs-small;
+                        color: @fcolor-lighter;
+                        .circle{
+                            position: relative;
+                            top:11px;
+                            left: -10px;
+                            margin-right: 5px;
+                            width: 4px;
+                            height: 4px;
+                            display: block;
+                            background-color: @fcolor-lighter;
+                            .border-radius(2px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.m-modify-name{
+    padding: 0 10px;
+    margin-top: -10px;
+    & .form-group{
+        & .control-label{
+            font-size: @fs-middle;
+            width: 80px;
+            margin: 0;
+            color: #909090;
+        }
+        & .control-content{
+            & span{
+                font-size: @fs-middle;
+                color:#909090;
+            }
+        }
+        & .form-control{
+            width: 248px;
+            padding: 6px 20px;
+            box-sizing : content-box; 
+            -moz-box-sizing : content-box;
+            border-radius: 50px;
+            height: 24px;
+            color: #909090;
+            font-size: @fs-middle;
+        }
+    }
+    & .submit-group{
+        padding-top: 4px;
+        & .btn-primary{
+            font-size: @fs-middle;
+            padding: 0 42px;
+            height: 38px;
+            line-height: 38px;
+            box-sizing : content-box; 
+            -moz-box-sizing : content-box;
+        }
+    }
+}
+.m-bind-prove{
+    padding: 0 0 0 10px;
+    margin-top: -10px;
+    .form-group{
+        padding: 0;
+        margin-bottom: 10px;
+        .control-label{
+            color: #909090;
+            font-size: @fs-middle;
+            display: block;
+            text-align: left;
+            float: none;
+        }
+    }
+    .form-info{
+        margin-bottom: 15px;
+        width: 100%;
+        height: 16px;
+        line-height: 16px;
+        .form-field{
+            margin-right: 10px;
+            width: 110px;
+            height: 16px;
+            line-height: 16px;
+            overflow: hidden;
+            white-space: nowrap;
+            & label{
+                font-weight: 500;
+                margin: 0;
+            }
+        }
+    }
+    .form-item{
+        width: 100%;
+        position: relative;
+        .block-label{
+            position: relative;
+            .warning{
+                position: absolute;
+                top: 2px;
+                right: 0;
+                line-height:30px;
+                color: @color-red;
+            }
+            & label{
+                margin-bottom: 0;
+            }
+            .card-type{
+                margin-bottom: 15px;
+                padding-left: 10px;
+                width: 350px;
+                height: 28px;
+                line-height:28px;
+                border: 1px solid @bdcolor-input;
+                border-radius: 2px 0 0 2px;
+                box-sizing: content-box;
+                -moz-box-sizing: content-box;
+                & option{
+                    line-height: 28px;
+                }
+            }
+            .input-info{
+                height: 26px;
+                font-size: @fs-main;
+                font-weight: normal;
+                &::-webkit-input-placeholder{
+                    font-weight:normal;
+                    font-size:14px;
+                    color:@bgcolor-deep;
+                }
+            }
+        }
+    }
+    .block-photo-list{
+        width: 376px;
+        margin-right: -20px;
+        .block-photo{
+            width: 112px;
+            text-align: center;
+            .photo{
+                width: 111px;
+                height: 111px;
+                background: url("../images/IDcard-add-photo.png") no-repeat;
+                cursor: pointer;
+                & img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .photo-note{
+                line-height: 34px;
+                font-size: @fs-main;
+                color: @fcolor-title;
+            }
+        }
+    }
+    .btn-primary{
+        margin: 40px 0 20px 115px;
+        padding: 0 40px;
+        line-height: 38px;
+        font-size: @fs-middle;
+    }
+}
+.m-modify-live{
+    margin-top: -2px;
+    & div{
+        margin-bottom: 18px;
+    }
+    & .modify-live-btn{
+        padding: 12px 0 0;
+        text-align: center;
+        margin-bottom: 10px;
+        & a{
+            padding:9px 46px;
+        }
+    }
+    & p{
+        font-size: @fs-main;
+        font-weight: bold;
+        text-align: left;
+        line-height: 14px;
+        margin-bottom: 8px;
+    }
+    & input{
+            width: 548px;
+            padding:6px 10px ;
+            border: 1px solid #cdcdcd;
+            box-sizing: content-box;
+            -moz-box-sizing: content-box;
+            border-radius: 5px;
+            -moz-box-shadow: inset 0px 1px 1px #f2f2f2;
+            -webkit-box-shadow: inset 0px 1px 1px #f2f2f2;
+            box-shadow: inset 0px 1px 1px #f2f2f2;
+            color: #6e6e6e;
+        }
+}
+//绑定手机弹窗样式
+.m-login {
+    & .block-login-content {
+        & .left{
+            border:0;
+            width: 300px;
+            & .btn-primary{
+                padding: 0 35px;
+            }
+        }
+    }
+    & .form-control{
+        width: 276px;
+    }
+    & .input-verify{
+        width: 166px;
+    }
+}

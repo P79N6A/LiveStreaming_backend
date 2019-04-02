@@ -1,0 +1,59 @@
+<div class="m-recharge">
+	<div ms-controller="pay_recharge" id="pay_recharge">
+		<div class="form-group form-vertical">
+			<label class="control-label" for="recharge_type">充值方式</label>
+			<div class="control-content control-content-auto">
+				{foreach from=$data.pay_list item=item key=key name=pay_list}
+				<div class="pay_type {if $smarty.foreach.pay_list.iteration eq 1}checked{/if}" title="{$item.name}" ms-click="@pay_type_checked">
+					<label class="pay-label">
+						<img src="{$item.logo}" class="pay-img" width="107" height="38" />
+						<input type="radio" name="pay_id" value="{$item.id}" {if $smarty.foreach.pay_list.iteration eq 1}checked="checked"{/if} class="pay-input" ms-duplex="@pay_id">
+					</label>
+				</div>
+				{/foreach}
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="form-group form-vertical">
+			<label class="control-label" for="money">充值金额</label>
+			<div class="control-content control-content-auto" style="width: 100%;">
+				<ul class="money-list">
+					{foreach from=$data.rule_list item=item key=key name=rule_list}
+					<li>
+						<label class="money-label {if $smarty.foreach.rule_list.iteration eq 1}checked{/if}" ms-click="@money_checked">
+							<span>{$item.money}元</span>
+							<input type="radio" name="rule_id" value="{$item.id}" {if $smarty.foreach.rule_list.iteration eq 1}checked="checked"{/if} class="pay-input" ms-duplex="@rule_id">
+						</label>
+						<span class="number-txt">(获得&nbsp;{$item.diamonds}&nbsp;秀豆)</span>
+					</li>
+					{/foreach}
+				</ul>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="form-group form-vertical">
+			<label class="control-label" for="other_money">其他金额</label>
+			<div class="control-content control-content-auto">
+				<input type="text" name="money" class="form-control f-l" ms-duplex="@money" ms-on-input="@is_other_money" onkeyup="amount(this);" placeholder="输入充值金额" />
+				<span class="number-txt f-l" style=" display: block; font-size: 14px;height: 30px; line-height: 30px;box-sizing: content-box; color: #b1aab1;">(获得&nbsp;<em id="other_diamond" ms-text="@other_diamond">0</em>&nbsp;秀豆)</span>
+			</div>
+			<div class="clear"></div>
+		</div>
+	 	<div class="submit-group t-c">
+		    <a href="javascript:void(0);" class="btn btn-primary" ms-click="@submit">去支付</a>
+  		</div>
+	</div>
+</div>
+<!-- 支付二维码 -->
+<div id="pay-qrcode-box">
+	<div id="pay-qrcode"></div>
+</div>
+<script type="text/javascript">
+	var ratio = '{$data.rate}';
+</script>
+<?php
+	$this->_var['dpagejs'][] = $this->_var['TMPL_REAL']."/dist/qrcode.js";
+	$this->_var['dpagejs'][] = $this->_var['TMPL_REAL']."/js/pay-recharge.js";
+	$this->_var['dcpagejs'][] = $this->_var['TMPL_REAL']."/js/pay-recharge.js";
+?>
+<script type="text/javascript" src="{function name="parse_script" v="$dpagejs" c="$dcpagejs"}"></script>

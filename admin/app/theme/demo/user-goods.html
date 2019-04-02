@@ -1,0 +1,46 @@
+{include file="inc/header.html"}
+<?php
+    $this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/user.css";
+    $this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/user-goods.css";
+?>
+<link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$dpagecss"}" />
+<div class="wrapper">
+    <div class="user-main bg-user-center mt-20 clearfix">
+        <!--左侧菜单区 -->
+        {include file="inc/inc-user-left.html"}
+        <!-- 右侧内容区 -->
+        <div class="layout-user-r">
+            <div class="user-r-main">
+                {include file="inc/inc-user-goods.html"}
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+$('#btn_add_goods').click(function(){
+    handleAjax.handle(APP_ROOT+"/index.php?ctl=user&act=add_goods&tmpl_pre_dir=inc", "", "html").done(function(result){
+        $.weeboxs.open(result, {title:"添加物品", animate:false, width:600, showButton:false, showCancel:false, showOk:false});
+    }).fail(function(err){
+        $.showErr(err);
+    });
+});
+
+function del_goods(id){
+    if(! id){
+        return;
+    }
+
+    $.showConfirm("确认移除该物品？",function(){
+        $.post(APP_ROOT+"/mapi/index.php?ctl=shop&act=del_goods&itype=app",{id:id}, function(res){
+            if(res.status){
+                $.showSuccess(res.error);
+                location.reload();
+            } else {
+                $.showErr(res.msg);
+            }
+        }, 'json');
+    });
+}
+
+</script>
+{include file="inc/footer.html"}

@@ -1,0 +1,258 @@
+执行日期：2019-02-08-02：39：31
+array (
+  0 => 'android',
+  1 => '5.1.9',
+  2 => '20190203',
+  3 => 'dalvik/1.6.0 (linux; u; android 4.4.2; oppo r11 build/nmf26x)',
+  4 => 'Android 2019-02-08 02:38:55 (user:99) errCode:-1 errMsg:login IM error because of null InitActModel',
+)
+
+执行日期：2019-02-08-02：39：31
+array (
+  0 => 'android',
+  1 => '5.1.9',
+  2 => '20190203',
+  3 => 'dalvik/1.6.0 (linux; u; android 4.4.2; oppo r11 build/nmf26x)',
+  4 => 'Android 2019-02-08 02:38:55 (user:99) errCode:-1 errMsg:login IM error because of null InitActModel',
+)
+
+执行日期：2019-02-08-02：40：56
+array (
+  0 => '/www/wwwroot/live/mapi/lib/login.action.php',
+  1 => 731,
+  2 => 'loginModule::qq_login',
+  3 => 
+  array (
+    'ret' => -22,
+    'msg' => 'openid is invalid',
+    'openid' => 'ECE9A6374D387A2E390A02DD34F02692',
+  ),
+)
+
+执行日期：2019-02-08-02：41：09
+array (
+  0 => '/www/wwwroot/live/mapi/lib/login.action.php',
+  1 => 731,
+  2 => 'loginModule::qq_login',
+  3 => 
+  array (
+    'ret' => -22,
+    'msg' => 'openid is invalid',
+    'openid' => 'ECE9A6374D387A2E390A02DD34F02692',
+  ),
+)
+
+执行日期：2019-02-08-02：41：15
+array (
+  0 => '/www/wwwroot/live/mapi/lib/login.action.php',
+  1 => 731,
+  2 => 'loginModule::qq_login',
+  3 => 
+  array (
+    'ret' => -22,
+    'msg' => 'openid is invalid',
+    'openid' => 'ECE9A6374D387A2E390A02DD34F02692',
+  ),
+)
+
+执行日期：2019-02-08-02：47：15
+array (
+  0 => 'android',
+  1 => '5.1.9',
+  2 => '20190203',
+  3 => 'dalvik/1.6.0 (linux; u; android 4.4.2; oppo r11 build/nmf26x)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-02-08-02：47：15
+array (
+  0 => 'android',
+  1 => '5.1.9',
+  2 => '20190203',
+  3 => 'dalvik/1.6.0 (linux; u; android 4.4.2; oppo r11 build/nmf26x)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-02-08-09：56：00
+array (
+  0 => 'android',
+  1 => '2.6.0',
+  2 => '2019012212',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; oppo r11st build/opm1.171019.011)',
+  4 => 'ctl=login,act=is_user_verifyjava.net.SocketException: Connection reset',
+)
+
+执行日期：2019-02-08-13：33：00
+array (
+  0 => '/www/wwwroot/live/mapi/lib/login.action.php',
+  1 => 731,
+  2 => 'loginModule::qq_login',
+  3 => 
+  array (
+    'ret' => -22,
+    'msg' => 'openid is invalid',
+    'openid' => 'BB640AE79ED55440BB9B4EADBAC7E291',
+  ),
+)
+
+执行日期：2019-02-08-13：33：10
+array (
+  0 => '/www/wwwroot/live/mapi/lib/login.action.php',
+  1 => 731,
+  2 => 'loginModule::qq_login',
+  3 => 
+  array (
+    'ret' => -22,
+    'msg' => 'openid is invalid',
+    'openid' => 'BB640AE79ED55440BB9B4EADBAC7E291',
+  ),
+)
+
+执行日期：2019-02-08-13：33：55
+array (
+  0 => '/www/wwwroot/live/mapi/lib/login.action.php',
+  1 => 731,
+  2 => 'loginModule::qq_login',
+  3 => 
+  array (
+    'ret' => -22,
+    'msg' => 'openid is invalid',
+    'openid' => 'BB640AE79ED55440BB9B4EADBAC7E291',
+  ),
+)
+
+执行日期：2019-02-08-13：34：55
+array (
+  0 => 'android',
+  1 => '5.1.9',
+  2 => '20190203',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.1.1; oppo a83 build/n6f26q)',
+  4 => 'ctl=mount,act=mount_rule_listcom.alibaba.fastjson.JSONException: exepct \'[\', but {, type : class com.fanwe.live.model.ShopModel',
+)
+
+执行日期：2019-02-08-13：34：55
+array (
+  0 => 'android',
+  1 => '5.1.9',
+  2 => '20190203',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.1.1; oppo a83 build/n6f26q)',
+  4 => 'ctl=mount,act=mount_rule_listcom.alibaba.fastjson.JSONException: exepct \'[\', but {, type : class com.fanwe.live.model.ShopModel',
+)
+
+执行日期：2019-02-08-13：39：10
+array (
+  0 => 'android',
+  1 => '5.1.9',
+  2 => '20190203',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.1.1; oppo a83 build/n6f26q)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-02-08-13：39：10
+array (
+  0 => 'android',
+  1 => '5.1.9',
+  2 => '20190203',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.1.1; oppo a83 build/n6f26q)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-02-08-13：39：12
+array (
+  0 => 'android',
+  1 => '5.1.9',
+  2 => '20190203',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.1.1; oppo a83 build/n6f26q)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-02-08-13：39：13
+array (
+  0 => 'android',
+  1 => '5.1.9',
+  2 => '20190203',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.1.1; oppo a83 build/n6f26q)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-02-08-13：39：35
+array (
+  0 => 'android',
+  1 => '5.1.9',
+  2 => '20190203',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.1.1; oppo a83 build/n6f26q)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-02-08-13：39：58
+array (
+  0 => 'android',
+  1 => '5.1.9',
+  2 => '20190203',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.1.1; oppo a83 build/n6f26q)',
+  4 => 'ctl=rank,act=consumptioncom.alibaba.fastjson.JSONException: 99999999999',
+)
+
+执行日期：2019-02-08-13：39：59
+array (
+  0 => 'android',
+  1 => '5.1.9',
+  2 => '20190203',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.1.1; oppo a83 build/n6f26q)',
+  4 => 'ctl=rank,act=consumptioncom.alibaba.fastjson.JSONException: 99999999999',
+)
+
+执行日期：2019-02-08-13：40：33
+array (
+  0 => 'android',
+  1 => '5.1.9',
+  2 => '20190203',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.1.1; oppo a83 build/n6f26q)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-02-08-16：11：14
+array (
+  0 => 'android',
+  1 => '5.1.9',
+  2 => '20190203',
+  3 => 'dalvik/2.1.0 (linux; u; android 6.0.1; mumu build/v417ir)',
+  4 => 'ctl=index,act=new_videojava.net.SocketTimeoutException: timeout',
+)
+
+执行日期：2019-02-08-16：11：15
+array (
+  0 => 'android',
+  1 => '5.1.9',
+  2 => '20190203',
+  3 => 'dalvik/2.1.0 (linux; u; android 6.0.1; mumu build/v417ir)',
+  4 => 'ctl=index,act=indexjava.net.SocketTimeoutException: failed to connect to zb.ylzb88.com/103.100.141.166 (port 80) after 15000ms',
+)
+
+执行日期：2019-02-08-21：47：33
+array (
+  0 => 'android',
+  1 => '2.6.0',
+  2 => '2019012212',
+  3 => 'dalvik/1.6.0 (linux; u; android 4.4.4; hm 2a miui/7.11.16)',
+  4 => 'ctl=app,act=initjava.net.SocketTimeoutException',
+)
+
+执行日期：2019-02-08-21：47：33
+array (
+  0 => 'android',
+  1 => '2.6.0',
+  2 => '2019012212',
+  3 => 'dalvik/1.6.0 (linux; u; android 4.4.4; hm 2a miui/7.11.16)',
+  4 => 'ctl=app,act=initjava.net.SocketTimeoutException',
+)
+
+执行日期：2019-02-08-21：49：54
+array (
+  0 => 'android',
+  1 => '2.6.0',
+  2 => '2019012212',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; vivo y85a build/opm1.171019.011)',
+  4 => 'Android 2019-02-08 21:49:20 errCode:70009 errMsg:login IM error Err_TLS_Third_Sig_Check_Public_Key_Decryption_Sig_Fail',
+)
+

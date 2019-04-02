@@ -1,0 +1,23 @@
+<style type="text/css">
+	#weixin_qrcode{
+		text-align:center;
+	}
+	#weixin_qrcode table{
+		margin:0 auto;
+	}
+</style>
+<div class="" id="weixin_qrcode"></div>
+<div class="blank15" ></div>
+<div class="" style="font-size:12px; text-align:left;"  >打开微信，点击底部的“发现”，使用“扫一扫”即可登录网站。</div>
+
+<script type="text/javascript">
+	var obj = new WxLogin({
+		id:"weixin_qrcode",
+		appid: "{$data.appid}", 
+		scope: "snsapi_login", 
+		redirect_uri: "{$data.back_url}",
+		state: "{$data.state}",
+		style: "",
+		href: ""
+    });
+</script>

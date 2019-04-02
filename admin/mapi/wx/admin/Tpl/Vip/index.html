@@ -1,0 +1,43 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<php>
+function createTime($time){
+	return date('Y-m-d H:i:s',$time);
+}
+function image($img){
+	return "<img src='".$img."' style='height:35px;'/>";
+}
+</php>
+
+<script>
+    //编辑跳转
+    function edit(id) {
+        location.href = ROOT+"?"+VAR_MODULE+"=Vip&"+VAR_ACTION+"=edit&id="+id;
+    }
+</script>
+<div class="main">
+<div class="main_title_list"><div class="list-line-ico"></div>VIP配置</div>
+	<html:list
+			id="dataTable"
+			style="dataTable"
+			name="course"
+			action="true"
+			datasource="list"
+			show="id:{%ID}
+			,name:VIP配置名称
+			,cost:价格（元）
+			,month:时长（月）
+            ,is_effect|get_is_effect=$course['id']:{%IS_EFFECT}"
+			actionlist="edit:编辑, del:{%DEL}" />
+            <table class="dataTable">
+                <tbody>
+                    <td colspan="11">
+                        <input type="button" class="button button-add" value="{%ADD}" onclick="edit(0);" />
+                    </td>
+                </tbody>
+            </table>
+<div class="blank5"></div>
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

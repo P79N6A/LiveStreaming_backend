@@ -1,0 +1,99 @@
+执行日期：2019-01-13-08：27：31
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.0.0; pro 6 plus build/nrd90m)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-13-08：27：31
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.0.0; pro 6 plus build/nrd90m)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-13-17：52：22
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'Android 2019-01-13 17:52:22 (user:66) viewer join im(335) error 10010,this group does not exist',
+)
+
+执行日期：2019-01-13-17：52：23
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'Android 2019-01-13 17:52:23 (user:66) viewer join im(335) error 10010,this group does not exist',
+)
+
+执行日期：2019-01-13-17：52：27
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'Android 2019-01-13 17:52:27 (user:66) viewer join im(333) error 10010,this group does not exist',
+)
+
+执行日期：2019-01-13-17：52：30
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'Android 2019-01-13 17:52:30 (user:66) viewer join im(333) error 10010,this group does not exist',
+)
+
+执行日期：2019-01-13-19：06：00
+array (
+  0 => 'android',
+  1 => '5.9.7',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9550 build/r16nw)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-13-19：06：00
+array (
+  0 => 'android',
+  1 => '5.9.7',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9550 build/r16nw)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-13-22：43：30
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; hwi-tl00 build/huaweihwi-tl00)',
+  4 => 'Android 2019-01-13 22:43:28 errCode:6023 errMsg:login IM error logout explicitly or kicked off by other device',
+)
+
+执行日期：2019-01-13-22：55：09
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.0.0; pro 6 plus build/nrd90m)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-13-22：55：09
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.0.0; pro 6 plus build/nrd90m)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+

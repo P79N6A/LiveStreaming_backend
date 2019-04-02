@@ -1,0 +1,37 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<div class="main">
+<div class="main_title_list"><div class="list-line-ico"></div>签到奖励</div>
+<html:list
+	id="dataTable"
+	style="dataTable"
+	name="dollcate"
+	checkbox="true"
+	action="true"
+	datasource="list"
+	show="id:{%ID}|50px
+	,day1_diamonds:首日签到奖励秀豆数
+	,day1_score:首日签到奖励积分数
+	,day2_diamonds:二日签到奖励秀豆数
+	,day2_score:二日签到奖励积分数
+	,day3_diamonds:三日签到奖励秀豆数
+	,day3_score:三日签到奖励积分数
+	,day4_diamonds:四日签到奖励秀豆数
+	,day4_score:四日签到奖励积分数
+	,day5_diamonds:五日签到奖励秀豆数
+	,day5_score:五日签到奖励积分数
+	,day6_diamonds:六日签到奖励秀豆数
+	,day6_score:六日签到奖励积分数
+	,day7_diamonds:七日签到奖励秀豆数
+	,day7_score:七日签到奖励积分数"
+	actionlist="edit:{%EDIT}" />
+	<table class="dataTable">
+		<tbody>
+			<td colspan="9">
+			</td>
+		</tbody>
+	</table>
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

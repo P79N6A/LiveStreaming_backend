@@ -1,0 +1,65 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<include file="Public:new" />
+<load href='__TMPL__Common/js/jquery.bgiframe.js' />
+<load href='__TMPL__Common/js/jquery.weebox.js' />
+<load href='__TMPL__Common/js/user.js' />
+<load href='__TMPL__Common/js/deal.js' />
+<load href='__TMPL__Common/style/weebox.css' />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<div class="main">
+    <div class="main_title_list"><div class="list-line-ico"></div>主播余粮报表</div>
+    <div class="search_row">
+        <form name="search" action="__APP__" method="get" class="clearfix">
+            <div>时间:
+            	<input type="text" class="textbox" name="begin_time" id="begin_time" onfocus="this.blur(); return showCalendar('begin_time', '%Y-%m-%d', false, false, 'btn_begin_time');" value="{$begin_time}"/>
+                <input type="button" class="button" id="btn_begin_time" value="{%SELECT_TIME}" onclick="return showCalendar('begin_time', '%Y-%m-%d', false, false, 'btn_begin_time');" />
+                <span>-</span> 
+                <input type="text" class="textbox" name="end_time" id="end_time" onfocus="this.blur(); return showCalendar('end_time', '%Y-%m-%d', false, false, 'btn_end_time');" value="{$end_time}" value="{$end_time}"/>
+                <input type="button" class="button" id="btn_end_time" value="{%SELECT_TIME}" onclick="return showCalendar('end_time', '%Y-%m-%d', false, false, 'btn_end_time');" />
+            </div>
+            <div>机构编号：<input type="text" class="textbox" name="login_name" value="{:trim($_REQUEST['login_name'])}">          </div>
+            <input type="hidden" value="BmPromoterBargain" name="m" />
+            <input type="hidden" value="index" name="a" />
+            <input type="submit" class="button" value="{%SEARCH}" />
+        </form>
+    </div>
+<html:list
+    id="dataTable"
+    style="dataTable"
+    name="user"
+    datasource="list"
+    show="p_login_name:鱼商编号
+    ,p_name:鱼商名称
+    ,promoter_ticket:所得礼物鱼粮
+    ,gain:鱼商游戏手续费
+    ,platform_gain:平台留存手续费
+    ,promoter_gain:鱼乐合伙人留存手续费
+    ,user_ticket:主播留存鱼粮
+    ,p_parent_login_name:所属鱼乐合伙人编号
+    "/>
+<div class="page">{$page}</div>
+</div>
+<script>
+	$("#dataTable").find("th a").each(function(){
+		if($.trim($(this).html())=='所得礼物鱼粮'||$.trim($(this).html())=='主播留存鱼粮'||$.trim($(this).html())=='鱼商游戏手续费'||$.trim($(this).html())=='平台留存手续费'||$.trim($(this).html())=='鱼乐合伙人留存手续费'||$.trim($(this).html())=='所属鱼乐合伙人编号')
+		{
+			$(this).parents("th").html($(this).html());
+		}
+	});
+	var html = '<tr class="row">'+
+            '	<td>合计</td>'+
+             '   <td></td>'+
+              '  <td>{$total_re.promoter_ticket}</td>'+
+               ' <td>{$total_re.gain}</td>'+
+                '<td>{$total_re.platform_gain}</td>'+
+                '<td>{$total_re.promoter_gain}</td>'+
+                '<td>{$total_re.user_ticket}</td>'+
+				'   <td></td>'+
+            '</tr>';
+	$("#dataTable").append(html);
+</script>
+<include file="Public:footer" />

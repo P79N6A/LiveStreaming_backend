@@ -1,0 +1,33 @@
+<style type="text/css">
+	.m-login .block-login-content .left .send-code.disabled{
+		background-color: #ECECEC;
+		color: #999;
+	}
+</style>
+<div class="m-login">
+	<div class="block-login-content clearfix">
+		<div class="left">
+			<form role="form" action="" id="j-form-loginmobile">
+				<div class="form-group form-vertical">
+					<label for="mobile" class="control-label">绑定手机号<span class="errortip"></span></label>
+					<div class="control-content control-content-auto">
+						<input id="mobile" type="text" :class="[@is_errorinput && 'errorinput']" class="form-control mb-20" name="mobile" placeholder="请输入您的手机号码" ms-duplex="@mobile" ms-blur="@check($event)" />
+						<div class="verify clearfix">
+							<input id="yzm" type="text" class="form-control input-verify f-l" name="verify_coder" placeholder="请输入验证码" ms-duplex="@verify_coder" />
+							<a :class="[@is_disabled && 'disabled']" class="send-code f-l" id="j-send-code" href="javascript:void(0)" ms-on-click="@send_code">发送验证码</a>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="submit-group t-c">
+					<a href="javascript:void(0)" class="btn btn-primary" ms-on-click="@bind">确定绑定</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<?php
+   	$this->_var['login_pagejs'][] = $this->_var['TMPL_REAL']."/js/bind-mobile.js";
+   	$this->_var['login_cpagejs'][] = $this->_var['TMPL_REAL']."/js/bind-mobile.js";
+?>
+<script type="text/javascript" src="{function name="parse_script" v="$login_pagejs" c="login_cpagejs"}"></script>

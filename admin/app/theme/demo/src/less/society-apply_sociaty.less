@@ -1,0 +1,198 @@
+@import (once) "public/variable.less";
+@import (once) "modules/m-form.less";
+.apply{
+	background: #fff;
+	padding: 50px 100px 20px;
+	.m-wrapper-top{
+		padding-bottom: 20px;
+		border-bottom:1px solid @bdcolor-deep; 
+		h3{
+			font-size: 20px;
+		}
+		p{
+			margin-top: 10px;
+			font-size: @fs-main;
+			color: @color-red;
+		}
+	}
+	.m-wrapper-content{
+		.tag-head-content{
+			margin-top:30px;
+			margin-bottom: 10px;
+		    
+		}
+		.tag-head {
+			    font-size: @fs-middle;
+			    position: relative;
+			    padding-left: 10px;
+			    font-weight: bolder;
+			    &:before {
+				    content: "";
+				    background-color: @bgcolor-theme;
+				    height: 19px;
+				    width: 3px;
+				    position: absolute;
+				    left: 0;
+				    top: 0;
+				    z-index: 100;
+				}
+			}
+		.star_submit {
+		    margin-bottom: 10px;
+		    	
+		    	.field_tittle {
+				    color: #595959;
+				    font-size: @fs-middle;
+				    width: 110px;
+				    text-align: center;
+				}
+				
+				
+		    }
+		    .submit-button{
+	    		padding-top:50px;
+	    		.star_btn_confirm, .star_btn_cancel {
+			    height: 40px;
+			    width: 100px;
+			    text-align: center;
+			    color: #FFF;
+			    font-size: @fs-middle;
+			    display: inline-block;
+			    -ms-touch-action: manipulation;
+			    touch-action: manipulation;
+			    cursor: pointer;
+			    -webkit-user-select: none;
+			    -moz-user-select: none;
+			    -ms-user-select: none;
+			    user-select: none;
+			    background-image: none;
+			    border: 1px solid transparent;
+			    border-radius: 1px;
+			}
+			.star_btn_confirm {
+			    background: @bgcolor-theme;
+			    margin-right: 10px;
+			}
+	    	}
+	    	.field_input {
+			    width: 500px;
+			    position: relative;
+			    float: left;
+			    .input-radio{
+			    	width: 500px;
+			    	.radio_input_wrap {
+					    float: left;
+					    margin-right: 30px;
+					}
+			    }
+			}
+			.file-idcard {
+			    width: 288px !important;
+			    margin: 0 10px;
+			    .upload_pic {
+				    background-color: #fafafa;
+				    border-radius: 1px;
+				    margin-right: 9px;
+				    height: 220px;
+				    width: 288px;
+				    overflow: hidden;
+				    .plus_icon{
+				    	background: url("../images/IDcard-add-photo.png") no-repeat;
+                		cursor: pointer;
+                		margin: 40px auto 15px;
+					    background-size: 100%;
+					    height: 60px;
+					    width: 60px;
+					    border-radius: 50px;
+					    background-size: cover;
+						filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/IDcard-add-photo.png',  sizingMethod='scale');
+				    }
+				    .plus_text {
+					    font-size: 18px;
+					    color: #666666;
+					    text-align: center;
+					    height: 20px;
+					    line-height: 20px;
+					}
+					.plus_subhead {
+					    font-size: 12px;
+					    color: #a9a9ab;
+					    text-align: center;
+					    line-height: 0;
+					    height: 20px;
+					    line-height: 20px;
+					}
+				}
+				.pic_container {
+				    position: absolute;
+				    top: 0;
+				    left: 0;
+				    img{
+				    	border: 0;
+				    }
+				}
+				.uploadimg_poster {
+				    position: absolute;
+				    top: 0;
+				    left: 0;
+				    filter:alpha(opacity=0); /* IE */  
+					-moz-opacity:0; /* 老版Mozilla */  
+					-khtml-opacity:0; /* 老版Safari */  
+					opacity: 0; /* 支持opacity的浏览器*/ 
+				    input{
+				    	width: 500px;
+				    	height: 500px;
+				    }
+				    input[type=file] {
+				    	display: block;
+					    width: 288px;
+					    height: 220px;
+					    opacity: 0;
+					    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+					}
+				}
+		}
+		.error_tips {
+		    font-size: 16px;
+		    color: red;
+		    margin-bottom: 50px;
+		    
+		}
+		.fw-form-group{
+			input[type=radio] {
+			    margin: 3px 5px 0 0;
+			    margin-top: 1px \9;
+			    line-height: normal;
+			    vertical-align: text-top;
+			}
+			.citys{
+				select{
+					width: 120px;
+					float: left;
+					margin-right: 20px;
+				}
+			}
+		}
+		.business_tips{
+			width: 288px;
+    		margin-left: 10px;
+		
+			.business{
+		    	font-size: 13px;
+			    line-height: 20px;
+			    color: @color-blue;
+		    }
+		}
+	    .J-agent{
+	    	display: none;
+	    }
+	    .J-bank_name,.J-bank_name1{
+	    	display: none;
+	    }
+	    .J-agent{
+	    	.m-wrapper-top{
+	    		margin-top: 30px;
+	    	}
+	    }
+	}
+}

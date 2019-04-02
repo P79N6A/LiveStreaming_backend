@@ -1,0 +1,39 @@
+<script type="text/javascript">
+    var ROOT = '{$APP_ROOT}/{$URL_NAME}';
+    var VAR_MODULE = "m";
+    var VAR_ACTION = "a";
+    var WEB_SESSION_ID = '<?php echo es_session::id(); ?>';
+    var EMOT_URL = '{$APP_ROOT}/public/emoticons/';
+    var MAX_FILE_SIZE =  '1024000b';
+    var UPLOAD_URL ='{$APP_ROOT}/m.php?m=PublicFile&a=do_upload&upload_type=1&dir=image';
+    var UPLOAD_SWF='{$TMPL}/js/plupload/Moxie.swf';
+    var UPLOAD_XAP='{$TMPL}/js/plupload/Moxie.xap';
+    var ALLOW_IMAGE_EXT= "gif,jpg,jpeg,png,bmp";
+    var MAX_IMAGE_SIZE= '1024000b';
+    var max_size = MAX_IMAGE_SIZE;
+    max_size  = max_size.substr(0, max_size.length - 1);
+    var max_size = parseInt(max_size)/1024/1000+'M';
+    function get_file_fun(name){
+        $("#"+name).ui_upload({
+            multi:false,
+            FilesAdded:function(){
+                $.showLoading("图片上传中");
+            },
+            FileUploaded:function(ajaxobj){
+                if(ajaxobj.state==200) {
+                     $("#"+name+"-url").val(ajaxobj.fullname);
+                    $("#"+name+"-image").attr('src',ajaxobj.fullname);
+                }else{
+                    $.showErr(ajaxobj.message);
+                }
+                $.hideLoading();
+            },Error:function(error){
+                if(error.code==-600){
+                    $.showErr("您上传的文件太大，最大允许上传"+max_size);
+                }else{
+                    $.showErr(error.message);
+                }
+            }
+        });
+    }
+</script>

@@ -1,0 +1,59 @@
+<div class="m-common-item">
+    <div class="m-common-title clearfix">
+        <span class="field f-l">我的消息</span>
+<!--         <div class="block-font f-r">
+    <span class="operation mr-20">标记为已读</span>
+    <span class="operation">删除消息</span>
+</div> -->
+    </div>
+    <div class="common-content mt-20 clearfix j-ajax-page">
+        <table>
+            <thead>
+                <tr class="form-head">
+                    <th width="13px" class="block-check">
+                        <!--<input type="checkbox" class="input-check">-->
+                    </th>
+<!--                     <th width="44px">
+    <i class="icon iconfont icon-gray">&#xe634;</i>
+</th> -->
+                    <th width="154px">发件人</th>
+                    <th width="528px">主题</th>
+                    <th width="145px">时间</th>
+                </tr>
+            </thead>
+            {if $data.list}
+            <tbody>
+            {foreach from=$data.list item=item key=key name=list}
+                <tr class="form-body" data-read="{$item.is_read}">
+                    <td class="block-check">
+                        <!--<input type="checkbox" class="input-check">-->
+                    </td>
+<!--                     <td>
+    <i class="icon iconfont {if $item.is_read eq '1'}icon-green{else if $item.is_read eq '0'}icon-orange{/if}">{if $item.is_read eq '1'}&#xe633;{else if $item.is_read eq '0'}&#xe634;{/if}</i>
+</td> -->
+                    <td>
+                        <img src="{$item.head_image}" alt="" class="img-circle">
+                        <span class="sender">{$item.send_user_name}</span>
+                    </td>
+                    <td><a class="content-font" href="{$item.url}">{function name="msubstr" v=$item.content b=0 e=40}</a></td>
+                    <td class="content-font">{function name="to_date" v=$item.send_time}</td>
+                </tr>
+            {/foreach}
+            </tbody>
+            {else}
+            <tbody>
+                <tr>
+                    <td colspan="4">
+                        <p class="null-data">暂无消息</p>
+                    </td>
+                </tr>
+            </tbody>
+            {/if}
+        </table>
+        <div class="m-page clearfix">
+            <div class="m-page-con">
+            {$data.page}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,136 @@
+/*界面主题色*/
+/*背景色*/
+/*背景色（深）*/
+/*模块背景色*/
+/*主题风格色*/
+/*主题辅助风格色*/
+/*字体颜色*/
+/*主要字色*/
+/*浅色*/
+/*更浅色（适用：二级标题、简介）*/
+/*更更浅色（适用：icon图标）*/
+/*标题*/
+/*字体大小*/
+/*线条颜色*/
+/*主要线条颜色*/
+/*更深线条颜色*/
+/*更浅线条颜色*/
+/*文本输入框边框颜色*/
+/*各类间距，高度*/
+/*横向间距*/
+/*纵向间距*/
+.page-course-vip .content-block {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 0.5rem;
+  background: #fff;
+}
+.page-course-vip .m-user {
+  padding: 0.625rem 0.5rem;
+}
+.page-course-vip .m-user .block-user {
+  display: -webkit-flex;
+  display: flex;
+}
+.page-course-vip .m-user .block-user .user-pic {
+  margin-right: 0.5rem;
+  width: 2.25rem;
+  height: 2.25rem;
+}
+.page-course-vip .m-user .block-user .user-pic img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5rem;
+}
+.page-course-vip .m-user .block-user .user-text .name {
+  color: #333;
+  line-height: 1.2rem;
+}
+.page-course-vip .m-user .block-user .user-text .txt {
+  color: #999;
+  line-height: 1.1rem;
+  font-size: 0.55rem;
+}
+.page-course-vip .m-vip-price {
+  padding: 0.5rem;
+}
+.page-course-vip .m-vip-price .vip-price {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.page-course-vip .m-vip-price .vip-price .vip-time {
+  color: #333;
+  line-height: 0.65rem;
+}
+.page-course-vip .m-vip-price .vip-price .vip-time p {
+  font-size: 0.55rem;
+  color: #999;
+  margin-top: 0.5rem;
+}
+.page-course-vip .m-vip-price .vip-price .vip-money {
+  font-size: 1.1rem;
+  color: #f1383f;
+}
+.page-course-vip .m-vip-price .vip-price .vip-money span {
+  font-size: 0.6rem;
+  margin-left: 0.1rem;
+}
+.page-course-vip .active {
+  position: relative;
+}
+.page-course-vip .active:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #f1383f;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+.page-course-vip .item-content {
+  padding: 0;
+}
+.page-course-vip .item-content .item-inner {
+  padding: 0.5rem;
+  background-position: calc(98%) center;
+  line-height: 1.4rem;
+  width: 100%;
+}
+.page-course-vip .item-content .item-inner .item-title i {
+  font-size: 1.4rem;
+  color: #58b64b;
+}
+.page-course-vip .item-content:last-child:after {
+  display: none;
+}
+.page-course-vip .card {
+  padding: 0.8rem 0.5rem;
+}
+.page-course-vip .card .card-header {
+  min-height: 0;
+  padding: 0;
+  margin-bottom: 0.3rem;
+}
+.page-course-vip .card .card-content .card-content-inner {
+  background-size: 100%;
+  width: 100%;
+  padding: 0;
+}
+.page-course-vip .card .card-content .card-content-inner * {
+  max-width: 100%;
+  height: auto;
+}
+.page-course-vip .card .card-content .card-content-inner img[src=""] {
+  opacity: 0;
+}
+.page-course-vip .m-button {
+  padding: 0 0.5rem;
+}

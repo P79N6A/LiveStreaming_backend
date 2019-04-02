@@ -1,0 +1,35 @@
+<div class="m-common-item m-common-list">
+	<div class="m-common-title clearfix">
+		<div class="common-title f-l">
+			<span class="field">黑名单</span>
+		</div>
+		
+		<div class="common-select f-r">
+			<a href="javascript:void(0);" class="supervise">解除黑名单</a>
+		</div>
+	</div>
+	<div class="common-content clearfix">
+		<div class="common-block mt-20 mr-20">
+			{if $data.user}
+			<ul class="common-block-list clearfix">
+			{foreach from=$data.user item=item key=key name=user}
+					<li class="block-list f-l">
+					<a href="javascript:void(0)" class="user-img">
+						<img src="{$item.head_image}" class="block-list-img">
+					</a>
+					<a href="javascript:void(0);" data-id="{$item.user_id}" class="btn-icon icon-cross j-remove-blacklist"><i class="icon iconfont">&#xe630;</i></a>
+					<p class="member-name">{$item.nick_name}</p>
+				</li>
+			{/foreach}
+			</ul>
+			{else}
+				<p class="null-data">暂无黑名单人员</p>
+			{/if}
+		</div>
+		<div class="m-page clearfix">
+			<div class="m-page-con">
+				{$data.page}   
+			</div>
+		</div>
+	</div>
+</div>

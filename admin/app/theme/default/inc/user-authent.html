@@ -1,0 +1,88 @@
+<div class="m-bind-prove" ms-controller="authent" id="authent">
+      <form action="">
+         <div class="form-group clearfix">
+             <label class="control-label">基本资料</label>
+         </div>
+         <div class="form-info clearfix">
+             <div class="form-field f-l clearfix">
+                 <label class="control-label control-field f-l" for="name">昵称：</label>
+                     <span title="{$user_info.nick_name}" style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{$user_info.nick_name}</span>
+             </div>
+             <div class="form-field f-l clearfix">
+                 <label class="control-label control-field f-l" for="sex">性别：</label>
+                     <span>{if $user_info.sex eq 1}男{elseif $user_info.sex eq 2}女{else}未知{/if}</span>
+             </div>
+         </div>
+         <div class="form-group clearfix">
+             <label class="control-label">信息认证</label>
+         </div>
+         <table class="form-item"> 
+             <tbody> 
+                <tr class="clearfix"> 
+                    <td class="block-label"> 
+                        <select name="authentication_type" ms-duplex="@data.authentication_type" class="card-type"> 
+                            {foreach from=$data.authent_list item=item key=key}
+                            <option value="{$item.name}">{$item.name}</option>
+                            {/foreach}
+                        </select> 
+                        <span class="warning">*</span> 
+                    </td> 
+                 </tr> 
+                 <tr class="clearfix"> 
+                     <td class="block-label"> 
+                         <label for=""> 
+                             <input type="text" placeholder="请输入您的真实姓名" ms-duplex="@data.authentication_name" class="card-type input-info"> 
+                         </label> 
+                         <span class="warning">*</span> 
+                     </td> 
+                 </tr> 
+                 <tr class="clearfix"> 
+                     <td class="block-label"> 
+                         <label for=""> 
+                             <input type="text" placeholder="请输入您的身份证号码" ms-duplex="@data.identify_number" class="card-type input-info"> 
+                         </label> 
+                         <span class="warning">*</span> 
+                     </td> 
+                 </tr> 
+                 <tr class="clearfix"> 
+                     <td class="block-label"> 
+                         <label for=""><input type="text" placeholder="请输入您的联系方式" ms-duplex="@data.contact" class="card-type input-info"></label> 
+                         <span class="warning">*</span> 
+                     </td> 
+                 </tr> 
+             </tbody>
+         </table>
+         <div class="form-group clearfix">
+            <label class="control-label">身份认证</label>
+         </div> 
+         <ul class="block-photo-list clearfix"> 
+            <li class="block-photo f-l"> 
+                <div class="photo" onclick='open_avatar_view(500,400,"identify_positive_image");'>
+                    <img src="" id="identify_positive_image" />
+                    <input type="hidden" name="identify_positive_image" ms-duplex="@data.identify_positive_image" />
+                </div> 
+                <div class="photo-note">身份证正面照</div> 
+            </li> 
+             <li class="block-photo ml-20 mr-20 f-l"> 
+                <div class="photo" onclick='open_avatar_view(500,400,"identify_nagative_image");'>
+                    <img src="" id="identify_nagative_image" />
+                    <input type="hidden" name="identify_nagative_image" ms-duplex="@data.identify_nagative_image" />
+                </div> 
+                <div class="photo-note">身份证反面照</div> 
+             </li> 
+             <li class="block-photo f-l"> 
+                 <div class="photo" onclick='open_avatar_view(500,400,"identify_hold_image");'>
+                    <img src="" id="identify_hold_image" />
+                    <input type="hidden" name="identify_hold_image" ms-duplex="@data.identify_hold_image" />
+                 </div> 
+                 <div class="photo-note">手持身份证反面照</div> 
+             </li> 
+         </ul> 
+         <a href="javascript:void(0);" class="btn btn-primary" ms-click="@submit">提交认证</a>
+      </form>
+</div>
+<?php
+    $this->_var['login_pagejs'][] = $this->_var['TMPL_REAL']."/js/user-authent.js";
+    $this->_var['login_cpagejs'][] = $this->_var['TMPL_REAL']."/js/user-authent.js";
+?>
+<script type="text/javascript" src="{function name="parse_script" v="$login_pagejs" c="login_cpagejs"}"></script>

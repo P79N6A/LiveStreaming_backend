@@ -1,0 +1,47 @@
+﻿{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<div class="main">
+<div class="main_title_list"><div class="list-line-ico"></div>采集列表</div>
+
+
+	<table class="dataTable">
+		<tbody>
+			<tr>
+                <td>序号</td>
+                <td>LOGO</td>
+                <td>名称</td>
+                <td>URL</td>
+                <td>操作</td>
+            </tr>
+            <?php foreach($data as $k=>$v){ ?>
+            <tr>
+                <td><?php echo $k+1 ?></td>
+                <td><img src="<?php echo $v['logourl'] ?>"  width="40" height="40" onerror="this.src='/public/images/live_img12.jpg'"/></td>
+                <td><?php echo $v['nickname'] ?></td>
+                <td><?php echo $v['play_url'] ?>
+                <td>
+
+<a href="{:U('VideoCollectnew/add_videofee',array('url'=>$v['play_url'],'logourl'=>$v['logourl'],'nickname'=>$v['nickname']))}" class="button">
+                加入收费直播
+                    </a>--------
+
+
+                <a href="{:U('VideoCollectnew/add_video',array('url'=>$v['play_url'],'logourl'=>$v['logourl'],'nickname'=>$v['nickname']))}" class="button">
+                加入直播
+                    </a>
+
+
+            </td>
+            </tr>
+
+
+               <?php }?>
+		</tbody>
+	</table>
+</div>
+
+<include file="Public:footer" />

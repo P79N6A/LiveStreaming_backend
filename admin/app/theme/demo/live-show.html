@@ -1,0 +1,475 @@
+{include file="inc/header.html"}
+<?php
+	$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/live-show.css";
+$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/live-lists.css";
+$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/index.css";
+$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/user-letter.css";
+$this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/js/jquery.timer.js";
+$this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/js/video-video_list.js";
+$this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/js/video-video_list.js";
+?>
+<link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$dpagecss"}" />
+{include file="inc/inc-videolist-left.html"}
+<div class="preload" style="position: relative; width: 100%; height: 660px;">
+	<div class="preload-main" style="position: absolute; width: 160px; height: 55px; line-height: 55px; text-align: center; top:50%; left:50%; background: rgba(0, 0, 0, 0.75);border-radius:30px;margin-left: -80px; margin-top: -22px;">
+		<img src="{$TMPL}/images/loading.gif" />
+	</div>
+</div>
+<div class="fullpage-container">
+	<div id="mainbody" class="mainbody">
+		<div class="live-room clearfix">
+			<div id="J-live-room-normal-left" class="live-room-normal-left f-l" style="position:relative;">
+				<div class="room-mes clearfix full_display_none">
+					<div class="avatar-pic avatar-biger f-l">
+                        <img src="{$data.podcast.user.head_image}"/>
+                    </div>
+                    <div class="relate-text f-l">
+                    	<div class="headline clearfix">
+                    		<span>{$data.room_title}</span>&nbsp;&nbsp;
+                    	</div>
+                    	<div class="tag-fs-con clearfix">
+                    		<span>#{$data.title}#</span>
+                    	</div>
+                    	<div class="acinfo-fs-con clearfix">
+                    		<span>
+                    			<i class="ui-grade grade-stars" data-grade="{$data.podcast.user.user_level}">{$data.podcast.user.user_level}</i>&nbsp;{$data.podcast.user.nick_name}
+                    		</span>
+                    		<span>
+                    			<i class="icon iconfont">&#xe642;</i>&nbsp;{$data.province}-{$data.city}
+                    		</span>
+                    		<span>
+                    			<i class="icon iconfont">&#xe645;</i>&nbsp;{$data.viewer_num}
+                    		</span>
+                    	</div>
+                    </div>
+                    <div class="btn-focus-group fr">
+						<ul class="clearfix">
+							<li ms-controller="focus">
+								<div class="focus-box" :css="{background: @data.color}">
+									<span class="btn-focus-j" :css="{background: @data.color}" :click="@follow" :html='@data.html'></span>
+									<span class="btn-focus-bar"></span>
+									<span class="btn-focus-num" :css="{background: @data.color}"><em ms-text="@data.num">0</em></span>
+								</div>
+							</li>
+							<li>
+								<div class="share-box">
+									<span class="btn-share-j">
+										<i class="icon iconfont">&#xe643;</i>&nbsp; 分享
+										<div class="pop-share-box">
+											<div class="box-null"></div>
+											<div class="pop-share-wrap">
+												<div class="pop-share-content clearfix">
+													<div class="pop-left f-l">
+														<div class="pop-share-title">呼唤小伙伴们前来围观吧</div>
+														<div class="bdsharebuttonbox">
+															<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+															<a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+															<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+														</div>
+													</div>
+													<div class="pop-right f-r">
+														<div class="down-ewm" id="qrcode"></div>
+														<p>微信扫码分享</p>
+													</div>
+													<script type="text/javascript">
+														window._bd_share_config={
+															"common":{
+																"bdSnsKey":{},
+																"bdText":"{$deal_info.name}",
+																"bdDesc":"{$deal_info.brief}",
+																"bdPic":"{$deal_info.image}",
+																"bdMini":"1",
+																"bdMiniList":false,
+																"bdStyle":"1",
+																"bdSize":"32"
+															},
+															"share":{},
+															"selectShare":{
+																"bdContainerClass":null,
+																"bdSelectMiniList":["tsina","sqq","qzone"]
+															}
+														};
+														with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+													</script>
+												</div>
+											</div>
+										</div>
+									</span>
+								</div>
+							</li>
+							<li>{if $data.podcast.user.id eq $user_info.id  && $data.live_in eq 1 && $data.room_type eq 1}<a href="javascript:void(0);"class="feedback-report-button" onclick="pop_friend_list('{$data.room_id}')">邀请好友</a>{/if}</li>
+							<li ms-controller="tipoff">
+								{if $data.podcast.user.id != $user_info.id && $data.live_in neq 0 }
+								<a class="feedback-report-button" title="举报该房间" href="javascript:void(0);" ms-click="@tipoff('{$data.room_id}')">
+									<i class="icon iconfont">&#xe644;</i> 举报
+								</a>
+								{elseif $data.live_in eq 2}
+								<a class="feedback-report-button" title="获取推流码" href="javascript:pop_live();">推流码</a>
+								{else}
+								<a class="feedback-report-button" title="我要直播" href="javascript:pop_live();">我要直播</a>
+								{/if}
+							</li>
+							{if $data.podcast.user.id != $user_info.id}
+							<li ms-controller="send-letter">
+								{if $user_info.id}
+								<a class="send-letter" title="发私信" href="javascript:void(0);" ms-click="@show_letter()">
+									<i class="icon iconfont">&#xe641;</i> 发私信
+								</a>
+								{else}
+								<a class="send-letter" title="发私信" href="javascript:void(0);" onclick="login();">
+									<i class="icon iconfont">&#xe641;</i> 发私信
+								</a>
+								{/if}
+							</li>
+							{/if}
+							<div class="clear"></div>
+						</ul>
+                    </div>
+				</div>
+				<!-- 视频区 -->
+				<div class="room-video" id="js-room-video">
+					<div id="main-video"></div>
+					<div id="float-video-liwu" class="float-video" style="position:absolute; top:0; left:0;">
+						<object id="liwu" name="liwu" type="application/x-shockwave-flash" data="/public/flash/liwu.swf" width="100%" height="100">
+							<param name="movie" value="/public/flash/liwu.swf"/>
+							<param name="wmode" value="transparent"/>
+							<param name="quality" value="high"/>
+							<param name="allowscriptaccess" value="always"/>
+						</object>
+					</div>
+					{if ($data.live_in neq 1 && $data.play_url eq '') || $data.is_live_pay eq 1 || $data.status eq 0}
+					<!-- 推荐直播（直播不存在） -->
+					<div id="float-video-null" class="float-video" style="margin-top: -160px;">
+						<div class="float-video-main">
+							{if $data.is_live_pay eq 1}
+							<p class="float-video-title">本房间为付费直播，下载 APP 观看或者去其他直播间打个酱油把！</p>
+							{else}
+							<p class="float-video-title">{if $data.status eq 0 && $data.error  neq ''&& $data.error neq '未发现有效的直播房间0'}{$data.error}{else}Oh , No! 本房间的主播正在赶来的路上，先去其他直播间打个酱油把！{/if}</p>
+							{/if}
+							<div class="m-live">
+								<ul class="m-live-list clearfix">
+								{foreach from=$data.is_recommend item=item key=key name=is_recommend}
+									<li class="block-live">
+										<a href="{$item.video_url}">
+											<span class="block-live-img">
+												<img alt="{$item.title}" src="{$item.live_image}" class="block-live-img lazy" />
+											</span>
+											<div class="block-live-info clearfix">
+												<div class="live-name clearfix">
+													<img alt="{$item.nick_name}" src="{$item.thumb_head_image}" class="avatar-normal" />
+													<p title="{$item.title}">{$item.title}</p>
+													<p class="sub f-l" title="{$item.nick_name}">{$item.nick_name}</p>
+													<span class="watch-num f-r"><i class="icon iconfont">&#xe60a;</i>{$item.watch_number}</span>
+												</div>
+											</div>
+										</a>
+									</li>
+								{/foreach}
+								</ul>
+							</div>
+							<div class="t-r" style="margin-right:20px;">
+								<a href='{url r="index#index"}' style="color:#c5c5c5;">>>返回首页</a>
+							</div>
+							<div class="t-c">
+								<a href='{url r="app_download#index"}' target="_blank" class="btn btn-primary">下载{$app_name}APP</a>
+								<!-- <p class="mt-10">开启开播提醒，精彩不再错过</p> -->
+							</div>
+						</div>
+					</div>
+					{else}
+					<div id="float-video-loading" class="float-video" style="margin-top:-125px;">
+						<div class="float-video-main">
+							<img src="/public/images/live_loading.gif" />
+						</div>
+					</div>
+					<div id="float-video-mask" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
+					{/if}
+					<div id="float-video-goods" class="float-video" style="margin-top: -180px; z-index: 999;">
+						<div class="m-recommend" style="width: 760px; margin: 0 auto;">
+							<div class="block-recommend">
+								<i class="iconfont recommend-close">&#xe646;</i>
+								<div class="group-recommend">
+									<div class="recommend-title">
+										<span class="title">本期主播推荐商品</span>
+									</div>
+									<div class="recommend-inner" id="m-recommend-scroll">
+	                                    <div class="block-inner">
+	                                        {include file="inc/modules/m-recommend-goods.html"}
+	                                    </div>
+										<div class="nav">
+											<ul></ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 礼物区 -->
+				<div id="js-stats-and-actions" class="stats-and-actions">
+					<div class="stats-and-actions-main" style="background-color: #fff; width: 100%;height: 100%;">
+						<!-- 主播推荐商品 -->
+						<div class="give-gift f-l" style="width:10%;">
+							<a href="javascript:void(0);" title="" class="person-recommend" style="display:none;">
+								<img src="{$TMPL}/images/zbtj.png" alt="">
+							</a>
+							<div class="clear"></div>
+						</div>
+						<!-- 发送礼物 -->
+						<div class="give-gift f-r" style="width:90%">
+							{if $data.is_live_pay neq 1}
+							{if $pc_is_open_recharge eq 1}
+							<a href="javascript:void(0);" class="recharge f-r" onclick="pop_recharge();">
+								<p>充值</p>
+							</a>
+							{/if}
+							<div class="gift-list f-r clearfix" id="J-gift-scroll">
+								<div class="hd">
+									<a class="next"></a>
+									<a class="prev"></a>
+								</div>
+								<div class="bd">
+									{foreach from=$data.prop_list item=item name=item_name key=key}
+									<div class="gift-block f-r">
+										<a href="javascript:void(0);" title="{$item.name}" class="gift J-send-gift J-gift-modal-show" id="gift-{$item.id}" prop-id="{$item.id}">
+											<img src="{$item.icon}"/>
+										</a>
+									</div>
+									{/foreach}
+								</div>
+							</div>
+							{/if}
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="gift-modal-box">
+					{foreach from=$data.prop_list item=item name=item_name key=key}
+					<div class="gift-modal J-gift-modal-show gift-modal-{$item.id}">
+						<div class="gift-details">
+							<div class="gift-img f-l">
+								{if $item.pc_gif}
+								<img src="{$item.pc_gif}" alt="{$item.name}">
+								{else}
+								<img src="{$item.icon}" alt="{$item.name}">
+								{/if}
+							</div>
+							<div class="gift-inner f-l">
+								<p class="gift-title">
+									<span class="gift-name">{$item.name}</span>
+									<span class="gift-price">{$item.diamonds}</span>
+								</p>
+								<p class="gift-desc">贡献值+{$item.ticket}、经验值+{$item.score}</p>
+								<p class="gift-feedback">赠送{$item.name}</p>
+								<a href="javascript:void(0)" prop-id="{$item.id}" class="btn btn-primary J-send-gift">点击赠送</a>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					{/foreach}
+				</div>
+			</div>
+			<div class="live-room-normal-right f-l">
+				<!--直播公告-->
+				<div class="m-notice">
+					<i class="icon iconfont">&#xe60e;</i>
+					<span class="notice-title">直播公告:</span>
+					{foreach from=$data.listmsg item=item}
+					<span>{$item.desc}</span>
+					{/foreach}
+				</div>
+				<div class="chat">
+					<!-- 粉丝贡献榜 -->
+					<div id="J-fans-rank" class="m-fans-rank">
+						<div class="fans-title hd">
+							<a href="javascript:void(0);" class="J-one active">本次贡献榜</a>
+							<a href="javascript:void(0);">累计贡献榜</a>
+						</div>
+						<div class="fans-content bd J-fans-con">
+							<ul class="J-fans-b"></ul>
+							<ul class="J-fans-z"></ul>
+						</div>
+					</div>
+					<!-- 聊天室 -->
+					<div id="J-chat-cont" class="m-chat-cont" style="height:599px;">
+						<div class="chat-cont-wrap" data-type="chat-cont">
+							<ul class="c-list" data-type="c-list" id="video_sms_list"></ul>
+						</div>	
+						<div class="m-chat-gift">
+							<div class="j-chat-gift">
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<!-- 发送消息区 -->
+					<div id="J-chat-speak" class="m-chat-speak">
+						<div class="layout-operate" ms-controller="chat_operate" id="vm_chat_operate">
+							<div class="barrage f-l ">
+								<i :class="[@is_add && 'active']" class="icon iconfont mr-5 J-barrage" title="开启弹幕" ms-click="@addBarrage">&#xe63b;</i>
+								<i :class="[!(@is_add) && 'active']" class="icon iconfont J-barrage" title="关闭弹幕" ms-click="@closeBarrage">&#xe63c;</i>
+							</div>
+							<div class="barrage f-r">
+								<i class="icon mr-5 iconfont J-clear-chart" title="清屏">&#xe63e;</i>
+								<i class="icon iconfont J-rock-chart" title="关闭滚屏">&#xe63d;</i>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="chat-speak-group">
+							<textarea id="input-chat-speak" placeholder="快和大家一起聊天吧~~" class="input-chat-speak"></textarea>
+							{if (!$user_info.id && $tourist_chat eq 0 )|| $data.live_in eq '' || $data.is_live_pay eq 1 ||$data.live_in eq 0 || $data.live_in eq 2 || $data.status eq 0}
+							<a href="javascript:return false;"onclick="return false;" title="发送" style="cursor: default;" class="btn-speak-error"><i class="edit">发送</i></a>
+							{else}
+							<a href="javascript:void(0);" class="btn-speak">发送</a>
+							{/if}
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<!--图片广告-->
+		{if $data.ad_list}
+		<div class="ban">
+			{foreach from=$data.ad_list item=item key=key name=ad_list}
+			<a href="{$item.url}" target="_blank" class="banner-t f-l .mt-10">
+				<img src="{$item.image}" alt="">
+			</a>
+			{/foreach}
+			<div class="clear"></div>
+		</div>
+		{/if}
+		<!-- 推荐视频 -->
+		<div class="m-live clearfix full_display_none">
+			<h2 class="m-common-title">
+				<div class="container-fluid">
+					<i class="common-icon c-3"></i><strong>推荐</strong>
+					<a href="{$data.is_recommend_more_url}" target="_blank" class="btn btn-default btn-circle view-more f-r">查看更多</a>
+				</div>
+			</h2>
+			{if $data.is_recommend}
+			<ul class="m-live-list clearfix">
+				{foreach from=$data.is_recommend item=item key=key name=is_recommend}
+				<li class="block-live">
+					<a href="{$item.video_url}">
+					<span class="block-live-img">
+						<img alt="{$item.title}" data-original="{$item.live_image}" class="block-live-img lazy" />
+					</span>
+						<div class="block-live-info clearfix">
+							<div class="live-name clearfix">
+								<img alt="{$item.nick_name}" src="{$item.thumb_head_image}" class="avatar-normal" />
+								<p title="{$item.title}">{$item.title}</p>
+								<p class="sub f-l" title="{$item.nick_name}">{$item.nick_name}</p>
+								<span class="watch-num f-r"><i class="icon iconfont">&#xe60a;</i>{$item.watch_number}</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				{/foreach}
+				<div class="clear"></div>
+			</ul>
+			{else}
+			<p class="null-data">暂无数据</p>
+			{/if}
+			<div class="clear"></div>
+		</div><!-- 最新 end -->
+	</div>
+</div>
+<div id="chat_panel" style="position: absolute; left: -999px;">{include file="inc/user-letter_chat.html"}</div>
+<?php
+	$this->_var['dpagejs'][] = $this->_var['TMPL_REAL']."/sdk/json2.js";
+	$this->_var['dcpagejs'][] = $this->_var['TMPL_REAL']."/sdk/json2.js";
+	$this->_var['dpagejs'][] = $this->_var['TMPL_REAL']."/sdk/webim.js";
+	$this->_var['dcpagejs'][] = $this->_var['TMPL_REAL']."/sdk/webim.js";
+	$this->_var['dpagejs'][] = $this->_var['TMPL_REAL']."/js/emotions.js";
+	$this->_var['dcpagejs'][] = $this->_var['TMPL_REAL']."/js/emotions.js";
+	$this->_var['dpagejs'][] = $this->_var['TMPL_REAL']."/js/im-message.js";
+	$this->_var['dcpagejs'][] = $this->_var['TMPL_REAL']."/js/im-message.js";
+	$this->_var['dpagejs'][] = $this->_var['TMPL_REAL']."/js/live-show.js";
+	$this->_var['dcpagejs'][] = $this->_var['TMPL_REAL']."/js/live-show.js";
+?>
+{if ($data.live_in == 0 || $data.live_in == 3) && $data.play_url}
+<script src="//qzonestyle.gtimg.cn/open/qcloud/video/h5/h5connect.js"></script>
+<script type="text/javascript">
+var playerInfo = {
+	"remember": 1,
+	"stretch_patch": true,
+	"auto_play": 1,
+	"WMode": "Opaque",
+	"disable_full_screen": 1,
+	"third_video": {
+		"urls": JSON.parse('<?php echo json_encode($this->_var["data"]["urls"]) ?>')
+	}
+};
+</script>
+{elseif $data.live_in == 1 && $data.play_hls && $data.play_flv}
+<script src="//qzonestyle.gtimg.cn/open/qcloud/video/live/h5/live_connect.js"></script>
+<script type="text/javascript">
+var playerInfo = {
+	"live_url": "{$data.play_hls}",
+	"live_url2": "{$data.play_flv}",
+	"disable_full_screen": 1,
+	"WMode": "Opaque",
+	"h5_start_patch": {
+		"url": "{$data.head_image}",
+		"stretch": false,
+	}
+};
+</script>
+{/if}
+<script type="text/javascript">
+var roomId = '{$data.id}';
+var podcast = {
+	user_id: '{$data.podcast.user.id}',
+	head_image: '{$data.podcast.user.head_image}',
+	nick_name: '{$data.podcast.user.nick_name}'
+};
+var podcastUserId = '{$data.podcast.user.id}';
+var avChatRoomId = '{$data.group_id}';
+var child_id = '{$data.child_id}';
+
+{if $data.podcast.has_focus}
+var focusInfo = {
+	"has_focus": true,
+	"color":'#bbb',
+	"html":'已关注',
+	"num": parseInt("{$data.podcast.user.fans_count}")
+};
+{else}
+var focusInfo = {
+	"has_focus": false,
+	"color":'#00DFB2',
+	"html":'关注',
+	"num": parseInt("{$data.podcast.user.fans_count}")
+};
+{/if}
+var live_in = '{$data.live_in}';
+	var is_live_pay='{$data.is_live_pay}';
+	var user_id='{$user_info.id}'
+</script>
+<script type="text/javascript" src="{$TMPL}/dist/qrcode.js"></script>
+<script type="text/javascript">
+    window.onload =function(){
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            width : 75, //设置宽高
+            height : 75
+        });
+		qrcode.makeCode("./wap/index.php?ctl=share&act=live&user_id={$data.user_id}&video_id={$data.id}");
+    }
+
+
+
+</script>
+{if $tourist_chat eq 1}
+<script>
+	loginInfo.identifierNick = '游客'+'{$data.tourist.tourist_id}';
+    loginInfo.identifier ='0';
+    loginInfo.head_image = '{$data.tourist.tourist_head_image}';
+    loginInfo.level = '{$data.tourist.tourist_level}';
+</script>
+{/if}
+<script>
+	jQuery("#J-gift-scroll").slide({mainCell:".bd",autoPage:true,effect:"left",autoPlay:false,vis:10,scroll:10,trigger:"click",delayTime:700,pnLoop:false});
+</script>
+<script type="text/javascript" src="{function name="parse_script" v="$dpagejs"}"></script>
+{include file="inc/footer.html"}

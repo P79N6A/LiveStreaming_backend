@@ -1,0 +1,31 @@
+执行日期：2019-02-07-03：56：48
+array (
+  0 => 'android',
+  1 => '2.6.0',
+  2 => '2019012212',
+  3 => 'dalvik/2.1.0 (linux; u; android 9; neo-al00 build/huaweineo-al00)',
+  4 => 'Android 2019-02-07 03:56:14 errCode:70009 errMsg:login IM error Err_TLS_Third_Sig_Check_Public_Key_Decryption_Sig_Fail',
+)
+
+执行日期：2019-02-07-07：50：21
+array (
+  0 => 'android',
+  1 => '2.6.0',
+  2 => '2019012212',
+  3 => 'dalvik/2.1.0 (linux; u; android 5.1.1; vivo x6s a build/lmy47v)',
+  4 => 'Android 2019-02-07 07:49:47 errCode:70009 errMsg:login IM error Err_TLS_Third_Sig_Check_Public_Key_Decryption_Sig_Fail',
+)
+
+执行日期：2019-02-07-13：08：09
+array (
+  0 => '/www/wwwroot/live/system/libs/user.php',
+  1 => 355,
+  2 => 'save_user',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorInfo' => 'Err_TLS_PT_Open_Login_Invalid_Http_Body_Nick',
+    'ErrorCode' => 70402,
+  ),
+)
+

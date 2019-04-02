@@ -1,0 +1,31 @@
+{include file="inc/header.html"}
+<div class="content">
+    <div class="list-block">
+        <ul>
+            {if $data.list}
+            {foreach from=$data.list item=item}
+            <li class="item-content">
+                <div class="item-inner">
+                    <div class="item-title">
+                        <p class="order-name">预约余老师：{$item.title}</p>
+                        <p class="order-time">{$item.create_time}</p>
+                    </div>
+                    <div class="item-after active">{if $item.status eq 0}待审核{elseif $item.status eq 1}已约见{elseif $item.status eq 2}拒绝约见{else}取消约见{/if}</div>
+                </div>
+            </li>
+            {/foreach}
+            {else}
+            <li class="item-content">
+                <div class="item-inner">
+                    <div class="item-title">
+                        <p class="order-name">暂无数据</p>
+                        <p class="order-time"></p>
+                    </div>
+                    <div class="item-after active"></div>
+                </div>
+            </li>
+            {/if}
+        </ul>
+    </div>
+</div>
+{include file="inc/footer.html"}

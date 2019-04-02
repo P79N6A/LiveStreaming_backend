@@ -1,0 +1,113 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<load href='__TMPL__Common/js/conf.js' />
+<script type="text/javascript" src="__ROOT__/public/region.js"></script>
+<load href='__TMPL__Common/js/user_edit.js' />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<div class="main">
+<div class="main_title">添加管理</div>
+<div class="blank5"></div>
+<form name="edit" action="/madmin.php?m=User&a=adduser" method="post" enctype="multipart/form-data" onsubmit="return submit_check();">
+<table class="form conf_tab" cellpadding=0 cellspacing=0 >
+	<tr>
+		<td colspan=2 class="topTd"></td>
+	</tr>
+
+	<tr>
+		<td class="item_title">昵称:</td>
+		<td class="item_input"><input type="text" name="nick_name" class="textbox" value="{$vo.nick_name}"  /></td>
+	</tr>
+
+	<tr>
+		<td class="item_title">名称:</td>
+		<td class="item_input"><input type="text" name="user_name_reg" class="textbox" value="{$vo.user_name_reg}"  /></td>
+	</tr>
+
+	<tr>
+		<td class="item_title">手机号:</td>
+		<td class="item_input"><input type="text" name="mobile" class="textbox" value="{$vo.nick_name}"  /></td>
+	</tr>
+	<tr>
+		<td class="item_title">密码:</td>
+		<td class="item_input"><input type="text" name="user_pwd" class="textbox" value="{$vo.nick_name}"  /></td>
+	</tr>
+
+	<tr>
+		<td class="item_title">推荐人ID:</td>
+		<td class="item_input"><input type="text" name="parent_id" class="textbox" value="{$user_id}" readonly /></td>
+	</tr>
+
+
+	<!--<tr>
+		<td class="item_title">级别:</td>
+		<td class="item_input">
+			<volist name="user_iden" id="vo" key="k">
+				<label>{$vo['name']}<input <if condition="$k eq 1">checked</if> type="radio" name="user_iden_id" value="{$vo['id']}"></label>
+			</volist>
+		</td>
+	</tr>-->
+
+
+	<tr>
+		<td colspan=2 class="bottomTd"></td>
+	</tr>
+</table>
+
+<script>
+
+    function submit_check(){
+
+
+		if($("[name='nick_name']").val()==''){
+			alert("请输入昵称");
+			return false;
+		}
+		if($("[name='mobile']").val() == ''){
+			alert("请输入手机号");
+			return false;
+		}
+
+
+		if($("[name='user_pwd']").length() < 6){
+			alert("请输入最少6位数密码");
+			return false;
+		}
+
+        if($("[name='parent_id']") == ''){
+            alert("请输入推荐人id");
+            return false;
+        }
+        if($("[name='user_iden_id']:checked").val() == ''){
+            alert("请选择类型");
+            return false;
+        }
+
+        return true;
+    }
+</script>
+<div class="blank5"></div>
+	<table class="form" cellpadding=0 cellspacing=0>
+		<tr>
+			<td colspan=2 class="topTd"></td>
+		</tr>
+		<tr>
+			<td class="item_title"></td>
+			<td class="item_input">
+			<!--隐藏元素-->
+			<input type="hidden" name="{:conf("VAR_MODULE")}" value="User" />
+			<input type="hidden" name="{:conf("VAR_ACTION")}" value="adduser_save" />
+			<!--隐藏元素-->
+			<input type="submit" class="button" value="保存" />
+			<input type="reset" class="button" value="{%RESET}" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 class="bottomTd"></td>
+		</tr>
+	</table>
+</form>
+</div>
+<include file="Public:footer" />

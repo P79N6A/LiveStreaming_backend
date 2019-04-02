@@ -1,0 +1,35 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<div class="main">
+<div class="main_title_list"><div class="list-line-ico"></div>签到列表</div>
+<div class="blank10"></div>
+<php>
+	function get_prop($prop_id)
+	{
+		$prop  = load_auto_cache('prop_id', array('id'=>$prop_id));
+		return isset($prop['name'])?$prop['name']:'';
+	}
+</php>
+<html:list
+	id="dataTable"
+	style="dataTable"
+	name="item"
+	checkbox="true"
+	action="true"
+	datasource="list"
+	show="id:{%ID}
+	,name:签到标题,day:第几天,prop_id|get_prop:道具,num:奖励数量,is_effect|get_is_effect=$item['id']:{%IS_EFFECT}"
+	actionlist="edit:编辑,foreverdel:删除" />
+	<table class="dataTable">
+		<tbody>
+			<td colspan="5">
+				<input type="button" class="button button-add" value="{%ADD}" onclick="add();" /><input type="button" class="button button-del" value="{%DEL}" onclick="foreverdel();" />
+
+			</td>
+		</tbody>
+	</table>
+<div class="blank5"></div>
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

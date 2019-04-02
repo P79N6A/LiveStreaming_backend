@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{:app_conf("SITE_NAME")}{:l("ADMIN_PLATFORM")}</title>
+<script type="text/javascript" src="__ROOT__/public/runtime/admin/lang.js"></script>
+<script type="text/javascript">
+	var version = '{:app_conf("DB_VERSION")}';
+</script>
+<load href='__TMPL__Common/style/style.css' />
+<load href='__TMPL__Common/style/main.css' />
+	<load href='__TMPL__Common/js/jquery.js' />
+
+</head>
+
+<body>
+
+
+<!--
+	新版开始
+-->
+<div class="main">
+	<div class="main_title">
+		<!--{:conf("APP_NAME")}{:l("ADMIN_PLATFORM")} {%HOME}-->
+		<table width=100%>
+			<tr>
+				<td align=left>{$greet}   {%APP_VERSION}:{:conf("DB_VERSION")}</td>
+				<td align=right></td>
+			</tr>
+		</table>
+	</div>
+	<div class="notify_box">
+		<table>
+
+			<!--<tr>
+                <td align="center"  colspan ="4">
+                    <div style="font-size:13px; background-color:#f8f9fb; height:40px;line-height: 40px; ">
+                        <span class="bx"><PHP> echo to_date(get_gmtime());</PHP></span> 数据实时指标
+                    </div>
+
+                </td>
+            </tr>-->
+            <tr>
+
+
+                <td class="statbox event_box" style="padding: 12px 10px 0;">
+                    <table>
+                        <tr>
+                            <th>会员信息</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="row">
+                                    <span class="t">编号：</span><span class="bx">{$user['id']}</span>
+                                    <div class="blank0"></div>
+                                </div>
+                                <div class="row">
+                                    <span class="t">名称：</span><span class="bx">{$user['user_name_reg']}</span>
+                                    <div class="blank0"></div>
+                                </div>
+                            </td>
+
+                        </tr>
+                    </table>
+                </td>
+
+
+
+
+
+
+
+
+                <td class="statbox tuan_box">
+                    <table>
+                        <tr>
+                            <th>会员统计</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                
+                                <div class="row">
+                                    <span class="t">今日注册：</span>
+                                    <span class="bx">{$count_reg_user}</span>
+                                    <div class="blank0"></div>
+                                </div>
+                                <div class="row">
+                                    <span class="t">今日充值 ：</span>
+                                    <span class="bx">{$pay_sum}</span>
+                                    <div class="blank0"></div>
+                                </div>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+
+            </tr>
+
+
+
+
+
+            <tr>
+
+                <td class="statbox tuan_box">
+                    <table>
+                        <tr>
+                            <th>修改密码</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <form action="/madmin.php?m=Index&a=index_password_edit" method="post">
+                                    <div class="row">
+                                        <span class="t">原&nbsp;&nbsp;&nbsp;密&nbsp;&nbsp;&nbsp;码：</span>
+                                        <span class="bx">
+                                            <input name="curr_password" >
+                                        </span>
+                                        <div class="blank0"></div>
+                                    </div>
+                                    <div class="row">
+                                        <span class="t">新&nbsp;&nbsp;&nbsp;密&nbsp;&nbsp;&nbsp;码：</span>
+                                        <span class="bx">
+                                            <input name="new_password" >
+                                        </span>
+                                        <div class="blank0"></div>
+                                    </div>
+                                    <div class="row">
+                                        <span class="t">确认新密码：</span>
+                                        <span class="bx">
+                                            <input name="new_password_conf" >
+                                        </span>
+                                        <div class="blank0"></div>
+                                    </div>
+                                    <div class="row">
+                                        <span class="t"></span>
+                                        <span class="bx">
+                                            <input type="submit" value="提交">
+                                        </span>
+                                        <div class="blank0"></div>
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+
+                    </table>
+                </td>
+
+                <if condition="$user['user_iden_id'] eq  1">
+                <td class="statbox tuan_box">
+                    <table>
+                        <tr>
+                            <th>我的二维码</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="{$user['qrcode_pic']}" style="width: 100px;">
+                            </td>
+                        </tr>
+
+                    </table>
+                </td>
+                </if>
+
+            </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</table>
+	</div>
+	<div class="blank5"></div>
+
+    <script type="text/javascript">
+	var nav_json_data = JSON.parse('<php>echo json_encode($navs);</php>');
+	loadModule();
+	$("#J_nav").change(function(){
+		loadModule();
+	});
+	$("#J_m").change(function(){
+		loadAction();
+	});
+	function loadModule(){
+		var nav =$("#J_nav").val();
+		var html = "";
+		$.each(nav_json_data,function(i,v){
+			if(i==nav){
+				$.each(v.groups,function(ii,vv){
+					html += '<option value="'+ii+'">'+vv.name+'</option>';
+				});
+			}
+		});
+
+		$("#J_m").html(html);
+		loadAction();
+	}
+
+	function loadAction(){
+		var nav =$("#J_nav").val();
+		var m =  $("#J_m").val();
+		var a_html = '<option value="">请选择</option>';
+		$.each(nav_json_data,function(i,v){
+			if(i==nav){
+				$.each(v.groups,function(ii,vv){
+					if(ii==m){
+						$.each(vv.nodes,function(iii,vvv){
+							a_html += '<option value="'+vvv.action+'" module="'+vvv.module+'">'+vvv.name+'</option>';
+						});
+					}
+				});
+			}
+		});
+
+		$("#J_a").html(a_html);
+	}
+
+	$("#J_a").change(function(){
+		if($.trim($(this).val())!=""){
+			location.href = ROOT + '?m='+$(this).find("option:selected").attr("module")+'&a='+$(this).val();
+		}
+	})
+</script>
+</body>
+</html>

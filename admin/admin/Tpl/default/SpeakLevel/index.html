@@ -1,0 +1,41 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<div class="main">
+<div class="main_title_list"><div class="list-line-ico"></div>会员等级</div>
+<php>
+	function level_scope_fn($level_scope){
+		return "<spang>".$level_scope."</spang>";
+	}
+
+	function colour_fn($colour){
+		if($colour){
+			return "<input type='color' name='colour' value=".$colour." disabled='disabled' />";
+		}else{
+			return "<input type='color' name='colour' value='#000000' disabled='disabled' />";
+		}
+	}
+</php>
+<div class="blank10"></div>
+
+	<html:list
+		id="dataTable"
+		style="dataTable"
+		name="speakLevel"
+		checkbox="true"
+		action="true"
+		datasource="list"
+		show="id:{%ID},level_scope|level_scope_fn=$speakLevel['level_scope']:等级范围,colour|colour_fn=$speakLevel['colour']:进场底色,speak_num:发言字数,name:坐骑,mount_day:赠送天数"
+		actionlist="edit:{%EDIT}, del:{%DEL}" />
+
+	<table class="dataTable">
+		<tbody>
+			<td colspan="6">
+				<input type="button" class="button button-add" value="{%ADD}" onclick="add();" />
+				<input type="button" class="button button-del" value="{%DEL}" onclick="del();" />
+			</td>
+		</tbody>
+	</table>
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

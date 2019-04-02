@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{:app_conf("SITE_NAME")}{:l("ADMIN_PLATFORM")}</title>
+<script type="text/javascript" src="__ROOT__/public/runtime/admin/lang.js"></script>
+<script type="text/javascript">
+	var version = '{:app_conf("DB_VERSION")}';
+</script>
+<load href='__TMPL__Common/style/style.css' />
+<load href='__TMPL__Common/style/main.css' />
+	<load href='__TMPL__Common/js/jquery.js' />
+    <load href='__TMPL__Common/js/ichart.1.2.min.js' />
+
+</head>
+
+<body>
+
+
+<!--
+	新版开始
+-->
+<div class="main">
+    <div class="main_title_list"  style="text-align: left;"><div class="list-line-ico"></div>后台概况</div>
+    <div class="blank10"></div>
+	<div class="notify_box">
+		<table>
+			<tr>
+				<td class="statbox tuan_box" style="padding:12px 10px 0">
+					<table>
+						<tr>
+							<th>待办事项</th>
+						</tr>
+						<tr>
+							<td>
+								<div class="row">
+					                <span class="t">分享审核：</span>
+									<span class="bx"><a href="{:u("Share/index",array("audit_status"=>0))}" <if condition="$share_count eq 0">style="color:#000000;"</if>>{$share_count}</a></span>
+									<div class="blank0"></div>
+								</div>
+								<div class="row">
+					                <span class="t">提问老余：</span>
+									<span class="bx"><a href="{:u("Question/index",array("is_answered"=>0))}" <if condition="$question_count eq 0">style="color:#000000;"</if>>{$question_count}</a></span>
+									<div class="blank0"></div>
+								</div>
+								<div class="row">
+					                <span class="t">预约老余：</span>
+									<span class="bx"><a href="{:u("Date/index")}" <if condition="$date_count eq 0">style="color:#000000;"</if>>{$date_count}</a></span>
+									<div class="blank0"></div>
+								</div>
+                                <div class="row">
+                                    <span class="t">会员反馈：</span>
+                                    <span class="bx"><a href="{:u("Feedback/index")}" <if condition="$feedback_count eq 0">style="color:#000000;"</if>>{$feedback_count}</a></span>
+                                    <div class="blank0"></div>
+                                </div>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td class="statbox tuan_box">
+					<table>
+                        <tr>
+                            <th>用户概况</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="row">
+                                    <span class="t">累计会员数/人：</span>
+                                    <span class="bx">
+                                        <a href="{:u("UserGeneral/index")}" <if condition="$user_count eq 0">style="color:#000000;"</if>>{$user_count}</a>
+                                    </span>
+                                    <div class="blank0"></div>
+                                </div>
+                               <div class="row">
+                                    <span class="t">累计付费会员数/人：</span>
+                                    <span class="bx"><a href="{:u("UserGeneral/index",array("member_type"=>3))}" <if condition="$pay_user_count eq 0">style="color:#000000;"</if>>{$pay_user_count}</a></span>
+                                    <div class="blank0"></div>
+                                </div>
+                                <div class="row">
+                                    <span class="t">今日会员登陆数/人：</span>
+                                    <span class="bx">
+                                        <a href="{:u("UserGeneral/index")}" <if condition="$login_user_count eq 0">style="color:#000000;"</if>>{$login_user_count}</a>
+                                    </span>
+                                    <div class="blank0"></div>
+                                </div>
+                                <div class="row">
+                                    <span class="t">今日新增会员数/人：</span>
+                                    <span class="bx">
+                                        <a href="{:u("UserGeneral/index")}" <if condition="$new_user_count eq 0">style="color:#000000;"</if>>{$new_user_count}</a>
+                                    </span>
+                                    <div class="blank0"></div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+				</td>
+
+			
+			</tr>
+			<tr>
+                <td align="center"  colspan ="4">
+                    <div style="font-size:13px;padding-left: 10px; background-color:#f8f9fb; height:40px;line-height: 40px; text-align: left;">
+                        会员近7天走势：
+                    </div>
+                </td>
+            </tr>
+            <tr style="border: none;">
+                <td align="center"  colspan ="4" style="border: none;">
+                    <div style="padding-left: 10px;" id='canvasDiv'></div>
+                </td>
+            </tr>
+            <tr>
+                <td align="center"  colspan ="4">
+                    <div style="font-size:13px;padding-left: 10px; background-color:#f8f9fb; height:40px;line-height: 40px; text-align: left;">
+                        账户信息：
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan ="4" class="statbox tuan_box"  style="padding-left: 12px;text-align: center;">
+                    <table>
+                        <tr>
+                            <td>管理员账号</td>
+                            <td>{$adm_session.adm_name}</td>
+                        </tr>
+                        <tr>
+                            <td>管理员组</td>
+                            <td>{$adm_session.role_name}</td>
+                        </tr>
+                        <tr>
+                            <td>最后登录时间</td>
+                            <td>{$adm_session.login_time}</td>
+                        </tr>
+                        <tr>
+                            <td>最后登录IP地址</td>
+                            <td>{$adm_session.login_ip}</td>
+                        </tr>
+                        <tr>
+                            <td>登录次数</td>
+                            <td>{$adm_session.login_count}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+		</table>
+	</div>	
+	<div class="blank5"></div>
+	
+    <script type="text/javascript">
+        $(function(){
+            var value = eval('<?php echo json_encode($char_data);?>');
+            var date_arr = new Array();
+            var login_arr = new Array();
+            var reg_arr = new Array();
+            for (var i = 0; i < value.length; i++) {
+                date_arr[i] = value[i]['time'];//日期数组
+                login_arr[i] = parseInt(value[i]['login_count']);//新增问题数数组
+                reg_arr[i] = parseInt(value[i]['reg_count']);//新增回答数数组
+            }
+
+            var data_user = [
+                {
+                    name : '当日会员',
+                    color:'#FFA52C',
+                    line_width:3,
+                    value:login_arr
+                },
+                {
+                    name : '当日会员新会员',
+                    color:'#1AFF9C',
+                    line_width:3,
+                    value:reg_arr
+                }
+            ];
+
+            var chart = new iChart.LineBasic2D({
+                render : 'canvasDiv',
+                data: data_user,
+                title : '',
+                width : 800,
+                height : 400,
+                tip:{
+                    enable:true,
+                    shadow:true,
+                    move_duration:400,
+                    border:{
+                        enable:true,
+                        radius : 5,
+                        width:2,
+                        color:'#3f8695'
+                    },
+                    listeners:{
+                        //tip:提示框对象、name:数据名称、value:数据值、text:当前文本、i:数据点的索引
+                        parseText:function(tip,name,value,text,i){
+                            return name+":"+value;
+                        }
+                    }
+                },
+                legend : {
+                    enable : true,
+                    row:1,//设置在一行上显示，与column配合使用
+                    column : 'max',
+                    valign:'top',
+                    sign:'bar',
+                    background_color:null,//设置透明背景
+                    offsetx:-80,//设置x轴偏移，满足位置需要
+                    border : true
+                },//在标题下显示不同数据的颜色区别
+                coordinate:{
+                    width:640,
+                    height:240,
+                    axis:{
+                        color:'#dcdcdc',
+                        width:1
+                    },
+                    scale:[{
+                        position:'left',
+                        start_scale:0,
+                        scale_size:2,
+                        scale_color:'#9f9f9f'
+                    },{
+                        position:'bottom',
+                        labels:date_arr
+                    }]
+                },
+                crosshair:{
+                    enable:true,
+                    line_color:'#62bce9'//十字线的颜色
+                },
+                sub_option:{
+                    hollow_inside:false,//设置一个点的亮色在外环的效果
+                    point_size:16
+                }
+            });
+            chart.draw();
+
+        });
+
+	var nav_json_data = <php>echo json_encode($navs);</php>;
+	loadModule();
+	$("#J_nav").change(function(){
+		loadModule();
+	});
+	$("#J_m").change(function(){
+		loadAction();
+	});
+	function loadModule(){
+		var nav =$("#J_nav").val();
+		var html = "";
+		$.each(nav_json_data,function(i,v){
+			if(i==nav){
+				$.each(v.groups,function(ii,vv){
+					html += '<option value="'+ii+'">'+vv.name+'</option>';
+				});
+			}
+		});
+		
+		$("#J_m").html(html);
+		loadAction();
+	}
+	
+	function loadAction(){
+		var nav =$("#J_nav").val();
+		var m =  $("#J_m").val();
+		var a_html = '<option value="">请选择</option>';
+		$.each(nav_json_data,function(i,v){
+			if(i==nav){
+				$.each(v.groups,function(ii,vv){
+					if(ii==m){
+						$.each(vv.nodes,function(iii,vvv){
+							a_html += '<option value="'+vvv.action+'" module="'+vvv.module+'">'+vvv.name+'</option>';
+						});
+					}
+				});
+			}
+		});
+	
+		$("#J_a").html(a_html);
+	}
+	
+	$("#J_a").change(function(){
+		if($.trim($(this).val())!=""){
+			location.href = ROOT + '?m='+$(this).find("option:selected").attr("module")+'&a='+$(this).val();
+		}
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{if $data.page_title neq ''}{$data.page_title}{else}{if $data.share}{$data.share.share_title}{/if}{/if}</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="wap-font-scale" content="no">
+    {if $data.share}
+    <meta name="description" itemprop="description" content="{$data.share.share_desc}" />
+    {/if}
+    <?php
+        $this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/dist/frames/sui-mobile/sm.min.css";
+        $this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/dist/frames/sui-mobile/sm-extend.min.css";
+        $this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/dist/frames/weui/weui.css";
+        $this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/dist/frames/animate.min.css";
+        $this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/dist/statics/css/main.min.css";
+        $this->_var['pagejs'][] = $this->_var['TMPL_REAL']."/dist/frames/sui-mobile/zepto.min.js";
+        $this->_var['pagejs'][] = $this->_var['TMPL_REAL']."/dist/frames/zepto.picLazyLoad.min.js";
+        $this->_var['pagejs'][] = $this->_var['TMPL_REAL']."/dist/frames/vue/vue.min.js";
+        $this->_var['pagejs'][] = $this->_var['TMPL_REAL']."/dist/frames/echarts.simple.min.js";
+        $this->_var['pagejs'][] = $this->_var['TMPL_REAL']."/dist/statics/js/public.min.js";
+    ?>
+    <link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$pagecss"}" />
+    <script src="{function name="parse_script" v="$pagejs"}"></script>
+    <script src="//at.alicdn.com/t/font_9a5gqqjgo86ywrk9.js"></script>
+    <script type="text/javascript">
+        var APP_ROOT = '{$APP_ROOT}';
+        var TMPL = '{$JSTMPL}';
+        $.config = {router: false};
+    </script>
+  </head>
+  <body>
+    <div class="page-group">
+        <div class="page page-current page-{$ctl}-{$act}" id="page-{$ctl}-{$act}">

@@ -1,0 +1,82 @@
+.m-common-title{
+	height:60px;
+	line-height:60px;
+	border-bottom: 1px solid @bdcolor;
+	font-size: @fs-big;
+	color: @fcolor-title;
+	overflow: hidden;
+	& .common-icon{
+		width: 34px;
+		height: 35px;
+		float: left;
+		background: url(../images/iconall.png) no-repeat;
+	}
+	& .c-1{
+		background-position: 0px 5px;
+	}
+	& .c-2{
+		background-position: 0px -104px;
+	}
+	& .c-3{
+		background-position: 0px -175px;
+	}
+	& .c-4{
+		background-position: 0px -210px;
+	}
+	& .c-5{
+		background-position: 0px -65px;
+	}
+	& .c-6{
+		background-position: 0px -30px;
+	}
+	& .c-7{
+		background-position: 0px -140px;
+	}
+	& .c-8{
+		background-position: 0px -245px;
+	}
+	& .topic{
+		font-size: @fs-small;
+		color:@fcolor-lighter;
+		float: left;
+		margin-top: 18px;
+		& a{
+			color: #000;
+            height: 24px;
+            font-size: 14px;
+            display: block;
+            text-align: center;
+            line-height: 24px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border: 1px solid #d7d7d7;
+            border-radius: 4px;
+            margin-right: 5px;
+            float: left;
+            &:hover{
+                background:#ff803b;
+                color:#fff;
+                border-color:#ff803b;
+            }
+            &.active{
+                background:#ff803b;
+                color:#fff;
+                border-color:#ff803b;
+            }
+		}
+	}
+	& strong{
+		float:left;
+		padding: 0 5px;
+		font-weight: 500;
+		font-size: 25px;
+	}
+	& .view-more{
+		margin-top:13px;
+		padding: 6px 23px;
+		&:hover{
+			background: @bgcolor-theme;
+			border:1px solid @bgcolor-theme;
+		}
+	}
+}

@@ -1,0 +1,56 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<include file="Public:new" />
+<load href='__TMPL__Common/js/jquery.bgiframe.js' />
+<load href='__TMPL__Common/js/jquery.weebox.js' />
+<load href='__TMPL__Common/js/user.js' />
+<load href='__TMPL__Common/js/deal.js' />
+<load href='__TMPL__Common/style/weebox.css' />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<php>
+	function get_coin($is_coin)
+    {
+   		if($is_coin == 1)
+        {
+        	return "游戏币礼物";
+        }
+        else
+        {
+        	return "秀豆礼物";
+        }
+    }
+</php>
+<div class="main">
+    <div class="main_title_list"><div class="list-line-ico"></div>会员账户报表</div>
+    <div class="search_row">
+        <form name="search" action="__APP__" method="get" class="clearfix">
+            <div>会员ID:<input type="text" class="textbox" name="user_id" value="{:trim($_REQUEST['user_id'])}"></div>
+            <div>机构编号：<input type="text" class="textbox" name="login_name" value="{:trim($_REQUEST['login_name'])}">          </div>
+            <div>业务员ID:<input type="text" class="textbox" name="bm_qrcode_id" value="{:trim($_REQUEST['bm_qrcode_id'])}"></div>
+            <input type="hidden" value="BmUserAccount" name="m" />
+            <input type="hidden" value="index" name="a" />
+            <input type="submit" class="button" value="{%SEARCH}" />
+        </form>
+    </div>
+    汇总：<span style="padding-right:10px;">游戏币 {$total_coins} </span><span style="padding-right:10px;">秀豆 {$total_diamonds} </span>
+    <br/>
+    <br/>
+<html:list
+    id="dataTable"
+    style="dataTable"
+    name="user"
+    datasource="list"
+    show="id:会员ID
+    ,nick_name:会员名称
+    ,coin:剩余游戏币
+    ,diamonds:剩余秀豆
+    ,login_name:所属鱼商编号
+    ,bm_promoter_id:所属代理商编号
+    ,bm_qrcode_id:所属业务员ID
+    "/>
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

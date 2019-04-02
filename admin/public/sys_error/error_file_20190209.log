@@ -1,0 +1,39 @@
+执行日期：2019-02-09-10：33：28
+array (
+  0 => 'android',
+  1 => '2.6.0',
+  2 => '2019012212',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.0; m5 note build/nrd90m)',
+  4 => 'ctl=login,act=send_mobile_verifyerrorCode: 404, msg: Not Found, result: <html>
+<head><title>404 Not Found</title></head>
+<body>
+<center><h1>404 Not Found</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>',
+)
+
+执行日期：2019-02-09-10：33：31
+array (
+  0 => 'android',
+  1 => '2.6.0',
+  2 => '2019012212',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.0; m5 note build/nrd90m)',
+  4 => 'ctl=login,act=send_mobile_verifyerrorCode: 404, msg: Not Found, result: <html>
+<head><title>404 Not Found</title></head>
+<body>
+<center><h1>404 Not Found</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>',
+)
+
+执行日期：2019-02-09-12：26：01
+array (
+  0 => 'android',
+  1 => '2.6.0',
+  2 => '2019012212',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; vivo y83a build/o11019)',
+  4 => 'Android 2019-02-09 12:25:26 errCode:70009 errMsg:login IM error Err_TLS_Third_Sig_Check_Public_Key_Decryption_Sig_Fail',
+)
+

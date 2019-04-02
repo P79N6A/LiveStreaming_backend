@@ -1,0 +1,66 @@
+{include file="inc/header.html"}
+<div id="vscope-question_detail">
+	<div class="content">
+		<div class="content-block">
+			<h3 class="f15">{$data.title}</h3>
+			<p class="block-center">{$data.content}</p>
+			<p class="block-after">共{$data.reply_count}条记录</p>
+		</div>
+		{if $data.answer_list}
+		<div class="content-block m-comment">
+			{if $data.reply_count != 0}
+			<div class="block-praise">
+				<i class="iconfont">&#xe95f;</i>
+				<span v-html="praise_count"></span>
+			</div>
+			{/if}
+			<div class="list-block cards-list">
+		      	<ul>
+					{foreach from=$data.answer_list item=item key=key name=answer_list}
+		        	<li class="card">
+		          		<div class="card-header no-border reply">
+		          			<em>{$item.answer_user_name}</em>回复<em>{$item.question_user_name}</em>
+<!-- 							<span class="header-text">{$item.v_explain}</span> -->
+						</div>
+					    <div class="card-content no-border">
+					      	<div class="card-content-inner">{$item.content}</div>
+					    </div>
+				    	<div class="card-footer no-border">
+				    		<span class="time">{$item.create_time}</span>
+				    		<!-- <i class="iconfont">&#xe95f;</i> -->
+				    		{if $data.question_user_id eq $user_info.id}
+								{if $item.answer_user_name neq $user_info.nick_name}
+								<span>
+									<a @click="pop_comment({$item.id})">回复</a>&nbsp;&nbsp;<i class="iconfont {if $item.is_praised}active{/if}" @click="praise({$item.id}, $event)">&#xe95f;</i>
+					    		</span>
+					    		{else}
+					    		<i class="iconfont {if $item.is_praised}active{/if}" @click="praise({$item.id}, $event)">&#xe95f;</i>
+					    		{/if}
+				    		{else}
+				    			<i class="iconfont {if $item.is_praised}active{/if}" @click="praise({$item.id}, $event)">&#xe95f;</i>
+				    		{/if}
+			    		</div>
+		        	</li>
+					{/foreach}
+		     	</ul>
+		    </div>
+		</div>
+		{/if}
+		{if $data.question_user_id eq $user_info.id}
+		<div class="m-button">
+			<a class="button button-light" @click="del_question({$data.id})">删除</a>
+		</div>
+		{/if}
+	</div>
+	<div class="m-float-comment" v-show="show_float_comment">
+		<div class="float-comment-mask" @click="close_comment"></div>
+		<div class="float-comment" id="vscope-comment">
+		    <textarea name="answer" id="comment-info" placeholder="回复余老师..." v-model="answer"></textarea>
+		    <a class="button button-fill" @click="send_comment">发送</a>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	var praise_count = {$data.praise_count};
+</script>
+{include file="inc/footer.html"}

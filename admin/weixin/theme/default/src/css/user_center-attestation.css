@@ -1,0 +1,97 @@
+/*界面主题色*/
+/*背景色*/
+/*背景色（深）*/
+/*模块背景色*/
+/*主题风格色*/
+/*主题辅助风格色*/
+/*字体颜色*/
+/*主要字色*/
+/*浅色*/
+/*更浅色（适用：二级标题、简介）*/
+/*更更浅色（适用：icon图标）*/
+/*标题*/
+/*字体大小*/
+/*线条颜色*/
+/*主要线条颜色*/
+/*更深线条颜色*/
+/*更浅线条颜色*/
+/*文本输入框边框颜色*/
+/*各类间距，高度*/
+/*横向间距*/
+/*纵向间距*/
+.page-user_center-attestation .block-top {
+  height: 52vw;
+  width: 100%;
+  background: url(../dist/statics/images/user_conter-attestation.png) no-repeat;
+  background-size: 58%;
+  background-position: center;
+}
+.page-user_center-attestation .content-block {
+  margin: 0;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  background: #fff;
+}
+.page-user_center-attestation .content-block .block-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.page-user_center-attestation .content-block .block-center .left {
+  line-height: 0.9rem;
+}
+.page-user_center-attestation .content-block .block-center .left .company {
+  color: #333;
+}
+.page-user_center-attestation .content-block .block-center .left .job_time {
+  font-size: 0.6rem;
+  color: #999;
+}
+.page-user_center-attestation .content-block .block-center .right {
+  font-size: 0.6rem;
+}
+.page-user_center-attestation .content-block .block-center .right .not_audited {
+  color: #999;
+}
+.page-user_center-attestation .content-block .block-center .right .in_review,
+.page-user_center-attestation .content-block .block-center .right .audit_not_pass {
+  color: #f1383f;
+}
+.page-user_center-attestation .content-block .block-center .right .already_examine {
+  color: #65dca5;
+}
+.page-user_center-attestation .content-block .block-img {
+  width: 100%;
+  height: 46.2vw;
+  background: #f7f7f7;
+}
+.page-user_center-attestation .content-block .block-img a {
+  display: block;
+  height: 100%;
+  position: relative;
+  background: url(../dist/statics/images/icon-upload_1.png) no-repeat;
+  background-position: center;
+  background-size: 34%;
+}
+.page-user_center-attestation .content-block .block-img a img {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.page-user_center-attestation .content-block .block-img a img[src=""] {
+  opacity: 0;
+}
+.page-user_center-attestation .m-button {
+  padding: 0 0.5rem;
+}
+.page-user_center-attestation .m-button .button {
+  border: 0;
+  background: #f1383f;
+  color: #fff;
+  height: 2rem;
+  line-height: 2rem;
+  border-radius: 0.15rem;
+}
+.page-user_center-attestation nav {
+  display: none;
+}

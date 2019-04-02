@@ -1,0 +1,74 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<div class="main">
+<div class="main_title">{%EDIT} <a href="{:u("Guard/guard_rules",array("id"=>$guard_info['id']))}" class="back_list">{%BACK_LIST}</a></div>
+<div class="blank5"></div>
+<form name="edit" action="__APP__" method="post" enctype="multipart/form-data">
+<table class="form conf_tab" cellpadding=0 cellspacing=0 >
+	<tr>
+		<td colspan=2 class="topTd"></td>
+	</tr>
+	<tr class="type_class type2_class">
+		<td class="item_title">时长:</td>
+		<td class="item_input"><input type="text" class="textbox require" name="day_length" value="{$vo.day_length}" />（天）
+		<span class="tip_span">已天为单位</span>
+		</td>
+	</tr>
+	<tr class="type_class">
+		<td class="item_title">所需秀豆:</td>
+		<td class="item_input"><input type="text" class="textbox require" name="diamonds" value="{$vo.diamonds}" />
+		<span class="tip_span">购买需要花费的秀豆数量</span>
+		</td>
+	</tr>
+	<tr class="type2_class">
+		<td class="item_title">{%USER_TICKET}:</td>
+		<td class="item_input"><input type="text" class="textbox require" name="ticket" value="{$vo.ticket}" />
+		<span class="tip_span">购买后该主播可获取到的{%USER_TICKET}数量</span>
+		</td>
+	</tr>
+	<tr class="type_class">
+		<td class="item_title">积分:</td>
+		<td class="item_input"><input type="text" class="textbox require" name="score" value="{$vo.score}" />
+		<span class="tip_span">购买者可获得的积分</span>
+		</td>
+	</tr>
+	<tr class="type2_class">
+		<td class="item_title">排序:</td>
+		<td class="item_input"><input type="text" class="textbox" name="sort" value="{$vo.sort}" />
+		<span class="tip_span"></span>
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2 class="bottomTd"></td>
+	</tr>
+</table>
+
+<div class="blank5"></div>
+	<table class="form" cellpadding=0 cellspacing=0>
+		<tr>
+			<td colspan=2 class="topTd"></td>
+		</tr>
+		<tr>
+			<td class="item_title"></td>
+			<td class="item_input">
+			<!--隐藏元素-->
+			<input type="hidden" name="{:conf("VAR_MODULE")}" value="Guard" />
+			<input type="hidden" name="{:conf("VAR_ACTION")}" value="update_guard_rules" />
+			<input type="hidden" name="guard_id" value="{$guard_info.id}" />
+            <input type="hidden" name="id" value="{$vo.id}" />
+			<!--隐藏元素-->
+			<input type="submit" class="button" value="{%EDIT}" />
+			<input type="reset" class="button" value="{%RESET}" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 class="bottomTd"></td>
+		</tr>
+	</table> 		 
+</form>
+</div>
+<script>
+	
+</script>
+<include file="Public:footer" />

@@ -1,0 +1,944 @@
+执行日期：2018-12-12-08：30：34
+array (
+  0 => '/home/wwwroot/qianying/domain/qianying/web/system/libs/user.php',
+  1 => 2165,
+  2 => 'accountimport',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorCode' => 70009,
+    'ErrorInfo' => '',
+  ),
+)
+
+执行日期：2018-12-12-08：30：38
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'Android 2018-12-12 08:30:37 (user:23) errCode:70009 errMsg:login IM error tls_check_signature failed  sdkappid:1400116859,acctype:32083,identifier:23 sig:APj4Mtn6tn4A81Fbbg__',
+)
+
+执行日期：2018-12-12-08：43：32
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.lang.NullPointerException: println needs a message',
+)
+
+执行日期：2018-12-12-08：43：32
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.lang.NullPointerException: println needs a message',
+)
+
+执行日期：2018-12-12-08：43：33
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.lang.NullPointerException: println needs a message',
+)
+
+执行日期：2018-12-12-08：43：33
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.lang.NullPointerException: println needs a message',
+)
+
+执行日期：2018-12-12-08：43：38
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：43：38
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：43：44
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：43：44
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：43：50
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.lang.NullPointerException: println needs a message',
+)
+
+执行日期：2018-12-12-08：43：50
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.lang.NullPointerException: println needs a message',
+)
+
+执行日期：2018-12-12-08：43：55
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.lang.NullPointerException: println needs a message',
+)
+
+执行日期：2018-12-12-08：43：55
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.lang.NullPointerException: println needs a message',
+)
+
+执行日期：2018-12-12-08：44：00
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：44：00
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：44：06
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：44：06
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：44：12
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.lang.NullPointerException: println needs a message',
+)
+
+执行日期：2018-12-12-08：44：13
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.lang.NullPointerException: println needs a message',
+)
+
+执行日期：2018-12-12-08：44：17
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：44：17
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：44：22
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：44：22
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：44：28
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.lang.NullPointerException: println needs a message',
+)
+
+执行日期：2018-12-12-08：44：28
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.lang.NullPointerException: println needs a message',
+)
+
+执行日期：2018-12-12-08：44：34
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.lang.NullPointerException: println needs a message',
+)
+
+执行日期：2018-12-12-08：44：34
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.lang.NullPointerException: println needs a message',
+)
+
+执行日期：2018-12-12-08：44：39
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：44：39
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：44：44
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：44：44
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：44：50
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.lang.NullPointerException: println needs a message',
+)
+
+执行日期：2018-12-12-08：44：50
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.lang.NullPointerException: println needs a message',
+)
+
+执行日期：2018-12-12-08：44：55
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：44：55
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：45：00
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：45：00
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：45：06
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：45：06
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：45：11
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.lang.NullPointerException: println needs a message',
+)
+
+执行日期：2018-12-12-08：45：12
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.lang.NullPointerException: println needs a message',
+)
+
+执行日期：2018-12-12-08：45：17
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：45：17
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：45：22
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：45：22
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：45：27
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：45：27
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：45：33
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.lang.NullPointerException: println needs a message',
+)
+
+执行日期：2018-12-12-08：45：33
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.lang.NullPointerException: println needs a message',
+)
+
+执行日期：2018-12-12-08：45：38
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：45：38
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：45：44
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.lang.NullPointerException: println needs a message',
+)
+
+执行日期：2018-12-12-08：45：44
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.lang.NullPointerException: println needs a message',
+)
+
+执行日期：2018-12-12-08：45：49
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：45：49
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：45：55
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.lang.NullPointerException: println needs a message',
+)
+
+执行日期：2018-12-12-08：45：55
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.lang.NullPointerException: println needs a message',
+)
+
+执行日期：2018-12-12-08：46：00
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：46：06
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.lang.NullPointerException: println needs a message',
+)
+
+执行日期：2018-12-12-08：46：06
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.lang.NullPointerException: println needs a message',
+)
+
+执行日期：2018-12-12-08：46：11
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.lang.NullPointerException: println needs a message',
+)
+
+执行日期：2018-12-12-08：46：11
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.lang.NullPointerException: println needs a message',
+)
+
+执行日期：2018-12-12-08：46：17
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：46：17
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：46：22
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.lang.NullPointerException: println needs a message',
+)
+
+执行日期：2018-12-12-08：46：22
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.lang.NullPointerException: println needs a message',
+)
+
+执行日期：2018-12-12-08：46：27
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：46：28
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：46：33
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.lang.NullPointerException: println needs a message',
+)
+
+执行日期：2018-12-12-08：46：33
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.lang.NullPointerException: println needs a message',
+)
+
+执行日期：2018-12-12-08：46：38
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：46：44
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.lang.NullPointerException: println needs a message',
+)
+
+执行日期：2018-12-12-08：46：44
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.lang.NullPointerException: println needs a message',
+)
+
+执行日期：2018-12-12-08：46：49
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：46：49
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：46：55
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：46：55
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on com.android.okhttp.Address@8a1129f9',
+)
+
+执行日期：2018-12-12-08：48：03
+array (
+  0 => '/home/wwwroot/qianying/domain/qianying/web/system/libs/user.php',
+  1 => 2165,
+  2 => 'accountimport',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorCode' => 70009,
+    'ErrorInfo' => '',
+  ),
+)
+
+执行日期：2018-12-12-08：48：08
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'Android 2018-12-12 08:48:07 (user:23) errCode:70009 errMsg:login IM error tls_check_signature failed  sdkappid:1400116859,acctype:32083,identifier:23 sig:APj4Mtn6tn4A81Fbbg__',
+)
+
+执行日期：2018-12-12-08：49：23
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'mozilla/5.0 (macintosh; intel mac os x 10_14) applewebkit/605.1.15 (khtml, like gecko) version/12.0 safari/605.1.15',
+  4 => 'Android',
+)
+
+执行日期：2018-12-12-08：50：35
+array (
+  0 => '/home/wwwroot/qianying/domain/qianying/web/system/libs/user.php',
+  1 => 2165,
+  2 => 'accountimport',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorCode' => 70009,
+    'ErrorInfo' => '',
+  ),
+)
+
+执行日期：2018-12-12-08：56：53
+array (
+  0 => '/home/wwwroot/qianying/domain/qianying/web/system/libs/user.php',
+  1 => 2165,
+  2 => 'accountimport',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorCode' => 70009,
+    'ErrorInfo' => '',
+  ),
+)
+
+执行日期：2018-12-12-08：56：55
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'Android 2018-12-12 08:56:54 (user:23) errCode:70009 errMsg:login IM error tls_check_signature failed  sdkappid:1400116859,acctype:32083,identifier:23 sig:APj4Mtn6tn4A81Fbbg__',
+)
+
+执行日期：2018-12-12-09：04：14
+array (
+  0 => '/home/wwwroot/qianying/domain/qianying/web/system/libs/user.php',
+  1 => 2165,
+  2 => 'accountimport',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorCode' => 70009,
+    'ErrorInfo' => '',
+  ),
+)
+
+执行日期：2018-12-12-15：36：27
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.0; sm-g9500 build/nrd90m)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on Connection{admin.huajianws.com:80, proxy=DIRECT hostAddress=39.98.86.104 cipherSuite=none protocol=http/1.1} (recycle count=1)',
+)
+
+执行日期：2018-12-12-15：36：27
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.0; sm-g9500 build/nrd90m)',
+  4 => 'ctl=app,act=initjava.io.IOException: unexpected end of stream on Connection{admin.huajianws.com:80, proxy=DIRECT hostAddress=39.98.86.104 cipherSuite=none protocol=http/1.1} (recycle count=1)',
+)
+
+执行日期：2018-12-12-15：36：58
+array (
+  0 => '/home/wwwroot/qianying/domain/qianying/web/system/libs/user.php',
+  1 => 2165,
+  2 => 'accountimport',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorCode' => 70009,
+    'ErrorInfo' => '',
+  ),
+)
+
+执行日期：2018-12-12-15：37：00
+array (
+  0 => '/home/wwwroot/qianying/domain/qianying/web/system/libs/user.php',
+  1 => 2165,
+  2 => 'accountimport',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorCode' => 70009,
+    'ErrorInfo' => '',
+  ),
+)
+
+执行日期：2018-12-12-15：37：01
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.0; sm-g9500 build/nrd90m)',
+  4 => 'Android 2018-12-12 15:37:00 (user:40) errCode:70009 errMsg:login IM error tls_check_signature failed  sdkappid:1400116859,acctype:32083,identifier:40 sig:jxCK4E9l68v6BuXqWv4_',
+)
+
+执行日期：2018-12-12-15：38：16
+array (
+  0 => '/home/wwwroot/qianying/domain/qianying/web/system/libs/user.php',
+  1 => 2165,
+  2 => 'accountimport',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorCode' => 70009,
+    'ErrorInfo' => '',
+  ),
+)
+
+执行日期：2018-12-12-15：38：18
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.0; sm-g9500 build/nrd90m)',
+  4 => 'Android 2018-12-12 15:38:17 (user:40) errCode:70009 errMsg:login IM error tls_check_signature failed  sdkappid:1400116859,acctype:32083,identifier:40 sig:jxCK4E9l68v6BuXqWv4_',
+)
+
+执行日期：2018-12-12-15：42：59
+array (
+  0 => '/home/wwwroot/qianying/domain/qianying/web/system/libs/user.php',
+  1 => 2165,
+  2 => 'accountimport',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorCode' => 70009,
+    'ErrorInfo' => '',
+  ),
+)
+
+执行日期：2018-12-12-15：43：02
+array (
+  0 => '/home/wwwroot/qianying/domain/qianying/web/system/libs/user.php',
+  1 => 2165,
+  2 => 'accountimport',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorCode' => 70009,
+    'ErrorInfo' => '',
+  ),
+)
+
+执行日期：2018-12-12-15：43：04
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/1.6.0 (linux; u; android 4.4.2; nexus 6 build/kot49h)',
+  4 => 'Android 2018-12-12 15:43:04 (user:41) errCode:70009 errMsg:login IM error tls_check_signature failed  sdkappid:1400116859,acctype:32083,identifier:41 sig:C5hijAP4mex8Od-PjlrQ',
+)
+
+执行日期：2018-12-12-16：40：05
+array (
+  0 => '/home/wwwroot/qianying/domain/qianying/web/system/libs/user.php',
+  1 => 2165,
+  2 => 'accountimport',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorCode' => 70009,
+    'ErrorInfo' => '',
+  ),
+)
+
+执行日期：2018-12-12-16：40：06
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 6.0; huawei caz-al10 build/huaweicaz-al10)',
+  4 => 'Android 2018-12-12 16:40:06 (user:25) errCode:-1 errMsg:login IM error because of null InitActModel',
+)
+
+执行日期：2018-12-12-16：40：06
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 6.0; huawei caz-al10 build/huaweicaz-al10)',
+  4 => 'Android 2018-12-12 16:40:06 (user:25) errCode:-1 errMsg:login IM error because of null InitActModel',
+)
+
+执行日期：2018-12-12-16：40：32
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 6.0; huawei caz-al10 build/huaweicaz-al10)',
+  4 => 'Android 2018-12-12 16:40:32 (user:25) errCode:-1 errMsg:login IM error because of null InitActModel',
+)
+
+执行日期：2018-12-12-16：40：33
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 6.0; huawei caz-al10 build/huaweicaz-al10)',
+  4 => 'Android 2018-12-12 16:40:33 (user:25) errCode:-1 errMsg:login IM error because of null InitActModel',
+)
+

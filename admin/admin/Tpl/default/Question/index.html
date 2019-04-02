@@ -1,0 +1,55 @@
+{//引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+    <php>
+        function get_is_answered($tag)
+        {
+            if($tag)
+            {
+                return "<span>已回答</span>";
+            }
+            else
+            {
+                return "<span>未回答</span>";
+            }
+        }
+
+        function detail($id){
+            return "<a href='javascript:detail(".$id.");'>查看</a>";
+        }
+    </php>
+    <script type="text/javascript">
+        function detail(id) {
+            location.href = ROOT+"?"+VAR_MODULE+"=Question&"+VAR_ACTION+"=detail&id="+id;
+        }
+    </script>
+<div class="main">
+    <div class="main_title_list"><div class="list-line-ico"></div>对话列表</div>
+    <div class="search_row">
+        <form name="search" action="__APP__" method="get">
+            是否已回答：<select name="is_answered">
+            <option value="">新提问</option>
+            <option value="1" <if condition="$_REQUEST['is_answered'] eq 1">selected="selected"</if>>已回答</option>
+            <option value="0" <if condition="$_REQUEST['is_answered']!='' && $_REQUEST['is_answered'] eq 0">selected="selected"</if>>未回答</option>
+        </select>
+            <input type="hidden" value="Question" name="m" />
+            <input type="hidden" value="index" name="a" />
+            <input type="submit" class="button" value="{%SEARCH}" />
+        </form>
+    </div>
+    <html:list
+            id="dataTable"
+            style="dataTable"
+            name="question"
+            action="true"
+            datasource="list"
+            show="id:编号
+			,question_user_name:提问人
+			,title:标题
+			,create_time:提问时间
+			,is_answered|get_is_answered:回答状态"
+            actionlist="detail:查看" />
+
+    <div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

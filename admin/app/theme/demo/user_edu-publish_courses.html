@@ -1,0 +1,38 @@
+{include file="inc/header.html"}
+<?php
+    
+    $this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/user.css";
+$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/user_edu-publish.css";
+
+$m_config = load_auto_cache("m_config");
+$this->_var['secretId'] = $m_config['qcloud_secret_id'];
+?>
+<link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$dpagecss"}" />
+<div class="wrapper">
+    <div class="user-main bg-user-center mt-20 clearfix">
+        <!--左侧菜单区 -->
+        {include file="inc/inc-user-left.html"}
+        <!-- 右侧内容区 -->
+        <div class="layout-user-r">
+            <div class="user-r-main">
+                {include file="inc/inc-user_edu-publish_courses.html"}
+            </div>
+            <div id="float-video-progress" style="position: fixed; top:50%; left: 50%; z-index: 999;display: none;background-color: rgba(0, 0, 0, 0.5);border-radius: 18px;overflow: hidden;margin-left: -130px;margin-top:-20px;padding: 8px;">
+                <div style="position:relative;width:260px;height:20px;background:#f9f9f9;border-radius: 10px;overflow: hidden;">
+                    <span id="video-progress" style="background:#ff630e;height:20px;line-height:20px;display:block;position:absolute;top:0;left:0;color:#fff;text-align:left;padding: 0 10px;"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php
+	$this->_var['dpagejs'][] = $this->_var['TMPL_REAL']."/js/user-live.js";
+$this->_var['dcpagejs'][] = $this->_var['TMPL_REAL']."/js/user-live.js";
+?>
+<script src="//qzonestyle.gtimg.cn/open/qcloud/js/vod/sdk/uploaderh5.js"></script>
+<script type="text/javascript">
+    var secretId = "{$secretId}";
+    var deal_data="{$data.deal_data}"
+</script>
+<script type="text/javascript" src="{function name="parse_script" v="$dpagejs" c="$dcpagejs"}"></script>
+{include file="inc/footer.html"}

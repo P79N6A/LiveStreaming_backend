@@ -1,0 +1,785 @@
+执行日期：2019-01-11-08：22：25
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/1.6.0 (linux; u; android 4.4.2; mi 6  build/nmf26x)',
+  4 => 'ctl=index,act=new_videocom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：22：26
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/1.6.0 (linux; u; android 4.4.2; mi 6  build/nmf26x)',
+  4 => 'ctl=index,act=indexcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：23：44
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/1.6.0 (linux; u; android 4.4.2; mi 6  build/nmf26x)',
+  4 => 'ctl=index,act=new_videocom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：23：46
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/1.6.0 (linux; u; android 4.4.2; mi 6  build/nmf26x)',
+  4 => 'ctl=index,act=indexcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：24：04
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/1.6.0 (linux; u; android 4.4.2; mi 6  build/nmf26x)',
+  4 => 'ctl=index,act=new_videocom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：24：06
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/1.6.0 (linux; u; android 4.4.2; mi 6  build/nmf26x)',
+  4 => 'ctl=index,act=indexcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：24：24
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/1.6.0 (linux; u; android 4.4.2; mi 6  build/nmf26x)',
+  4 => 'ctl=index,act=new_videocom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：24：26
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/1.6.0 (linux; u; android 4.4.2; mi 6  build/nmf26x)',
+  4 => 'ctl=index,act=indexcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：24：44
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/1.6.0 (linux; u; android 4.4.2; mi 6  build/nmf26x)',
+  4 => 'ctl=index,act=new_videocom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：24：46
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/1.6.0 (linux; u; android 4.4.2; mi 6  build/nmf26x)',
+  4 => 'ctl=index,act=indexcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：25：17
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/1.6.0 (linux; u; android 4.4.2; mi 6  build/nmf26x)',
+  4 => 'ctl=user,act=userinfocom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：25：17
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/1.6.0 (linux; u; android 4.4.2; mi 6  build/nmf26x)',
+  4 => 'ctl=user,act=userinfocom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：25：24
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/1.6.0 (linux; u; android 4.4.2; mi 6  build/nmf26x)',
+  4 => 'ctl=user,act=userinfocom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：25：24
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/1.6.0 (linux; u; android 4.4.2; mi 6  build/nmf26x)',
+  4 => 'ctl=user,act=userinfocom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：25：44
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/1.6.0 (linux; u; android 4.4.2; mi 6  build/nmf26x)',
+  4 => 'ctl=index,act=indexcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：25：44
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/1.6.0 (linux; u; android 4.4.2; mi 6  build/nmf26x)',
+  4 => 'ctl=index,act=new_videocom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：25：58
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=user,act=state_changecom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：25：59
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=video,act=video_listcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：25：59
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=index,act=focus_videocom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：25：59
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=user,act=userinfocom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：25：59
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=user,act=userinfocom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：25：59
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=index,act=new_videocom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：25：59
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=index,act=indexcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：26：00
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=index,act=indexcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：26：01
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=index,act=indexcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：26：02
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=user,act=userinfocom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：26：02
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=user,act=userinfocom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：31：14
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=mount,act=mount_rule_listcom.alibaba.fastjson.JSONException: exepct \'[\', but {, type : class com.fanwe.live.model.ShopModel',
+)
+
+执行日期：2019-01-11-08：31：14
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=mount,act=mount_rule_listcom.alibaba.fastjson.JSONException: exepct \'[\', but {, type : class com.fanwe.live.model.ShopModel',
+)
+
+执行日期：2019-01-11-08：33：50
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：33：50
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：33：52
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：34：11
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：34：25
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：34：28
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：34：29
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：34：36
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：34：36
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：34：37
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：34：38
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：34：40
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：50：15
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：55：34
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：55：42
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：55：50
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：55：52
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-08：56：05
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-09：54：46
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-09：54：46
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-09：54：54
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-10：01：12
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-10：01：20
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-10：01：25
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-10：02：09
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-10：02：20
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-10：02：36
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-10：04：47
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-10：04：51
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-10：23：23
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.0.0; pro 6 plus build/nrd90m)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-10：23：23
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.0.0; pro 6 plus build/nrd90m)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-10：32：29
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; hwi-tl00 build/huaweihwi-tl00)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-10：32：29
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; hwi-tl00 build/huaweihwi-tl00)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-10：59：43
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; hwi-tl00 build/huaweihwi-tl00)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-10：59：43
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; hwi-tl00 build/huaweihwi-tl00)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-11：00：14
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; hwi-tl00 build/huaweihwi-tl00)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-11：00：15
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; hwi-tl00 build/huaweihwi-tl00)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-11：00：19
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; hwi-tl00 build/huaweihwi-tl00)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-11：16：35
+array (
+  0 => 'android',
+  1 => '5.9.7',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9550 build/r16nw)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-11：16：35
+array (
+  0 => 'android',
+  1 => '5.9.7',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9550 build/r16nw)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-11：16：48
+array (
+  0 => 'android',
+  1 => '5.9.7',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9550 build/r16nw)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-11：32：59
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; hwi-tl00 build/huaweihwi-tl00)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-11：41：03
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-11：41：07
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-11：42：34
+array (
+  0 => '/www/wwwroot/live/mapi/lib/pay.action.php',
+  1 => 162,
+  2 => 'payModule::recharge',
+  3 => 
+  array (
+    'error' => '无任何支付方式',
+  ),
+)
+
+执行日期：2019-01-11-13：54：36
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=index,act=new_videojava.io.IOException: unexpected end of stream on com.android.okhttp.Address@10767604',
+)
+
+执行日期：2019-01-11-13：55：34
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-13：55：34
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; paam00 build/opm1.171019.011)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-16：22：08
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; hwi-tl00 build/huaweihwi-tl00)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-16：22：08
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; hwi-tl00 build/huaweihwi-tl00)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-16：50：47
+array (
+  0 => 'android',
+  1 => '5.9.7',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.0; mix miui/v9.5.1.0.nahcnfa)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-16：50：47
+array (
+  0 => 'android',
+  1 => '5.9.7',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.0; mix miui/v9.5.1.0.nahcnfa)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-16：50：56
+array (
+  0 => 'android',
+  1 => '5.9.7',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.0; mix miui/v9.5.1.0.nahcnfa)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-18：51：20
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; hwi-tl00 build/huaweihwi-tl00)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-18：51：20
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; hwi-tl00 build/huaweihwi-tl00)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-20：51：12
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; hwi-tl00 build/huaweihwi-tl00)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-20：51：12
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; hwi-tl00 build/huaweihwi-tl00)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-01-11-21：43：00
+array (
+  0 => 'android',
+  1 => '5.9.8',
+  2 => '20190110',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.0.0; pro 6 plus build/nrd90m)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+

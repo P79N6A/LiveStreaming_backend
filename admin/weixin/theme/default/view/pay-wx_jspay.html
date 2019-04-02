@@ -1,0 +1,24 @@
+{include file="inc/header.html"}
+<div class="content">
+	<div class="content-block sp-block">
+		<span class="sp-title">{$data.notice_info.recharge_name}</span>
+		<span class="sp-price">￥{$data.notice_info.money}</span>
+	</div>
+ 	<div class="list-block">
+    	<ul>
+      		<li class="item-content">
+    			<div class="item-inner">
+          			<div class="item-title">收款方</div>
+          			<div class="item-after">维品客</div>
+       			 </div>
+      		</li>
+      	</ul>
+    </div>
+	<div class="m-button" id="vscope-wx_pay">
+		<a class="button" @click="wx_pay">立即支付</a>
+	</div>
+</div>
+<script type="text/javascript">
+	var jsApiParameters = JSON.parse(<?php echo json_encode($this->_var['data']['jsApiParameters']); ?>), pid = {$data.pid};
+</script>
+{include file="inc/footer.html"}

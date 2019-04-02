@@ -1,0 +1,36 @@
+{include file="inc/header.html"}
+<div class="content pull-to-refresh-content infinite-scroll">
+    {include file="inc/pull-to-refresh-layer.html"}
+    <div class="list-block media-list">
+        <ul class="data-list">
+        	{foreach from=$data.code_list item=code_list}
+            <li>
+            	<a href='{url r="user_center#vipcode_detail" p="code_id=$code_list.id"}' class="item-content">
+	                <div class="item-media"><img src="{$data.app_logo}"></div>
+	                <div class="item-inner">
+	                    <div class="item-title-row">
+	                        <div class="item-title">维品客会员激活码</div>
+	                    </div>
+	                    <div class="item-subtitle">{$code_list.code}</div>
+	                </div>
+	                {if $code_list.is_effect eq 0}
+	                <div class="item-after">
+	                	<i class="icon iconfont icon-used">&#xe6d6;</i>
+	                </div>
+	                {/if}
+                </a>
+            </li>
+            {/foreach}
+        </ul>
+    </div>
+    {if $data.code_list} {include file="inc/infinite-scroll-preloader.html"} {/if}
+</div>
+<script type="text/javascript">
+var paramet = {
+        type: GetQueryString("type"),
+    },
+    ajax_url, new_paramet, page = 2,
+    loading = false,
+    total_page = Number('{$data.total_page}');
+</script>
+{include file="inc/footer.html"}

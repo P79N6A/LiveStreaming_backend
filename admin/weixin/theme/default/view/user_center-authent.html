@@ -1,0 +1,61 @@
+{include file="inc/header.html"}
+<?php
+    $this->_var['dpagejs'][] = $this->_var['TMPL_REAL']."/dist/frames/plupload/plupload.main.js";
+    $this->_var['dcpagejs'][] = $this->_var['TMPL_REAL']."/dist/frames/plupload/plupload.main.js";
+?>
+<script src="{function name="parse_script" v="$dpagejs" c="dcpagejs"}"></script>
+{include file="inc/upload-config.html"}
+<div class="content">
+	<div class="block-top"></div>
+	<div class="content-block">
+		<div class="block-center">
+			<div class="left">
+				<p class="company f13">{$data.data.company}</p>
+				<p class="job_time"><span>{$data.data.job}</span>&nbsp;<span>{$data.data.job_age}</span></p>
+			</div>
+			<!-- 
+				认证中class=in_review
+				认证未通过class=audit_not_pass
+				已认证class=already_examine
+			 -->
+			<div class="right">
+				{if $data.data.is_authentication == 0}
+				<span class="not_audited">未认证</span>
+				{elseif $data.data.is_authentication == 1}
+				<span class="in_review">待认证</span>
+				{elseif $data.data.is_authentication == 2}
+				<span class="already_examine">已认证</span>
+				{else}
+				<span class="audit_not_pass">认证未通过</span>
+				{/if}
+			</div>
+		</div>
+	</div>
+	<div class="content-block">
+		<div class="block-img">
+			<a href="javascript:void(0)" {if $data.data.is_authentication neq 1 && $data.data.is_authentication neq 2}id="upload-business_card"{/if}>
+				<img src="{$data.data.business_card}" alt="" id="upload-business_card-image">
+			</a>
+		</div>
+	</div>
+	<div class="content-block">
+		<div class="block-img">
+			<a href="javascript:void(0)" {if $data.data.is_authentication neq 1 && $data.data.is_authentication neq 2}id="upload-work_card"{/if}>
+				<img src="{$data.data.work_card}" alt="" id="upload-work_card-image">
+			</a>
+		</div>
+	</div>
+	<div class="content-block">
+		<div class="block-img">
+			<a href="javascript:void(0)" {if $data.data.is_authentication neq 1 && $data.data.is_authentication neq 2}id="upload-work_contract"{/if}>
+				<img src="{$data.data.work_contract}" alt="" id="upload-work_contract-image">
+			</a>
+		</div>
+	</div>
+	{if $data.data.is_authentication neq 1 && $data.data.is_authentication neq 2}
+	<div class="m-button">
+        <a class="button button-light" id="J-save">提交认证</a>
+    </div>
+    {/if}
+</div>
+{include file="inc/footer.html"}

@@ -1,0 +1,85 @@
+<style type="text/css">
+	.m-modify-live{
+	    margin-top: -2px;
+	}
+	.m-modify-live div{margin-bottom: 18px;}
+	.m-modify-live .modify-live-btn{
+	 	padding: 12px 0 0;
+    	text-align: center;
+    	margin-bottom: 10px;
+	}
+	.m-modify-live .modify-live-btn a{
+		padding:9px 46px;
+	}
+	.m-modify-live p{
+	 	font-size: 14px;
+        font-weight: bold;
+        text-align: left;
+        line-height: 14px;
+        margin-bottom: 8px;
+	}
+	.m-modify-live input{
+		width: 536px;
+        padding:6px 10px ;
+        border: 1px solid #cdcdcd;
+        box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        border-radius: 5px;
+        -moz-box-shadow: inset 0px 1px 1px #f2f2f2;
+        -webkit-box-shadow: inset 0px 1px 1px #f2f2f2;
+        box-shadow: inset 0px 1px 1px #f2f2f2;
+        color: #6e6e6e;
+	}
+	.m-modify-live .image-live-box{
+		position:relative;
+		width:100px;
+		height:56px;
+		line-height: 50px;
+		border:1px solid #dedede;
+		color:#aaa;
+		cursor:pointer;
+		text-align:center;
+	}
+	.m-modify-live .image-live-box span{font-size:70px;font-family:airal;}
+	.m-modify-live .image-live-box img{
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+	}
+	.m-modify-live .image-live-box img[src=""]{
+		opacity:0;
+	}
+</style>
+
+<div class="m-modify-live" ms-controller="add_goods" id="add_goods">
+	<div class="modify-live-FMS">
+		<p>物品名称</p>
+		<input type="text" value=""  name="name" maxlength="50" placeholder="请输入物品名称" ms-duplex="@name">
+	</div>
+	<div class="playback-path">
+		<p>物品图片</p>
+		<div class="image-live-box" onclick='open_avatar_view(180,180, "imgs", function(){save_img(180,180,"imgs",APP_ROOT+"/mapi/index.php?ctl=user&act=add_goods");});'>
+			<img id="imgs" />
+			<input type="hidden" name="imgs" ms-duplex="@imgs" >
+			<span>+</span>
+		</div>
+	</div>
+	<div class="modify-live-FMS">
+		<p>价格</p>
+        <input type="text" name="price" onkeyup="amount(this);"maxlength="18" placeholder="输入价格" ms-duplex="@price">
+	</div>
+	<div class="playback-path">
+		<p>物品链接</p>
+		<input type="text" name="url" placeholder="输入物品链接" ms-duplex="@url"><span>提示：链接以http://开头</span>
+	</div>
+	<div class="modify-live-btn">
+		<a href="javascript:void(0);" class="btn btn-primary" ms-click="@submit">保存</a>
+	</div>
+</div>
+<?php
+    $this->_var['login_pagejs'][] = $this->_var['TMPL_REAL']."/js/user-add-goods.js";
+    $this->_var['login_cpagejs'][] = $this->_var['TMPL_REAL']."/js/user-add-goods.js";
+?>
+<script type="text/javascript" src="{function name="parse_script" v="$login_pagejs" c="login_cpagejs"}"></script>

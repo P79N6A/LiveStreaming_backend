@@ -1,0 +1,51 @@
+<style type="text/css">
+    .view-controller {
+        visibility: hidden
+    }
+</style>
+<div class="user-r-title clearfix">
+    <div class="common-title f-l">
+        <span class="field">我发布的课程</span>
+    </div>
+    <!--<a href="javascript:void(0)" class="btn btn-primary btn-m f-r" id="btn_upload">上传视频</a>-->
+</div>
+<div class="user-r-content clearfix j-ajax-page">
+    {if $data.deal_list}
+    <div class="m-live clearfix">
+        <ul class="m-live-list clearfix">
+            {foreach from=$data.deal_list item=item key=key name=list}
+            <!--<a href="javascript:$.showToast('{$item.d_status_name}')">-->
+            <li class="block-live">
+                <a href="javascript:void(0)">
+					<span class="block-live-img">
+						<img alt="" src="{$item.image}" class="block-live-img lazy"/>
+                        <span class="live-img-txt">课时:{$item.courses_count}</span>
+					</span>
+                    <div class="block-live-info clearfix">
+                        <div class="live-name clearfix">
+                            <img alt="" src="{$user_info.head_image}" class="avatar-normal"/>
+                            <p title="{$item.title}">{$item.title}</p>
+                            <p class="sub f-l">创建者ID:{$item.user_id}</p>
+                            <span class="watch-num f-r">价格:{$item.price}</span>
+                            <span class="sub f-l">课程已售数量：{$item.sale_count}</span>
+                            <span class="sub f-r">开课时间:{$item.begin_at}</span>
+                        </div>
+                    </div>
+                    {if $d_status eq 7}
+                    <div class="btn btn-danger btn-xs f-r btn-del" style="margin:0 10px;" onclick="pop_zc_live(0,{$item.id},{$item.cate_id})">开始直播
+                    </div>
+                    {/if}
+                </a>
+            </li>
+            {/foreach}
+        </ul>
+    </div>
+    {else}
+    <p class="null-data">暂无数据</p>
+    {/if}
+    <!--<div class="m-page clearfix">-->
+    <!--<div class="m-page-con">-->
+    <!--{$data.page}-->
+    <!--</div>-->
+    <!--</div>-->
+</div>

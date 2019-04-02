@@ -1,0 +1,54 @@
+@import (once) "public/variable.less";
+.page-user_center-vipcode{
+	.list-block{
+		ul{
+			background:none;
+		}
+		li{
+			margin-bottom:0.5rem;
+			background:#fff;
+		}
+		.item-content{
+			overflow:hidden;
+			line-height:1.3;
+			padding-left:0.5rem;
+			&:after{
+				border:0;
+			}
+		}
+		&.media-list{
+			.item-media{
+				padding:0.625rem 0;
+				 img{
+					width:2.25rem;
+					height:2.25rem;
+					border-radius:50%;
+				}
+			}
+			.item-inner{
+				padding:0.625rem 0;
+				.item-title-row, .item-subtitle{
+					padding-top:0.25rem;
+				}
+				.item-title{
+					font-size:0.7rem;
+				}
+				.item-subtitle{
+					font-size:0.55rem;
+					font-family:'arial';
+					color:@fc-light;
+				}
+			}
+			.item-after{
+				.icon-used{
+					color:@fc-light;
+					font-size:3.3rem;
+					position: absolute;
+					top:-0.15rem;
+					right:0.5rem;
+					line-height:1;
+				}
+			}
+		}
+	}
+}

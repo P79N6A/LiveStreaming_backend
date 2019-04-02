@@ -1,0 +1,75 @@
+{include file="inc/header.html"}
+<?php
+	$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/live-lists.css";
+	$this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/js/video-video_list.js";
+	$this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/js/video-video_list.js";
+?>
+<link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$dpagecss"}" />
+	{include file="inc/inc-videolist-left.html"}
+	<div id="live-wrap">
+		<!--新秀直播-->
+		{if !$data.jump_type and $data.new_list}
+		<div class="m-live new-live clearfix">
+			<div class="m-live-tit">
+				<i class="common-icon c-8"></i>
+				<h2>新秀直播</h2>
+				<a href="javascript:void(0);" data-scr="{$APP_ROOT}/index.php?ctl=video&act=video_list&change_new=1" class="new-list-change j-change-btn"><i class="iconfont">&#xe635;</i>换一批</a>
+			</div>
+			<ul class="m-live-list clearfix j-change-con">
+				{include file="inc/video-new_list.html"}
+			</ul>
+			<div class="clear"></div>
+		</div>
+		{/if}
+		<!--新秀直播结束-->
+		<!--图片广告-->
+		{if $data.ad_list}
+		<div class="ban">
+			{foreach from=$data.ad_list item=item key=key name=ad_list}
+			<a href="{$item.url}" target="_blank" class="banner-t f-l .mt-10">
+				<img src="{$item.image}" alt="">
+			</a>
+			{/foreach}
+			<div class="clear"></div>
+		</div>
+		{/if}
+		<!-- 话题 -->
+		{if $data.jump_type lte 1}
+		<div class="m-live topic-live clearfix">
+			<div class="m-live-tit">
+				<i class="common-icon c-9"></i>
+				<h2>正在直播</h2>
+				{if $data.cate_top}
+				<ul class="topic-list">
+					<li><a href="javascript:void(0)" class="topic-item {if !$data.cate_id}active{/if}">全部</a></li>
+					{foreach from=$data.cate_top item=item key=key name=cate_top}
+					{if $item.cate_id}
+					<li><a href="javascript:void(0)" class="topic-item {if $data.cate_id eq $item.cate_id}active{/if}" data-id="{$item.cate_id}">{$item.title}</a></li>
+					{/if}
+					{/foreach}
+				</ul>
+				{/if}
+			</div>
+			{include file="inc/video-live_list.html"}
+		</div>
+		{/if}
+		<!-- 话题结束 -->
+		<!-- 关注 -->
+		<div class="m-live follow-live j-ajax-page clearfix">
+			{if $data.jump_type eq 2}
+			{include file="inc/video-focus_list.html"}
+			{/if}
+		</div>
+		<!-- 关注结束 -->
+		<div class="m-live history-live clearfix">
+			{if $data.jump_type eq 3}
+			{include file="inc/video-history_list.html"}
+			{/if}
+		</div>
+	</div>
+<?php
+	$this->_var['dpagejs'][] = $this->_var['TMPL_REAL']."/js/live-lists.js";
+	$this->_var['dcpagejs'][] = $this->_var['TMPL_REAL']."/js/live-lists.js";
+?>
+<script type="text/javascript" src="{function name="parse_script" v="$dpagejs" c="$dcpagejs"}"></script>
+{include file="inc/footer.html"}

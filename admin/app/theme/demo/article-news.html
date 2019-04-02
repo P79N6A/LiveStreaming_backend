@@ -1,0 +1,41 @@
+{include file="inc/header.html"}
+<?php
+	$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/user.css";
+	$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/article.css";
+   	$this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/js/article.js";
+   	$this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/js/article.js";
+?>
+<link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$dpagecss"}" />
+
+<div class="wrapper">
+	<div class="user-main bg-user-center mt-20 clearfix">
+		<!--左侧菜单区 -->
+		<div class="layout-user-l f-l">
+			{include file="inc/inc-article-left.html"}
+		</div>
+		<!-- 右侧内容区 -->
+		<div class="layout-user-r">
+			<div class="user-r-main">
+				<div class="block-content j-ajax-page">
+					<ul class="content-list">
+					{foreach from=$data.news item=item key=key name=news}
+						<li class="news-list">
+							<a href="{$item.url}"  class="clearfix">
+								<span class="f-l">{$item.title}</span>
+								<span class="f-r list-time">{function name="to_date" v=$item.create_time}</span>
+							</a>
+						</li>
+					{/foreach}
+					</ul>
+					
+					<div class="m-page clearfix">
+						<div class="m-page-con">
+						{$data.page}   
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{include file="inc/footer.html"}

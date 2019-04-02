@@ -1,0 +1,77 @@
+.m-page{
+    padding: 16px;
+    text-align: center;
+    & .m-page-con{
+        padding: 20px 0;
+        display: inline-block;
+        *display:inline;
+        *zoom:1;
+        & span.current{
+            margin-left: 10px;
+            height: 26px;
+            line-height: 26px;
+            border: 1px solid #ddd;
+            padding: 0 12.5px;
+            font-size: 12px;
+            border-radius: 3px;
+            text-decoration: none;
+            background: @bgcolor-theme;
+            color: #fff;
+            border-color: @bgcolor-theme;
+            display: inline-block;
+        }
+        & span.record{
+            margin-left: 10px;
+            height: 26px;
+            line-height: 26px;
+            padding: 0 12.5px;
+            font-size: 12px;
+            text-decoration: none;
+            color: #444;
+        }
+        & a{
+            display: inline-block;
+            margin-left: 10px;
+            height: 26px;
+            line-height: 26px;
+            border: 1px solid @bdcolor-deep;
+            padding: 0 12.5px;
+            font-size:@fs-small ;
+            border-radius:3px ;
+            text-decoration: none;
+            color: @fcolor-main;
+            float:none;
+            &:hover{
+                background: @bgcolor-theme;
+                color: #fff;
+                border-color:  @bgcolor-theme;
+            }
+        }
+        & .page-on{
+            background: @bgcolor-theme;
+            color: #fff;
+            border-color: @bgcolor-theme;
+        }
+        & .page-skip-txt{
+            margin-left: 10px;
+            height: 26px;
+            line-height: 26px;
+            font-size:@fs-small ;
+            color: @fcolor-main;
+            float: left;
+        }
+        & .input{
+            width: 32px;
+            height: 26px;
+            line-height: 26px;
+            padding: 0 5px;
+            margin: 0;
+            text-align: center;
+            border: 1px solid @bdcolor-deep;
+            box-sizing : content-box; 
+            -moz-box-sizing : content-box;
+            border-radius:3px ;
+            float: left;
+        }
+    }
+}

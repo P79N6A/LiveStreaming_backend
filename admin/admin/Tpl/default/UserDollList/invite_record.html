@@ -1,0 +1,83 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<include file="Public:new" />
+<load href='__TMPL__Common/js/jquery.bgiframe.js' />
+<load href='__TMPL__Common/js/jquery.weebox.js' />
+<load href='__TMPL__Common/js/user.js' />
+<load href='__TMPL__Common/js/deal.js' />
+<load href='__TMPL__Common/style/weebox.css' />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<div class="main">
+<if condition="($jump neq '')">
+    <div class="main_title_list"><div class="list-line-ico"></div>{$user_id}的邀请日志   <a href="{:u("UserGeneral/index_wawa")}" class="back_list">{%BACK_LIST}</a></div>
+<else/>
+<div class="main_title_list"><div class="list-line-ico"></div>邀请记录列表</div>
+</if>
+<php>
+
+    //时间戳转时间格式
+    function time_format($timestamp){
+        if($timestamp)
+        return to_date($timestamp,'Y-m-d H:i:s');
+        else
+        return '';
+    }
+    //获取用户昵称
+    function get_nick_name($uid)
+    {
+        return emoji_decode(M("User")->where("id=".$uid)->getField("nick_name"));
+    }
+    //获取邀请奖励的单位
+    function get_bonuse_unit($bonuse)
+    {
+        $m_config = load_auto_cache('m_config');
+        return $bonuse.$m_config['diamonds_name'];
+    }
+
+</php>
+<if condition="($jump eq '')">
+<div class="search_row">
+	<form name="search" action="__APP__" method="get" >
+	<div>邀请者ID：
+        <input type="text" class="textbox" name="user_id" value="{:trim($_REQUEST['user_id'])}" style="width:100px;" />
+    </div>
+    <div>被邀请者ID：
+        <input type="text" class="textbox" name="invited_id" value="{:trim($_REQUEST['invited_id'])}" style="width:100px;" />
+    </div>
+    <div>邀请时间：<span><input type="text" class="textbox" name="time_1" id="time_1" value="{$_REQUEST['time_1']}" onfocus="this.blur(); return showCalendar('time_1', '%Y-%m-%d %H:%M:%S', false, false, 'btn_time_1');" /><input type="button" class="button" id="btn_time_1" value="{%SELECT_TIME}" onclick="return showCalendar('time_1', '%Y-%m-%d  %H:%M:%S', false, false, 'btn_time_1');" /></span> - <span><input type="text" class="textbox" name="time_2" id="time_2" value="{$_REQUEST['time_2']}" onfocus="this.blur(); return showCalendar('time_2', '%Y-%m-%d %H:%M:%S', false, false, 'btn_time_2');" /><input type="button" class="button" id="btn_time_2" value="{%SELECT_TIME}" onclick="return showCalendar('time_2', '%Y-%m-%d %H:%M:%S', false, false, 'btn_time_2');" /></span></div>
+    <input type="hidden" value="UserDollList" name="m" />
+    <input type="hidden" value="invite_record" name="a" />
+    <input type="submit" class="button" value="{%SEARCH}" />
+	</form>
+</div>
+</if>
+        <html:list
+        id="dataTable"
+        style="dataTable"
+        name="userDollList"
+        action="true"
+        datasource="list"
+        show="id:ID
+        ,user_id:邀请者ID
+        ,user_id|get_nick_name:邀请者昵称
+        ,invited_id:被邀请者ID
+        ,invited_id|get_nick_name:被邀请者昵称
+        ,inviter_bonuse|get_bonuse_unit:邀请者奖励
+        ,invited_user_bonuse|get_bonuse_unit:被邀请者奖励
+        ,time|time_format:邀请时间
+        ,invite_code:邀请码"
+            actionlist="tips:无" />
+
+<script type="text/javascript">
+    /*function doll_detail(doll_id)
+    {
+        location.href = ROOT+"?"+VAR_MODULE+"=DollCate&"+VAR_ACTION+"=detail&id="+doll_id;
+    }*/
+</script>
+
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

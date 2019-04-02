@@ -1,0 +1,46 @@
+@import (once) "public/variable.less";
+@import (once) "modules/m-live.less";
+.m-live{
+	margin-right: -10px;
+    margin-left: 5px;
+    margin-top:0;
+	.m-live-list{
+		padding: 0;
+		.block-live{
+			width: 290px;
+			& a {
+				& .block-live-img{
+					&:after{
+						border-radius: 0;
+					}
+					& .live-img-txt{
+						position: absolute;
+						top: 0;
+						right: 0;
+						width: 36px;
+						height: 16px;
+						line-height: 15px;
+						font-size: @fs-small;
+						background: @bgcolor-theme;
+					    text-align: center;
+    					color: #fff;
+					}
+				}
+			}
+			
+		}
+	}
+}
+.m-uc-content {
+	& .content-pd20{
+		padding-top: 30px;
+		& .m-common-item{
+			margin-top: 0px;
+		}
+	}
+}
+.m-common-title {
+    height: auto;
+    line-height: 30px;
+    overflow: inherit;
+}

@@ -1,0 +1,84 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<div class="main_title">二级分类列表 <a href="{:u("CarClassify/index")}" class="back_list">{%BACK_LIST}</a></div>
+<php>
+    function get_classified_image_selected($classify_image){
+        return "<img src='".$classify_image."' style='height:35px;width:35px;'/>";
+    }
+    
+</php>
+<script>
+	//添加二级分类跳转
+	function classify2_add($classify1_id)
+	{
+		location.href = ROOT+"?"+VAR_MODULE+"="+MODULE_NAME+"&"+VAR_ACTION+"=classify2_add&classify1_id="+$classify1_id;
+	}
+	//编辑界面
+	function classify2_edit(id)
+	{
+		location.href = ROOT+"?"+VAR_MODULE+"="+MODULE_NAME+"&"+VAR_ACTION+"=classify2_edit&id="+id;
+	}
+</script>
+<div class="main">
+<div class="main_title_list"><div class="list-line-ico"></div>分类列表</div>
+    <div class="search_row">
+        <form name="search" action="__APP__" method="get" class="clearfix">
+            <div>分类名称：<input type="text" class="textbox" name="title" value="{:trim($_REQUEST['title'])}" style="width:100px;" /></div>
+            <div><input type="hidden" value="CarClassify" name="m" /><input type="hidden" value="index" name="a" /><input type="submit" class="button" value="{%SEARCH}" /></div>
+        </form>
+    </div>
+<html:list
+	id="dataTable"
+	style="dataTable"
+	name="classify2"
+	checkbox="true"
+	action="true"
+	datasource="list"
+	show="id:{%ID},title:{%TITLE_SHOW}:edit,classify_image|get_classified_image_selected=$classify['classify_image']:图标,is_effect|get_is_effect=$classify['id']:{%IS_EFFECT},sort|get_sort=$classify['id']:{%SORT},is_show:是否首页导航栏显示"
+	actionlist="classify2_edit:{%EDIT}, del2:{%DEL}" />
+	<table class="dataTable">
+		<tbody>
+			<td colspan="5">
+				<input type="button" class="button button-add" value="{%ADD}" onclick="classify2_add({$classify1_id});" />
+                <input type="button" class="button button-del" value="{%DEL}" onclick="del2();" />
+			</td>
+		</tbody>
+	</table>
+<div class="page">{$page}</div>
+</div>
+<script>
+    function del2(id)
+    {
+        if(!id)
+        {
+            idBox = $(".key:checked");
+            if(idBox.length == 0)
+            {
+                alert(LANG['DELETE_EMPTY_WARNING']);
+                return;
+            }
+            idArray = new Array();
+            $.each( idBox, function(i, n){
+                idArray.push($(n).val());
+            });
+            id = idArray.join(",");
+        }
+        if(confirm(LANG['CONFIRM_DELETE']))
+            $.ajax({
+                url: ROOT+"?"+VAR_MODULE+"="+MODULE_NAME+"&"+VAR_ACTION+"=foreverdelete&id="+id,
+                data: "ajax=1",
+                dataType: "json",
+                success: function(obj){
+                    $("#info").html(obj.info);
+                    //if(obj.status==1)
+                    alert(obj.info);
+                    location.href=location.href;
+                }
+            });
+    }
+</script>
+<include file="Public:footer" />

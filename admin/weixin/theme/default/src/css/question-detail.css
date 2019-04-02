@@ -1,0 +1,146 @@
+/*界面主题色*/
+/*背景色*/
+/*背景色（深）*/
+/*模块背景色*/
+/*主题风格色*/
+/*主题辅助风格色*/
+/*字体颜色*/
+/*主要字色*/
+/*浅色*/
+/*更浅色（适用：二级标题、简介）*/
+/*更更浅色（适用：icon图标）*/
+/*标题*/
+/*字体大小*/
+/*线条颜色*/
+/*主要线条颜色*/
+/*更深线条颜色*/
+/*更浅线条颜色*/
+/*文本输入框边框颜色*/
+/*各类间距，高度*/
+/*横向间距*/
+/*纵向间距*/
+.page-question-detail .content-block {
+  padding: 1rem 0.5rem;
+  margin: 0.5rem 0;
+  background: #fff;
+}
+.page-question-detail .content-block h3 {
+  color: #333;
+  line-height: 0.75rem;
+}
+.page-question-detail .content-block .block-center {
+  margin: 0.5rem 0;
+  font-size: 0.6rem;
+  color: #666;
+  line-height: 1.1rem;
+}
+.page-question-detail .content-block .block-after {
+  font-size: 0.6rem;
+  text-align: right;
+  color: #999;
+  line-height: 0.6rem;
+}
+.page-question-detail .m-comment {
+  display: -webkit-flex;
+  display: flex;
+  padding: 0.5rem;
+}
+.page-question-detail .m-comment .block-praise {
+  height: 1.75rem;
+  width: 1.75rem;
+  border-radius: 0.1rem;
+  background: #efeff4;
+  padding: 0.2rem;
+  font-size: 0.5rem;
+  line-height: 0.5rem;
+  color: #f1383f;
+  text-align: center;
+  margin-right: 0.5rem;
+}
+.page-question-detail .m-comment .block-praise i {
+  font-size: 0.7rem;
+  line-height: 0.7rem;
+  margin-bottom: 0.2rem;
+  display: block;
+}
+.page-question-detail .m-comment .list-block {
+  padding: 0;
+  margin: 0;
+  -webkit-flex: 1;
+  flex: 1;
+}
+.page-question-detail .m-comment .list-block .card {
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.page-question-detail .m-comment .list-block .card:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: auto;
+  top: auto;
+  height: 1px;
+  width: 100%;
+  background-color: #e1e1e1;
+  display: block;
+  z-index: 15;
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+.page-question-detail .m-comment .list-block .card:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.page-question-detail .m-comment .list-block .card:last-child:after {
+  display: none;
+}
+.page-question-detail .m-comment .list-block .card .card-header {
+  display: block;
+  line-height: 0.8rem;
+}
+.page-question-detail .m-comment .list-block .card .card-header .header-text {
+  font-size: 0.6rem;
+  color: #999;
+}
+.page-question-detail .m-comment .list-block .card .reply {
+  font-size: 0.6rem;
+}
+.page-question-detail .m-comment .list-block .card .reply em {
+  color: #586b96;
+}
+.page-question-detail .m-comment .list-block .card .time {
+  font-size: 0.6rem;
+  color: #999;
+}
+.page-question-detail .m-comment .list-block .card .card-footer {
+  line-height: 0.7rem;
+}
+.page-question-detail .m-comment .no-border {
+  padding: 0;
+  margin: 0;
+  min-height: 0;
+}
+.page-question-detail .m-comment .no-border .active {
+  color: #f1383f;
+}
+.page-question-detail .m-comment .no-border i {
+  color: #cfcfcf;
+}
+.page-question-detail .m-comment .no-border a {
+  color: #f1383f;
+  font-size: 0.6rem;
+}
+.page-question-detail .m-comment .card-content-inner {
+  padding: 0;
+  margin: 0.5rem 0;
+  color: #666;
+  font-size: 0.6rem;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.page-question-detail .float-comment {
+  bottom: -5.65rem;
+}

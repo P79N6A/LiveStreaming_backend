@@ -1,0 +1,69 @@
+@import (once) "public/variable.less";
+@import (once) "modules/pop-bespeak-meet.less";
+.page-date-detail{
+	font-family: "微软雅黑";
+	& .content{
+		bottom: 0;
+	}
+	& .content-block{
+		margin: 0;
+		padding: 0;
+		margin: 0.5rem 0;
+		background: #fff;
+		width: 100%;
+	}
+	& .m-title{
+		padding:0.5rem;
+		position: absolute;
+		top: 0;
+		bottom: 2.5rem;
+		& h3{
+			line-height: 1.75rem;
+			color: #333;
+			margin-bottom: 0.2rem;
+		}
+		& p{
+			color: @fc-dark;
+			font-size: @fs-small;
+			line-height: 1.1rem;
+		}
+	}
+	& .m-button{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		display: -webkit-flex;
+		display: flex;
+		margin: 0;
+		border-top: 1px solid #cdcdcd;
+		height: 2.5rem;
+		& div{
+			width: 50%;
+		}
+		& .left{
+			padding: 0 0.5rem;
+			& span{
+				line-height: 2.5rem;
+				color: #f1383f;
+				& .numb{
+					font-size: @fs-big;
+					font-family: Arial;
+					padding: 0 0.1rem;
+				}
+			}
+		}
+		& .button{
+			height: 2.5rem;
+			line-height: 2.5rem;
+			background: #f1383f;
+			color: #fff;
+			font-size:@fs-middle;
+			border: 0;
+			border-radius: 0;
+		}
+	}
+	& nav{
+		display: none;
+	}
+}

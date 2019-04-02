@@ -1,0 +1,68 @@
+<?php
+	$m_config = load_auto_cache("m_config");
+	$this->_var['ticket_name'] = empty($m_config['ticket_name']) ? '秀票' : $m_config['ticket_name'];
+	$this->_var['app_name'] = empty($m_config['app_name']) ? '千秀互动直播' : $m_config['app_name'];
+?>
+<div class="m-exchange">
+	<!--<div class="dialog-tc2">-->
+		<!--<a href="javascript:void(0);" onclick="return false" title="关闭" class="dialog-close">-->
+			<!--<i class="iconfont"></i>-->
+		<!--</a>-->
+		<!--<div class="hd">-->
+			<!--<a class="dialog-title active">兑换秀豆</a>-->
+			<!--<a class="dialog-title">兑换红包</a>-->
+		<!--</div>-->
+	<!--</div>-->
+	<div class="m-recharge m-exchange bd clearfix">
+		<div>
+			<form action="javascript:void(0);" class="jewel" ms-controller="pay_exchange" id="pay_exchange">
+				<div class="form-group clearfix">
+					<label class="control-label" for="recharge_type">账户余额</label>
+					<div class="control-content">
+						<span class="balance-numb">{$data.useable_ticket}</span><span class="balance-txt">{$ticket_name}</span>
+					</div>
+				</div>
+				<div class="form-group form-vertical clearfix">
+					<label class="control-label" for="money">兑换数额</label>
+					<div class="control-content control-content-auto" style="width: 100%;">
+						<ul class="money-list">
+							{foreach from=$data.exchange_rules item=item key=key name=exchange_rules}
+							<li style="">
+								<label class="money-label {if $smarty.foreach.exchange_rules.iteration eq 1}checked{/if}" ms-click="@money_checked">
+									<span>{$item.ticket}{$ticket_name}</span>
+									<input type="radio" name="rule_id" value="{$item.id}" {if $smarty.foreach.exchange_rules.iteration eq 1}checked="checked"{/if} class="pay-input" ms-duplex="@data.rule_id">
+								</label>
+								<span class="number-txt">(获得&nbsp;{$item.diamonds}&nbsp;秀豆)</span>
+							</li>
+							{/foreach}
+						</ul>
+					</div>
+				</div>
+				<div class="form-group form-vertical clearfix">
+					<label class="control-label" for="other_money">其他金额</label>
+					<div class="control-content control-content-auto">
+						<input type="text" name="ticket" class="form-control f-l" ms-duplex="@data.ticket" ms-change="@is_other_ticket" onkeyup="amount(this);" placeholder="输入兑换数量" />
+						<span class="number-txt f-l">(获得&nbsp;<em id="other_diamonds" ms-text="@data.other_diamonds">0</em>&nbsp;秀豆)</span>
+					</div>
+				</div>
+			 	<div class="submit-group t-c">
+				    <a href="javascript:void(0);" class="btn btn-primary" ms-click="@submit">兑换</a>
+		  		</div>
+			</form>
+			<div class="mt-20 remark">
+				<p>如需兑换红包：关注微信公众号：{$app_name}, 打开<a href='{url r="app_download#index"}' target="_blank"  style="color:#00DFB2">app</a>，登陆后在个人中心--收益--领取劳务费</p>
+			</div>
+		</div>
+		<!--秀豆结束-->
+
+	</div>
+</div>
+<script type="text/javascript">
+	var rule_id = $("input[name='rule_id']").val();
+	var ratio = '{$data.ratio}';
+</script>
+<?php
+	$this->_var['dpagejs'][] = $this->_var['TMPL_REAL']."/js/pay-exchange.js";
+	$this->_var['dcpagejs'][] = $this->_var['TMPL_REAL']."/js/pay-exchange.js";
+?>
+<script type="text/javascript" src="{function name="parse_script" v="$dpagejs" c="$dcpagejs"}"></script>

@@ -1,0 +1,131 @@
+</div>
+<div id="footerwrapper" class="full_display_none">
+	<div class="footer">
+		<div class="footer-top">
+			<div class="wrapper">
+				<a href="{$APP_ROOT}/index.php?ctl=article&title=关于我们">关于我们</a>|
+				<a href="{$APP_ROOT}/index.php?ctl=article&act=faq&faq_group=主播招聘">主播招聘</a>|
+				<a href="{$APP_ROOT}/index.php?ctl=article&act=faq&faq_group=联系我们">联系我们</a>|
+				<a href="{$APP_ROOT}/index.php?ctl=article&act=faq">帮助中心</a>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<div class="wrapper">
+				<p>{$NETWORK_FOR_RECORD}</p>
+				<p> Copyright © <?php echo date('Y'); ?> {$SITE_LICENSE}</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="m-sidebar" style="display: none">
+	<div class="top-block">
+		<span class="go-top">
+			<i class="icon iconfont icon-top">&#xe649;</i>
+		</span>
+		<span class="go-top-white">
+			<i class="icon iconfont icon-top">&#xe649;</i>
+		</span>
+	</div>
+</div>
+<?php
+   	$this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/dist/Bootstrap/js/bootstrap.min.js";
+   	$this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/dist/Bootstrap/js/bootstrap.min.js";
+   	$this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/dist/jquery.lazyload.min.js";
+   	$this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/dist/jquery.lazyload.min.js";
+	$this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/dist/Weebox/bgiframe.js";
+	$this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/dist/Weebox/bgiframe.js";
+	$this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/dist/Weebox/weebox.js";
+	$this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/dist/Weebox/weebox.js";
+    $this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/dist/cropper/cropper.min.js";
+    $this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/dist/cropper/cropper.min.js";
+   	$this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/js/pages.js";
+   	$this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/js/pages.js";
+   	$this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/js/pages-user.js";
+   	$this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/js/pages-user.js";
+	$this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/sdk/json2.js";
+	$this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/sdk/json2.js";
+	$this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/sdk/webim.js";
+	$this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/sdk/webim.js";
+	$this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/js/emotions.js";
+	$this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/js/emotions.js";
+	$this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/js/im-message.js";
+	$this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/js/im-message.js";
+   	$this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/js/public.js";
+   	$this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/js/public.js";
+	$this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/js/user-letter.js";
+	$this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/js/user-letter.js";
+	$this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/js/inc-user-left.js";
+	$this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/js/inc-user-left.js";
+	$this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/js/society_income.js";
+	$this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/js/society_income.js";
+	$this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/js/calendar.js";
+	$this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/js/calendar.js";
+	$this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/js/moment.js";
+	$this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/js/moment.js";
+	$this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/js/daterangepicker.js";
+	$this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/js/daterangepicker.js";
+?>
+<script type="text/javascript" src="{function name="parse_script" v="$foot_pagejs" c="foot_cpagejs"}"></script>
+<script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+<script type="text/javascript"> 
+	if(!$(".banner_cont ul").has('li').length){ 
+		$("#banner").css("display","none");
+	} 
+	
+	if($(".banner_cont ul").find('li').length==1){ 
+		$(".btn_tit").css("display","none");
+	}
+	else if($(".banner_cont ul").find('li').length>1){
+		$(".btn_tit").css("display","block");
+	}
+	if($(".banner_cont ul").find('li').length>1){
+		jQuery("#banner").slide({mainCell:".banner_cont ul",titCell:".effect_hd span",effect:"leftLoop",easing:"easeInOutQuint",delayTime:500,autoPlay:true});
+		$("#banner").mousemove(function(){
+			$(this).find(".prev").show();
+			$(this).find(".next").show();
+		}).mouseout(function(){
+			$(this).find(".prev").hide();
+			$(this).find(".next").hide();
+		});
+	}
+
+	$("img.lazy").lazyload({effect: "fadeIn"});
+
+
+	window.onscroll=function(){
+		if($(document).scrollTop() > 450){
+			$(".m-sidebar").fadeIn("slow");
+		}else{
+			$(".m-sidebar").fadeOut("slow");
+		}
+	};
+
+	$(".top-block").click(function () {
+		$("html,body").animate({scrollTop:0},"fast","swing",function(){});
+	});
+
+	//主播收入
+	$('#dd').calendar({
+	    trigger: '#dt',
+	    zIndex: 999,
+	    format: 'yyyy-mm-dd',
+	    onSelected: function(view, date, data) {
+	        console.log('event: onSelected')
+	    },
+	    onClose: function(view, date, data) {
+	        console.log('event: onClose')
+	        console.log('view:' + view)
+	        console.log('date:' + date)
+	        console.log('data:' + (data || 'None'));
+	    }
+	});
+	//主播直播时长
+	$(document).ready(function() {
+		$('#reservation').daterangepicker(null, function(start, end, label) {
+			console.log(start.toISOString(), end.toISOString(), label);
+		});
+	});
+	
+</script>
+</body>
+</html>

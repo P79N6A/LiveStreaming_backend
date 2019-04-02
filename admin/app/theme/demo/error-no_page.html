@@ -1,0 +1,18 @@
+{include file="inc/header.html"}
+<?php
+	$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/error-no_page.css";
+?>
+<link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$dpagecss"}" />
+<div class="wrapper">
+	<div class="m-error-no">
+		<div class="error-no-img">
+			
+		</div>
+		<p class="error-no-txt">{$data.error},你可以通过以下方式继续访问...&nbsp...</p>
+		<div class="error-no-btn">
+			<a href='{url r="index#index"}' class="btn-index"><i class="icon iconfont">&#xe639;</i>返回首页</a>
+			<a href="{if $data.basename neq ''}{$data.basename}{else} javascript:window.history.go(-1) {/if}" class="btn-return"><i class="icon iconfont">&#xe63a;</i>后退一步</a>
+		</div>
+	</div>
+</div>
+{include file="inc/footer.html"}

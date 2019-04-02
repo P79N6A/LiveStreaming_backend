@@ -1,0 +1,72 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<php>
+	function mount_name($id){
+		$mount=M("Mounts")->where("id =".intval($id))->getField("name");
+		return $mount;
+	}
+</php>
+<script>
+	function add_rules(id){
+		location.href = ROOT+'?m='+MODULE_NAME+'&a=add_mount_rules&id='+id;
+	}
+	function edit_rules(id){
+		location.href = ROOT+'?m='+MODULE_NAME+'&a=edit_mount_rules&id='+id;
+	}
+	function del_mount_rules(id){
+		if(!id)
+		{
+			idBox = $(".key:checked");
+			if(idBox.length == 0)
+			{
+				alert("请选择需要删除的项目");
+				return;
+			}
+			idArray = new Array();
+			$.each( idBox, function(i, n){
+				idArray.push($(n).val());
+			});
+			id = idArray.join(",");
+		}
+		if(confirm("确定要删除选中的项目吗？"))
+		$.ajax({
+				url: ROOT+"?"+VAR_MODULE+"="+MODULE_NAME+"&"+VAR_ACTION+"=del_mount_rules&id="+id,
+				data: "ajax=1",
+				dataType: "json",
+				success: function(obj){
+					$("#info").html(obj.info);
+					if(obj.status==1)
+					location.href=location.href;
+				}
+		});
+	}
+</script>
+<div class="main">
+<div class="main_title">交易规则列表</div>
+<div class="blank5"></div>
+<div class="button_row">
+	<input type="button" class="button" value="{%ADD}" onclick="add_rules({$mount_info.id});" />
+	<input type="button" class="button" value="{%DEL}" onclick="del_mount_rules();" />
+</div>
+<div class="blank5"></div>
+<html:list
+	id="dataTable"
+	style="dataTable"
+	name="mount_animated"
+	checkbox="true"
+	action="true"
+	datasource="list"
+	show="id:{%ID}
+		  ,mount_id|mount_name:所属守护
+		  ,day_length:时长（天）
+		  ,diamonds:秀豆
+		  ,score:积分
+		  ,sort|get_sort=$mount_animated['id']:{%SORT}"
+	actionlist="edit_rules:编辑,del_mount_rules:删除" />
+<div class="blank5"></div>
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />
+
+<!---->

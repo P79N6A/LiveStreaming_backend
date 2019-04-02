@@ -1,0 +1,79 @@
+{include file="inc/header.html"}
+<script type="text/javascript">
+	var data = {
+		pay_id: 1,
+		vip_id: '',
+		pid: '',
+		type: '',
+		cost: '',
+		user: {},
+		vip_list: '',
+		vip_level: {},
+		item_vip_lv: '',
+		active_name: '',
+		jsApiParameters: ''
+	};
+</script>
+<div id="vscope-course_vip">
+	<div class="content">
+		<div class="content-block m-user">
+			<div class="block-user">
+				<div class="user-pic">
+					<img :src="user.head_image" alt="" />
+				</div>
+				<div class="user-text">
+					<p class="name" v-html="user.nick_name"></p>
+					<p class="txt" v-html="user.signature"></p>
+				</div>
+			</div>
+		</div>
+		<div :class="{'active': active_name == item.name}" class="content-block m-vip-price" @click="change_vip(item)" v-for="item in vip_list">
+			<div class="vip-price">
+				<div class="vip-time">
+					<h3 class="f13" v-html="item.name"></h3>
+					<p><span v-html="item.month"></span>个月，每月<span v-html="(item.cost/item.month).toFixed(2)"></span>元</p>
+				</div>
+				<div class="vip-money" v-cloak>{{item.cost | format_int}}<span>元</span></div>
+			</div>
+		</div>
+
+		<!-- <div class="content-block">
+			<div class="list-block">
+			    <ul id="pay">
+			      	<li class="item-content">
+			        	<div class="item-inner">
+			          		<div class="item-title">支付金额：<span id="cost" v-html="cost"></span>元(<span id="name" v-html="name"></span>)</div>
+			        	</div>
+			      	</li>
+			      	<li class="item-content item-link" @click="wx_pay">
+			      		<div class="item-inner">
+			      			<div class="item-title">
+			      				<i class="iconfont">&#xe976;</i>&nbsp;
+			      				<span class="f13">微信支付</span>
+			      			</div>
+			      		</div>
+			      	</li>
+			    </ul>
+		  	</div>
+		</div> -->
+		<div class="content-block">
+			<div class="card">
+			    <div class="card-header no-border f13">会员特权模块</div>
+		    	<div class="card-content">
+		      		<div class="card-content-inner">
+		      			<template v-for="(value, key) in vip_level">
+		      				<div v-if="key == item_vip_lv">
+		      					<div v-html="value"></div>
+		      				</div>
+		      			</template>
+		      		</div>
+	    		</div>
+		  	</div>
+		</div>
+	</div>
+	<div class="footer-btn-bar">
+		<a class="button button-fill" @click="wx_pay">微信支付 <span class="f-number">￥{{cost}}</span></a>
+	</div>
+</div>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+{include file="inc/footer.html"}

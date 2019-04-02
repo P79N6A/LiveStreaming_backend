@@ -1,0 +1,45 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+
+<div id="video-container" style="margin: 0px auto;"></div>
+
+<div class="main" style="margin: 0px auto; width: 1024px;">
+	<table class="dataTable">
+		<tbody>
+			<td colspan="9">
+				<input type="button" class="button button-frond" value="正面" />
+				<input type="button" class="button button-side" value="侧面" />
+			</td>
+		</tbody>
+	</table>
+</div>
+<script src="http://imgcache.qq.com/open/qcloud/video/vcplayer/TcPlayer.js"></script>
+<script>
+	var player =  new TcPlayer('video-container', {
+	        "m3u8": "{$record.play_url}",
+	        "autoplay" : true,
+	        "width" :  '1024',
+	        "height" : '768',
+	    });
+
+    $('.button-frond').click(function(){
+    	$('#video-container').empty();
+    	var player =  new TcPlayer('video-container', {
+	        "m3u8": "{$record.play_url}",
+	        "autoplay" : true,
+	        "width" :  '1024',
+	        "height" : '768',
+	    });
+    });
+
+    $('.button-side').click(function(){
+    	$('#video-container').empty();
+    	var player =  new TcPlayer('video-container', {
+	        "m3u8": "{$record.play_url2}",
+	        "autoplay" : true,
+	        "width" :  '1024',
+	        "height" : '768',
+	    });
+    });
+</script>

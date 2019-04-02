@@ -1,0 +1,106 @@
+{include file="inc/header.html"}
+<?php
+    $this->_var['dpagecss'][] = $this->_var['TMPL_REAL'] . "/css/user_center-grade.css";
+    $this->_var['dcpagecss'][] = $this->_var['TMPL_REAL'] . "/css/user_center-grade.css";
+?>
+<link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$dpagecss" c="$dcpagecss"}" />
+<div class="page page_user_center-grade" id="page-user_center-grade">
+  <!--   {if !isApp()}
+	<header class="bar bar-nav">
+    	<a class="button button-link button-nav pull-left" href="/demos/card" data-transition='slide-out'>
+      		<span class="icon icon-left"></span>
+    	</a>
+    	<h1 class="title">{$data.page_title}</h1>
+  	</header>
+    {/if} -->
+	<div class="content">
+        <div class="buttons-tab">
+            <a href="#tab1" class="tab-link active button">主播等级</a>
+            <a href="#tab2" class="tab-link button">用户等级</a>
+        </div>
+        <div class="tabs">
+            <div id="tab1" class="tab active">
+                <div class="y-rank tc">
+                    <div class="y-ranktop">
+                        <p class="y-level bold f20">{$data.anchor_leve_name}</p>
+                        <img src="{$TMPL}/images/icon_medal.png">
+                        <p class="exp_val f16"><span class="c-red">{$data.u_ticket}</span>{if $data.up_ticket neq '满级'}/<span v-cloak>{$data.up_ticket}</span>{/if}</p>
+                        <div class="y-scroll"><div class="theme_color" id="anchor_grade_progress"></div></div>
+                    </div>
+                    <div class="y-rankbottom">
+                        <h3><strong>主播等级说明</strong></h3>
+                        <div style="text-align: left;">
+                            <p>1.收到礼物将会增加秀票</p>
+                            <p>2.更多特权将持续更新</p>
+                        </div>
+                        <h3><strong>等级体系明细</strong></h3>
+                        <div style="text-align: left;">
+                            <table class="table table-striped table-condensed">
+                                <colgroup width="50%"></colgroup>
+                                <colgroup width="50%"></colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>等级</th>
+                                        <th>秀票</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {foreach from=$data.anchor_level item=item key=key name=item_name}
+                                    <tr>
+                                        <td>{$item.level}</td>
+                                        <td>{$item.ticket}</td>
+                                    </tr>
+                                    {/foreach}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="tab2" class="tab">
+                <div class="y-rank tc">
+                    <div class="y-ranktop">
+                        <p class="y-level bold f20">{$data.leve_name}</p>
+                        <img src="{$TMPL}/images/icon_medal.png">
+                        <p class="exp_val f16"><span class="c-red">{$data.u_score}</span>{if $data.up_score neq '满级'}/<span v-cloak>{$data.up_score}</span>{/if}</p>
+                        <div class="y-scroll"><div class="theme_color" id="grade_progress"></div></div>
+                    </div>
+                    <div class="y-rankbottom">
+                        <h3><strong>等级说明</strong></h3>
+                        <div style="text-align: left;">
+                            <p>1.不同等级图标不同，越高越尊贵</p>
+                            <p>2.您的身份一眼可见，尊贵显而易见</p>
+                            <p>3.送礼物是最快的升级办法，送的越多升级越快</p>
+                        </div>
+                        <h3><strong>等级体系明细</strong></h3>
+                        <div style="text-align: left;">
+                            <table class="table table-striped table-condensed">
+                                <colgroup width="50%"></colgroup>
+                                <colgroup width="50%"></colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>等级</th>
+                                        <th>经验值</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {foreach from=$data.user_level item=item key=key name=item_name}
+                                    <tr>
+                                        <td>{$item.level}</td>
+                                        <td>{$item.score}</td>
+                                    </tr>
+                                    {/foreach}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var u_score = '{$data.u_score}', up_score = '{$data.up_score}';
+            var u_ticket = '{$data.u_ticket}', up_ticket = '{$data.up_ticket}';
+        </script>
+	</div>
+</div>
+{include file="inc/footer.html"}

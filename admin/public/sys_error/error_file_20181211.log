@@ -1,0 +1,159 @@
+执行日期：2018-12-11-17：38：15
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=user,act=userinfojava.io.IOException: unexpected end of stream on com.android.okhttp.Address@cb9913ad',
+)
+
+执行日期：2018-12-11-17：38：16
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=user,act=userinfojava.io.IOException: unexpected end of stream on com.android.okhttp.Address@cb9913ad',
+)
+
+执行日期：2018-12-11-17：38：54
+array (
+  0 => '/home/wwwroot/qianying/domain/qianying/web/system/libs/user.php',
+  1 => 2165,
+  2 => 'accountimport',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorCode' => 70009,
+    'ErrorInfo' => '',
+  ),
+)
+
+执行日期：2018-12-11-17：38：56
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'Android 2018-12-11 17:38:55 (user:23) errCode:70009 errMsg:login IM error tls_check_signature failed  sdkappid:1400116859,acctype:32083,identifier:23 sig:APj4Mtn6tn4A81Fbbg__',
+)
+
+执行日期：2018-12-11-17：39：17
+array (
+  0 => '/home/wwwroot/qianying/domain/qianying/web/system/libs/user.php',
+  1 => 2165,
+  2 => 'accountimport',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorCode' => 70009,
+    'ErrorInfo' => '',
+  ),
+)
+
+执行日期：2018-12-11-17：39：19
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'Android 2018-12-11 17:39:18 (user:23) errCode:70009 errMsg:login IM error tls_check_signature failed  sdkappid:1400116859,acctype:32083,identifier:23 sig:APj4Mtn6tn4A81Fbbg__',
+)
+
+执行日期：2018-12-11-17：41：52
+array (
+  0 => '/home/wwwroot/qianying/domain/qianying/web/system/libs/user.php',
+  1 => 2165,
+  2 => 'accountimport',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorCode' => 70009,
+    'ErrorInfo' => '',
+  ),
+)
+
+执行日期：2018-12-11-17：41：54
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'Android 2018-12-11 17:41:52 (user:23) errCode:70009 errMsg:login IM error tls_check_signature failed  sdkappid:1400116859,acctype:32083,identifier:23 sig:APj4Mtn6tn4A81Fbbg__',
+)
+
+执行日期：2018-12-11-17：45：46
+array (
+  0 => '/home/wwwroot/qianying/domain/qianying/web/system/libs/user.php',
+  1 => 2165,
+  2 => 'accountimport',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorCode' => 70009,
+    'ErrorInfo' => '',
+  ),
+)
+
+执行日期：2018-12-11-17：45：48
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'Android 2018-12-11 17:45:47 (user:23) errCode:70009 errMsg:login IM error tls_check_signature failed  sdkappid:1400116859,acctype:32083,identifier:23 sig:APj4Mtn6tn4A81Fbbg__',
+)
+
+执行日期：2018-12-11-21：36：53
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'ctl=login,act=send_mobile_verifyjava.net.SocketTimeoutException: timeout',
+)
+
+执行日期：2018-12-11-21：37：42
+array (
+  0 => '/home/wwwroot/qianying/domain/qianying/web/system/libs/user.php',
+  1 => 2165,
+  2 => 'accountimport',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorCode' => 70009,
+    'ErrorInfo' => '',
+  ),
+)
+
+执行日期：2018-12-11-21：37：50
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'Android 2018-12-11 21:37:49 (user:23) errCode:70009 errMsg:login IM error tls_check_signature failed  sdkappid:1400116859,acctype:32083,identifier:23 sig:APj4Mtn6tn4A81Fbbg__',
+)
+
+执行日期：2018-12-11-21：58：01
+array (
+  0 => '/home/wwwroot/qianying/domain/qianying/web/system/libs/user.php',
+  1 => 2165,
+  2 => 'accountimport',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorCode' => 70009,
+    'ErrorInfo' => '',
+  ),
+)
+
+执行日期：2018-12-11-21：58：05
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.0.0; sm-g9350 build/r16nw)',
+  4 => 'Android 2018-12-11 21:58:04 (user:23) errCode:70009 errMsg:login IM error tls_check_signature failed  sdkappid:1400116859,acctype:32083,identifier:23 sig:APj4Mtn6tn4A81Fbbg__',
+)
+

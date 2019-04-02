@@ -1,0 +1,47 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<script type="text/javascript">
+
+    function check_incharge_form()
+    {
+        var allow_max_number =parseInt($("input[name='allow_max_number']").val());
+        if(allow_max_number>2147483647)
+        {
+
+            alert("所填写的人数不能超过2147483647");
+            return false;
+        }
+        return true;
+    }
+</script>
+<div class="main">
+	<div class="main_title">直播间最大人数&nbsp;{$user_info.allow_max_number}&nbsp;&nbsp;(0为不限制)<!--{%USER_TICKET}:{$user_info.ticket}--></div>
+	<div class="blank5"></div>
+	<form name="edit" action="__APP__" method="post" enctype="multipart/form-data" onsubmit="return check_incharge_form();">
+		<table class="form" cellpadding=0 cellspacing=0>
+			<tr>
+				<td colspan=2 class="topTd"></td>
+			</tr>
+			<tr>
+				<td class="item_title">直播间最大真实人数:</td>
+				<td class="item_input"><input type="text" class="textbox require" name="allow_max_number" />
+				</td>
+			</tr>
+			<tr>
+				<td class="item_title">&nbsp;</td>
+				<td class="item_input">
+					<!--隐藏元素-->
+					<input type="hidden" name="id" value="{$user_info.id}" />
+					<input type="hidden" name="{:conf("VAR_MODULE")}" value="UserGeneral" />
+					<input type="hidden" name="{:conf("VAR_ACTION")}" value="modify_number" />
+					<!--隐藏元素-->
+					<input type="submit" class="button" value="{%OK}" />
+					<input type="reset" class="button" value="{%RESET}" />
+				</td>
+			</tr>
+			<tr>
+				<td colspan=2 class="bottomTd"></td>
+			</tr>
+		</table>
+	</form>
+</div>

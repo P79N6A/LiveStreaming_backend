@@ -1,0 +1,73 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<PHP>
+	function tips()
+	{
+		return "<a sytle='text-decoration:none;'>无</a>";
+	}
+	function pk_win($is_win)
+	{
+		switch($is_win){
+			case 1:
+			    return '胜利';
+			break;
+			case 2:
+			    return '失败';
+			break;
+			case 3:
+			    return '平局';
+			break;
+			default:
+			    return 'PK无效';
+			break;
+		}
+	}
+</PHP>
+<include file="Public:header" />
+<load href='__TMPL__Common/js/jquery.bgiframe.js' />
+<load href='__TMPL__Common/js/jquery.weebox.js' />
+
+<load href='__TMPL__Common/style/weebox.css' />
+<div class="main">
+<div class="main_title_list"><div class="list-line-ico"></div>PK记录</div>
+<div class="search_row">
+	<form name="search" action="__APP__" method="get" class="clearfix">
+		<div>发起PK主播ID：<input type="text" class="textbox" name="from_user_id" value="{:trim($_REQUEST['from_user_id'])}" style="width:100px" /></div>
+		<div>接受PK主播ID ：<input type="text" class="textbox" name="to_user_id" value="{:trim($_REQUEST['to_user_id'])}" /></div>
+		<div>创建时间 ：
+			<input style="margin: 0" type="text" class="textbox" name="start_time" id="start_time" value="{:trim($_REQUEST['start_time'])}" onfocus="return showCalendar('start_time', '%Y-%m-%d', false, false, 'start_time');" /> - <input type="text" class="textbox" name="end_time" id="end_time" value="{:trim($_REQUEST['end_time'])}" onfocus="return showCalendar('end_time', '%Y-%m-%d', false, false, 'end_time');" />
+		</div>
+		<div>
+			<input type="hidden" value="PkLiveHistory" name="m" />
+			<input type="hidden" value="index" name="a" />
+			<input type="submit" class="button" value="{%SEARCH}" />
+		</div>
+	</form>
+</div>
+<html:list
+	id="dataTable"
+	style="dataTable"
+	name="deal"
+	action="true"
+	datasource="list"
+	show="id:{%ID}
+		,user_id:发起PK主播ID
+		,user_nick_name:主播昵称
+		,video_id:房间ID
+		,to_user_id:接受PK主播ID
+		,to_user_nick_name:主播昵称
+		,to_video_id:房间ID
+		,pk_theme:PK主题
+		,pk_time:PK约定时间
+		,is_win|pk_win:PK结果
+		,start_time|to_date:创建时间
+		,stop_time|to_date:PK结束时间
+		"
+	actionlist="tips:无" />
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

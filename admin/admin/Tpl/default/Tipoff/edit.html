@@ -1,0 +1,88 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<div class="main">
+<div class="main_title">{%EDIT} <a href="{:u("Tipoff/index")}" class="back_list">{%BACK_LIST}</a></div>
+<div class="blank5"></div>
+<form name="edit" action="__APP__" method="post" enctype="multipart/form-data">
+<table class="form" cellpadding=0 cellspacing=0>
+	<tr>
+		<td colspan=2 class="topTd"></td>
+	</tr>
+    <tr>
+        <td class="item_title">举报人:</td>
+        <td class="item_input">{$vo.from_user_name} [ID:{$vo.from_user_id}]<input type="hidden" class="textbox require" name="from_user_id" value="{$vo.from_user_id}"/></td>
+    </tr>
+    <if condition="$vo.screenshot neq ''">
+    <tr>
+        <td class="item_title">举报人QQ:</td>
+        <td class="item_input">{$vo.from_user_qq}<input type="hidden" class="textbox require" name="from_user_id" value="{$vo.from_user_qq}"/></td>
+    </tr>
+    </if>
+    <tr>
+        <td class="item_title">被举报人:</td>
+        <td class="item_input">{$vo.to_user_name} [ID:{$vo.to_user_id}]<input type="hidden" class="textbox require" name="to_user_id" value="{$vo.to_user_id}"/></td>
+    </tr>
+    <tr>
+        <td class="item_title">举报类型:</td>
+        <td class="item_input">
+            <select name="tipoff_type_id">
+                <option value="0">请选择举报类型</option>
+                <foreach name="tipoff" item="item">
+                    <option value="{$item.id}" <if condition="$vo['tipoff_type_id'] eq $item['id']">selected="selected"</if>>{$item.name}</option>
+                </foreach>
+            </select>
+        </td>
+    </tr>
+    <if condition="$vo.screenshot neq ''">
+    <tr>
+        <td class="item_title">截图:</td>
+        <td class="item_input">
+            <img src="{$vo.screenshot}"/>
+        </td>
+    </tr>
+    </if>
+    <if condition="!empty($vo['data'])">
+    <tr>
+        <td class="item_title">图片:</td>
+        <td class="item_input">
+            <volist name="vo['data']" id="data_item">
+                <a href="{$data_item}" target="_blank">
+                    <img src="{$data_item}" height="100" width="100" />
+                </a>
+            </volist>
+        </td>
+    </tr>
+    </if>
+    <tr>
+        <td class="item_title">备注:</td>
+        <td class="item_input">
+            <textarea name="remark" class="textarea">{$vo.remark}</textarea>
+        </td>
+    </tr>
+    <tr>
+        <td class="item_title">是否处理:</td>
+        <td class="item_input">
+            <label>是<input type="radio" name="status" value="1" <if condition="$vo['status'] eq 1">checked="checked"</if>  /></label>
+            <label>否<input type="radio" name="status" value="0" <if condition="$vo['status'] eq 0">checked="checked"</if> /></label>
+        </td>
+    </tr>
+	<tr>
+		<td class="item_title"></td>
+		<td class="item_input">
+			<!--隐藏元素-->
+			<input type="hidden" name="{:conf("VAR_MODULE")}" value="Tipoff" />
+			<input type="hidden" name="{:conf("VAR_ACTION")}" value="update" />
+			<input type="hidden" name="id" value="{$vo.id}" />
+			<!--隐藏元素-->
+			<input type="submit" class="button" value="{%EDIT}" />
+			<input type="reset" class="button" value="{%RESET}" />
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2 class="bottomTd"></td>
+	</tr>
+</table>
+</form>
+</div>
+<include file="Public:footer" />

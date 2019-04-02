@@ -1,0 +1,379 @@
+{include file="inc/header.html"}
+<?php
+	$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/index.css";
+	$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/user-rank.css";
+?>
+<link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$dpagecss"}" />
+<style type="text/css">
+	.m-Top{
+		min-height: 690px;
+	}
+</style>
+<div class="wrapper">
+	<!--排行榜列表开始-->
+	<div class="m-wrapper-top clearfix">
+		<div class="layout-3 f-l">
+			<div class="layout-3-list clearfix">
+				<!-- 魅力主播排行榜 -->
+				<div class="m-Top clearfix" id="J-ranking-charm">
+					<h2 class="m-common-title">
+						<div class="container-fluid">
+							<i class="common-icon c-5"></i><strong>魅力榜</strong>
+							<span class="top-selects hd">
+								<a href="javascript:void(0);">日榜</a>
+								<a href="javascript:void(0);">周榜</a>
+								<a href="javascript:void(0);">月榜</a>
+								<a href="javascript:void(0);" class="active">总榜</a>
+							</span>
+						</div>
+					</h2>
+					<div class="bd">
+						<!-- 日榜 -->
+						<ul class="m-Top-list clearfix">
+							{foreach from=$data.charm_podcast.day item=item key=key name=charm_podcast}
+							{if  $smarty.foreach.charm_podcast.iteration lte 10}
+							<li class="list-{$key}">
+								<a href="{$item.video_url}" title="{$item.nick_name}" target="_blank" class="clearfix">
+									<p class="grade-img">No.{$smarty.foreach.charm_podcast.iteration}</p>
+									<img src="{$item.head_image}" alt="" class="top-img">
+									<p class="list-name">{$item.nick_name}</p>
+								</a>
+							</li>
+							{/if}
+							{/foreach}
+						</ul>
+						<!-- 周榜 -->
+						<ul class="m-Top-list clearfix">
+							{foreach from=$data.charm_podcast.weeks item=item key=key name=charm_podcast}
+							{if  $smarty.foreach.charm_podcast.iteration lte 10}
+							<li class="list-{$key}">
+								<a href="{$item.video_url}" title="{$item.nick_name}" target="_blank" class="clearfix">
+									<p class="grade-img">No.{$smarty.foreach.charm_podcast.iteration}</p>
+									<img src="{$item.head_image}" alt="" class="top-img">
+									<p class="list-name">{$item.nick_name}</p>
+								</a>
+							</li>
+							{/if}
+							{/foreach}
+						</ul>
+						<!-- 月榜 -->
+						<ul class="m-Top-list clearfix" rel="yue">
+							{foreach from=$data.charm_podcast.month  item=item key=key name=charm_podcast}
+							{if  $smarty.foreach.charm_podcast.iteration  lte 10}
+							<li class="list-{$key}">
+								<a href="{$item.video_url}" title="{$item.nick_name}" target="_blank" class="clearfix">
+									<p class="grade-img">No.{$smarty.foreach.charm_podcast.iteration}</p>
+									<img src="{$item.head_image}" alt="" class="top-img">
+									<p class="list-name">{$item.nick_name}</p>
+								</a>
+							</li>
+							{/if}
+							{/foreach}
+						</ul>
+						<!-- 总榜 -->
+						<ul class="m-Top-list clearfix">
+							{foreach from=$data.charm_podcast.all item=item key=key name=charm_podcast}
+							{if  $smarty.foreach.charm_podcast.iteration  lte 10}
+							<li class="list-{$key}">
+								<a href="{$item.video_url}" title="{$item.nick_name}" target="_blank" class="clearfix">
+									<p class="grade-img">No.{$smarty.foreach.charm_podcast.iteration}</p>
+									<img src="{$item.head_image}" alt="" class="top-img">
+									<p class="list-name">{$item.nick_name}</p>
+								</a>
+							</li>
+							{/if}
+							{/foreach}
+						</ul>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<!-- 富豪排行榜 -->
+				<div class="m-Top" id="J-ranking-plute">
+					<h2 class="m-common-title">
+						<div class="container-fluid">
+							<i class="common-icon c-6"></i><strong>富豪榜</strong>
+							<span class="top-selects hd">
+								<a href="javascript:void(0);">日榜</a>
+								<a href="javascript:void(0);">周榜</a>
+								<a href="javascript:void(0);">月榜</a>
+								<a href="javascript:void(0);" class="active">总榜</a>
+							</span>
+						</div>
+					</h2>
+					<div class="bd">
+						<!-- 日榜 -->
+						<ul class="m-Top-list clearfix j-list-day">
+							{foreach from=$data.rich_list.day item=item key=key name=rich_list}
+							{if  $smarty.foreach.rich_list.iteration lte 10}
+							<li class="list-{$key}">
+								<a href="{$item.video_url}" title="{$item.nick_name}" target="_blank" class="clearfix">
+									<p class="grade-img">No.{$smarty.foreach.rich_list.iteration}</p>
+									<img src="{$item.head_image}" alt="" class="top-img">
+									<p class="list-name">{$item.nick_name}</p>
+								</a>
+							</li>
+							{/if}
+							{/foreach}
+						</ul>
+						<!-- 周榜 -->
+						<ul class="m-Top-list clearfix j-list-week">
+							{foreach from=$data.rich_list.weeks item=item key=key name=rich_list}
+							{if  $smarty.foreach.rich_list.iteration lte 10}
+							<li class="list-{$key}">
+								<a href="{$item.video_url}" title="{$item.nick_name}" target="_blank" class="clearfix">
+									<p class="grade-img">No.{$smarty.foreach.rich_list.iteration}</p>
+									<img src="{$item.head_image}" alt="" class="top-img">
+									<p class="list-name">{$item.nick_name}</p>
+								</a>
+							</li>
+							{/if}
+							{/foreach}
+						</ul>    
+						<!-- 月榜 -->
+						<ul class="m-Top-list clearfix j-list-month">
+							{foreach from=$data.rich_list.month item=item key=key name=rich_list}
+							{if  $smarty.foreach.rich_list.iteration lte 10}
+							<li class="list-{$key}">
+								<a href="{$item.video_url}" title="{$item.nick_name}" target="_blank" class="clearfix">
+									<p class="grade-img">No.{$smarty.foreach.rich_list.iteration}</p>
+									<img src="{$item.head_image}" alt="" class="top-img">
+									<p class="list-name">{$item.nick_name}</p>
+								</a>
+							</li>
+							{/if}
+							{/foreach}
+						</ul>
+						<!-- 总榜 -->
+						<ul class="m-Top-list clearfix j-list-total">
+							{foreach from=$data.rich_list.all item=item key=key name=rich_list}
+							{if  $smarty.foreach.rich_list.iteration lte 10}
+							<li class="list-{$key}">
+								<a href="{$item.video_url}" title="{$item.nick_name}" target="_blank" class="clearfix">
+									<p class="grade-img">No.{$smarty.foreach.rich_list.iteration}</p>
+									<img src="{$item.head_image}" alt="" class="top-img">
+									<p class="list-name">{$item.nick_name}</p>
+								</a>
+							</li>
+							{/if}
+							{/foreach}
+						</ul>
+					</div>
+				</div>
+				<!--家族榜-->
+				<div class="m-Top clearfix" id="J-ranking-family">
+					<h2 class="m-common-title">
+						<div class="container-fluid">
+							<i class="common-icon c-4"></i><strong>家族榜</strong>
+							<span class="top-selects hd">
+								<a href="javascript:void(0);">日榜</a>
+								<a href="javascript:void(0);">周榜</a>
+								<a href="javascript:void(0);">月榜</a>
+								<a href="javascript:void(0);" class="active">总榜</a>
+							</span>
+						</div>
+					</h2>
+					<div class="bd">
+						<!-- 日榜 -->
+						<ul class="m-Top-list clearfix">
+							{foreach from=$data.family.day item=item key=key name=family}
+							{if  $smarty.foreach.family.iteration lte 10}
+							<li class="list-{$key}">
+								<a href="{url r="family#info" p="family_id=$item.family_id"}" title="{$item.family_name}" target="_blank" class="clearfix">
+									<p class="grade-img">No.{$smarty.foreach.family.iteration}</p>
+									<img src="{$item.family_logo}" alt="" class="top-img">
+									<p class="list-name">{$item.family_name}</p>
+								</a>
+							</li>
+							{/if}
+							{/foreach}
+						</ul>
+						<!-- 周榜 -->
+						<ul class="m-Top-list clearfix">
+							{foreach from=$data.family.weeks item=item key=key name=family}
+							{if  $smarty.foreach.family.iteration lte 10}
+							<li class="list-{$key}">
+								<a href="{url r="family#info" p="family_id=$item.family_id"}" title="{$item.family_name}" target="_blank" class="clearfix">
+									<p class="grade-img">No.{$smarty.foreach.family.iteration}</p>
+									<img src="{$item.family_logo}" alt="" class="top-img">
+									<p class="list-name">{$item.family_name}</p>
+								</a>
+							</li>
+							{/if}
+							{/foreach}
+						</ul>
+						<!-- 月榜 -->
+						<ul class="m-Top-list clearfix" rel="yue">
+							{foreach from=$data.family.month  item=item key=key name=family}
+							{if  $smarty.foreach.family.iteration  lte 10}
+							<li class="list-{$key}">
+								<a href="{url r="family#info" p="family_id=$item.family_id"}" title="{$item.family_name}" target="_blank" class="clearfix">
+									<p class="grade-img">No.{$smarty.foreach.family.iteration}</p>
+									<img src="{$item.family_logo}" alt="" class="top-img">
+									<p class="list-name">{$item.family_name}</p>
+								</a>
+							</li>
+							{/if}
+							{/foreach}
+						</ul>
+						<!-- 总榜 -->
+						<ul class="m-Top-list clearfix">
+							{foreach from=$data.family.all item=item key=key name=family}
+							{if  $smarty.foreach.family.iteration  lte 10}
+							<li class="list-{$key}">
+								<a href="{url r="family#info" p="family_id=$item.family_id"}" title="{$item.family_name}" target="_blank" class="clearfix">
+									<p class="grade-img">No.{$smarty.foreach.family.iteration}</p>
+									<img src="{$item.family_logo}" alt="" class="top-img">
+									<p class="list-name">{$item.family_name}</p>
+								</a>
+							</li>
+							{/if}
+							{/foreach}
+						</ul>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<!--新秀榜-->
+				<div class="m-Top clearfix" id="J-ranking-rookie">
+					<h2 class="m-common-title">
+						<div class="container-fluid">
+							<i class="common-icon c-8"></i><strong>新秀榜</strong>
+							<span class="top-selects hd">
+								<a href="javascript:void(0);">日榜</a>
+								<a href="javascript:void(0);">周榜</a>
+								<a href="javascript:void(0);" class="active">月榜</a>
+								<a href="javascript:void(0);" class="active">总榜</a>
+							</span>
+						</div>
+					</h2>
+					<div class="bd">
+						<!-- 日榜 -->
+						<ul class="m-Top-list clearfix">
+							{foreach from=$data.newstar.day item=item key=key name=charm_podcast}
+							{if  $smarty.foreach.charm_podcast.iteration lte 10}
+							<li class="list-{$key}">
+								<a href="{$item.video_url}" title="{$item.nick_name}" target="_blank" class="clearfix">
+									<p class="grade-img">No.{$smarty.foreach.charm_podcast.iteration}</p>
+									<img src="{$item.head_image}" alt="" class="top-img">
+									<p class="list-name">{$item.nick_name}</p>
+								</a>
+							</li>
+							{/if}
+							{/foreach}
+						</ul>
+						<!-- 周榜 -->
+						<ul class="m-Top-list clearfix">
+							{foreach from=$data.newstar.weeks item=item key=key name=charm_podcast}
+							{if  $smarty.foreach.charm_podcast.iteration lte 10}
+							<li class="list-{$key}">
+								<a href="{$item.video_url}" title="{$item.nick_name}" target="_blank" class="clearfix">
+									<p class="grade-img">No.{$smarty.foreach.charm_podcast.iteration}</p>
+									<img src="{$item.head_image}" alt="" class="top-img">
+									<p class="list-name">{$item.nick_name}</p>
+								</a>
+							</li>
+							{/if}
+							{/foreach}
+						</ul>
+						<!-- 月榜 -->
+						<ul class="m-Top-list clearfix" rel="yue">
+							{foreach from=$data.newstar.month  item=item key=key name=charm_podcast}
+							{if  $smarty.foreach.charm_podcast.iteration  lte 10}
+							<li class="list-{$key}">
+								<a href="{$item.video_url}" title="{$item.nick_name}" target="_blank" class="clearfix">
+									<p class="grade-img">No.{$smarty.foreach.charm_podcast.iteration}</p>
+									<img src="{$item.head_image}" alt="" class="top-img">
+									<p class="list-name">{$item.nick_name}</p>
+								</a>
+							</li>
+							{/if}
+							{/foreach}
+						</ul>
+						<!-- 总榜 -->
+						<ul class="m-Top-list clearfix">
+							{foreach from=$data.newstar.all item=item key=key name=charm_podcast}
+							{if  $smarty.foreach.charm_podcast.iteration  lte 10}
+							<li class="list-{$key}">
+								<a href="{$item.video_url}" title="{$item.nick_name}" target="_blank" class="clearfix">
+									<p class="grade-img">No.{$smarty.foreach.charm_podcast.iteration}</p>
+									<img src="{$item.head_image}" alt="" class="top-img">
+									<p class="list-name">{$item.nick_name}</p>
+								</a>
+							</li>
+							{/if}
+							{/foreach}
+						</ul>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+	<!--排行榜列表结束-->
+	{if $data.ad_list.0}
+	<div class="advertisement">
+		<a href="{$data.ad_list.0.url}" target="_blank">
+			<img src="{$data.ad_list.0.image}" alt="">
+		</a>
+	</div>
+	{/if}
+
+	<!-- 热门直播列表开始 -->
+	<div class="m-wrapper-content">
+		<div class="m-live clearfix">
+			<h2 class="m-common-title">
+				<div class="container-fluid">
+					<i class="common-icon c-2"></i><strong>热门</strong>
+					<a href="{$data.is_hot_more_url}" target="_blank" class="btn btn-default btn-circle view-more f-r">查看更多</a>
+				</div>
+			</h2>
+			{if $data.is_hot}
+			<ul class="m-live-list clearfix">
+				{foreach from=$data.is_hot item=item key=key name=is_hot}
+					<li class="block-live">
+						<a href="{$item.video_url}">
+							<span class="block-live-img">
+								<img alt="{$item.title}"  data-original="{$item.live_image}" class="block-live-img lazy" />
+							</span>
+							<div class="block-live-info clearfix">
+								<div class="live-name clearfix">
+									<img alt="{$item.nick_name}" src="{$item.thumb_head_image}" class="avatar-normal" />
+									<p title="{$item.title}">{$item.title}</p>
+									<p class="sub f-l" title="{$item.nick_name}">{$item.nick_name}</p>
+									<span class="watch-num f-r"><i class="icon iconfont">&#xe60a;</i>{$item.watch_number}</span>
+								</div>
+							</div>
+						</a>
+					</li>
+				{/foreach}
+			</ul>
+			{else}
+			<p class="null-data">暂无数据</p>
+			{/if}
+		</div>
+	</div>
+	<!-- 热门直播列表结束 -->
+</div>
+<script type="text/javascript">
+	$("#J-ranking-charm").slide({titCell:".hd a", mainCell:".bd", titOnClassName:"active", trigger:"click", delayTime:500});
+	$("#J-ranking-plute").slide({titCell:".hd a", mainCell:".bd", titOnClassName:"active", trigger:"click", delayTime:500});
+	$("#J-ranking-family").slide({titCell:".hd a", mainCell:".bd", titOnClassName:"active", trigger:"click", delayTime:500});
+	$("#J-ranking-rookie").slide({titCell:".hd a", mainCell:".bd", titOnClassName:"active", trigger:"click", delayTime:500});
+
+	$('.m-Top-list').each(function(){
+		var li_length = $(this).children("li").length;
+		var li_even = $(this).children("li:even");
+		var li_odd = $(this).children("li:odd");
+		li_even.addClass("list-odd");
+		li_odd.addClass("list-even");
+		if(li_length % 2){
+			$(this).children("li").last().addClass("list-last2");
+		}else{
+			$(this).children("li").last().addClass("list-last");
+			$(this).children("li").eq(li_length-2).addClass("list-last2");
+		};
+	});
+	
+	
+</script>
+{include file="inc/footer.html"}

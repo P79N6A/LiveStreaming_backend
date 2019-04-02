@@ -1,0 +1,4 @@
+PHP 5.6.35 Development Server started at Wed Aug 15 09:32:05 2018
+Listening on http://127.0.0.1:8080
+Document root is /mnt/e/wamp64/www/livet1
+Press Ctrl-C to quit.

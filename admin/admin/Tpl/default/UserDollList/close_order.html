@@ -1,0 +1,54 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<load href='__TMPL__Common/js/conf.js' />
+<script type="text/javascript" src="__ROOT__/public/region.js"></script>
+<load href='__TMPL__Common/js/user_edit.js' />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<div class="main">
+<if condition="($from eq 'unget')">
+    <div class="main_title">订单关闭 
+        <a href="{:u("UserDollList/unget")}" class="back_list">{%BACK_LIST}</a>
+    </div>
+    <else/>
+    <div class="main_title">订单关闭
+        <a href="{:u("UserDollList/index")}" class="back_list">{%BACK_LIST}</a>
+    </div>
+</if>
+<div class="blank5"></div>
+<form name="close_confirm" action="__APP__" method="post" enctype="multipart/form-data" onsubmit="return submit_check();">
+<table class="form conf_tab" cellpadding=0 cellspacing=0 >
+    <tr>
+        <td class="item_title">订单序列号</td>
+        <td class="item_input">{$order_sn}</td>
+    </tr>
+    <tr>
+        <td class="item_title">用户id</td>
+        <td class="item_input">{$uid}</td>
+    </tr>
+    <tr>
+        <td class="item_title">补偿{$diamond_name}</td>
+        <td class="item_input"><input type="text" class="textbox" name="exchanged_diamonds" value="{$exchanged_diamonds}" /></td>
+    </tr>
+	<tr>
+        <td class="item_title">关闭理由</td>
+        <td class="item_input"><input type="text" class="textbox" name="close_reason" value="{$close_reason}" /></td>
+    </tr>
+    <tr>
+        <td class="item_title"></td>
+        <td class="item_input">
+            <!--隐藏元素-->
+            <input type="hidden" name="id" value="{$id}" />
+            <input type="hidden" name="{:conf("VAR_MODULE")}" value="UserDollList" />
+            <input type="hidden" name="{:conf("VAR_ACTION")}" value="close_confirm" />
+            <input type="hidden" name="from" value="{$from}" />
+            <!--隐藏元素-->
+            <input type="submit" class="button" value="关闭确认" />
+        </td>
+    </tr>
+</table>
+</form>
+</div>
+<include file="Public:footer" />

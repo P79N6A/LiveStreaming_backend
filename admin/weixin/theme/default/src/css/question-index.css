@@ -1,0 +1,154 @@
+/*界面主题色*/
+/*背景色*/
+/*背景色（深）*/
+/*模块背景色*/
+/*主题风格色*/
+/*主题辅助风格色*/
+/*字体颜色*/
+/*主要字色*/
+/*浅色*/
+/*更浅色（适用：二级标题、简介）*/
+/*更更浅色（适用：icon图标）*/
+/*标题*/
+/*字体大小*/
+/*线条颜色*/
+/*主要线条颜色*/
+/*更深线条颜色*/
+/*更浅线条颜色*/
+/*文本输入框边框颜色*/
+/*各类间距，高度*/
+/*横向间距*/
+/*纵向间距*/
+.page-question-index .bar-tab ~ .content {
+  top: -2.2rem;
+}
+.page-question-index .content-block {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 0.5rem;
+}
+.page-question-index .m-user {
+  padding: 0.625rem 0.5rem;
+  background: #fff;
+}
+.page-question-index .m-user .block-user {
+  display: -webkit-flex;
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+.page-question-index .m-user .block-user .user-pic {
+  margin-right: 0.5rem;
+}
+.page-question-index .m-user .block-user .user-pic img {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 5rem;
+}
+.page-question-index .m-user .block-user .user-text .name {
+  color: #333;
+  line-height: 1.2rem;
+}
+.page-question-index .m-user .block-user .user-text .txt {
+  color: #999;
+  line-height: 1.1rem;
+}
+.page-question-index .m-user .block-button {
+  display: -webkit-flex;
+  display: flex;
+  padding: 0 0.25rem;
+  margin-bottom: 0.125rem;
+}
+.page-question-index .m-user .block-button .button {
+  border-radius: 0.1rem;
+}
+.page-question-index .m-user .block-button .below-line {
+  height: 2rem;
+  line-height: 2rem;
+  color: #fff;
+  background: #f1383f;
+  border-color: #f1383f;
+  width: 48%;
+  margin-right: 0.75rem;
+  font-size: 0.7rem;
+}
+.page-question-index .m-user .block-button .on-line {
+  height: 2rem;
+  line-height: 2rem;
+  color: #fff;
+  background: #ff9000;
+  border-color: #ff9000;
+  width: 48%;
+  font-size: 0.7rem;
+}
+.page-question-index .m-tab .buttons-tab .tab-link {
+  border: 0;
+  height: 2.5rem;
+  line-height: 2.5rem;
+}
+.page-question-index .m-tab .buttons-tab .tab-link span {
+  position: relative;
+  height: 100%;
+  display: inline-block;
+  padding: 0 0.5rem;
+  color: #000;
+}
+.page-question-index .m-tab .buttons-tab .active span {
+  color: #f1383f;
+}
+.page-question-index .m-tab .card {
+  margin-bottom: 0.5rem;
+}
+.page-question-index .m-tab .card a {
+  display: block;
+  height: 100%;
+  padding: 0.5rem;
+}
+.page-question-index .m-tab .card .card-content {
+  margin-bottom: 0.3rem;
+}
+.page-question-index .m-tab .card .card-content .card-content-inner {
+  padding: 0;
+}
+.page-question-index .m-tab .card .card-content .card-content-inner p {
+  line-height: 1.1rem;
+  color: #666;
+}
+.page-question-index .m-tab .card .card-footer {
+  min-height: 1rem;
+  padding: 0;
+  color: #999;
+}
+.page-question-index .m-tab .card .card-footer:before {
+  background: none;
+}
+.page-question-index .m-tab .card .card-footer .answered {
+  color: #f1383f;
+  line-height: 0.6rem;
+  display: -webkit-flex;
+  display: flex;
+}
+.page-question-index .m-tab .card .card-footer .answered span.da {
+  background: #f1383f;
+  color: #fff;
+  padding: 0 0.1rem;
+  border-radius: 0.1rem;
+  font-size: 0.9rem;
+  line-height: 1.1rem;
+  height: 1.1rem;
+  display: inline-block;
+  width: 1.1rem;
+  text-align: center;
+  -moz-transform: scale(0.5, 0.5);
+  -webkit-transform: scale(0.5, 0.5);
+  -o-transform: scale(0.5, 0.5);
+  margin: -0.25rem -0.1rem -0.25rem -0.25rem;
+}
+.page-question-index .m-tab .card .card-footer .look-time i {
+  font-size: 0.8rem;
+  line-height: 0.9rem;
+  margin-right: 0.1rem;
+}
+.page-question-index .m-tab .card .card-footer .look-time span {
+  margin-left: 0.5rem;
+  line-height: 0.9rem;
+}

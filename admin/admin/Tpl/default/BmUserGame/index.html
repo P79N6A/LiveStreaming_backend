@@ -1,0 +1,54 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<include file="Public:new" />
+<load href='__TMPL__Common/js/jquery.bgiframe.js' />
+<load href='__TMPL__Common/js/jquery.weebox.js' />
+<load href='__TMPL__Common/js/user.js' />
+<load href='__TMPL__Common/js/deal.js' />
+<load href='__TMPL__Common/style/weebox.css' />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<div class="main">
+    <div class="main_title_list"><div class="list-line-ico"></div>会员账户报表</div>
+    <div class="search_row">
+        <form name="search" action="__APP__" method="get" class="clearfix">
+            <div>时间:
+            	<input type="text" class="textbox" name="begin_time" id="begin_time" onfocus="this.blur(); return showCalendar('begin_time', '%Y-%m-%d', false, false, 'btn_begin_time');" value="{$begin_time}"/>
+                <input type="button" class="button" id="btn_begin_time" value="{%SELECT_TIME}" onclick="return showCalendar('begin_time', '%Y-%m-%d', false, false, 'btn_begin_time');" />
+                <span>-</span> 
+                <input type="text" class="textbox" name="end_time" id="end_time" onfocus="this.blur(); return showCalendar('end_time', '%Y-%m-%d', false, false, 'btn_end_time');" value="{$end_time}" value="{$end_time}"/>
+                <input type="button" class="button" id="btn_end_time" value="{%SELECT_TIME}" onclick="return showCalendar('end_time', '%Y-%m-%d', false, false, 'btn_end_time');" />
+            </div>
+            <div>游戏名称:<input type="text" class="textbox" name="game_name" value="{:trim($_REQUEST['game_name'])}"></div>
+            <div>会员ID:<input type="text" class="textbox" name="id" value="{:trim($_REQUEST['id'])}"></div>
+            <div>机构编号：<input type="text" class="textbox" name="login_name" value="{:trim($_REQUEST['login_name'])}">          </div>
+            <div>业务员ID:<input type="text" class="textbox" name="bm_qrcode_id" value="{:trim($_REQUEST['bm_qrcode_id'])}"></div>
+            <input type="hidden" value="BmUserGame" name="m" />
+            <input type="hidden" value="index" name="a" />
+            <input type="submit" class="button" value="{%SEARCH}" />
+        </form>
+    </div>
+    汇总：<span style="padding-right:10px;">获胜 {$total.sum_win} </span><span style="padding-right:10px;">失败 {$total.sum_fail} </span><span style="padding-right:10px;">会员手续费 {$total.sum_user_gain} </span>
+    <br/>
+    <br/>
+<html:list
+    id="dataTable"
+    style="dataTable"
+    name="user"
+    datasource="list"
+    show="create_time|to_date:时间
+    ,id:会员ID
+    ,game_name:游戏名称
+    ,sum_bet:会员下注
+    ,sum_win:会员获胜
+    ,sum_fail:会员失败
+    ,user_gain:会员游戏手续费
+    ,login_name:所属鱼商编号
+    ,bm_promoter_id:所属代理商编号
+    ,bm_qrcode_id:所属业务员ID
+    "/>
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

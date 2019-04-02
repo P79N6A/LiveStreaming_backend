@@ -1,0 +1,22 @@
+<div id="left-list">
+	<ul>
+		<li class="all-live">
+			<a href='{if $data.type} /index.php?ctl=video&act=video_list&{$data.type}=1{else}{url r="video#video_list"}{/if}'  class="left-item j-left-item {if $ctl eq 'video' && $act eq 'video_list'}active{/if}">
+				<i class="iconfont">&#xe629;</i>
+				<p>直播</p>
+			</a>
+		</li>
+		<li class="topic">
+			<a href="javascript:void(0)" class="left-item j-left-item j-topic-live">
+				<i class="iconfont">&#xe637;</i>
+				<p>话题</p>
+			</a>
+		</li>
+		<li class="{if $user_info.id}follow{/if}">
+			<a href="javascript:void(0);" class="left-item {if $user_info.id}j-left-item j-focus-live{/if}" {if !$user_info.id} onclick="login();"{/if}>
+				<i class="iconfont">&#xe61a;</i>
+				<p>关注</p>
+			</a>
+		</li>
+	</ul>
+</div>

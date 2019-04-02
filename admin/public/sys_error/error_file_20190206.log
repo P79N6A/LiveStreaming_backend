@@ -1,0 +1,280 @@
+执行日期：2019-02-06-00：33：13
+array (
+  0 => 'android',
+  1 => '1.1.9',
+  2 => '20190203',
+  3 => 'dalvik/1.6.0 (linux; u; android 4.4.2; oppo r11 build/nmf26x)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-02-06-00：34：13
+array (
+  0 => 'android',
+  1 => '1.1.9',
+  2 => '20190203',
+  3 => 'dalvik/1.6.0 (linux; u; android 4.4.2; oppo r11 build/nmf26x)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-02-06-00：46：10
+array (
+  0 => 'android',
+  1 => '1.1.9',
+  2 => '20190203',
+  3 => 'dalvik/1.6.0 (linux; u; android 4.4.2; huawei mla-al10 build/huaweimla-al10)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-02-06-00：46：10
+array (
+  0 => 'android',
+  1 => '1.1.9',
+  2 => '20190203',
+  3 => 'dalvik/1.6.0 (linux; u; android 4.4.2; huawei mla-al10 build/huaweimla-al10)',
+  4 => 'ctl=videosmall,act=svlistcom.alibaba.fastjson.JSONException: syntax error, expect {, actual error, pos 0',
+)
+
+执行日期：2019-02-06-02：00：13
+array (
+  0 => '/www/wwwroot/live/system/libs/user.php',
+  1 => 355,
+  2 => 'save_user',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorInfo' => 'Err_TLS_PT_Open_Login_Invalid_Http_Body_Nick',
+    'ErrorCode' => 70402,
+  ),
+)
+
+执行日期：2019-02-06-02：00：21
+array (
+  0 => '/www/wwwroot/live/system/libs/user.php',
+  1 => 355,
+  2 => 'save_user',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorInfo' => 'Err_TLS_PT_Open_Login_Invalid_Http_Body_Nick',
+    'ErrorCode' => 70402,
+  ),
+)
+
+执行日期：2019-02-06-02：00：48
+array (
+  0 => '/www/wwwroot/live/system/libs/user.php',
+  1 => 355,
+  2 => 'save_user',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorInfo' => 'Err_TLS_PT_Open_Login_Invalid_Http_Body_Nick',
+    'ErrorCode' => 70402,
+  ),
+)
+
+执行日期：2019-02-06-02：00：51
+array (
+  0 => '/www/wwwroot/live/system/libs/user.php',
+  1 => 355,
+  2 => 'save_user',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorInfo' => 'Err_TLS_PT_Open_Login_Invalid_Http_Body_Nick',
+    'ErrorCode' => 70402,
+  ),
+)
+
+执行日期：2019-02-06-02：02：47
+array (
+  0 => '/www/wwwroot/live/system/libs/user.php',
+  1 => 355,
+  2 => 'save_user',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorInfo' => 'Err_TLS_PT_Open_Login_Invalid_Http_Body_Nick',
+    'ErrorCode' => 70402,
+  ),
+)
+
+执行日期：2019-02-06-02：02：54
+array (
+  0 => '/www/wwwroot/live/system/libs/user.php',
+  1 => 355,
+  2 => 'save_user',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorInfo' => 'Err_TLS_PT_Open_Login_Invalid_Http_Body_Nick',
+    'ErrorCode' => 70402,
+  ),
+)
+
+执行日期：2019-02-06-02：04：26
+array (
+  0 => '/www/wwwroot/live/system/libs/user.php',
+  1 => 355,
+  2 => 'save_user',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorInfo' => 'Err_TLS_PT_Open_Login_Invalid_Http_Body_Nick',
+    'ErrorCode' => 70402,
+  ),
+)
+
+执行日期：2019-02-06-09：07：27
+array (
+  0 => 'android',
+  1 => '2.6.0',
+  2 => '2019012212',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; vivo x21a build/opm1.171019.011)',
+  4 => 'Android 2019-02-06 09:06:54 errCode:70009 errMsg:login IM error Err_TLS_Third_Sig_Check_Public_Key_Decryption_Sig_Fail',
+)
+
+执行日期：2019-02-06-10：04：38
+array (
+  0 => 'android',
+  1 => '2.6.0',
+  2 => '2019012212',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; vivo x21i a build/o11019)',
+  4 => 'Android 2019-02-06 10:04:04 errCode:70009 errMsg:login IM error Err_TLS_Third_Sig_Check_Public_Key_Decryption_Sig_Fail',
+)
+
+执行日期：2019-02-06-10：23：56
+array (
+  0 => 'android',
+  1 => '2.6.0',
+  2 => '2019012212',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.0; m1 e build/nrd90m)',
+  4 => 'ctl=login,act=send_mobile_verifyjava.net.SocketTimeoutException: timeout',
+)
+
+执行日期：2019-02-06-10：24：11
+array (
+  0 => 'android',
+  1 => '2.6.0',
+  2 => '2019012212',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.0; m1 e build/nrd90m)',
+  4 => 'ctl=login,act=send_mobile_verifyjava.net.SocketTimeoutException: connect timed out',
+)
+
+执行日期：2019-02-06-10：26：35
+array (
+  0 => 'android',
+  1 => '2.6.0',
+  2 => '2019012212',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.0; m1 e build/nrd90m)',
+  4 => 'ctl=app,act=initjava.net.SocketTimeoutException: connect timed out',
+)
+
+执行日期：2019-02-06-10：56：14
+array (
+  0 => 'android',
+  1 => '2.6.0',
+  2 => '2019012212',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; pbbm00 build/o11019)',
+  4 => 'Android 2019-02-06 10:55:40 errCode:70009 errMsg:login IM error Err_TLS_Third_Sig_Check_Public_Key_Decryption_Sig_Fail',
+)
+
+执行日期：2019-02-06-18：43：21
+array (
+  0 => 'android',
+  1 => '2.6.0',
+  2 => '2019012212',
+  3 => 'dalvik/2.1.0 (linux; u; android 9; bkl-al20 build/huaweibkl-al20)',
+  4 => 'Android 2019-02-06 18:42:47 errCode:70009 errMsg:login IM error Err_TLS_Third_Sig_Check_Public_Key_Decryption_Sig_Fail',
+)
+
+执行日期：2019-02-06-22：50：21
+array (
+  0 => 'android',
+  1 => '2.6.0',
+  2 => '2019012212',
+  3 => 'dalvik/2.1.0 (linux; u; android 9; bkl-al20 build/huaweibkl-al20)',
+  4 => 'Android 2019-02-06 22:49:46 errCode:70009 errMsg:login IM error Err_TLS_Third_Sig_Check_Public_Key_Decryption_Sig_Fail',
+)
+
+执行日期：2019-02-06-22：58：48
+array (
+  0 => 'android',
+  1 => '2.6.0',
+  2 => '2019012212',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.1.1; oppo r11 pluskt build/nmf26x)',
+  4 => 'ctl=app,act=initjava.net.SocketTimeoutException: connect timed out',
+)
+
+执行日期：2019-02-06-22：58：48
+array (
+  0 => 'android',
+  1 => '2.6.0',
+  2 => '2019012212',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.1.1; oppo r11 pluskt build/nmf26x)',
+  4 => 'ctl=app,act=initjava.net.SocketTimeoutException: connect timed out',
+)
+
+执行日期：2019-02-06-22：58：50
+array (
+  0 => 'android',
+  1 => '2.6.0',
+  2 => '2019012212',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.1.1; oppo r11 pluskt build/nmf26x)',
+  4 => 'ctl=user,act=usersigjava.lang.NullPointerException: Attempt to invoke virtual method \'void android.app.Activity.startActivity(android.content.Intent)\' on a null object reference',
+)
+
+执行日期：2019-02-06-22：59：05
+array (
+  0 => 'android',
+  1 => '2.6.0',
+  2 => '2019012212',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.1.1; oppo r11 pluskt build/nmf26x)',
+  4 => 'ctl=login,act=loginoutjava.net.SocketTimeoutException: timeout',
+)
+
+执行日期：2019-02-06-22：59：05
+array (
+  0 => 'android',
+  1 => '2.6.0',
+  2 => '2019012212',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.1.1; oppo r11 pluskt build/nmf26x)',
+  4 => 'ctl=app,act=initjava.net.SocketTimeoutException: timeout',
+)
+
+执行日期：2019-02-06-22：59：05
+array (
+  0 => 'android',
+  1 => '2.6.0',
+  2 => '2019012212',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.1.1; oppo r11 pluskt build/nmf26x)',
+  4 => 'ctl=app,act=initjava.net.SocketTimeoutException: timeout',
+)
+
+执行日期：2019-02-06-23：04：41
+array (
+  0 => 'android',
+  1 => '2.6.0',
+  2 => '2019012212',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.1.1; oppo r11 pluskt build/nmf26x)',
+  4 => 'ctl=app,act=initjava.net.SocketTimeoutException: connect timed out',
+)
+
+执行日期：2019-02-06-23：04：50
+array (
+  0 => 'android',
+  1 => '2.6.0',
+  2 => '2019012212',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.1.1; oppo r11 pluskt build/nmf26x)',
+  4 => 'ctl=app,act=initjava.net.SocketTimeoutException: connect timed out',
+)
+
+执行日期：2019-02-06-23：04：55
+array (
+  0 => 'android',
+  1 => '2.6.0',
+  2 => '2019012212',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.1.1; oppo r11 pluskt build/nmf26x)',
+  4 => 'ctl=app,act=initjava.net.SocketTimeoutException: connect timed out',
+)
+

@@ -1,0 +1,101 @@
+/*界面主题色*/
+/*背景色*/
+/*背景色（深）*/
+/*模块背景色*/
+/*主题风格色*/
+/*主题辅助风格色*/
+/*字体颜色*/
+/*主要字色*/
+/*浅色*/
+/*更浅色（适用：二级标题、简介）*/
+/*更更浅色（适用：icon图标）*/
+/*标题*/
+/*字体大小*/
+/*线条颜色*/
+/*主要线条颜色*/
+/*更深线条颜色*/
+/*更浅线条颜色*/
+/*文本输入框边框颜色*/
+/*各类间距，高度*/
+/*横向间距*/
+/*纵向间距*/
+.page-question-form_question .m-question-lab {
+  height: 2.5rem;
+  line-height: 2.5rem;
+  padding: 0 .5rem;
+  font-size: .75rem;
+  color: #333;
+}
+.page-question-form_question .m-question-input {
+  background: #fff;
+  margin-bottom: 0.5rem;
+}
+.page-question-form_question .m-question-input input {
+  height: 2rem;
+  border: 0;
+  width: 100%;
+  padding: 0.5rem;
+}
+.page-question-form_question .m-question-input textarea {
+  resize: none;
+  width: 100%;
+  height: 8rem;
+  border: none;
+  font-size: .65rem;
+  color: #333;
+  padding: .5rem;
+}
+.page-question-form_question .m-question-input .secret-question {
+  height: 1.95rem;
+  line-height: 1.95rem;
+  padding: 0 .5rem;
+}
+.page-question-form_question .m-question-input .secret-question .check-box {
+  position: relative;
+  color: #999;
+  padding-left: 1.2rem;
+}
+.page-question-form_question .m-question-input .secret-question .check-box:before {
+  content: " ";
+  font-family: iconfont!important;
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 0;
+  width: 1.9rem;
+  height: 1.9rem;
+  line-height: 1.9rem;
+  border: 1px solid #999;
+  background: #efeff4;
+  border-radius: 1px;
+  margin-right: .25rem;
+  text-align: center;
+  color: #333;
+  font-size: 1.3rem;
+  -webkit-transform: translate(-25%, -50%) scale(0.5);
+  transform: translate(-25%, -50%) scale(0.5);
+}
+.page-question-form_question .m-question-input .secret-question .check-box.isSecret:before {
+  content: "\e61c";
+}
+.page-question-form_question .question-btn-list {
+  padding: .25rem .75rem 0 .75rem;
+  font-size: 0.7rem;
+}
+.page-question-form_question .question-btn-list .question-btn {
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  border-radius: 4px;
+}
+.page-question-form_question .question-btn-list .btn-cannel {
+  display: block;
+  color: #333;
+  margin-right: .375rem;
+  background: #d0d0d0;
+}
+.page-question-form_question .question-btn-list .btn-ok {
+  color: #fff;
+  background: #f1383f;
+  margin-left: .375rem;
+}

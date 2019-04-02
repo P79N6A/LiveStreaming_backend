@@ -1,0 +1,44 @@
+<tagLib name="html" />
+<include file="Public:header" />
+<div class="main">
+<div class="main_title">快递查询设置</div>
+<div class="blank5"></div>
+	<form method='post' id="form" name="form" action="__APP__">
+	<table cellpadding="4" cellspacing="0" border="0" class="form">
+		<tr>
+			<td colspan="2" class="topTd"></td>
+		</tr>
+		<foreach name="config" item="cfg">
+		<tr <if condition="$cfg['code'] eq 'only_one_delivery' or $cfg['code'] eq 'has_ecv' or $cfg['code'] eq 'has_message' or $cfg['code'] eq 'has_region'">style="display:none;"</if>>		
+			<td class="item_title">{$cfg.title}</th>
+			<td class="item_input">
+				<if condition="$cfg['type'] eq 0">
+				<input type="text" class="textbox" name="{$cfg.code}" value="{$cfg.val}" />
+				</if>
+				<if condition="$cfg['type'] eq 4">
+					<select name="{$cfg.code}">	  	
+							<option value="1" <if condition="$cfg['val'] eq 1">selected="selected"</if> >API查询模式，需要到 [http://www.kuaidi100.com] 申请APP_KEY</option>
+							<option value="2" <if condition="$cfg['val'] eq 2">selected="selected"</if> >URL查询模式</option>
+							<option value="3" <if condition="$cfg['val'] eq 3">selected="selected"</if> >HtmlAPI查询模式，需要到 [http://www.kuaidi100.com] 申请APP_KEY</option>		
+					</select>
+				</if>
+			</td>
+		</tr>
+		</foreach>
+		<tr>
+			<td class="item_title"></td>
+			<td class="item_input">
+				<input type="hidden" name="{:conf("VAR_MODULE")}" value="Express" />
+			
+				<input type="hidden" name="{:conf("VAR_ACTION")}" value="save_express_query" />
+				<input type="submit" class="button" value="{%EDIT}" />
+				<input type="reset" class="button" value="{%RESET}" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="bottomTd"></td>
+		</tr>
+	</table>
+	</form>
+</div>
+<include file="Public:footer" />

@@ -1,0 +1,43 @@
+{include file="inc/header.html"}
+<div id="vscope-meet">
+	<div class="content">
+		<div class="content-block m-title">
+			<h3>{$data.data.title}</h3>
+			<p>{$data.data.content}</p>
+		</div>
+		<div class="content-block m-button">
+			<div class="left"><span><em class="f13">&yen;</em><em class="numb">{$data.data.price}</em>/次</span></div>
+			<div class="right">
+				<a href="javascript:void(0)" class="button" @click="open_date({$data.data.id})">立即预约</a>
+			</div>
+		</div>
+	</div>
+	<div class="pop-bespeak-meet" :class="[is_open_date ? 'z-open' : '']">
+		<div class="bespeak-meet-con">
+			<div class="bespeak-meet-tit b-line">预约需要您填写以下信息哦</div>
+			<div class="bespeak-input">
+				<div class="input-box b-line l-line">
+					<span class="line t-line r-line"></span>
+					<input type="text" placeholder="请输入您的真实姓名" class="bespeaker-name" v-model="name">
+				</div>
+				<div class="verify-box input-box flex-box b-line l-line">
+					<span class="line t-line r-line"></span>
+					<input type="number" placeholder="请输入您的电话号码" class="bespeaker-phone flex-1" maxlength="11" v-model="mobile">
+					<div class="send-verify j-send-verify" id="j-send-code" @click="send_code">发送验证码</div>
+				</div>
+				<div class="input-box b-line l-line">
+					<span class="line t-line r-line"></span>
+					<input type="number" placeholder="验证码" class="bespeaker-verify" v-model="verify">
+				</div>
+			</div>
+			<div class="bespeak-btn-list flex-box">
+				<div class="bespeak-btn btn-cannel j-cannel flex-1" @click="cancel_date">取消</div>
+				<div class="bespeak-btn btn-ok j-bespeak-meet flex-1" @click="submit">确认</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	var has_wanna, wanna_count;
+</script>
+{include file="inc/footer.html"}

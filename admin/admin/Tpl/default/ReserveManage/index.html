@@ -1,0 +1,100 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<include file="Public:new" />
+<load href='__TMPL__Common/js/jquery.bgiframe.js' />
+<load href='__TMPL__Common/js/jquery.weebox.js' />
+<load href='__TMPL__Common/js/user.js' />
+<load href='__TMPL__Common/js/deal.js' />
+<load href='__TMPL__Common/style/weebox.css' />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<div class="main">
+<div class="main_title_list"><div class="list-line-ico"></div>预约列表</div>
+<php>
+
+    //获取有效值名称
+    function get_effect_name($effect){
+        switch($effect)
+        {
+            case 0:
+                return "已失效";
+                break;
+            case 1:
+                return "有效";
+                break;
+            default:
+            return "";
+            break;
+        }
+    }
+
+    //时间戳转时间格式
+    function time_format($timestamp){
+        if($timestamp)
+        return to_date($timestamp,'Y-m-d H:i:s');
+        else
+        return '';
+    }
+    //获取用户昵称
+    function get_nick_name($uid)
+    {
+        return emoji_decode(M("User")->where("id=".$uid)->getField("nick_name"));
+    }
+
+    //获取娃娃名称
+    function get_doll_name($id){
+        $sql = "select t2.title from ".DB_PREFIX."dolls t1 left join ".DB_PREFIX."doll_cate t2 on t1.cate_id = t2.id where t1.id = $id ";
+        return emoji_decode($GLOBALS['db']->getOne($sql));
+    }
+
+
+</php>
+<div class="search_row">
+	<form name="search" action="__APP__" method="get" >
+	<div>用户ID：
+        <input type="text" class="textbox" name="user_id" value="{:trim($_REQUEST['user_id'])}" style="width:100px;" />
+    </div>
+    <div>直播间ID：
+        <input type="text" class="textbox" name="room_id" value="{:trim($_REQUEST['room_id'])}" style="width:100px;" />
+    </div>
+    <div>娃娃机ID：
+        <input type="text" class="textbox" name="dolls_id" value="{:trim($_REQUEST['dolls_id'])}" style="width:100px;" />
+    </div>
+
+    <div>预约状态：
+        <select name="is_effect">
+            <option value="-1" selected="selected">所有</option>
+            <option value="0" <if condition="$_REQUEST['is_effect'] eq 0 "> selected="selected"
+                </if>>已失效</option>
+            <option value="1"<if condition="$_REQUEST['is_effect'] eq 1"> selected="selected"</if>>有效</option>
+        </select>
+    </div>
+    <div>预约申请时间：<span><input type="text" class="textbox" name="create_time_1" id="create_time_1" value="{$_REQUEST['create_time_1']}" onfocus="this.blur(); return showCalendar('create_time_1', '%Y-%m-%d %H:%M:%S', false, false, 'btn_create_time_1');" /><input type="button" class="button" id="btn_create_time_1" value="{%SELECT_TIME}" onclick="return showCalendar('create_time_1', '%Y-%m-%d  %H:%M:%S', false, false, 'btn_create_time_1');" /></span> - <span><input type="text" class="textbox" name="create_time_2" id="create_time_2" value="{$_REQUEST['create_time_2']}" onfocus="this.blur(); return showCalendar('create_time_2', '%Y-%m-%d %H:%M:%S', false, false, 'btn_create_time_2');" /><input type="button" class="button" id="btn_create_time_2" value="{%SELECT_TIME}" onclick="return showCalendar('create_time_2', '%Y-%m-%d %H:%M:%S', false, false, 'btn_create_time_2');" /></span></div>
+    <input type="hidden" value="ReserveManage" name="m" />
+    <input type="hidden" value="index" name="a" />
+    <input type="submit" class="button" value="{%SEARCH}" />
+	</form>
+</div>
+        <html:list
+        id="dataTable"
+        style="dataTable"
+        name="ReserveManage"
+        action="true"
+        datasource="list"
+        show="id:ID
+        ,user_id:用户ID
+        ,user_id|get_nick_name:用户昵称
+        ,room_id:直播间ID
+        ,dolls_id:娃娃机ID
+        ,dolls_id|get_doll_name:娃娃名称
+        ,create_time|time_format:预约申请时间
+        ,is_effect|get_effect_name:预约状态
+        ,begin_time|time_format:游戏开始时间
+        ,end_time|time_format:游戏结束时间"
+            actionlist="tips:无" />
+
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

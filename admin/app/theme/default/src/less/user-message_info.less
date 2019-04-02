@@ -1,0 +1,63 @@
+@import (once) "public/variable.less";
+.m-uc-content {
+	& .content-pd20 {
+			& .m-common-item {
+				& .m-common-title {
+					height: auto;
+					& .common-title{
+						margin-top: 0;
+					}
+					& .common-select {
+						& a{
+							padding: 0
+						}
+					}
+				}
+				& .common-content{
+					& .common-block{
+						& .block-caption{
+							font-size: @fs-main;
+							font-weight: bold;
+							margin-bottom: 10px;
+							color: @fcolor-light;
+						}
+						& .block-user{
+							position: relative;
+							display: block;
+							width: 160px;
+							height: 38px;
+							padding-left: 48px;
+							color: @fcolor-light;
+							font-size: @fs-small;
+							line-height: 19px;
+							& .user-portrait{
+								width: 40px;
+								position: absolute;
+								top: 0;
+								left: 0;
+							}
+							& .user-name{
+								width: 100%;
+								display: block;
+								overflow: hidden;
+								white-space: nowrap;
+                                text-overflow: ellipsis;
+                                margin-bottom: 2px;
+							}
+						}
+						& .block-title{
+							border: 1px solid #d8d8d8;
+							width: 878px;
+							height: 250px;
+							padding: 10px;
+							& p{
+								text-indent: 20px;
+								color: @fcolor-lighter;
+								font-size: @fs-small;
+							}
+						}
+					}
+				}
+			}
+		} 
+	}

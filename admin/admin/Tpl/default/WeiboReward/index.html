@@ -1,0 +1,47 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<load href='__TMPL__Common/js/paigoods.js' />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<php>
+	function get_nickname($id){
+        $get_nickname=$GLOBALS['db']->getOne("select nick_name from ".DB_PREFIX."user where id=".$id);
+		return emoji_decode($get_nickname);
+    }
+	function get_content($id){
+        $content=$GLOBALS['db']->getOne("select content from ".DB_PREFIX."weibo where id=".$id);
+		return emoji_decode($content);
+    }
+</php>
+<script type="text/javascript">
+	function detail(id)
+	{
+		location.href = ROOT+"?"+VAR_MODULE+"="+MODULE_NAME+"&"+VAR_ACTION+"=detail&weibo_id="+id;
+	}
+</script>
+<div class="search_row">
+	<form name="search" action="__APP__" method="get">
+       	 动态内容：<input type="text" class="textbox" name="content" value="{:trim($_REQUEST['content'])}" style="width:100px;" />
+		<input type="hidden" value="WeiboReward" name="m" />
+		<input type="hidden" value="index" name="a" />
+		<input type="submit" class="button" value="{%SEARCH}" />
+    </form>
+</div>
+<div class="main">
+<div class="main_title_list"><div class="list-line-ico"></div>打赏列表</div>
+<html:list
+	id="dataTable"
+	style="dataTable"
+	name="weibo_reward"
+	action="true"
+	datasource="list"
+	show="id|get_content:动态内容
+		,打赏总秀票:打赏总秀票"
+	actionlist="detail:打赏明细"/>
+	
+	
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

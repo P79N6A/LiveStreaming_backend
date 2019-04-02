@@ -1,0 +1,79 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<script type="text/javascript">
+    $(function () {
+        $("#commonRoom").click(function () {
+            $("input[name='is_live_pay']").val("0");
+            $("input[name='live_pay_type']").val("0");
+            $("input[name='live_fee']").val("0");
+        })
+        $("#timeRoom").click(function () {
+            $("input[name='is_live_pay']").val("1");
+            $("input[name='live_pay_type']").val("0");
+        })
+        $("#sceneRoom").click(function () {
+            $("input[name='is_live_pay']").val("1");
+            $("input[name='live_pay_type']").val("1");
+        })
+    })
+    function check_incharge_form()
+    {
+        if($("input[name='is_live_pay']").val()=="1"){
+            var live_fee = $.trim($("input[name='live_fee']").val());
+            if(live_fee==''){
+                alert("请输入观看费用");
+                return false;
+            }
+            var ret = /^[0-9]*[1-9][0-9]*$/;
+            if(!ret.test(live_fee)){
+                alert("观看费用必须为大于0的整数");
+                return false;
+            }
+        }
+        return true;
+    }
+</script>
+<div class="main">
+    <div class="main_title"></div>
+    <div class="blank5"></div>
+    <form name="edit" action="__APP__" method="post" enctype="multipart/form-data" onsubmit="return check_incharge_form();">
+        <table class="form" cellpadding=0 cellspacing=0>
+            <tr>
+                <td colspan=2 class="topTd"></td>
+            </tr>
+            <tr>
+                <td class="item_title">房间类型</td>
+                <td class="item_input">
+                    <label>普通<input type="radio" name="changeBtn" id="commonRoom" checked /></label>
+                    <label>按时<input type="radio" name="changeBtn" id="timeRoom" /></label>
+                    <label>按场<input type="radio" name="changeBtn" id="sceneRoom" /></label>
+                </td>
+            </tr>
+            <tr>
+                <td class="item_title">费用:</td>
+                <td class="item_input">
+                    <input type="text" class="textbox" name="live_fee" value="0"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="item_title">&nbsp;</td>
+                <td class="item_input">
+                    <!--隐藏元素-->
+                    <input type="hidden" name="is_live_pay" value="0"/>
+                    <input type="hidden" name="live_pay_type" value="0" />
+                    <input type="hidden" name="url" value="{$_GET['playurl']}" />
+                    <input type="hidden" name="logourl" value="{$_GET['logourl']}" />
+                    <input type="hidden" name="nickname" value="{$_GET['nickname']}" />
+                    <input type="hidden" name="{:conf("VAR_MODULE")}" value="VideoCollect1" />
+                    <input type="hidden" name="{:conf("VAR_ACTION")}" value="add_video" />
+                    <!--隐藏元素-->
+                    <input type="submit" class="button" value="{%OK}" />
+                    <input type="reset" class="button" value="{%RESET}" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan=2 class="bottomTd"></td>
+            </tr>
+        </table>
+    </form>
+</div>

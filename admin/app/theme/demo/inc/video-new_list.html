@@ -1,0 +1,17 @@
+{foreach from=$data.new_list item=item}
+<li class="block-live">
+    <a href="{$item.video_url}" target="_blank">
+        <span class="block-live-img">
+            <img alt="{$item.title}" src="{$item.live_image}"data-original="{$item.live_image}" class="block-live-img lazy" />
+        </span>
+        <div class="block-live-info clearfix">
+            <div class="live-name clearfix">
+                <img alt="{$item.nick_name}" src="{$item.thumb_head_image}" class="avatar-normal" />
+                <p title="{$item.title}">{$item.title}</p>
+                <p class="sub f-l" title="{$item.nick_name}">{$item.nick_name}</p>
+                <span class="watch-num f-r"><i class="icon iconfont">&#xe60a;</i>{$item.watch_number}</span>
+            </div>
+        </div>
+    </a>
+</li>
+{/foreach}

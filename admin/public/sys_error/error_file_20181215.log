@@ -1,0 +1,303 @@
+执行日期：2018-12-15-11：13：17
+array (
+  0 => '/home/wwwroot/qianying/domain/qianying/web/system/libs/user.php',
+  1 => 2165,
+  2 => 'accountimport',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorCode' => 70009,
+    'ErrorInfo' => '',
+  ),
+)
+
+执行日期：2018-12-15-11：13：18
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.0; sm-g9500 build/nrd90m)',
+  4 => 'Android 2018-12-15 11:13:18 (user:5) errCode:70009 errMsg:login IM error tls_check_signature failed  sdkappid:1400028711,acctype:11978,identifier:5 sig:lBDC8bWx8*V8A9*8W1c_',
+)
+
+执行日期：2018-12-15-19：40：08
+array (
+  0 => '/home/wwwroot/qianying/domain/qianying/web/system/libs/user.php',
+  1 => 2165,
+  2 => 'accountimport',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorCode' => 70009,
+    'ErrorInfo' => '',
+  ),
+)
+
+执行日期：2018-12-15-19：40：11
+array (
+  0 => '/home/wwwroot/qianying/domain/qianying/web/system/libs/user.php',
+  1 => 2165,
+  2 => 'accountimport',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorCode' => 70009,
+    'ErrorInfo' => '',
+  ),
+)
+
+执行日期：2018-12-15-19：40：13
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.1.2; vivo x9s build/n2g47h)',
+  4 => 'Android 2018-12-15 19:40:14 (user:42) errCode:70009 errMsg:login IM error tls_check_signature failed  sdkappid:1400028711,acctype:11978,identifier:42 sig:AHjou7LxYXwCusha*Q__',
+)
+
+执行日期：2018-12-15-19：45：47
+array (
+  0 => '/home/wwwroot/qianying/domain/qianying/web/system/libs/user.php',
+  1 => 2165,
+  2 => 'accountimport',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorCode' => 70009,
+    'ErrorInfo' => '',
+  ),
+)
+
+执行日期：2018-12-15-19：45：48
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.1.2; vivo x9s build/n2g47h)',
+  4 => 'Android 2018-12-15 19:45:49 (user:42) errCode:70009 errMsg:login IM error tls_check_signature failed  sdkappid:1400028711,acctype:11978,identifier:42 sig:AHjou7LxYXwCusha*Q__',
+)
+
+执行日期：2018-12-15-20：53：44
+array (
+  0 => '/home/wwwroot/qianying/domain/qianying/web/system/libs/user.php',
+  1 => 2165,
+  2 => 'accountimport',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorCode' => 70009,
+    'ErrorInfo' => '',
+  ),
+)
+
+执行日期：2018-12-15-20：54：03
+array (
+  0 => '/home/wwwroot/qianying/domain/qianying/web/system/libs/user.php',
+  1 => 2165,
+  2 => 'accountimport',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorCode' => 70009,
+    'ErrorInfo' => '',
+  ),
+)
+
+执行日期：2018-12-15-20：54：05
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; mi 6x miui/v9.5.11.0.odccnfa)',
+  4 => 'Android 2018-12-15 20:54:05 (user:43) errCode:70009 errMsg:login IM error tls_check_signature failed  sdkappid:1400028711,acctype:11978,identifier:43 sig:AAOAgPxUtj6tL8UsXLE_',
+)
+
+执行日期：2018-12-15-20：54：57
+array (
+  0 => '/home/wwwroot/qianying/domain/qianying/web/system/libs/user.php',
+  1 => 2165,
+  2 => 'accountimport',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorCode' => 70009,
+    'ErrorInfo' => '',
+  ),
+)
+
+执行日期：2018-12-15-20：54：58
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; mi 6x miui/v9.5.11.0.odccnfa)',
+  4 => 'Android 2018-12-15 20:54:59 (user:43) errCode:70009 errMsg:login IM error tls_check_signature failed  sdkappid:1400028711,acctype:11978,identifier:43 sig:AAOAgPxUtj6tL8UsXLE_',
+)
+
+执行日期：2018-12-15-20：56：04
+array (
+  0 => '/home/wwwroot/qianying/domain/qianying/web/system/libs/user.php',
+  1 => 2165,
+  2 => 'accountimport',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorCode' => 70009,
+    'ErrorInfo' => '',
+  ),
+)
+
+执行日期：2018-12-15-20：56：04
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 8.1.0; mi 6x miui/v9.5.11.0.odccnfa)',
+  4 => 'Android 2018-12-15 20:56:05 (user:43) errCode:70009 errMsg:login IM error tls_check_signature failed  sdkappid:1400028711,acctype:11978,identifier:43 sig:AAOAgPxUtj6tL8UsXLE_',
+)
+
+执行日期：2018-12-15-21：06：35
+array (
+  0 => '/home/wwwroot/qianying/domain/qianying/web/system/libs/user.php',
+  1 => 2165,
+  2 => 'accountimport',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorCode' => 70009,
+    'ErrorInfo' => '',
+  ),
+)
+
+执行日期：2018-12-15-21：07：22
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.1.2; vivo x9s build/n2g47h)',
+  4 => 'Android 2018-12-15 21:07:23 (user:42) errCode:70009 errMsg:login IM error tls_check_signature failed  sdkappid:1400028711,acctype:11978,identifier:42 sig:AHjou7LxYXwCusha*Q__',
+)
+
+执行日期：2018-12-15-21：10：13
+array (
+  0 => '/home/wwwroot/qianying/domain/qianying/web/system/libs/user.php',
+  1 => 2165,
+  2 => 'accountimport',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorCode' => 70009,
+    'ErrorInfo' => '',
+  ),
+)
+
+执行日期：2018-12-15-21：11：48
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.1.2; vivo x9s build/n2g47h)',
+  4 => 'Android 2018-12-15 21:11:49 (user:42) errCode:70009 errMsg:login IM error tls_check_signature failed  sdkappid:1400028711,acctype:11978,identifier:42 sig:AHjou7LxYXwCusha*Q__',
+)
+
+执行日期：2018-12-15-21：16：44
+array (
+  0 => '/home/wwwroot/qianying/domain/qianying/web/system/libs/user.php',
+  1 => 2165,
+  2 => 'accountimport',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorCode' => 70009,
+    'ErrorInfo' => '',
+  ),
+)
+
+执行日期：2018-12-15-21：16：46
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.1.2; vivo x9s build/n2g47h)',
+  4 => 'Android 2018-12-15 21:16:47 (user:42) errCode:70009 errMsg:login IM error tls_check_signature failed  sdkappid:1400028711,acctype:11978,identifier:42 sig:AHjou7LxYXwCusha*Q__',
+)
+
+执行日期：2018-12-15-21：20：43
+array (
+  0 => '/home/wwwroot/qianying/domain/qianying/web/system/libs/user.php',
+  1 => 2165,
+  2 => 'accountimport',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorCode' => 70009,
+    'ErrorInfo' => '',
+  ),
+)
+
+执行日期：2018-12-15-21：20：47
+array (
+  0 => '/home/wwwroot/qianying/domain/qianying/web/system/libs/user.php',
+  1 => 2165,
+  2 => 'accountimport',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorCode' => 70009,
+    'ErrorInfo' => '',
+  ),
+)
+
+执行日期：2018-12-15-21：20：47
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.1.2; vivo x9s build/n2g47h)',
+  4 => 'Android 2018-12-15 21:20:49 (user:44) errCode:70009 errMsg:login IM error tls_check_signature failed  sdkappid:1400028711,acctype:11978,identifier:44 sig:yEEITeBPZePT*AJY-VvZ',
+)
+
+执行日期：2018-12-15-21：22：35
+array (
+  0 => '/home/wwwroot/qianying/domain/qianying/web/system/libs/user.php',
+  1 => 2165,
+  2 => 'accountimport',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorCode' => 70009,
+    'ErrorInfo' => '',
+  ),
+)
+
+执行日期：2018-12-15-21：22：36
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.1.2; vivo x9s build/n2g47h)',
+  4 => 'Android 2018-12-15 21:22:37 (user:44) errCode:70009 errMsg:login IM error tls_check_signature failed  sdkappid:1400028711,acctype:11978,identifier:44 sig:yEEITeBPZePT*AJY-VvZ',
+)
+
+执行日期：2018-12-15-21：28：47
+array (
+  0 => '/home/wwwroot/qianying/domain/qianying/web/system/libs/user.php',
+  1 => 2165,
+  2 => 'accountimport',
+  3 => 
+  array (
+    'ActionStatus' => 'FAIL',
+    'ErrorCode' => 70009,
+    'ErrorInfo' => '',
+  ),
+)
+
+执行日期：2018-12-15-21：31：32
+array (
+  0 => 'android',
+  1 => '1.1.8',
+  2 => '20180928',
+  3 => 'dalvik/2.1.0 (linux; u; android 7.1.2; vivo x9s build/n2g47h)',
+  4 => 'Android 2018-12-15 21:31:33 (user:44) errCode:70009 errMsg:login IM error tls_check_signature failed  sdkappid:1400028711,acctype:11978,identifier:44 sig:yEEITeBPZePT*AJY-VvZ',
+)
+

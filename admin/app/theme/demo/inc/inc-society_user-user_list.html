@@ -1,0 +1,59 @@
+<div class="user-r-title clearfix">
+    <div class="common-title f-l">
+        <span class="field">签约主播</span>
+    </div>
+    <!--         <div class="block-font f-r">
+<span class="operation mr-20">标记为已读</span>
+<span class="operation">删除消息</span>
+</div> -->
+</div>
+<div class="user-r-content clearfix j-ajax-page">
+    <div class="search clearfix">
+        <input type="number" name="" class="anchor-id" placeholder="请输入主播ID">
+        <a href="javascript:void(0)" class="btn btn-primary btn-circle J-sign-search">搜索</a>
+        <!--<span style="padding-left: 20px">签约链接:{$data.url}</span>-->
+    </div>
+    <div class="ajax-block">
+        <table>
+            <thead>
+                <tr class="form-head">
+                    <th>主播ID</th>
+                    <th>主播昵称</th>
+                    <th>魅力等级</th>
+                    <th>主播头像</th>
+                    <th>签约时间</th>
+                    <th>状态</th>
+                </tr>
+            </thead>
+            {if $data.list}
+            <tbody>
+                {foreach from=$data.list item=item key=key name=list}
+                <tr class="form-body">
+                    <td class="content-font">{$item.user_id}</td>
+                    <td class="content-font">{$item.nick_name}</td>
+                    <td class="content-font">{$item.user_level}</td>
+                    <td>
+                        <img src="{$item.head_image}" alt="" class="img-circle">
+                    </td>
+                    <td class="content-font">{$item.deal_time}</td>
+                    <td class="content-font">{$item.status}</td>
+                </tr>
+                {/foreach}
+            </tbody>
+            {else}
+            <tbody>
+                <tr>
+                    <td colspan="6">
+                        <p class="null-data">暂无数据</p>
+                    </td>
+                </tr>
+            </tbody>
+            {/if}
+        </table>
+        <div class="m-page clearfix">
+            <div class="m-page-con">
+                {$data.page}
+            </div>
+        </div>
+    </div>
+</div>

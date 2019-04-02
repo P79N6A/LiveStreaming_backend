@@ -1,0 +1,49 @@
+{include file="inc/header.html"}
+<?php
+  	$this->_var['dpagejs'][] = $this->_var['TMPL_REAL']."/dist/frames/plupload/plupload.main.js";
+  	$this->_var['dcpagejs'][] = $this->_var['TMPL_REAL']."/dist/frames/plupload/plupload.main.js";
+?>
+<script src="{function name="parse_script" v="$dpagejs" c="dcpagejs"}"></script>
+<script type="text/javascript">
+	var imgs = [];
+</script>
+{include file="inc/upload-config.html"}
+<div id="vscope-add_share">
+	<div class="content">
+		<div class="content-block">
+			<input type="text" name="title" placeholder="请输入您要分享的标题，例如：关于小程序的颠覆" class="f13" v-model="title">
+		</div>
+		<div class="content-block">
+      		<p>
+      			<input type="text" name="cate_name" placeholder="请选择您的分类，例如：2017互联网的大事" readonly="readonly" class="create_actions f13" v-model="cate_name" @click="create_actions">
+      		</p>
+		</div>
+		<div class="content-block">
+			<textarea name="content" placeholder="请填写您要分享的内容" class="f13" v-model="content"></textarea>
+		</div>
+		<div class="content-block">
+			<div class="card">
+			    <div class="card-header f13">上传图片</div>
+			    <div class="card-content">
+			      	<div class="card-content-inner">
+			      		<div class="inner-conter">
+			      			<div id="image_box"></div>
+			      			<div class="upload-img-block">
+			      				<a id="upload-imgs">
+			      					<img src="" alt="" id="upload-imgs-image" />
+			      				</a>
+			      			</div>
+			      		</div>
+			      	</div>
+			    </div>
+		  	</div>
+		</div>
+		<div class="m-button">
+			<a href="javascript:void(0)" class="button button-light" @click="submit">发布</a>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	var cate_list = JSON.parse('<?php echo json_encode($this->_var['data']['cate_list']); ?>'), imgs=[];
+</script>
+{include file="inc/footer.html"}

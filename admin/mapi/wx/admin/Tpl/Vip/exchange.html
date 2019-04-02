@@ -1,0 +1,92 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<php>
+function getVipName($vip_id)
+{
+    return M("Vip")->where("id=".$vip_id)->getField("name");
+}
+function getAdminName($Admin_id)
+{
+    return M("Admin")->where("id=".$Admin_id)->getField("adm_name");
+}
+function getIsEffect($is_effect)
+{
+    return $is_effect?'是':'否';
+}
+</php>
+
+<script>
+</script>
+<div class="main">
+<div class="main_title_list"><div class="list-line-ico"></div>会员兑换码</div>
+    <div class="search_row">
+        <form name="search" action="__APP__" method="get">
+            VIP类型：<select name="vip_id">
+                <option value="0">所有</option>
+                <?php foreach ($vip as $key => $value): ?>
+                    <option value="<?php echo $value['id']; ?>"<?php if ($value['id']==$_REQUEST['vip_id']): ?> selected="selected"<?php endif ?>><?php echo $value['name']; ?></option>
+                <?php endforeach ?>
+            </select>
+			是否有效：<select name="is_effect">
+                <option value="1"<?php if (1==$_REQUEST['is_effect']): ?> selected="selected"<?php endif ?>>是</option>
+                <option value="0"<?php if (0==$_REQUEST['is_effect']): ?> selected="selected"<?php endif ?>>否</option>
+            </select>
+
+            <input type="hidden" value="Vip" name="m" />
+            <input type="hidden" value="exchange" name="a" />
+            <input type="submit" class="button" value="{%SEARCH}" />
+        </form>
+    </div>
+	<html:list
+			id="dataTable"
+			style="dataTable"
+			name="code"
+			datasource="list"
+			show="id:{%ID}
+            ,vip_id|getVipName:VIP类型
+            ,admin_id|getAdminName:管理员
+			,code:兑换码
+            ,is_effect|getIsEffect:是否有效" />
+
+            <table class="dataTable">
+                <tbody>
+                    <td colspan="11">
+                        兑换VIP：<select id="vip_id">
+                            <foreach name="vip" item="item">
+                                <option value="{$item.id}">{$item.name}</option>
+                            </foreach>
+                        </select>
+                        兑换码数量：<input type="number" id="num" class="textbox" value="0"/>
+                        所属用户ID：<input type="number" id="user_id" class="textbox" value="0"/>
+                        兑换码有效时间：<input type="number" id="gift_num_time" class="textbox" value="1" />
+                        <select id="gift_unit_time">
+                            <option value="month">月</option>
+                            <option value="day">天</option>
+                        </select>
+                        <input type="button" id="add" class="button button-add" value="{%ADD}"/>
+                    </td>
+                </tbody>
+            </table>
+<div class="blank5"></div>
+<div class="page">{$page}</div>
+</div>
+<script type="text/javascript">
+    $('#add').on('click', function () {
+        $.post(ROOT+"?"+VAR_MODULE+"=Vip&"+VAR_ACTION+"=addExchange",
+        {
+            vip_id:$('#vip_id').val(),
+            num:$('#num').val(),
+            user_id:$('#user_id').val(),
+            gift_num_time:$('#gift_num_time').val(),
+            gift_unit_time:$('#gift_unit_time').val(),
+        },
+          function (r) {
+            alert(r.error);
+            if (r.status == 1) {
+                location.reload();
+            }
+        },'json');
+    })
+</script>
+<include file="Public:footer" />

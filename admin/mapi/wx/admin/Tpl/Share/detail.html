@@ -1,0 +1,47 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<div class="main">
+<div class="main_title">审核 <a href="{:u("Share/index")}" class="back_list">{%BACK_LIST}</a></div>
+<div class="blank5"></div>
+<form name="edit" action="__APP__" method="post" enctype="multipart/form-data">
+<table class="form" cellpadding=0 cellspacing=0>
+	<tr>
+		<td colspan=2 class="topTd"></td>
+	</tr>
+	<tr>
+		<td class="item_title">标题:</td>
+		<td class="item_input" >{$data.title}</td>
+	</tr>
+	<tr>
+		<td class="item_title">内容:</td>
+		<td class="item_input" >{$data.content}</td>
+	</tr>
+	<tr>
+		<td class="item_title">审核状态:</td>
+		<td class="item_input">
+			<lable>审核通过<input type="radio" name="audit_status" value="1" <if condition="$data['audit_status'] eq 1">checked="checked"</if> /></lable>
+			<lable>审核不通过<input type="radio" name="audit_status" value="2" <if condition="$data['audit_status'] eq 2">checked="checked"</if> /></lable>
+		</td>
+	</tr>
+	<tr>
+		<td class="item_title">审核说明:</td>
+		<td class="item_input" ><input type="text" class="textbox" name="audit_log" value="{$data.audit_log}" /></td>
+	</tr>
+	<tr>
+		<td class="item_title"></td>
+		<td class="item_input">
+			<!--隐藏元素-->
+			<input type="hidden" name="id" value="{$data.id}" />
+			<input type="hidden" name="{:conf("VAR_MODULE")}" value="Share" />
+			<input type="hidden" name="{:conf("VAR_ACTION")}" value="audit" />
+			<!--隐藏元素-->
+			<input type="submit" class="button" value="{%EDIT}" />
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2 class="bottomTd"></td>
+	</tr>
+</table>
+</form>
+</div>

@@ -1,0 +1,34 @@
+<div class="m-title-list f-l" ms-controller="uc_nav">
+	<ul>
+		<li {if $ctl eq 'user' && $act eq 'userinfo'}class="active"{/if}>
+			<a href='{url r="user#userinfo"}'><i class="icon iconfont">&#xe617;</i>我的资料</a>
+		</li>
+		<li {if $ctl eq 'user' && $act eq 'live'}class="active"{/if}>
+			<a href='{url r="user#live"}'><i class="icon iconfont">&#xe629;</i>我的直播</a>
+		</li>
+		<li {if $ctl eq 'user' && $act eq 'contribution_list'}class="active"{/if}>
+			<a href='{url r="user#contribution_list" p="type=all&itype=app"}'><i class="icon iconfont">&#xe61e;</i>{$ticket_name}贡献榜</a>
+		</li>
+<!-- 		<li>
+			<a><i class="icon iconfont">&#xe625;</i>认证</a>
+		</li> -->
+		<li {if $ctl eq 'user' && $act eq 'message'}class="active"{/if}>
+			<a href='{url r="user#message"}'><i class="icon iconfont">&#xe61c;</i>消息</a>
+		</li>
+		<li {if $ctl eq 'user' && $act eq 'letter'}class="active"{/if}>
+			<a href='{url r="user#letter"}'><i class="icon iconfont">&#xe626;</i>私信</a>
+		</li>
+		<li {if $ctl eq 'user' && $act eq 'focus'}class="active"{/if}>
+			<a href='{url r="user#focus"}'><i class="icon iconfont">&#xe61a;</i>我的关注</a>
+		</li>
+		<li {if $ctl eq 'user' && $act eq 'blacklist'}class="active"{/if}>
+			<a href='{url r="user#blacklist"}'><i class="icon iconfont">&#xe619;</i>黑名单</a>
+		</li>
+		<li {if $ctl eq 'user' && $act eq 'family'}class="active"{/if}>
+			<a {if $user_info.family_id}href='{url r="user#family"}'{else}href='javascript:void(0);' ms-on-click="@tip_nofamily"{/if}><i class="icon iconfont">&#xe624;</i>我的家族</a>
+		</li>
+		<li {if $ctl eq 'user' && $act eq 'weixin_distribution'}class="active"{/if}>
+			<a href='{url r="user#weixin_distribution"}'><i class="icon iconfont">&#xe624;</i>微信分销</a>
+		</li>
+	</ul>
+</div>

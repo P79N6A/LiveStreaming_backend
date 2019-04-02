@@ -1,0 +1,76 @@
+.m-common-title{
+	height:60px;
+	line-height:60px;
+	border-bottom: 1px solid @bdcolor;
+	font-size: @fs-big;
+	color: @fcolor-title;
+	overflow: hidden;
+	& .iconfont{
+		font-size: 34px;
+		color: @bgcolor-theme;
+		float:left;
+		&.c-1{
+			color:@bgcolor-theme;
+		}
+		&.c-2{
+			color:#ff0000;
+		}
+		&.c-3{
+			color:#69acf0;
+		}
+		&.c-4{
+			color:#ff803b;
+		}
+		&.c-5{
+			color:#fe649e;
+		}
+		&.c-6{
+			color:#ffad0e;
+		}
+		&.c-7{
+			color:#00cd91;
+		}
+	}
+	& .topic{
+		font-size: @fs-small;
+		color:@fcolor-lighter;
+		float: left;
+		margin-top: 18px;
+		& a{
+			color: #000;
+            height: 24px;
+            font-size: 14px;
+            display: block;
+            text-align: center;
+            line-height: 24px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border: 1px solid #d7d7d7;
+            border-radius: 4px;
+            margin-right: 5px;
+            float: left;
+            &:hover{
+                background:#ff803b;
+                color:#fff;
+                border-color:#ff803b;
+            }
+            &.active{
+                background:#ff803b;
+                color:#fff;
+                border-color:#ff803b;
+            }
+		}
+	}
+	& strong{
+		float:left;
+		padding: 0 15px;
+	}
+	& .view-more{
+		margin-top:13px;
+		padding: 6px 23px;
+		&:hover{
+			background: @bgcolor-theme;
+			border:1px solid @bgcolor-theme;
+		}
+	}
+}

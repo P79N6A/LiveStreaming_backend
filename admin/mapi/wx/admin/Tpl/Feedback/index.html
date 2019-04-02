@@ -1,0 +1,17 @@
+{//引入标签库s }
+<tagLib name="html" />
+<include file="Public:header" />
+<div class="main">
+    <div class="main_title_list"><div class="list-line-ico"></div>反馈列表</div>
+    <html:list
+            id="dataTable"
+            style="dataTable"
+            name="Feedback"
+            action="true"
+            datasource="list"
+            show="id:编号|5%
+            ,content:反馈内容|75%
+            ,create_time:反馈时间|10%"
+            actionlist="foreverdel:删除" />
+    <div class="page">{$page}</div>
+<include file="Public:footer" />

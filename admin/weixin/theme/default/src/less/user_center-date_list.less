@@ -1,0 +1,28 @@
+@import (once) "public/variable.less";
+.page-user_center-date_list{
+	.list-block{
+		.order-name{
+			color: #333;
+			margin-bottom: 0.25rem;
+			font-size: 0.75rem;
+			white-space:nowrap;text-overflow:ellipsis;overflow:hidden;-webkit-text-overflow:ellipsis;
+		}
+		.order-time{
+			color: #999;
+			font-size: 0.6rem;
+		}
+		.item-after{
+			font-size: 0.65rem;
+		}
+		.active{
+			color: @color-theme;
+		}
+		&:last-child{
+			.item-content{
+				&:after{
+					display: none;
+				}
+			}
+		}
+	}
+}

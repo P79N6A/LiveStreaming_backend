@@ -1,0 +1,17 @@
+<ul class="raw" ms-controller="live_goods" id="live_goods">
+    <li class="b-recommend" ms-for="item in @items">
+        <a href="javascript:void(0);" class="">
+            <div class="goods-img">
+                <img ms-attr="{alt:item.name,src:item.imgs}">
+            </div>
+            <div class="goods-info">
+                <div class="clearfix">
+                    <span class="price f-l">￥{{item.price}}</span>
+                    <a ms-attr="{href: item.url}" target="_black" class="btn btn-primary f-r">购买</a>
+                    <div class="clear"></div>
+                </div>
+                <a ms-attr="{href: item.url}" target="_black" class="goods-name">{{item.name}}</a>
+            </div>
+        </a>
+    </li>
+</ul>

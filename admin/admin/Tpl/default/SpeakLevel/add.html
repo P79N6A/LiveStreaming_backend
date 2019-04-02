@@ -1,0 +1,61 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<div class="main">
+<div class="main_title">{%ADD} <a href="{:u("SpeakLevel/index")}" class="back_list">{%BACK_LIST}</a></div>
+<div class="blank5"></div>
+<form name="edit" action="__APP__" method="post" enctype="multipart/form-data">
+<table class="form" cellpadding=0 cellspacing=0>
+	<tr>
+        <td class="item_title">开始等级:</td>
+        <td class="item_input"><input type="text" class="textbox require" name="begin_level" value=""/></td>
+    </tr>
+    <tr>
+        <td class="item_title">结束等级:</td>
+        <td class="item_input"><input type="text" class="textbox require" name="end_level" value=""/>
+        <span class="tip_span">&nbsp;[不包含]</span>
+        </td>
+    </tr>
+	<tr>
+		<td class="item_title">进场底色:</td>
+		<td class="item_input">
+			<input type="color" name="colour" value="" />
+		</td>
+	</tr>
+	<tr>
+		<td class="item_title">发言字数:</td>
+		<td class="item_input"><input type="text" class="textbox " name="speak_num" value="" /></td>
+	</tr>
+    <tr>
+        <td class="item_title">坐骑:</td>
+        <td class="item_input">
+        <select name="mount_id">
+            <option value="0">不增送坐骑</option>
+            <foreach name="mounts" item="g">
+                <option value="{$g.id}">{$g.name}</option>
+            </foreach>
+        </select>
+        </td>
+    </tr>
+    <tr>
+        <td class="item_title">赠送天数:</td>
+        <td class="item_input"><input type="text" class="textbox " name="mount_day" value="" /></td>
+    </tr>
+	<tr>
+		<td class="item_title"></td>
+		<td class="item_input">
+			<!--隐藏元素-->
+			<input type="hidden" name="{:conf("VAR_MODULE")}" value="SpeakLevel" />
+			<input type="hidden" name="{:conf("VAR_ACTION")}" value="insert" />
+			<!--隐藏元素-->
+			<input type="submit" class="button" value="{%ADD}" />
+			<input type="reset" class="button" value="{%RESET}" />
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2 class="bottomTd"></td>
+	</tr>
+</table>
+</form>
+</div>
+<include file="Public:footer" />

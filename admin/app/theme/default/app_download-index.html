@@ -1,0 +1,43 @@
+{include file="inc/header.html"}
+<?php
+	$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/app_download-index.css";
+?>
+<link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$dpagecss"}" />
+<div class="layout-app-down">
+    <div class="bg-font"></div>
+    <ul class="list-down">
+        {if $data.list.ios.has_ios eq 1}
+        <li class="ios-down f-l">
+            <a href="{$data.list.ios.ios_down_url}"></a>
+        </li>
+        {/if}
+        {if $data.list.android.has_android eq 1}
+        <li class="android-down f-l">
+            <a href="{$data.list.android.android_down_url}"></a>
+        </li>
+        {/if}
+        {if $data.list.wechat.has_wechat eq 1}
+        <li class="app-down f-l">
+            <div class="down-ewm-bg"></div>
+            <div class="down-ewm" id="qrcode"></div>
+        </li>
+        {/if}
+        <li class="other-down f-l">
+            <a href="http://ilvbfile.fanwe.net/public/attachment/attachment/fanwe-obs-releases-1.0.2-x86.zip"></a>
+        </li>
+    </ul>
+</div>
+<?php
+    $this->_var['dpagejs'][] = $this->_var['TMPL_REAL']."/dist/qrcode.js";
+?>
+<script type="text/javascript" src="{function name="parse_script" v="$dpagejs"}"></script>
+<script type="text/javascript">
+    window.onload =function(){
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            width : 147, //设置宽高
+            height : 147
+        });
+        qrcode.makeCode('{$data.list.wechat.url}');
+    }
+</script>
+{include file="inc/footer.html"}

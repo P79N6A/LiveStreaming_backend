@@ -1,0 +1,52 @@
+@import (once) "public/variable.less";
+.page-user_center-add_feedback{
+	& textarea{
+		outline: none;
+		resize:none;
+		width: 100%;
+		height: 40%;
+		border: none;
+		text-align: left;
+		display: block;
+		padding: 0.6rem 0.5rem;
+		margin-top: 0.5rem;
+	}
+	& .number{
+		position: relative;
+		& p {
+			line-height: 1.5rem;
+			background: #fff;
+			color: @fc-light;
+			padding: 0 0.5rem;
+		}
+		&:before{
+			content: '';
+		    position: absolute;
+		    width: 200%;
+		    height: 200%;
+		    border-bottom: 1px solid #b2b2b2;
+		    -webkit-transform-origin: 0 0;
+		    -moz-transform-origin: 0 0;
+		    -ms-transform-origin: 0 0;
+		    -o-transform-origin: 0 0;
+		    transform-origin: 0 0;
+		    -webkit-transform: scale(0.5, 0.5);
+		    -ms-transform: scale(0.5, 0.5);
+		    -o-transform: scale(0.5, 0.5);
+		    transform: scale(0.5, 0.5);
+		    -webkit-box-sizing: border-box;
+		    -moz-box-sizing: border-box;
+		    box-sizing: border-box;
+		    top: 0;
+		}
+	}
+	& .content-block{
+		padding:0.5rem;
+		& .button-big{
+			height: 2rem;
+			line-height: 2rem;
+			font-size: @fs-middle;
+			background: @color-theme;
+		}
+	}
+}

@@ -1,0 +1,171 @@
+@import (once) "public/variable.less";
+.page-user_center-balance{
+	.content{
+		bottom: 3rem;
+		.content-block{
+			padding: 0;
+			margin: 0;
+			margin-bottom: 0.5rem;
+			.card{
+				.card-content-inner{
+					padding: 1.25rem 0;
+					text-align: center;
+					p{
+						margin: 0.5rem 0;
+					}
+					.inner-text{
+						color: #333;
+					}
+					.inner-money{
+						font-size: 1.75rem;
+						color: @color-theme;
+						font-family: Arial;
+						em{
+							font-size: 1.6rem;
+							margin-right: 0.2rem;
+						}
+					}
+				}
+				.card-footer{
+					&:before{
+                        content: '';
+                        position: absolute;
+                        width: 200%;
+                        height: 200%;
+                        border-top: 1px solid #ececec;
+                        -webkit-transform-origin: 0 0;
+                        -moz-transform-origin: 0 0;
+                        -ms-transform-origin: 0 0;
+                        -o-transform-origin: 0 0;
+                        transform-origin: 0 0;
+                        -webkit-transform: scale(0.5, 0.5);
+                        -ms-transform: scale(0.5, 0.5);
+                        -o-transform: scale(0.5, 0.5);
+                        transform: scale(0.5, 0.5);
+                        -webkit-box-sizing: border-box;
+                        -moz-box-sizing: border-box;
+                        box-sizing: border-box;
+                        top: 0;
+                        pointer-events: none;
+                        background: none;
+                    }
+					div{
+						width: 50%;
+						text-align: center;
+						line-height: 1.05rem;
+						color: #333;
+					}
+					.income{
+						position: relative;
+						&:after{
+							content: "";
+							display: block;
+							width: 1px;
+							height: 0.8rem;
+							position: absolute;
+							top: 33%;
+							width: 200%;
+	                        height: 1.6rem;
+	                        border-right: 1px solid #cfcfcf;
+	                        -webkit-transform-origin: 0 0;
+	                        -moz-transform-origin: 0 0;
+	                        -ms-transform-origin: 0 0;
+	                        -o-transform-origin: 0 0;
+	                        transform-origin: 0 0;
+	                        -webkit-transform: scale(0.5, 0.5);
+	                        -ms-transform: scale(0.5, 0.5);
+	                        -o-transform: scale(0.5, 0.5);
+	                        transform: scale(0.5, 0.5);
+	                        -webkit-box-sizing: border-box;
+	                        -moz-box-sizing: border-box;
+	                        box-sizing: border-box;
+	                        pointer-events: none;
+						}
+					}
+					.footer-money{
+						color: @color-theme;
+						font-family: Arial;
+					}
+				}
+			}
+			.list-block{
+				margin: 0;
+				
+				.item-content{
+					padding:0;
+					&:after{
+						content: '';
+                        position: absolute;
+                        width: 200%;
+                        height: 200%;
+                        border-top: 1px solid #ececec;
+                        -webkit-transform-origin: 0 0;
+                        -moz-transform-origin: 0 0;
+                        -ms-transform-origin: 0 0;
+                        -o-transform-origin: 0 0;
+                        transform-origin: 0 0;
+                        -webkit-transform: scale(0.5, 0.5);
+                        -ms-transform: scale(0.5, 0.5);
+                        -o-transform: scale(0.5, 0.5);
+                        transform: scale(0.5, 0.5);
+                        -webkit-box-sizing: border-box;
+                        -moz-box-sizing: border-box;
+                        box-sizing: border-box;
+                        top: 0;
+                        left: 0;
+                        pointer-events: none;
+                        background: none;
+					}
+					.item-inner{
+						padding: 0 0.5rem;
+						min-height: 0;
+						line-height: 2.45rem;
+						&:after{
+							display: none;
+						}
+					}
+				}
+				.item-content-list{
+					display: block;
+					padding: 0.5rem;
+					.item-inner{
+						padding: 0;
+						min-height: 0;
+						font-size: @fs-small;
+						color: #999;
+						line-height: 0.8rem;
+						.item-title{
+							color: #999;
+						}
+						.item-after{
+							max-height: inherit;
+						}
+					}
+					.consume{
+						.item-title{
+							font-size: 0.65rem;
+							color: #333;
+						}
+					}
+					.trade_num{
+						margin: 0.5rem 0;
+					}
+					.remainder{
+						.reduce{
+							color: @color-theme;
+						}
+						.plus{
+							color: #47cf4a;
+						}
+					}
+				}
+			}
+		}
+	}
+	.m-button{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+}

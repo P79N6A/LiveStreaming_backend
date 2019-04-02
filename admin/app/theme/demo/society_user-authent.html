@@ -1,0 +1,188 @@
+{include file="inc/header.html"}
+<?php
+	$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/society-apply_sociaty.css";
+	$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/society_user-authent.css";
+	$this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/js/society_user-authent.js";
+   	$this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/js/society_user-authent.js";
+?>
+    <link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$dpagecss"}" />
+    {include file="inc/upload-config.html"}
+    <div class="wrapper apply">
+        <div class="m-wrapper-top clearfix">
+            <h3>红人签约申请</h3>
+            <p>以下信息均为必填项，为了保证您的利益，请如实填写</p>
+        </div>
+        <div class="m-wrapper-content">
+            <form class="J-agent clearfix" ms-controller="ms_agent" id="ms_agent">
+                <div class="tag-head-content">
+                    <span class="tag-head">基本资料</span>
+                </div>
+                <div class="fw-form-group">
+                    <label for="realname">真实姓名：</label>
+                    <input type="text" class="fw-form-control" id="realname" name="realname" ms-duplex="@realname" placeholder="请输入您的真实姓名">
+                    <span class="fw-form-right">真实姓名不能为空</span>
+                </div>
+                <div class="fw-form-group">
+                    <label for="telephone">联系电话：</label>
+                    <input type="number" class="fw-form-control" id="telephone" name="tel" ms-duplex-number="@tel" placeholder="请输入真实的电话号码以便联系">
+                    <span class="fw-form-right">联系电话不能为空</span>
+                </div>
+                <div class="fw-form-group">
+                    <label for="paperstype">身份证类型：</label>
+                    <select class="fw-form-selset" id="paperstype" ms-duplex="@paperstype">
+                        <option value="1">身份证</option>
+                    </select>
+                </div>
+                <div class="fw-form-group">
+                    <label for="papersnumb">证件号：</label>
+                    <input type="text" class="fw-form-control" id="papersnumb" name="papersnumb" ms-duplex="@papersnumb" placeholder="请输入您的证件号">
+                    <span class="fw-form-right">证件号不能为空</span>
+                </div>
+                <div class="m-wrapper-top clearfix">
+		            <h3>上传相关资料</h3>
+		        </div>
+                <div class="tag-head-content">
+                    <span class="tag-head">身份证</span>
+                </div>
+                <div class="star_submit clearfix" style="width: 100%">
+                    <div class="field_input file-idcard">
+                        <div class="upload_pic">
+                            <div class="plus_icon"></div>
+                            <div class="plus_text">身份证正面</div>
+                            <div class="plus_subhead">小于1MB</div>
+                        </div>
+                        <div class="pic_container">
+                            <img id="identify_positive-image" src="" width="288" height="220">
+                        </div>
+                        <div class="uploadimg_poster" id="identify_positive">
+                            <input type="hidden" value="" name="frontpicture" id="identify_positive-url" ms-duplex="@identify_positive_image">
+                            <input type="file" id="frontpicture_file" name="img">
+                        </div>
+                    </div>
+                    <div class="field_input file-idcard">
+                        <div class="upload_pic">
+                            <div class="plus_icon"></div>
+                            <div class="plus_text">身份证反面</div>
+                            <div class="plus_subhead">小于1MB</div>
+                        </div>
+                        <div class="pic_container">
+                            <img id="identify_nagative-image" src="" width="288" height="220">
+                        </div>
+                        <div class="uploadimg_poster" id="identify_nagative">
+                            <input type="hidden" value="" name="backpicture" id="identify_nagative-url" ms-duplex="@identify_nagative_image">
+                            <input type="file" id="backpicture_file" name="img">
+                        </div>
+                    </div>
+                    <div class="field_input file-idcard">
+                        <div class="upload_pic">
+                            <div class="plus_icon"></div>
+                            <div class="plus_text">手持身份证</div>
+                            <div class="plus_subhead">小于1MB</div>
+                        </div>
+                        <div class="pic_container">
+                            <img id="identify_hold-image" src="" width="288" height="220">
+                        </div>
+                        <div class="uploadimg_poster" id="identify_hold">
+                            <input type="hidden" value="" name="pictureinhand" id="identify_hold-url" ms-duplex="@identify_hold_image">
+                            <input type="file" id="pictureinhand_file" name="img">
+                        </div>
+                    </div>
+                </div>
+                <div class="error_tips text-center">
+                    <span class="ng-hide">身份证照不能为空</span>
+                </div>
+                <div class="tag-head-content">
+                    <span class="tag-head">直播间海报</span>
+                </div>
+                <div class="poster clearfix">
+                	<div class="field_input file-idcard">
+                        <div class="upload_pic">
+                            <div class="plus_icon"></div>
+                            <div class="plus_text">直播间海报</div>
+                            <div class="plus_subhead">小于1MB</div>
+                        </div>
+                        <div class="pic_container" >
+                            <img id="show_bill-image" src="" width="288" height="220">
+                        </div>
+                        <div class="uploadimg_poster" id="show_bill">
+                            <input type="hidden" value="" name="pictureinhand" id="show_bill-url" ms-duplex="@show_bill">
+                            <input type="file" id="pictureinhand_file" name="img">
+                        </div>
+                    </div>
+                </div>
+                <div class="m-wrapper-top clearfix">
+		            <h3>艺人作品</h3>
+		        </div>
+		        <div class="fw-form-group clearfix">
+                    <label class="title-group">
+                    	<span class="tag-head">作品</span>
+                    </label>
+                    <div class="fw-form-content">
+                    	<div class="fw-form-group">
+		                    <label for="liveaddress">作品地址：</label>
+		                    <input type="text" class="fw-form-control" id="liveaddress" name="liveaddress" ms-duplex="@liveaddress" placeholder="请输入您的视频作品地址">
+		                </div>
+		                <div class="fw-form-group">
+		                    <label for="textarea">作品说明：</label>
+		                    <textarea class="fw-form-control" maxlength="30" id="textarea" name="textarea" ms-duplex="@textarea" placeholder="请填写作品说明（最多30字）"></textarea>
+		                    <p class="fw-form-after-right">还可以输入<em>30</em>字</p>
+		                </div>
+	                    
+                	</div>
+                	<div class="fw-form-right f-l">作品不能为空</div>
+                </div>
+                <!-- <div class="fw-form-group clearfix">
+                    <label class="title-group">
+                    	<span class="tag-head">作品2</span>
+                    </label>
+                    <div class="fw-form-content">
+                    	<div class="fw-form-group">
+		                    <label for="liveaddress2">作品地址：</label>
+		                    <input type="text" class="fw-form-control" id="liveaddress2" name="liveaddress2" ms-duplex="@liveaddress2" placeholder="请输入您的视频作品地址">
+		                </div>
+		                <div class="fw-form-group">
+		                    <label for="textarea2">作品说明：</label>
+		                    <textarea class="fw-form-control" maxlength="30" id="textarea2" name="textarea2" ms-duplex="@textarea2" placeholder="请填写作品说明（最多30字）"></textarea>
+		                    <p class="fw-form-after-right">还可以输入<em>30</em>字</p>
+		                </div>
+	                    
+                	</div>
+                </div>
+                <div class="fw-form-group clearfix">
+                    <label class="title-group">
+                    	<span class="tag-head">作品3</span>
+                    </label>
+                    <div class="fw-form-content">
+                    	<div class="fw-form-group">
+		                    <label for="liveaddress3">作品地址：</label>
+		                    <input type="text" class="fw-form-control" id="liveaddress3" name="liveaddress3" ms-duplex="@liveaddress3" placeholder="请输入您的视频作品地址">
+		                </div>
+		                <div class="fw-form-group">
+		                    <label for="textarea3">作品说明：</label>
+		                    <textarea class="fw-form-control" maxlength="30" id="textarea3" name="textarea3" ms-duplex="@textarea3" placeholder="请填写作品说明（最多30字）"></textarea>
+		                    <p class="fw-form-after-right">还可以输入<em>30</em>字</p>
+		                </div>
+	                    
+                	</div>
+                </div> -->
+                <div class="fw-form-group">
+                    <label for="text">备注说明：</label>
+                    <input type="text" class="fw-form-control" id="text" name="text" ms-duplex="@text" placeholder="备注说明：">
+                    <span class="fw-form-right">备注不能为空</span>
+                </div>
+                <div class="submit-button" style="text-align:center;">
+                    <button type="button" id="submit_btn" class="star_btn_confirm"  ms-click="@created()">提交</button>
+                    <button class="star_btn_cancel">取消</button>
+                </div>
+        	</div>
+        </form>
+    </div>
+    </div>
+    <script type="text/javascript">
+        get_file_fun('identify_positive');
+        get_file_fun('identify_nagative');
+        get_file_fun('identify_hold');
+        get_file_fun('show_bill');
+        var society_id = getQueryString("society_id");
+    </script>
+    {include file="inc/footer.html"}

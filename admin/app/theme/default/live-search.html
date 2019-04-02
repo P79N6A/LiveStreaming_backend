@@ -1,0 +1,136 @@
+{include file="inc/header.html"}
+<?php
+	$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/index.css";
+	$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/live-search.css";
+?>
+<link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$dpagecss"}" />
+
+<div class="wrapper">
+	{if $data.user_list && $data.live_list}
+	<div class="search-type-nav">
+		<a href='/index.php?ctl=live&act=search&type=0&key={$data.key}' {if $data.type eq 0}class="active"{/if}>
+		<span>综合</span>
+		<em></em>
+		</a>
+		<a href='/index.php?ctl=live&act=search&type=1&key={$data.key}' {if $data.type eq 1}class="active"{/if}>
+		<span>主播</span>
+		<em></em>
+		</a>
+		<a href='/index.php?ctl=live&act=search&type=2&key={$data.key}' {if $data.type eq 2}class="active"{/if}>
+		<span>直播</span>
+		<em></em>
+		</a>
+    </div>
+    {/if}
+    {if $data.user_list || $data.live_list}
+	    {if $data.user_list}
+	    <!-- 相关主播  -->
+	    <div class="m-live m-anchor clearfix">
+			<h2 class="m-common-title clearfix">
+				<div class="container-fluid">
+					<strong>相关主播</strong>
+					{if $data.type==1}
+
+					{else}
+					<a href="{$data.user_more}" target="_blank" class="btn btn-default btn-circle view-more f-r">查看更多</a>
+					{/if}
+				</div>
+			</h2>
+			<ul class="m-live-list clearfix">
+				{foreach from=$data.user_list item=item key=key name=user_list}
+				<li class="block-live">
+					<a href='{$item.video_url}' target="_blank">
+	                    <div class="imgbox">
+	                        <img src="{$item.head_image}" width="110" height="110" />
+	                    </div>
+	                    <h3>{$item.nick_name}<!-- 铠<span class="keyword">天才大哥</span> --></h3>
+	                    <strong>{$item.fans_count}<span>人关注</span></strong>
+	                </a>
+				</li>
+				{/foreach}
+			</ul>
+		</div>
+	{if $data.type==1}
+	<div class="m-page clearfix">
+		<div class="m-page-con">
+			{$data.page}
+		</div>
+	</div>
+	{/if}
+		{/if}
+		{if $data.live_list}
+		<!-- 相关直播 -->
+		<div class="m-live clearfix">
+			<h2 class="m-common-title">
+				<div class="container-fluid">
+					<strong>相关直播</strong>
+					{if $data.type==2}
+
+					{else}
+					 <a href="{$data.live_more}" target="_blank" class="btn btn-default btn-circle view-more f-r">查看更多</a>
+					{/if}
+				</div>
+			</h2>
+			<ul class="m-live-list clearfix">
+				{foreach from=$data.live_list item=item key=key name=user_list}
+				<li class="block-live">
+					<a href='{$item.video_url}' target="_blank">
+						<span class="block-live-img">
+							<img alt="" src="{$item.live_image}" class="block-live-img lazy" />
+						</span>
+						<div class="block-live-info clearfix">
+							<div class="live-name clearfix">
+								<img alt="" src="{$item.head_image}" class="avatar-normal" />
+								<p title="12312">{$item.title}<!-- 31<span class="keyword">天才大哥</span> --></p>
+								<p class="sub f-l" title="111332123">{$item.nick_name}</p>
+								<span class="watch-num f-r"><i class="icon iconfont">&#xe60a;</i>{$item.watch_number}</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				{/foreach}
+			</ul>
+		</div>
+	{if $data.type==2}
+		<div class="m-page clearfix">
+			<div class="m-page-con">
+				{$data.page}
+			</div>
+		</div>
+	{/if}
+		{/if}
+	{else}
+		<p class="null-data">抱歉，暂时没有相关内容，试试我们推荐的内容吧</p>
+		<div class="m-live clearfix">
+			<h2 class="m-common-title">
+				<div class="container-fluid">
+					<strong>热门直播</strong>
+				</div>
+			</h2>
+			<ul class="m-live-list clearfix">
+				{foreach from=$data.is_recommend item=item key=key name=user_list}
+				<li class="block-live">
+					<a href='{$item.video_url}' target="_blank">
+						<span class="block-live-img">
+							<img alt="" src="{$item.head_image}" class="block-live-img lazy" />
+						</span>
+						<div class="block-live-info clearfix">
+							<div class="live-name clearfix">
+								<img alt="" src="{$item.head_image}" class="avatar-normal" />
+								<p title="12312">{$item.title}<!-- 31<span class="keyword">天才大哥</span> --></p>
+								<p class="sub f-l" title="111332123">{$item.nick_name}</p>
+								<span class="watch-num f-r"><i class="icon iconfont">&#xe60a;</i>{$item.watch_number}</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				{/foreach}
+			</ul>
+		</div>
+	{/if}
+</div>
+<script type="text/javascript">
+	var search_key = getQueryString("key");
+	$("input[name='search_key']").val(search_key);
+</script>
+{include file="inc/footer.html"}

@@ -1,0 +1,74 @@
+{include file="inc/header.html"}
+<div class="content infinite-scroll">
+<!--     <div class="content-block">
+        <div class="card">
+            <div class="card-content">
+                  <div class="card-content-inner">
+                      <p class="inner-text f13">账户余额（元）</p>
+                      <p class="inner-money"><em>&yen;</em><span>7501.82</span></p>
+                  </div>
+            </div>
+            <div class="card-footer">
+                <div class="income f13">
+                    <p class="footer-text">累计收入（元）</p>
+                    <p class="footer-money">&yen;32151.00</p>
+                </div>
+                <div class="expenditure f13">
+                    <p class="footer-text">累计支出（元）</p>
+                    <p class="footer-money">&yen;21542.00</p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="content-block">
+        <div class="list-block">
+            <ul class="trade-list">
+                <li class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title f13">交易明细</div>
+                    </div>
+                </li>
+                {foreach from=$data.data.list item=item key=key}
+                <li class="item-content item-content-list">
+                    <div class="item-inner consume">
+                        <div class="item-title">消费</div>
+                        <div class="item-after">{$item.create_time}</div>
+                    </div>
+                    <div class="item-inner trade_num">
+                        <div class="item-title">交易号：{$item.sn}</div>
+                    </div>
+                    <div class="item-inner remainder">
+                        <div class="item-title">余额：&yen;{$item.balance}</div>
+                        <div class="item-after reduce">{$item.money}</div>
+                    </div>
+                </li>
+                {foreachelse}
+                <li class="null-data">暂无交易明细</li>
+                {/foreach}
+                <input type="hidden" name="total_page" value="{$data.data.total_page}" />
+            </ul>
+        </div>
+    </div>
+    {if $data.data.list}
+    <div id="vscope-paging">
+        <!-- 加载提示符 -->
+        <div class="infinite-scroll-preloader" v-if="total_page>1 && page<=total_page">
+            <div class="preloader"></div>
+        </div>
+        <div class="infinite-scroll-preloader data-null" v-if="page>total_page">
+            <span style="color:#999;font-size:0.75rem;">无更多数据</span>
+        </div>
+    </div>
+    {/if}
+</div>
+<!-- <div class="m-button">
+    <a href="javascript:void(0)" class="button button-light">充值</a>
+</div> -->
+<script type="text/javascript">
+    
+    var paramet = {
+        type: GetQueryString("type"),
+    },ajax_url,new_paramet,page=2,loading=false,total_page=Number('{$data.data.total_page}');
+
+</script>
+{include file="inc/footer.html"}

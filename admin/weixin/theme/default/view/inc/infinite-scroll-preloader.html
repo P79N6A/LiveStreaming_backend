@@ -1,0 +1,9 @@
+<div id="vscope-paging">
+  	<!-- 加载提示符 -->
+    <div class="infinite-scroll-preloader" v-if="total_page>1 && page<=total_page">
+        <div class="preloader"></div>
+    </div>
+    <div class="infinite-scroll-preloader data-null" v-if="page>total_page">
+        <span style="color:#999;font-size:0.75rem;">无更多数据</span>
+    </div>
+</div>

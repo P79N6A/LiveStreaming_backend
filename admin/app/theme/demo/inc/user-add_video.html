@@ -1,0 +1,188 @@
+<style type="text/css">
+	.m-modify-live{
+	    margin-top: -2px;
+	}
+	.m-modify-live div{margin-bottom: 18px;}
+	.m-modify-live .modify-end-btn{
+		padding: 12px 0 0;
+		margin-left: 90px;
+		text-align: center;
+		display: inline-block;
+		margin-bottom: 10px;
+	}
+	.m-modify-live .modify-room-btn{
+		padding: 12px 0 0;
+		margin-left: 85px;
+		/*text-align: center;*/
+		display: inline-block;
+		margin-bottom: 10px;
+	}
+	.m-modify-live .modify-create-btn{
+		padding: 12px 0 0;
+		margin-left: 185px;
+		text-align: center;
+		display: inline-block;
+		margin-bottom: 10px;
+	}
+	.m-modify-live .modify-create-btn a{
+		padding:9px 46px;
+	}
+	.m-modify-live .modify-end-btn a{
+		padding:9px 46px;
+	}
+	.m-modify-live .modify-room-btn a{
+		padding:9px 46px;
+	}
+	.m-modify-live p{
+	 	font-size: 14px;
+        font-weight: bold;
+        text-align: left;
+        line-height: 14px;
+        margin-bottom: 8px;
+	}
+	.m-modify-live input{
+		width: 548px;
+        padding:6px 10px ;
+        border: 1px solid #cdcdcd;
+        box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        border-radius: 5px;
+        -moz-box-shadow: inset 0px 1px 1px #f2f2f2;
+        -webkit-box-shadow: inset 0px 1px 1px #f2f2f2;
+        box-shadow: inset 0px 1px 1px #f2f2f2;
+        color: #6e6e6e;
+	}
+	.m-modify-live .image-live-box{
+		position:relative;
+		width:100px;
+		height:56px;
+		line-height: 50px;
+		border:1px solid #dedede;
+		color:#aaa;
+		cursor:pointer;
+		text-align:center;
+	}
+	.m-modify-live .image-live-box span{font-size:70px;font-family:airal;}
+	.m-modify-live .image-live-box img{
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+	}
+	.m-modify-live .image-live-box img[src=""]{
+		opacity:0;
+	}
+	.m-modify-live .modify-end-btn .btn .btn-primary{
+		margin-right: 30px;
+	}
+	.inline{
+		display: inline-block;
+	}
+</style>
+<?php
+$this->_var['OPEN_LIVE_PAY']=defined('OPEN_LIVE_PAY')? OPEN_LIVE_PAY : 0;
+$m_config = load_auto_cache("m_config");
+$this->_var['pc_live_fee']=intval($m_config['pc_live_fee']);
+$puth_rtmp = $this->_var['data']['push_rtmp'];
+if($puth_rtmp){
+	$i = strrpos($puth_rtmp, "live/") + 5;
+	$this->_var['push_url'] = substr($puth_rtmp, 0, $i);
+	$this->_var['push_code'] = substr($puth_rtmp, $i);
+}
+if(empty($this->_var['user_info']['room_title'])){
+	$this->_var['user_info']['room_title'] = $this->_var['user_info']['nick_name'] . '的直播间';
+}
+?>
+
+{if $data.status}
+<div class="m-modify-live">
+	{if $data.live_in eq 1 or $data.live_in eq 2}
+	<div class="modify-live-FMS">
+		<p>FMS&nbsp;URL</p>
+		<input type="text" readonly="readonly" value="{$push_url}" class="FMS-URL">
+	</div>
+	<div class="playback-path">
+		<p>播放路径</p>
+		<input type="text" readonly="readonly" value="{$push_code}" class="playback">
+	</div>
+	{else}
+	<div class="modify-live-FMS">
+		<p>直播间名称</p>
+		<input type="text" value="{$user_info.room_title}" name="room_name" maxlength="20" placeholder="请输入直播间名称" class="FMS-URL" style="width:480px;margin-right:10px;">
+		<!--<a onclick="edit_room_title({$data.room_id});" class="btn btn-primary">保存</a>-->
+	</div>
+	<div class="modify-live-FMS">
+		<p>话题</p>
+		<input type="text" value="{$data.title}" onmousemove="$(this).attr('title',$(this).val())"  name="title" maxlength="20" placeholder="请输入直播间话题" class="FMS-URL" style="width:200px;margin-right:10px;">
+		<strong>选择话题：</strong>
+		<select name = "cate" class="FMS-URL" onmousemove="$(this).attr('title',$(this).val())" data-live-search="false" style="width: 200px">
+			<option value="">选择话题</option>
+		{foreach from=$data.cate item=item}
+			<option value="{$item.title}">{$item.title}</option>
+		{/foreach}
+		</select>
+	</div>
+	<div class="playback-path">
+		<p>直播间封面</p>
+		<div class="image-live-box" style="width:285px;height:160px;" {if $data.room_id} onclick= 'open_avatar_view(285,160, "live_image", function(){save_img(285,160,"live_image",APP_ROOT+"/mapi/index.php?ctl=user&act=update_live_image&room_id={$data.room_id}");});'
+             {else} onclick ='open_avatar_view(285,160, "live_image", function(){save_img(285,160,"live_image",APP_ROOT+"/mapi/index.php?ctl=user&act=add_goods");});' {/if}>
+			<img src="{$data.live_image}" id="live_image" />
+			<input type="hidden" name="live_image" />
+			<span>+</span>
+		</div>
+	</div>
+	<div class="m-modify-live inline">
+		<strong>是否为私密直播：</strong>
+        <select name = "is_private" class="FMS-URL" data-live-search="false">
+            <option value="0">否</option>
+            <option value="1">是</option>
+        </select>
+	</div>
+	{if $OPEN_LIVE_PAY eq 1 && $pc_live_fee > 0}
+	<div class="m-modify-live inline">
+		<strong>是否付费：</strong>
+		<select name = "is_live_pay" class="FMS-URL" data-live-search="false">
+			<option value="0">否</option>
+			<option value="1">是</option>
+		</select>
+	</div>
+	{/if}
+	{/if}
+	<br/>
+	{if $data.room_id neq ''}
+		<div class="modify-end-btn">
+			<a href="javascript:end_live('{$data.room_id}');" class="btn btn-red">结束直播</a>
+		</div>
+	{elseif $data.type neq ''}
+		<div class="modify-create-btn">
+			<a href="javascript:pop_video('{$data.type}','{$data.deal_id}','{$data.cate_id}');" class="btn btn-primary">创建直播</a>
+		</div>
+	{else}
+		<div class="modify-create-btn">
+			<a href="javascript:pop_video();" class="btn btn-primary">创建直播</a>
+		</div>
+	{/if}
+	<div class="modify-room-btn">
+		{if $data.room_id neq ''}
+		<a href="javascript:get_live('{$data.room_id}');" class="btn btn-green">进入直播间</a>
+		{/if}
+	</div>
+</div>
+{elseif $data.need_agree}
+<iframe style="width: 100%; height: 600px;" frameborder=0 src='{url r="app#agreement"}'></iframe>
+
+<div class="m-modify-live">
+	<div class="modify-room-btn">
+		<a href="javascript:pop_live(1);" class="btn btn-primary">同意</a>
+	</div>
+</div>
+{else}
+{$data.error}
+{/if}
+<script>
+	$(".modify-live-FMS select[name='cate']").change(function(){
+		var cate = $(this).val();
+		$(".modify-live-FMS input[name='title']").val(cate);
+	});
+</script>

@@ -1,0 +1,48 @@
+{// 引入标签库 }
+<tagLib name="html"/>
+<include file="Public:header"/>
+<div class="main">
+    <div class="main_title_list">
+        <div class="list-line-ico"></div>
+        今日最佳
+    </div>
+    <table class="dataTable">
+        <thead>
+            <tr>
+                <td>点击率</td>
+                <td>观看时长</td>
+            </tr>
+        </thead>
+        <tbody>
+            <foreach name="today" item="item">
+                <tr>
+                    <td>{$item.title}({$item.view_times}次)</td>
+                    <td>{$item.title}({$item.long_time}分钟)</td>
+                </tr>
+            </foreach>
+        </tbody>
+    </table>
+    <div class="main_title_list">
+        <div class="list-line-ico"></div>
+        近七日数据
+    </div>
+    <table class="dataTable">
+        <thead>
+            <tr>
+                <td>点击率</td>
+                <td>观看时长</td>
+            </tr>
+        </thead>
+        <tbody>
+            <foreach name="seven_day" item="item">
+                <tr>
+                    <td>{$item.title}({$item.view_times}次)</td>
+                    <td>{$item.title}({$item.long_time}分钟)</td>
+                </tr>
+            </foreach>
+        </tbody>
+    </table>
+    <div class="blank5"></div>
+    <div class="page">{$page}</div>
+</div>
+<include file="Public:footer"/>

@@ -1,0 +1,83 @@
+{include file="inc/header.html"}
+<?php
+	$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/index-family.css";
+?>
+<link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$dpagecss"}" />
+<!--海报区域开始  -->
+<div class="wrapper">
+    <div class="layout-family clearfix">
+        <div class="layout-family-left mr-20 f-l">
+            <!-- 最新家族 -->
+            <div class="m-family clearfix">
+                <h2 class="m-common-title">
+                    <div class="container-fluid">
+                        {if $data.type eq 'hot'}
+                        <i class="icon iconfont hot">&#xe601;</i><strong>热门家族</strong>
+                        {else}
+                        <i class="icon iconfont c-3">&#xe602;</i><strong>最新家族</strong>
+                        {/if}
+                    </div>
+                </h2>
+                <ul class="m-family-list clearfix">
+                    {foreach from=$data.list item=item key=key}
+                    <li class="block-family f-l">
+                        <a href='{url r="family#info" p="family_id=$item.family_id"}' target="_blank" class="p10 clearfix">
+                            <span class="block-family-img mr-10 f-l">
+                                <img src="{$item.family_logo}" class="block-family-img" />
+                            </span>
+                            <div class="block-family-info f-l">
+                                <strong class="family-name" title="asfasra">{$item.family_name}</strong>
+                                <p class="family-case" title="adsaseqw">族长：{$item.nick_name}</p>
+                                <p class="family-case">成员：{$item.user_count}</p>
+                            </div>
+                        </a>
+                    </li>
+                    {/foreach}
+                </ul>
+                <div class="m-page clearfix">
+                    <div class="m-page-con">
+                    {$data.page}   
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--家族排行-->
+        <div class="layout-family-right f-l">
+            <div class="m-Top">
+                <h2 class="m-common-title">
+                    <div class="container-fluid">
+                        <i class="icon iconfont c-1">&#xe603;</i><strong>家族排行</strong>
+                        {if $user_info.family_id}
+                            <a href='{url r="family#info" p="family_id=$user_info.family_id"}' target="_blank" class="btn btn-primary btn-rank f-r">去我的家族</a>
+                        {else}
+                            <a href="javascript:create_family();" class="btn btn-primary btn-rank f-r">创建家族</a>
+                        {/if}
+                    </div>
+                </h2>
+                <ul class="m-Top-list">
+                    {foreach from=$data.ranking item=item key=key name=ranking}
+                    {if $smarty.foreach.ranking.iteration lte 10}
+                    <li>
+                        <div class="block-family-rank">
+                            <a href='{url r="family#info" p="family_id=$item.family_id"}' target="_blank" title="{$item.family_name}">
+                                {if $smarty.foreach.ranking.iteration lte 3}
+                                <i class="star star-{$smarty.foreach.ranking.iteration}"></i>
+                                {else}
+                                <i class="star-number">{$smarty.foreach.ranking.iteration}</i>
+                                {/if}
+                                <div class="info">
+                                    <img src="{$item.family_logo}" class="avatar-normal" />
+                                    <p class="family-case">{$item.family_name}</p>
+                                    <p class="family-case">人数：{$item.user_count}</p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    {/if}
+                    {/foreach}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="inc/footer.html"}

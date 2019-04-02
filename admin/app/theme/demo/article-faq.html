@@ -1,0 +1,54 @@
+{include file="inc/header.html"}
+<?php
+	$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/user.css";
+	$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/article.css";
+   	$this->_var['foot_pagejs'][] = $this->_var['TMPL_REAL']."/js/article.js";
+   	$this->_var['foot_cpagejs'][] = $this->_var['TMPL_REAL']."/js/article.js";
+?>
+<link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$dpagecss"}" />
+
+<div class="wrapper">
+	<div class="user-main bg-user-center mt-20 clearfix">
+		<!--左侧菜单区 -->
+		<div class="layout-user-l f-l j-article-menu" ms-controller="uc_nav">
+			{include file="inc/inc-article-left.html"}
+		</div>
+		<!-- 右侧内容区 -->
+		<div class="layout-user-r">
+			<div class="user-r-main" style="padding:0;">
+				<div class="block-title">
+					<ul class="clearfix">
+						{foreach from=$data.faq_cates item=item key=key name=faq_cates}
+						{if  $smarty.foreach.faq_cates.iteration  lt 7}
+						<li data-src="{$item.articlelist_url}" class="{if $data.page_title eq $item.group}active{/if}"><a href="{$item.articlelist_url}">{$item.group}</a></li>
+						{/if}
+						{/foreach}
+						<div class="clear"></div>
+					</ul>
+				</div>
+				<div class="block-content" style="padding:20px;">
+					<!-- 充值问题 -->
+					<div class="j-ajax-page">
+						<ul class="content-list">
+
+						{foreach from=$data.list item=item key=key name=list}
+							<li class="help clearfix">
+								<div class="f-l">
+									<h3 class="help-titlt">{$item.question}</h3>
+									<p class="help-text">{$item.answer}</p>
+								</div>
+							</li>
+						{/foreach}
+						</ul>
+						<div class="m-page clearfix">
+							<div class="m-page-con">
+								{$data.page}   
+							</div>
+						</div>
+					</div><!-- end -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{include file="inc/footer.html"}

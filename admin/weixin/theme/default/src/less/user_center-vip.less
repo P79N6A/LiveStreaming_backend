@@ -1,0 +1,42 @@
+@import (once) "public/variable.less";
+@import (once) "modules/m-vip-card.less";
+@import (once) "modules/m-vip-liberty.less";
+.page-user_center-vip{
+	.block-vip-card{
+		padding:0.5rem 0.95rem 0;
+	}
+	.block-vip-operat{
+		padding:0.95rem;
+		background:#fff;
+		margin-bottom:0.5rem;
+	}
+	.vip-operat-list{
+		display:webkit-flex;
+		display:flex;
+		.vip-operat{
+			text-align:left;
+			font-size:0.6rem;
+			margin-right:0.95rem;
+			.iconfont{
+				font-size:2rem;
+				color:@color-theme;
+				line-height:1;
+				margin:0 0.2rem;
+			}
+			span{
+				color:@fc-light;
+			}
+			.label{
+				margin-top:0.5rem;
+			}
+		}
+	}
+	.block-vip-code{
+		.item-content{
+			padding:0;
+			&:after{
+				border:0;
+			}
+		}
+	}
+}

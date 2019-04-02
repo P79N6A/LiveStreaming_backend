@@ -1,0 +1,52 @@
+<div id="crop-avatar">
+    <div id="avatar-modal">
+        <form class="avatar-form" action="{$data.upload_url}" enctype="multipart/form-data" method="post">
+            <div class="avatar-body">
+                <!-- Upload image and data -->
+                <div class="avatar-upload">
+                    <input class="avatar-src" name="avatar_src" type="hidden"/>
+                    <input class="avatar-data" name="avatar_data" type="hidden"/>
+                    <input class="avatar-input" id="avatarInput" name="avatar_file" type="file" accept="image/gif,image/jpeg,image/jpg,image/png" />
+                </div>
+                <!-- Crop and preview -->
+                <div class="avatar-row clearfix">
+                    <div class="avatar-row-l">
+                        <div class="avatar-wrapper"></div>
+                    </div>
+                    <div class="avatar-row-r">
+                        <div class="avatar-preview preview-lg"></div>
+                        <div class="avatar-preview preview-md"></div>
+                        <div class="avatar-preview preview-sm"></div>
+                    </div>
+                </div>
+                <div class="avatar-row avatar-btns">
+                    <div class="avatar-row-l">
+                        <div class="btn-group clearfix">
+                            <button class="btn btn-primary" data-method="rotate" data-option="-90" type="button" title="Rotate -90 degrees">向左旋转</button>
+                            <button class="btn btn-primary" data-method="rotate" data-option="-15" type="button">-15度</button>
+                            <button class="btn btn-primary" data-method="rotate" data-option="-30" type="button">-30度</button>
+                            <button class="btn btn-primary" data-method="rotate" data-option="-45" type="button">-45度</button>
+                        </div>
+                        <div class="btn-group clearfix">
+                            <button class="btn btn-primary" data-method="rotate" data-option="90" type="button" title="Rotate 90 degrees">向右旋转</button>
+                            <button class="btn btn-primary" data-method="rotate" data-option="15" type="button">15度</button>
+                            <button class="btn btn-primary" data-method="rotate" data-option="30" type="button">30度</button>
+                            <button class="btn btn-primary" data-method="rotate" data-option="45" type="button">45度</button>
+                        </div>
+                    </div>
+                     <div class="avatar-row-r">
+                        <button class="btn btn-primary btn-block avatar-save" type="submit">确定上传</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="loading" aria-label="Loading" role="img" tabindex="-1"></div>
+</div>
+<script src="<?php echo $this->_var['TMPL']; ?>/dist/cropper/main.js"></script>
+<script type="text/javascript">
+    var scale = '{$data.scale}';
+    if('{$data.has_callback}' == 0){
+        bind_CropAvatar('{$data.scale}');
+    }
+</script>

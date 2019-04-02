@@ -1,0 +1,29 @@
+{include file="inc/header.html"}
+<?php
+	$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/user.css";
+	$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/user_center-family.css";
+	$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/user-message.css";
+	$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/society_user-user_list.css";
+	$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/society-tipoff_index.css";
+?>
+<link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$dpagecss"}" />
+<div class="wrapper">
+	<div class="user-main bg-user-center mt-20 clearfix">
+		<!--左侧菜单区 -->
+		{include file="inc/inc-user-left.html"}
+		<!-- 右侧内容区 -->
+		<div class="layout-user-r">
+			<div class="user-r-main">
+				{include file="inc/inc-society-tipoff_index.html"}
+			</div>
+		</div>
+	</div>
+</div>
+<?php
+	$this->_var['dpagejs'][] = $this->_var['TMPL_REAL']."/js/society-tipoff_index.js";
+	$this->_var['dcpagejs'][] = $this->_var['TMPL_REAL']."/js/society-tipoff_index.js";
+	$this->_var['dpagejs'][] = $this->_var['TMPL_REAL']."/js/user-blacklist.js";
+	$this->_var['dcpagejs'][] = $this->_var['TMPL_REAL']."/js/user-blacklist.js";
+?>
+<script type="text/javascript" src="{function name="parse_script" v="$dpagejs" c="$dcpagejs"}"></script>
+{include file="inc/footer.html"}

@@ -1,0 +1,52 @@
+li.b-recommend{
+    float:left;
+    width: 162px;
+    border-radius: 1px;
+    margin-right: 20px;
+    overflow: hidden;
+    background: #f8f8f8;
+    .goods-img{
+        display: block;
+        position: relative;
+        width: 162px;
+        height: 162px;
+        overflow: hidden;
+        & img{
+            width: 100%;
+        }
+    }
+    .goods-info{
+        padding: 5px 8px;
+        .price{
+            font-size: @fs-main;
+            font-weight: 700;
+            color: @bgcolor-theme;
+            width: 100px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            cursor: pointer
+        }
+        .btn-primary{
+            display: inline-block;
+            zoom: 1;
+            width: 60px;
+            height: 20px;
+            padding: 0;
+            line-height: 20px;
+            border-radius: 2px;
+        }
+        .goods-name{
+            display: block;
+            height: 40px;
+            line-height: 20px;
+            overflow: hidden;
+            color: #333;
+            font-size: @fs-small;
+            overflow : hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+    }
+}

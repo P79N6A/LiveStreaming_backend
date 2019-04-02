@@ -1,0 +1,170 @@
+@import (once) "public/variable.less";
+@import (once) "public/csstree.less";
+@import (once) "modules/m-common-title.less";
+.layout-family{
+    background: @bgcolor;
+    margin-top: 10px;
+    .m-family-list{
+        width: 906px;
+        margin-left: -10px;
+        margin-right: -10px;
+        *margin-bottom: 10px;
+        .block-family{
+            margin: 10px;
+            width: 282px;
+            background: #fff;
+            & a{
+                display: block;
+            }
+            .p10{
+                padding: 10px;
+                .block-family-img{
+                    width: 97px;
+                    height: 97px;
+                    overflow: hidden;
+                    display: block;
+                    .border-radius(49px);
+                }
+                .block-family-info{
+                    width: 59%;
+                    margin: 0;
+                    .family-name{
+                        line-height: 26px;
+                        font-size: 18px;
+                        color: #000;
+                    }
+                    .family-case{
+                        margin-top: 12px;
+                        line-height: 20px;
+                        font-size: @fs-small;
+                        color: #000;
+                    }
+                }
+            }
+        }
+    }
+}
+.m-common-title{
+    height: 50px;
+    line-height: 50px;
+    border: 0;
+    .view-more{
+        margin-top: 8px;
+        padding: 6px 25px;
+    }
+    .btn-rank{
+        margin-top: 9px;
+        padding:5px 27px;
+        .border-radius(0px);
+    }
+    .container-fluid{
+        padding: 0;
+    }
+}
+.layout-family-left{
+    width: 886px;
+    height: auto;
+}
+.layout-family-right{
+    width: 294px;
+    height: auto;
+}
+.m-Top{
+    & .m-common-title{
+        border:0;
+    }
+    & .top-selects{
+        float: right;
+        & a{
+            font-size: @fs-small;
+            color:@fcolor-lighter;
+            margin-right:10px;
+            padding:3px;
+            &.active{
+                color:@bgcolor-theme;
+                border-bottom: 2px solid @bgcolor-theme;
+            }
+        }
+    }
+    & .m-Top-list{
+        margin-top: 10px;
+        background: #fff;
+        & li{
+            padding-right: 10px;
+            .block-family-rank{
+                padding: 10px 0;
+                margin-left: 56px;
+                border-bottom: 1px solid @bdcolor;
+                & a{
+                    height:40px;
+                    line-height:40px;
+                    position:relative;
+                    display:block;
+                    & .star{
+                        position:absolute;
+                        top:5px;
+                        left:-46px;
+                        display:block;
+                        width:26px;
+                        height:35px;
+                        margin-top:2px;
+                        background:url(../images/icon-Tops.png) no-repeat;
+                        &.star-none{
+                            background:none;
+                        }
+                        &.star-1{
+                            background-position: 0 0;
+                        }
+                        &.star-2{
+                            background-position: 0 -42px;
+                        }
+                        &.star-3{
+                            background-position: 0 -85px;
+                        }
+                    }
+                    .star-number{
+                        position: absolute;
+                        top: 5px;
+                        left: -45px;
+                        display: block;
+                        width: 27px;
+                        height: 27px;
+                        margin-top: 2px;
+                        background-color: @bgcolor-deep;
+                        text-align: center;
+                        .border-radius(3px);
+                        line-height:27px;
+                        font-size: @fs-middle;
+                        color: #fff;
+                    }
+                    & .info,& .grade{
+                        height:40px;
+                        line-height:40px;
+                    }
+                    & .info{
+                        .family-case{
+                            line-height: 22px;
+                            font-size: @fs-small;
+                            color: @fcolor-light;
+                        }
+                    }
+                    & .avatar-normal{
+                        margin-right: 20px;
+                        float:left;
+                    }
+                }
+                &:last-child a{
+                    border-bottom: 0;
+                }
+            }
+        }
+        & .last{
+            border: none;
+        }
+    }
+}
+
+
+
+
+

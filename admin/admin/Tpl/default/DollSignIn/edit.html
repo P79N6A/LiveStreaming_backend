@@ -1,0 +1,90 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<div class="main">
+<div class="main_title">{%EDIT} <a href="{:u("DollSignIn/index")}" class="back_list">{%BACK_LIST}</a></div>
+<div class="blank5"></div>
+<form name="edit" action="__APP__" method="post" enctype="multipart/form-data" onsubmit="return check();">
+<table class="form" cellpadding=0 cellspacing=0>
+	<tr>
+		<td colspan=2 class="topTd"></td>
+	</tr>
+	<tr>
+		<td class="item_title">首日签到奖励秀豆数:</td>
+		<td class="item_input"><input type="text" class="textbox require" name="day1_diamonds" value="{$vo.day1_diamonds}" /></td>
+	</tr>
+	<tr>
+		<td class="item_title">首日签到奖励积分数:</td>
+		<td class="item_input"><input type="text" class="textbox require" name="day1_score" value="{$vo.day1_score}" /></td>
+	</tr>
+	<tr>
+		<td class="item_title">二日签到奖励秀豆数:</td>
+		<td class="item_input"><input type="text" class="textbox require" name="day2_diamonds" value="{$vo.day2_diamonds}" /></td>
+	</tr>
+	<tr>
+		<td class="item_title">二日签到奖励积分数:</td>
+		<td class="item_input"><input type="text" class="textbox require" name="day2_score" value="{$vo.day2_score}" /></td>
+	</tr>
+	<tr>
+		<td class="item_title">三日签到奖励秀豆数:</td>
+		<td class="item_input"><input type="text" class="textbox require" name="day3_diamonds" value="{$vo.day3_diamonds}" /></td>
+	</tr>
+	<tr>
+		<td class="item_title">三日签到奖励积分数:</td>
+		<td class="item_input"><input type="text" class="textbox require" name="day3_score" value="{$vo.day3_score}" /></td>
+	</tr>
+	<tr>
+		<td class="item_title">四日签到奖励秀豆数:</td>
+		<td class="item_input"><input type="text" class="textbox require" name="day4_diamonds" value="{$vo.day4_diamonds}" /></td>
+	</tr>
+	<tr>
+		<td class="item_title">四日签到奖励积分数:</td>
+		<td class="item_input"><input type="text" class="textbox require" name="day4_score" value="{$vo.day4_score}" /></td>
+	</tr>
+	<tr>
+		<td class="item_title">五日签到奖励秀豆数:</td>
+		<td class="item_input"><input type="text" class="textbox require" name="day5_diamonds" value="{$vo.day5_diamonds}" /></td>
+	</tr>
+	<tr>
+		<td class="item_title">五日签到奖励积分数:</td>
+		<td class="item_input"><input type="text" class="textbox require" name="day5_score" value="{$vo.day5_score}" /></td>
+	</tr>
+	<tr>
+		<td class="item_title">六日签到奖励秀豆数:</td>
+		<td class="item_input"><input type="text" class="textbox require" name="day6_diamonds" value="{$vo.day6_diamonds}" /></td>
+	</tr>
+	<tr>
+		<td class="item_title">六日签到奖励积分数:</td>
+		<td class="item_input"><input type="text" class="textbox require" name="day6_score" value="{$vo.day6_score}" /></td>
+	</tr>
+	<tr>
+		<td class="item_title">七日签到奖励秀豆数:</td>
+		<td class="item_input"><input type="text" class="textbox require" name="day7_diamonds" value="{$vo.day7_diamonds}" /></td>
+	</tr>
+	<tr>
+		<td class="item_title">七日签到奖励积分数:</td>
+		<td class="item_input"><input type="text" class="textbox require" name="day7_score" value="{$vo.day7_score}" /></td>
+	</tr>
+
+	<tr>
+		<td class="item_title"></td>
+		<td class="item_input">
+			<!--隐藏元素-->
+			<input type="hidden" name="id" value="{$vo.id}" />
+			<input type="hidden" name="{:conf("VAR_MODULE")}" value="DollSignIn" />
+			<input type="hidden" name="{:conf("VAR_ACTION")}" value="update" />
+			<!--隐藏元素-->
+			<input type="submit" class="button" value="{%EDIT}" />
+			<input type="reset" class="button" value="{%RESET}" />
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2 class="bottomTd"></td>
+	</tr>
+</table>	 
+</form>
+</div>
+<include file="Public:footer" />

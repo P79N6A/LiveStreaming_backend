@@ -1,0 +1,22 @@
+@import (once) "public/variable.less";
+.footer{
+	background: #333;
+	padding: 10px 0;
+	color: #aaa;
+	text-align: center;
+	margin-top:20px;
+	& .footer-top{
+		height:62px;
+		line-height:62px;
+		border-bottom: 1px solid #aaa;
+		& a{
+			color:#aaa;
+			margin:0 20px;
+		}
+	}
+	& .footer-bottom{
+		padding:10px 0 70px 0;
+		font-size: @fs-small;
+		line-height: 1.8;
+	}
+}

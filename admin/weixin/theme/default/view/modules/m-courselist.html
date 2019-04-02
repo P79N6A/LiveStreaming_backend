@@ -1,0 +1,53 @@
+
+<div class="buttons-tab">
+{if $act eq 'qi_list'}
+    <a href='{url r="course#qi_list" p="list_type=new"}' class="button {if $data.list_type eq 'new'}active{/if}">最新</a>
+    <a href='{url r="course#qi_list" p="list_type=hot"}' class="button {if $data.list_type eq 'hot'}active{/if}">热门</a>
+    <a href='{url r="course#qi_list" p="list_type=recommend"}' class="button {if $data.list_type eq 'recommend'}active{/if}">推荐</a>
+{/if}   
+{if $act eq 'yu_list'}
+    <a href='{url r="course#yu_list" p="list_type=new"}' class="button {if $data.list_type eq 'new'}active{/if}">最新</a>
+    <a href='{url r="course#yu_list" p="list_type=hot"}' class="button {if $data.list_type eq 'hot'}active{/if}">热门</a>
+    <a href='{url r="course#yu_list" p="list_type=recommend"}' class="button {if $data.list_type eq 'recommend'}active{/if}">推荐</a>
+{/if}  
+</div>
+<div class="content-block search searchbar-box">
+	<div class="searchbar">
+		<a class="searchbar-cancel">取消</a>
+	    <div class="search-input">
+		    <label class="icon icon-search" for="search"></label>
+		    <form action="javascript:return true;" id="form-search">
+		    	<input type="search" id="search" name="search" placeholder="搜索课程" />
+		    </form>
+	    </div>
+  	</div>
+</div>
+<div class="content-block">
+    <div class="tabs">
+      	<div id="tab1" class="tab active">
+			<div class="content-block hot-live clearfix">
+				<div class="hot-title">
+					<span class="f13">{if $data.list_type eq 'new'}最新{elseif $data.list_type eq 'hot'}热门{else}推荐{/if}播放</span>
+				</div>
+				<div class="course-list">
+				    {foreach from=$data.list item=item key=key}
+					<div class="live-block">
+						<a href="{$item.url}">
+							<div class="live-block-img">
+								<img alt="{$item.name}" src="{$TMPL}/dist/statics/images/blank.gif" data-original="{$item.img}" class="lazyload">
+							</div>
+							<div class="live-block-text">
+								<p class="block-title">{$item.title}</p>
+								<p class="block-footer"><span class="footer-numb">播放人数：{$item.views}</span><span class="footer-data">日期：{$item.newest}</span></p>
+							</div>
+						</a>
+					</div>
+					{foreachelse}
+					<div class="null-data">暂无数据</div>
+					{/foreach}
+					<input type="hidden" name="total_page" value="{$data.total_page}" />
+				</div>
+			</div>
+      	</div>
+    </div>
+</div>

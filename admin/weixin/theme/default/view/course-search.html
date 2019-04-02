@@ -1,0 +1,83 @@
+{include file="inc/header.html"}
+<header class="bar bar-nav searchbar-box">
+	<div class="searchbar">
+		<a class="searchbar-cancel">取消</a>
+	    <div class="search-input">
+		    <label class="icon icon-search" for="search"></label>
+		    <form action="javascript:return true;" id="form-search"> 
+		    	<input type="search" value="{$data.search}" name="search" id="search" placeholder="搜索课程" />
+		    </form>
+	    </div>
+  	</div>
+</header>
+<div class="content infinite-scroll">
+	<div id="vm-vscope">
+		<div class="content-inner">
+			<div class="content-padded course-item-title">
+	        	<p>搜索结果</p>
+	        </div>
+	        <div class="buttons-tab">
+			    <div :class="{'active' : !search_type}" class="button" @click.stop="choose_type(list,0)"><span class="f13">播单</span></div>
+			    <div :class="{'active' : search_type}" class="button" @click.stop="choose_type(list,1)"><span class="f13">视频</span></div>
+		  	</div>
+	        <div class="item-content course-item-list">
+	            <template v-if="search_type == 1">
+	            	<div class="live-block course-video-more" v-for="item in list" v-if="list.length>0">
+						<a :href="item.url">
+							<div class="live-block-img">
+								<img :alt="item.title" :src="item.img">
+								<span class="f11" v-html="item.long_time"></span>
+							</div>
+							<div class="live-block-text">
+								<p class="block-title" v-html="item.title"></p>
+								<p class="block-footer">
+									<span class="footer-numb">播放人数：{{item.view_times}}</span>
+									<span class="footer-data">日期：{{item.create_time | time}}</span>
+								</p>
+							</div>
+						</a>
+					</div>
+					<div class="null-data" v-if="list.length<=0">暂无数据</div>
+	            </template>
+	            <template v-if="search_type == 0">
+	            	<div class="live-block course-item" v-for="item in list" v-if="list.length>0">
+						<a :href="item.url">
+							<div class="live-block-img">
+								<img :alt="item.title" :src="item.img">
+								<p class="item-title" v-html="item.title"></p>
+							</div>
+						</a>
+					</div>
+					<div class="null-data" v-if="list.length<=0">暂无数据</div>
+	            </template>
+	        </div>
+	    </div>
+	    <template v-if="list.length">
+		  	<!-- 加载提示符 -->
+		    <div class="infinite-scroll-preloader" v-if="total_page>1 && page<=total_page">
+		        <div class="preloader"></div>
+		    </div>
+		    <div class="infinite-scroll-preloader data-null" v-if="page>total_page">
+		        <span style="color:#999;font-size:0.75rem;">无更多数据</span>
+		    </div>
+	    </template>
+    </div>
+</div>
+<script type="text/javascript">
+	var data = {
+		list: [],
+		search: '{$data.search}',
+		search_type: 0,
+		loading: false,
+		page: 2,
+		total_page: Number('{$data.total_page}')
+	}
+</script>
+<script type="text/javascript">
+
+    var paramet = {
+        search: '{$data.search}',
+    },ajax_url,new_paramet;
+
+</script>
+{include file="inc/footer.html"}

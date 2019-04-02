@@ -1,0 +1,87 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<div class="main">
+<div class="main_title">{%EDIT} <a href="{:u("IndexImage/index")}" class="back_list">{%BACK_LIST}</a></div>
+<div class="blank5"></div>
+<form name="edit" action="__APP__" method="post" enctype="multipart/form-data">
+<table class="form" cellpadding=0 cellspacing=0>
+	<tr>
+		<td colspan=2 class="topTd"></td>
+	</tr>
+	<tr>
+		<td class="item_title">标题:</td>
+		<td class="item_input"><input type="text" class="textbox require" name="title" value="{$vo.title}" /></td>
+	</tr>
+	<tr>
+		<td class="item_title">图片:</td>
+		<td class="item_input"><html:imgUpload name = 'image' id='image' value="$vo.image" />
+            <span class="tip_span" id="tip_span">&nbsp;图片规格为：828px*240px</span>
+		</td>
+	</tr>
+    <tr>
+        <td class="item_title">显示位置:</td>
+        <td class="item_input">
+            <select name="show_position" id="position">
+                <foreach  name="position" item="position_item" key="k">
+                    <option value="{$k}" <if condition="$vo['show_position'] eq $k">selected="selected"</if>>{$position_item}</option>
+                </foreach>
+            </select>
+
+        </td>
+    </tr>
+    <tr id="family_id" <if condition="$vo['type'] neq 1">style="display: none"</if>>
+        <td class="item_title">家族:</td>
+        <td class="item_input">
+            <select name="show_id" style="width:300px">
+                <foreach  name="family" item="f_item" key="k">
+                    <option value="{$f_item.id}" <if condition="$vo['show_id'] eq $f_item['id']">selected="selected"</if> >{$f_item.name}</option>
+                </foreach>
+            </select>
+        </td>
+    </tr>
+	<!--<tr  id="select_type">
+		<td class="item_title">类型:</td>
+		<td class="item_input">
+			<select name="type" id="type">
+				<foreach  name="type_list" item="type_item" key="k">
+					<option value="{$k}" <if condition="$vo['type'] eq $k">selected="selected"</if> >{$type_item}</option>
+				</foreach>
+			</select>
+		</td>
+	</tr>-->
+    <tr  id="url">
+        <td class="item_title">链接:</td>
+        <td class="item_input"><input type="text" class="textbox" name="url" value="{$vo.url}" /></td>
+    </tr>
+    <tr>
+        <td class="item_title">{%IS_EFFECT}:</td>
+        <td class="item_input">
+            <lable>{%IS_EFFECT_1}<input type="radio" name="is_effect" value="1" <if condition="$vo['is_effect'] eq 1 ">checked="checked"</if> /></lable>
+            <lable>{%IS_EFFECT_0}<input type="radio" name="is_effect" value="0" <if condition="$vo['is_effect'] eq 0 ">checked="checked"</if> /></lable>
+        </td>
+    </tr>
+	<tr>
+		<td class="item_title">{%SORT}:</td>
+		<td class="item_input"><input type="text" class="textbox" name="sort" value="{$vo.sort}" /></td>
+	</tr>
+	
+	<tr>
+		<td class="item_title"></td>
+		<td class="item_input">
+			<!--隐藏元素-->
+			<input type="hidden" name="{:conf("VAR_MODULE")}" value="IndexImage" />
+			<input type="hidden" name="{:conf("VAR_ACTION")}" value="update" />
+			<input type="hidden" name="id" value="{$vo.id}" />
+			<!--隐藏元素-->
+			<input type="submit" class="button" value="{%EDIT}" />
+			<input type="reset" class="button" value="{%RESET}" />
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2 class="bottomTd"></td>
+	</tr>
+</table>
+</form>
+</div>
+<include file="Public:footer" />

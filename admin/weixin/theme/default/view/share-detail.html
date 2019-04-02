@@ -1,0 +1,104 @@
+{include file="inc/header.html"}
+<div id="vscope-share_detail">
+	<div class="content">
+		<div class="content-block m-user">
+			<div class="block-user">
+				<div class="user-pic">
+					<img :src="share.head_image" alt="">
+				</div>
+				<div class="user-text">
+					<p class="name" v-html="share.nick_name"></p>
+					<p class="txt f11" v-html="share.signature"></p>
+				</div>
+			</div>
+			<template v-if="share.user_id == user_id">
+				<span class="button audit_status" v-if="share.audit_status == 0">待审核</span>
+				<span class="button audit_status" v-if="share.audit_status == 2">待审核</span>
+			</template>
+		</div>
+		<div class="content-block m-content-text">
+			<div class="block-content">
+				<h3>
+					<span class="f15" v-html="share.title"></span>
+					<span class="click f13" @click="delete_share(share)" v-if="share.user_id == user_id">删除</span>
+				</h3>
+				<div class="inner-content">
+					<img :src="share.imgs[0]" />
+					<p v-html="share.content"></p>
+				</div>
+				<div class="inner-text">
+	      			<div class="text-top">
+	      				<div class="state">
+	      					<div class="details">
+	      						<span v-html="share.create_time"></span>
+      						</div>
+	      					<div class="link">
+	      						<span class="look">
+	      							<i class="iconfont f18">&#xe967;</i>{{share.watch_count}}
+	      						</span>
+	      						<span @click="praise(share, $event)">
+	      							<i :class="{'active':share.is_praised}" class="iconfont">&#xe95f;</i>{{share.praise_count}}
+	      						</span>
+								<span @click="pop_comment(0, share)">
+	      							<i class="iconfont">&#xe966;</i>{{share.reply_count}}
+	      						</span>
+	      					</div>
+	      				</div>
+	      			</div>
+	      			<div class="text-comment">
+	      				<div class="praise" v-if="share.praise_count">
+	      					<p class="praise-name">
+	      					<template v-for="praise_list in share.praise_list">
+	      						{{praise_list.nick_name}}、
+	      					</template>
+	      					</p>
+	      					<p>&nbsp;等{{share.praise_count}}人赞过</p>
+	      				</div>
+	      				<div class="comment-area" v-if="share.reply_list">
+	      					<template v-for="reply_list in share.reply_list">
+	      						<template v-if="reply_list.user_id == user_id">
+	      							<p @click="delete_reply(share, reply_list)">
+	      								<span>{{reply_list.nick_name}}<template v-if="!reply_list.reply_user_name">：</template></span>
+	      								<template v-if="reply_list.reply_user_name">
+	      									回复<span>{{reply_list.reply_user_name}}：</span>
+	      								</template>
+	      								{{reply_list.content}}
+	      							</p>
+	      						</template>
+	      						<template v-else>
+	      							<p @click="pop_comment(1, reply_list)">
+	      								<span>{{reply_list.nick_name}}<template v-if="!reply_list.reply_user_name">：</template></span>
+	      								<template v-if="reply_list.reply_user_name">
+	      									回复<span>{{reply_list.reply_user_name}}：</span>
+	      								</template>
+	      								{{reply_list.content}}
+	      							</p>
+	      						</template>
+	      					</template>
+	      				</div>
+	      			</div>
+  				</div>
+			</div>
+		</div>
+	</div>
+	<div class="m-float-comment" v-show="show_float_comment">
+		<div class="float-comment-mask" @click="close_comment"></div>
+		<div class="float-comment">
+		    <textarea name="content" id="comment-info" placeholder="写评论..."></textarea>
+		    <a class="button button-fill" @click="send_comment">发送</a>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	var data = {
+		user_id: {$user_info.id},
+		user_name: '{$user_info.nick_name}',
+		id: "",
+		share: [],
+		item_reply: "",
+		content: "",
+		type: 0,
+		show_float_comment: false
+	}
+</script>
+{include file="inc/footer.html"}

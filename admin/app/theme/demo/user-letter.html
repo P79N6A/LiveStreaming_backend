@@ -1,0 +1,25 @@
+{include file="inc/header.html"}
+<?php
+    $this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/user.css";
+    $this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/user_center-family.css";
+    $this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/user-letter.css";
+?>
+<link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$dpagecss"}" />
+<div class="wrapper">
+    <div class="user-main bg-user-center mt-20 clearfix">
+        <!--左侧菜单区 -->
+        {include file="inc/inc-user-left.html"}
+        <!-- 右侧内容区 -->
+        <div class="layout-user-r">
+            <div class="user-r-main">
+                {include file="inc/inc-user-letter.html"}
+            </div>
+        </div>
+    </div>
+</div>
+<div id="chat_panel" style="position: absolute; left: -999px;">{include file="inc/user-letter_chat.html"}</div>
+
+<script type="text/javascript">
+var friends = JSON.parse('<?php echo json_encode($this->_var['data']['friends']); ?>');
+</script>
+{include file="inc/footer.html"}

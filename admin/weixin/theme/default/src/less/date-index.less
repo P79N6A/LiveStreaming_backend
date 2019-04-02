@@ -1,0 +1,222 @@
+@import (once) "public/variable.less";
+@import (once) "modules/pop-bespeak-meet.less";
+.page-date-index{
+	.m-tit{
+		height: 2.5rem;
+		line-height: 2.5rem;
+		font-size: .65rem;
+		color: #333;
+		padding: 0 .5rem;
+		background: #fff;
+	}
+
+	.m-business-card{
+		position: relative;
+		line-height: 0;
+
+		.business-card-con{
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			line-height: 1.5;
+			color: #fff;
+			z-index: 1;
+
+			.card-con-portrait{
+				position: absolute;
+				top: 0;
+			    left: 0;
+			    right: 0;
+			    bottom: 2rem;
+			    display: -webkit-flex;
+			    display: flex;
+			    -webkit-flex-direction: column;
+			    flex-direction: column;
+			    -webkit-justify-content: center;
+			    justify-content: center;
+			    -webkit-align-items: center;
+			    align-items: center;
+			    img{
+			    	width: 4rem;
+				    height: 4rem;
+				    border-radius: 50px;
+				    border: 0.2rem solid rgba(0,0,0,0.1);
+				    margin-bottom: 0.3rem; 
+			    }
+			    p.portrait-name{
+			    	font-size: @fs-big;
+			    }
+			    p.portrait-introduce{
+			    	font-size: @fs-small;
+			    	display:block;
+			    	white-space:nowrap; 
+			    	overflow:hidden; 
+			    	text-overflow:ellipsis;
+			    	width: 100%;
+			    	padding: 0 1rem;
+			    }
+			}
+
+			.date-info{
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				height: 2rem;
+				line-height: 2rem;
+				background: rgba(0,0,0,.4);
+				font-size: .6rem;
+				padding: 0 .5rem;
+
+				.looked{
+					margin-right: 1rem;
+				}
+
+				.iconfont{
+					margin-right: .25rem;
+				}
+				.location{
+					overflow:hidden;
+					text-overflow:ellipsis;
+					-o-text-overflow:ellipsis;
+					-webkit-text-overflow:ellipsis;
+					-moz-text-overflow:ellipsis;
+					white-space:nowrap;
+				}
+			}
+
+			.person-info{
+				position: absolute;
+				top: -webkit-calc(50% - 2rem);
+				top: calc(50% - 2rem);
+				left: 0;
+				right: 0;
+				text-align: center;
+				-webkit-transform: translateY(-50%);
+						transform: translateY(-50%);
+
+				.avatar{
+					width: 4.15rem;
+					height: 4.15rem;
+					margin: 0 auto;
+					margin-bottom: .5rem;
+					border: .2rem solid rgba(0,0,0,.1);
+					border-radius: 50%;
+
+					img{
+						width: 100%;
+						height: 100%;
+					}
+				}
+
+				.person-name{
+					font-size: .9rem;
+					line-height: 1.4rem;
+				}
+
+				.person-bief{
+					display: -webkit-box;
+					font-size: .65rem;
+					line-height: 1.1rem;
+					-webkit-box-orient: vertical;
+					-webkit-line-clamp: 2;
+					overflow: hidden;
+					padding: 0 .5rem;
+				}
+			}
+		}
+	}
+
+	.m-character-bief{
+		background: #fff;
+		margin: .5rem 0;
+
+		.show-more{
+			font-size: .55rem;
+			color: #999;
+			text-align: right;
+		}
+
+		.character-bief{
+			display: -webkit-box;
+			padding: .5rem;
+			line-height: 1.2rem;
+			font-size: .65rem;
+			color: #888;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 3;
+			overflow: hidden;
+		}
+
+		&.isShow .character-bief{
+			-webkit-line-clamp: inherit;
+		}
+	}
+
+	.m-course-price{
+		padding: .5rem;
+		background: #fff;
+		margin: .5rem 0;
+
+		.course-tit{
+			font-size: .65rem;
+			line-height: 1.15rem;
+			color: #333;
+		}
+
+		.course-info{
+			height: 1.05rem;
+			line-height: 1.05rem;
+			font-size: .55rem;
+
+			.course-price{
+				color: #f1383f;
+			}
+
+			.course-num{
+				color: #999;
+			}
+		}
+	}
+
+	.m-meet-ensure{
+		background: #fff;
+		margin: .5rem 0;
+
+		.meet-ensure-con{
+			padding: .5rem;
+			line-height: 1.25rem;
+			font-size: .65rem;
+			color: #999;
+		}
+	}
+
+	.date-index-bar{
+		background: #fff;
+
+		.add-collect{
+			width: 2.5rem;
+			height: 2.5rem;
+			line-height: 2.5rem;
+			text-align: center;
+			font-size: 1.15rem;
+			.collected{
+				color: @color-theme;
+			}
+		}
+		.now-date{
+			background: @color-theme;
+			height: 2.5rem;
+			line-height: 2.5rem;
+			color: #fff;
+			font-size: .8rem;
+			text-align: center;
+		}
+		.right{
+			background: #7cfc00;
+			color: @fc-main;
+		}
+	}
+}

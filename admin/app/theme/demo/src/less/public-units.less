@@ -1,0 +1,119 @@
+@import (once) "public/variable.less";
+// 会员头像
+.avatar-normal{
+	width:40px;
+	height:40px;
+	-moz-border-radius:50%; -khtml-border-radius:50%; -webkit-border-radius:50%; border-radius:50%;
+  overflow: hidden;
+}
+.avatar-middle{
+	width:60px;
+	height:60px;
+	border-radius:50%;
+  -moz-border-radius:50%; -khtml-border-radius:50%; -webkit-border-radius:50%; border-radius:50%;
+  overflow: hidden;
+}
+.avatar-big{
+	width:80px;
+	height:80px;
+	-moz-border-radius:50%; -khtml-border-radius:50%; -webkit-border-radius:50%; border-radius:50%;
+  overflow: hidden;
+}
+.avatar-biger{
+  width:100px;
+  height:100px;
+  -moz-border-radius:50%; -khtml-border-radius:50%; -webkit-border-radius:50%; border-radius:50%;
+  overflow: hidden;
+}
+
+// 等级
+.ui-grade-img{
+  width: 23px;
+  height: 16px;
+}
+.ui-grade{
+  width:22px;
+  height:16px;
+  line-height: 16px;
+  background:url(../images/icon-all-grade.png) no-repeat;
+  display:inline-block;
+  padding-left: 15px;
+  color:#fff;
+  font-size: 12px;
+  text-align: center;
+  width: 23px;
+}
+// .ui-grade:after{
+//   content: attr(data-grade);
+// }
+.grade-stars{
+  background-position: 0 0;
+}
+.grade-moon{
+  background-position: 0 -21px;
+}
+.grade-sun{
+  background-position: 0 -42px;
+}
+// 按钮组
+.btn-primary{
+  background-color: @bgcolor-theme;
+  border-color: @bgcolor-theme;
+}
+.btn-disabled{
+  background-color: @bgcolor-disabled;
+  border-color: @bgcolor-disabled;
+  color:#fff;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary{
+  background-color:darken(@bgcolor-theme, 5%);
+  border-color:darken(@bgcolor-theme, 5%);
+}
+.btn-green{
+  background-color: @color-green;
+  border-color: @color-green;
+  color:#fff;
+}
+.btn-red{
+  background-color: #f76c6c;
+  border-color: #f76c6c;
+  color:#fff;
+}
+.btn{
+  -moz-border-radius:3px; -khtml-border-radius:3px; -webkit-border-radius:3px; border-radius:3px;
+  &.btn-default{
+    border-color:@bdcolor-input;
+  }
+  &.btn-circle{
+    border-radius: 17px;
+  }
+  &:hover{
+    color:#fff;
+  }
+}
+.btn-lg{
+  &.btn-circle{
+    border-radius: 22px;
+  }
+}
+.btn-sm{
+  &.btn-circle{
+    border-radius: 15px;
+  }
+}
+.btn-xs{
+  &.btn-circle{
+    border-radius: 11px;
+  }
+}
+
+// 表单组
+.form-group{margin-bottom:5px;padding:5px 0;overflow:inherit;clear:both;}
+.form-group label{color:#999;font-weight:normal;}
+.form-group .control-label{width:90px;float:left;text-align:right;font-size:14px;margin:0;margin-right:10px;overflow:hidden;color:#666;}
+.form-group .control-label,.form-group .control-content{height:34px;line-height:34px;font-size:14px;float:left;word-break:break-word;}
+.form-group .control-content-auto{height:auto;line-height:initial;}
+.small-form-group .control-label,.small-form-group .control-content{height:30px;line-height:30px;font-size:14px;float:left;}
+.smaller-form-group .control-label,.smaller-form-group .control-content{height:26px;line-height:26px;font-size:14px;float:left;}
+.form-vertical .control-label{display:block;margin:0 0 5px 0;text-align:left;float:none;width:100%;}
+.submit-group{margin:10px 0;}

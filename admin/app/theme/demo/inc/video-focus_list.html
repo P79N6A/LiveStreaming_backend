@@ -1,0 +1,34 @@
+<div class="m-live-tit">
+    <i class="live-tit-ico iconfont">&#xe61b;</i>
+    <h2>我的关注</h2>
+</div>
+{if $data.list}
+<ul class="m-live-list clearfix">
+    {foreach from=$data.list item=item key=key name=list}
+    <li class="block-live block-live-{$item.cate_id}">
+        <a href="{$item.video_url}">
+            <span class="block-live-img">
+								<img alt="" src="{$item.live_image}" data-original="{$item.live_image}"  class="block-live-img lazy" />
+							</span>
+            <div class="block-live-info clearfix">
+                <div class="live-name clearfix">
+                    <img alt="" src="{$item.thumb_head_image}" class="avatar-normal" />
+                    <p title="{$item.title}">{$item.title}</p>
+                    <p class="sub f-l">{$item.nick_name}</p>
+                    <span class="watch-num f-r"><i class="icon iconfont">&#xe60a;</i>{$item.watch_number}</span>
+                </div>
+            </div>
+        </a>
+    </li>
+    {/foreach}
+</ul>
+{else}
+<p class="null-data">抱歉，暂无关注信息！</p>
+{/if}
+<!--分页开始-->
+<div class="m-page clearfix">
+    <div class="m-page-con">
+        {$data.page}
+    </div>
+</div>
+<!--分页结束-->

@@ -1,0 +1,121 @@
+/*界面主题色*/
+/*背景色*/
+/*背景色（深）*/
+/*模块背景色*/
+/*主题风格色*/
+/*主题辅助风格色*/
+/*字体颜色*/
+/*主要字色*/
+/*浅色*/
+/*更浅色（适用：二级标题、简介）*/
+/*更更浅色（适用：icon图标）*/
+/*标题*/
+/*字体大小*/
+/*线条颜色*/
+/*主要线条颜色*/
+/*更深线条颜色*/
+/*更浅线条颜色*/
+/*文本输入框边框颜色*/
+/*各类间距，高度*/
+/*横向间距*/
+/*纵向间距*/
+.page-share-add_share .content-block {
+  margin: 0;
+  padding: 0;
+  margin-top: 0.5rem;
+  background: #fff;
+}
+.page-share-add_share .content-block input {
+  border: 0;
+  width: 100%;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  padding: 0 0.5rem;
+  color: #333;
+}
+.page-share-add_share .content-block p {
+  width: 100%;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  color: #333;
+}
+.page-share-add_share .content-block textarea {
+  resize: none;
+  outline: none;
+  border: 0;
+  width: 100%;
+  height: 7.5rem;
+  line-height: 0.75rem;
+  padding: 0.5rem;
+  color: #333;
+}
+.page-share-add_share .content-block img[src=""] {
+  opacity: 0;
+}
+.page-share-add_share .content-block .card .card-header {
+  padding: 0.5rem;
+  line-height: 1.5rem;
+  min-height: auto;
+  color: #333;
+}
+.page-share-add_share .content-block .card .card-content .card-content-inner {
+  padding: 0.5rem 0 0 0;
+}
+.page-share-add_share .content-block .card .card-content .card-content-inner .inner-conter {
+  overflow: hidden;
+}
+.page-share-add_share .content-block .card .card-content .card-content-inner .inner-conter .upload-img-block {
+  float: left;
+  width: 29.5vw;
+  height: 29.4vw;
+  background: #f7f7f7;
+  margin-left: 3vw;
+  margin-bottom: 3vw;
+}
+.page-share-add_share .content-block .card .card-content .card-content-inner .inner-conter .upload-img-block a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(../dist/statics/images/icon-upload_2.png) no-repeat;
+  background-position: center;
+  background-size: 42%;
+}
+.page-share-add_share .content-block .card .card-content .card-content-inner .inner-conter .upload-img-block img {
+  width: 100%;
+  height: 100%;
+}
+.page-share-add_share .content-block .card .card-content .card-content-inner .inner-conter .image_item {
+  position: relative;
+  width: 29.4vw;
+  height: 29.4vw;
+  float: left;
+  margin-left: 3vw;
+  margin-bottom: 3vw;
+  padding-top: 0.5rem;
+  padding-right: 0.5rem;
+}
+.page-share-add_share .content-block .card .card-content .card-content-inner .inner-conter .image_item img {
+  width: 100%;
+  height: 100%;
+}
+.page-share-add_share .content-block .card .card-content .card-content-inner .inner-conter .image_item .remove_image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 99;
+  width: 1rem;
+  height: 1rem;
+  line-height: 1rem;
+  text-align: center;
+}
+.page-share-add_share .m-button .button {
+  border: 0;
+  background: #f1383f;
+  color: #fff;
+  height: 2rem;
+  line-height: 2rem;
+  border-radius: 0.15rem;
+}
+.page-share-add_share nav {
+  display: none;
+}

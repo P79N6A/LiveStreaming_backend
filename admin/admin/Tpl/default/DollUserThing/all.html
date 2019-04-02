@@ -1,0 +1,158 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<include file="Public:new" />
+<load href='__TMPL__Common/js/jquery.bgiframe.js' />
+<load href='__TMPL__Common/js/jquery.weebox.js' />
+<load href='__TMPL__Common/js/user.js' />
+<load href='__TMPL__Common/js/deal.js' />
+<load href='__TMPL__Common/style/weebox.css' />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<div class="main">
+<div class="main_title_list"><div class="list-line-ico"></div>所有订单</div>
+<php>
+    //获取实物图片
+	function wawa_image($wawa_image){
+		 if($wawa_image==''){
+			return "<a style='height:35px;width:35px;'/>实物图片不存在</a>";
+		}else{
+            $wawa_image = get_spec_image($wawa_image);
+			return "<img src='".$wawa_image."' style='height:35px;width:35px;'/>";
+		}
+	}
+    //获取领取状态名称
+    function get_status_name($status){
+        switch($status)
+        {
+            case 0:
+                return "未领取";
+                break;
+            case 1:
+                return "领取中";
+                break;
+            case 2:
+                return "已领取";
+                break;
+            case -2:
+                return "已兑换";
+                break;
+            default:
+            return "错误状态";
+            break;
+
+        }
+    }
+    //时间戳转时间格式
+    function time_format($timestamp){
+        if($timestamp)
+        return to_date($timestamp,'Y-m-d H:i:s');
+        else
+        return '';
+    }
+    //获取用户昵称
+    function get_nick_name($uid)
+    {
+        return emoji_decode(M("User")->where("id=".$uid)->getField("nick_name"));
+    }
+    //获取邮费
+    function get_freight($doll_id)
+    {
+        $sql = "select freight from ".DB_PREFIX."dolls where id = ".$doll_id;
+        return $GLOBALS['db']->getOne($sql);
+    }
+    //跳转到实物详情
+    function doll_detail($id){
+        return "<a href=\"javascript:doll_detail('".$id."')\">$id</a>";
+    }
+	
+	//获取领取状态名称
+    function get_status_thing($id,$status){
+        switch($status)
+        {
+            case 0:
+                return "无";
+                break;
+            case 1:
+                return "<a href=\"javascript:logistics_edit('".$id."')\">发货</a><br /><a href=\"javascript:dispatching('".$id."')\">配送详情</a><br /><a href=\"javascript:same_cate('".$id."')\">同组实物</a>";
+                break;
+            case 2:
+                return "<a href=\"javascript:dispatching('".$id."')\">配送详情</a>";
+                break;
+            case -2:
+                return "无";
+                break;
+            default:
+            return "错误状态";
+            break;
+
+        }
+    }
+</php>
+<div class="search_row">
+	<form name="search" action="__APP__" method="get" >
+	<div>用户ID：
+        <input type="text" class="textbox" name="user_id" value="{:trim($_REQUEST['user_id'])}" style="width:100px;" />
+    </div>
+	<div>订单号：
+        <input type="text" class="textbox" name="order_sn" value="{:trim($_REQUEST['order_sn'])}" style="width:100px;" />
+    </div>
+    <div>领取状态：
+        <select name="status">
+            <option value="-1" selected="selected">所有</option>
+            <option value="0" <if condition="$_REQUEST['status'] eq 0 "> selected="selected"
+                </if>>未领取</option>
+            <option value="1"<if condition="$_REQUEST['status'] eq 1"> selected="selected"</if>>领取中</option>
+            <option value="2"<if condition="$_REQUEST['status'] eq 2"> selected="selected"</if>>已领取</option>
+        </select>
+    </div>
+    <div>兑换时间：<span><input type="text" class="textbox" name="grab_time_1" id="grab_time_1" value="{$_REQUEST['grab_time_1']}" onfocus="this.blur(); return showCalendar('grab_time_1', '%Y-%m-%d %H:%M:%S', false, false, 'btn_grab_time_1');" /><input type="button" class="button" id="btn_grab_time_1" value="{%SELECT_TIME}" onclick="return showCalendar('grab_time_1', '%Y-%m-%d  %H:%M:%S', false, false, 'btn_grab_time_1');" /></span> - <span><input type="text" class="textbox" name="grab_time_2" id="grab_time_2" value="{$_REQUEST['grab_time_2']}" onfocus="this.blur(); return showCalendar('grab_time_2', '%Y-%m-%d %H:%M:%S', false, false, 'btn_grab_time_2');" /><input type="button" class="button" id="btn_grab_time_2" value="{%SELECT_TIME}" onclick="return showCalendar('grab_time_2', '%Y-%m-%d %H:%M:%S', false, false, 'btn_grab_time_2');" /></span></div>
+    <input type="hidden" value="DollUserThing" name="m" />
+    <input type="hidden" value="all" name="a" />
+    <input type="submit" class="button" value="{%SEARCH}" />
+	</form>
+</div>
+        <html:list
+        id="dataTable"
+        style="dataTable"
+        name="dolluserthing"
+        action="true"
+        datasource="list"
+        show="id:ID
+        ,order_sn:订单序列号
+        ,user_id:用户ID
+        ,user_id|get_nick_name:用户昵称
+        ,doll_id|doll_detail:实物ID
+        ,doll_name:实物名称
+        ,img|wawa_image:实物图片
+        ,status|get_status_name:领取状态
+        ,freight:邮费(元)
+        ,grab_time|time_format:兑换时间
+        ,pay_time|time_format:支付时间"
+            actionlist="id|get_status_thing=$dolluserthing['status']" />
+
+<script type="text/javascript">
+     function dispatching(id)
+    {
+        location.href = ROOT+"?"+VAR_MODULE+"="+MODULE_NAME+"&"+VAR_ACTION+"=dispatching&id="+id;
+    }
+    function logistics_edit(id)
+    {
+        //跳转页面，手动输入单号
+        location.href = ROOT+"?"+VAR_MODULE+"="+MODULE_NAME+"&"+VAR_ACTION+"=logistics_edit&id="+id;
+    }
+	function doll_detail(doll_id)
+    {
+        location.href = ROOT+"?"+VAR_MODULE+"=DollExchangeThing&"+VAR_ACTION+"=edit&id="+doll_id;
+    }
+	function same_cate(id)
+    {
+        //过滤，只显示同类商品
+        location.href = ROOT+"?"+VAR_MODULE+"="+MODULE_NAME+"&"+VAR_ACTION+"="+ACTION_NAME+"&cate_id="+id;
+    }
+</script>
+
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

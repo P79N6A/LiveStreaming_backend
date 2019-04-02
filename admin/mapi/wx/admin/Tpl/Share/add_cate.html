@@ -1,0 +1,32 @@
+{//引入标签库}
+<tagLib name="html" />
+<include file="Public:header" />
+<div class="main">
+	<div class="main_title">添加话题 <a href="{:u("Share/cate_list")}" class="back_list">{%BACK_LIST}</a></div>
+	<form name="edit" action="__APP__" method="post" enctype="multipart/form-data">
+	<table class="form" cellpadding=0 cellspacing=0>
+		<tr>
+			<td colspan=2 class="topTd"></td>
+		</tr>
+		<tr>
+			<td class="item_title">分类名称:</td>
+			<td class="item_input" ><input type="text" class="textbox" name="cate_name"/></td>
+		</tr>
+		<tr>
+			<td class="item_title">分类介绍:</td>
+			<td class="item_input" ><input type="text" class="textbox" name="introduce"/></td>
+		</tr>
+		<tr>
+			<td class="item_title"></td>
+			<td class="item_input">
+				<!--隐藏元素-->
+				<input type="hidden" name="id" value="{$data.id}" />
+				<input type="hidden" name="{:conf("VAR_MODULE")}" value="Share" />
+				<input type="hidden" name="{:conf("VAR_ACTION")}" value="insert_cate" />
+				<!--隐藏元素-->
+				<input type="submit" class="button" value="{%INSERT}" />
+			</td>
+		</tr>
+</table>
+</form>
+</div>

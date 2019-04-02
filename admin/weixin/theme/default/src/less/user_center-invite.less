@@ -1,0 +1,95 @@
+@import (once) "public/variable.less";
+.page-user_center-invite{
+	& .nbg{
+		padding:.5rem @lateralspacing ;
+		margin: @longitudinalspacing 0;
+	}
+	& .wbg{
+		background: #fff;
+		padding:1rem @lateralspacing ;
+		margin: @longitudinalspacing 0;
+	}
+	& .tc{
+		text-align: center;
+	}
+	& .sharetip{
+		font-size:@fs-normal;
+		line-height: 1.3rem;
+	}
+	& .sharetip h2{
+		font-size:@fs-normal;
+		line-height: 1.3rem;
+	}
+	& .sharetip h2 strong{
+		color: @color-theme;
+	}
+	& .ewmbox{
+		width: 6rem;
+		height: 6rem;
+		margin: 0 auto;
+		& img{
+			width: 100%;
+		}
+	}
+	& .yqm{
+		font-size: @fs-small;
+		color: @fc-light;
+		padding-top: .5rem;
+	}
+	& .btit{
+		height: 2rem;
+		line-height: 2rem;
+		background: #fff;
+		padding:0 @lateralspacing;
+		border-bottom: 1px solid @bdcolor-light;
+	}
+	& .bcon{
+		background: #fff;
+		width: 50%;
+		line-height: 4rem;
+		text-align: center;
+		& i{
+			font-size: 2rem;
+			color: @fc-lighter;
+		}
+		& i.wx.active{
+			color: #17c40f;
+		}
+		& i.fx.active{
+			color: #f1383f;
+		}
+	}
+	.share-tip{
+		position: absolute;
+		top:0;
+		left:0;
+		z-index:999;
+		width:100%;
+		height:100%;
+		background:rgba(0,0,0,0.6);
+		padding: 0.75em 1rem;
+		text-align:right;
+		color:#fff;
+		font-size:0.85rem;
+		display:none;
+		.icon{
+			width:100%;
+			height:4rem;
+			display: -webkit-flex;
+			display: flex;
+			-webkit-justify-content: flex-end;
+			justify-content: flex-end;
+			margin-bottom:0.5rem;
+		}
+		i{
+			width:4rem;
+			height:4rem;
+			background:url(../dist/statics/images/icon-share-tip.png) no-repeat;
+			background-size:100%;
+			display:block;
+		}
+		&.show{
+			display:block;
+		}
+	}
+}

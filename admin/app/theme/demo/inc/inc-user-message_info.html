@@ -1,0 +1,24 @@
+<div class="user-r-title clearfix">
+	<div class="common-title f-l">
+		<span class="field">消息详情</span>
+	</div>
+	<div class="common-select f-r">
+		<a href='{url r="user#message"}' class="operation mr-20">返回</a>
+<!--             <a href="javascript:void(0)" class="operation">删除消息</a>
+	 -->		</div>
+</div>
+<div class="user-r-content clearfix j-ajax-page">
+	<div class="common-block mr-10 ml-10">
+	{if $data.info}
+		<!-- <h3 class="block-caption">{$data.info.title}</h3> -->
+		<p class="block-user">
+			<img src="{$data.info.head_image}" alt="" class="user-portrait">
+			<span class="user-name" title="{$data.info.send_user_name}">发件人：{$data.info.send_user_name}</span>
+			<span>时间：{function name="to_date" v=$data.info.send_time}</span>
+		</p>
+		<div class="block-title mt-20">
+			{$data.info.content}
+		</div>
+	{/if}
+	</div>
+</div>

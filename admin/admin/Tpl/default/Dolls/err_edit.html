@@ -1,0 +1,59 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<div class="main">
+<div class="main_title">错误码<span style="color: black;font-weight: bold">{$err_code}</span>的描述编辑 <a href="{:u("Dolls/err_code")}" class="back_list">{%BACK_LIST}</a></div>
+<div class="blank5"></div>
+<form name="err_edit" action="__APP__" method="post" enctype="multipart/form-data">
+<table class="form" cellpadding=0 cellspacing=0>
+	<tr>
+		<td colspan=2 class="topTd"></td>
+	</tr>
+	<tr>
+		<td class="item_title">错误描述:</td>
+		<td class="item_input"><input type="text" class="textbox require" name="des" value="{$des}" /></td>
+	</tr>
+	<tr>
+		<td class="item_title"></td>
+		<td class="item_input">
+			<!--隐藏元素-->
+			<input type="hidden" name="{:conf("VAR_MODULE")}" value="Dolls" />
+			<input type="hidden" name="{:conf("VAR_ACTION")}" value="updateErrDes" />
+			<input type="hidden" name="id" value="{$id}" />
+			<!--隐藏元素-->
+			<input type="submit" class="button" value="{%EDIT}" />
+			<input type="reset" class="button" value="{%RESET}" />
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2 class="bottomTd"></td>
+	</tr>
+</table>	 
+</form>
+</div>
+<script>
+$('select[name="type"]').change(function(){
+	var v = $(this).val();
+	switch (v) {
+		case "0":
+			$('.fanwe').hide().find('input').removeClass('require');
+			$('.self-build').hide().find('input').removeClass('require');
+			$('.tencent').show().find('input').addClass('require');
+			break;
+		case "1":
+			$('.tencent').hide().find('input').removeClass('require');
+			$('.self-build').hide().find('input').removeClass('require');
+			$('.fanwe').show().find('input').addClass('require');
+			break;
+		case "2":
+			$('.tencent').hide().find('input').removeClass('require');
+			$('.fanwe').hide().find('input').removeClass('require');
+			$('.self-build').show().find('input').addClass('require');
+			break;
+	}
+}).change();
+</script>
+<include file="Public:footer" />

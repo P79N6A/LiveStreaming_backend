@@ -1,0 +1,19 @@
+.page-pay-wx_jspay .sp-block {
+  margin: 1rem 0;
+}
+.page-pay-wx_jspay .sp-title {
+  font-size: 0.85rem;
+  display: block;
+  text-align: center;
+}
+.page-pay-wx_jspay .sp-price {
+  font-size: 2.5rem;
+  font-family: 'arial';
+  display: block;
+  text-align: center;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.page-pay-wx_jspay .m-button {
+  margin-top: 0.75rem;
+}

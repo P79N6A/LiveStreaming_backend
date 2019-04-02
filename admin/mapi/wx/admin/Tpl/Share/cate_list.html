@@ -1,0 +1,43 @@
+{//引入标签库}
+<tagLib name="html" />
+<include file="Public:header" />
+<div class="main">
+<php>
+	function del_cate($id){
+		return "<a href='javascript:del_cate(".$id.");'>删除</a>";
+	}
+    function edit_cate($id){
+        return "<a href='javascript:edit_cate(".$id.");'>编辑</a>";
+    }
+</php>
+<script type="text/javascript">
+	function add_cate(){
+		location.href = ROOT+"?"+VAR_MODULE+"=Share&"+VAR_ACTION+"=add_cate";
+	}
+
+	function del_cate(id){
+        confirm("确定要删除吗?");
+		location.href = ROOT+"?"+VAR_MODULE+"=Share&"+VAR_ACTION+"=del_cate&id="+id;
+	}
+
+    function edit_cate(id){
+        location.href = ROOT+"?"+VAR_MODULE+"=Share&"+VAR_ACTION+"=edit_cate&id="+id;
+    }
+</script>
+<div class="main_title_list"><div class="list-line-ico"></div>分类列表</div>
+    <html:list
+        id="dataTable"
+        style="dataTable"
+        name="share_cate"
+        action="true"
+        datasource="list"
+        show="id:编号
+        ,cate_name:分类名称
+        ,introduce:分类介绍
+        ,create_time:创建时间"
+        actionlist="edit_cate:编辑,del_cate:删除" />
+
+    <input type="button" class="button button-add" value="{%ADD}" onclick="add_cate();" style="margin-top: 10px" />
+
+    <div class="page">{$page}</div>
+</div>

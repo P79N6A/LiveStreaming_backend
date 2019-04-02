@@ -1,0 +1,118 @@
+.m-letter{
+    position: relative;
+    padding-top: 20px;
+    box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    .m-letter-info{
+        height: 400px;
+        overflow: hidden;
+        position: relative;
+        -webkit-transition: all .6s;
+        -moz-transition: all .6s;
+        -o-transition: all .6s;
+        transition: all .6s;
+        &:hover{
+            padding-right: 15px;
+            overflow-y: scroll;
+        }
+        .m-letter-send{
+            width: 100%;
+            overflow: hidden;
+            .sender-img{
+                width: 42px;
+                height: 42px;
+                border-radius: 21px;
+                overflow: hidden;
+            }
+            .letter-content{
+              position: relative;
+                padding: 5px 10px;
+                margin: 5px 15px;
+                max-width: 300px;
+                box-sizing: content-box;
+                -moz-box-sizing: content-box;
+                .border-radius(3px);
+                .arrow{
+                  display: block;
+                  width: 0;
+                  height: 0;
+                }
+            }
+            .you{
+                background: @bgcolor;
+                .arrow-you{
+                    position: absolute;
+                    top: 10px;
+                    left: -5px;
+                    width: 5px;
+                    height: 9px;
+                    background: url("../images/letter-arrow-gray.png") no-repeat;
+                }
+                .letter-inner{
+                    line-height: 1.4;
+                    font-size: @fs-main;
+                    color: @fcolor-main;
+                    word-break: break-all;
+                }
+            }
+            .me{
+                background: @bgcolor-theme;
+                .arrow-me{
+                    position: absolute;
+                    right: -5px;
+                    top: 10px;
+                    width: 5px;
+                    height: 9px;
+                    background: url("../images/letter-arrow-orange.png") no-repeat;
+                }
+                .letter-inner{
+                    line-height: 1.4;
+                    font-size: @fs-main;
+                    color: #fff;
+                    word-break: break-all;
+                }   
+            }
+        }
+    }
+    .block-txt{
+        position: relative;
+        width: 100%;
+        height: 91px;
+        overflow: hidden;
+        .arrow{
+            position: absolute;
+            bottom: 0;
+            bottom: 4px\9;
+            right: 4px;
+            width: 7px;
+            height: 7px;
+            background: url("../images/letter-txt-arrow.png") no-repeat;
+        }
+        .box-txt{
+            width: 98%;
+            background: #f0f0f0;
+            box-shadow:inset 0 5px 10px #e6e6e6;
+            .border-radius(4px);
+            .input-txt{
+                padding: 8px;
+                width: 85%;
+                height: 70px;
+                background: #f0f0f0;
+                font-size: @fs-main;
+                line-height: 1.5;
+                border: 0;
+                resize: none;
+                outline:none;
+                .border-radius(4px);
+            }
+        }
+        .btn-send{
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            padding:25px 12px;
+        }
+    }
+}
+
+

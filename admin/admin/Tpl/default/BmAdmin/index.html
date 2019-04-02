@@ -1,0 +1,49 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<div class="main">
+<div class="main_title_list"><div class="list-line-ico"></div>后台员工列表</div>
+<php>
+	function get_bm_role_name($role_id)
+	{
+		$name=M("BmRole")->where("id=".intval($role_id))->getField("name");
+		if(!$name){
+			return "暂无分组";
+		}else{
+			return $name;
+		}
+	}
+	function get_bm_promoter($member_id,$pid)
+	{
+		if($member_id==-1){
+			return "平台管理员";
+		}else if($member_id==0&&$pid==0){
+			return "推广中心";
+		}else if($member_id==0&&$pid>0){
+			return "推广商";
+		}else{
+			return "推广商员工";
+			}
+	}
+</php>
+<div class="blank10"></div>
+<html:list
+	id="dataTable"
+	style="dataTable"
+	name="admin"
+	checkbox="true"
+	action="true"
+	datasource="list"
+	show="id:{%ID}|50px,name:{%ADM_NAME}:edit,member_id|get_bm_promoter=$admin['pid']:角色身份:{%ID}|50px,bm_role_id|get_bm_role_name:{%ROLE},is_effect|get_is_effect=$admin['id']:{%IS_EFFECT},login_name:{%登陆编号}"
+	actionlist="edit:{%EDIT}" />
+	<table class="dataTable">
+		<tbody>
+			<td colspan="7">
+				<input type="button" class="button button-add" value="{%ADD}" onclick="add();" />
+				<input type="button" class="button button-del" value="{%DEL}" onclick="del();" />
+			</td>
+		</tbody>
+	</table>
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

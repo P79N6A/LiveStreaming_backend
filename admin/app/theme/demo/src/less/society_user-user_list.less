@@ -1,0 +1,117 @@
+@import (once) "public/variable.less";
+.user-r-content {
+    .search {
+        margin-bottom: 20px;
+        input {
+            border: 1px solid #ddd;
+            padding: 0 10px;
+            height: 34px;
+            line-height: 34px;
+            box-sizing: content-box;
+            -moz-box-sizing: content-box;
+            border-radius: 2px;
+            float: left;
+        }
+        span{
+            float: left;
+            line-height: 35px;
+        }
+        .calendar-arrow {
+            span.next{
+                float: right;
+            }
+        }
+        .calendar-hd{
+            a{
+                span{
+                    float: none;
+                }
+            }
+        }
+        select {
+            -webkit-appearance: none;
+            padding: 6px 10px;
+            border: 1px solid #ddd;
+            margin-left: 10px;
+            margin-right: 10px;
+            float: left;
+        }
+        .btn-circle {
+            line-height: 20px;
+            padding: 7px 16px;
+            border-radius: 5px;
+            margin-left: 10px;
+            float: left;
+        }
+        #demo{
+            float: left;
+            input{
+                width: 80px;
+            }
+        }
+    }
+    .form-head {
+        background: #fafafa;
+        th {
+            text-align: center;
+        }
+    }
+    .relieve{
+        th{
+            width: 164px;
+        }
+    }
+    .form-body {
+        .img-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 0;
+        }
+        td {
+            padding: 5px 10px;
+            line-height: 20px;
+            height: 20px;
+            .font-link {
+                text-align: center;
+            }
+            span {
+                text-decoration: underline;
+                color: #f56151;
+                cursor: pointer;
+            }
+        }
+    }
+    table {
+        text-align: center;
+        width: 100%;
+    }
+    .slideBox {
+        width: auto;
+        text-align: left;
+        .hd {
+            height: 30px;
+            line-height: 30px;
+            padding: 0 10px 0 20px;
+            border-bottom: 1px solid #ddd;
+            position: relative;
+            ul {
+                float: left;
+                position: absolute;
+                left: 20px;
+                top: -1px;
+                height: 32px;
+                li {
+                    float: left;
+                    padding: 0 25px;
+                    cursor: pointer;
+                }
+                li.on {
+                    height: 30px;
+                    background: #fafafa;
+                    border: 1px solid #ddd;
+                    border-bottom: 2px solid #fafafa;
+                }
+            }
+        }
+    }
+}

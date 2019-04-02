@@ -1,0 +1,99 @@
+{include file="inc/header.html"}
+<header class="bar bar-nav searchbar-box">
+	<div class="searchbar">
+		<a class="searchbar-cancel">取消</a>
+	    <div class="search-input">
+		    <label class="icon icon-search" for="search"></label>
+		    <form action="javascript:return true;" id="form-search"> 
+		    	<input type="search" value="" name="search" id="search" placeholder="搜索课程" />
+		    </form>
+	    </div>
+  	</div>
+</header>
+<div class="content">
+	<!--  海报区域开始  -->
+	<div class="content-block banner">
+		<div class="swiper-container" data-space-between='10'>
+		    <div class="swiper-wrapper">
+		    {foreach from=$data.banner item=item key=key name=banner}
+		   	{if $smarty.foreach.banner.iteration lte 4}
+		      	<div class="swiper-slide">
+			      	<a href="{$item.url}">
+			      		<img src="{$item.img}" alt="{$item.name}">
+			      	</a>
+		      	</div>
+	      	{/if}
+    		{/foreach}
+		    </div>
+		    <div class="swiper-pagination"></div>
+	  	</div>
+	</div>
+	<!--  海报区域结束  -->
+	<div class="content-block m-said-school">
+		<div class="said-school">
+			<a href='{url r="course#yu_list" p="list_type=new"}'>
+				<label class="said"></label>
+				<span>企业经营</span>
+			</a>
+		</div>
+		<div class="said-school">
+			<a href='{url r="course#qi_list" p="list_type=new"}'>
+				<label class="school"></label>
+				<span>家长必修</span>
+			</a>
+		</div>
+	</div>
+	<!-- <div class="content-block  classification">
+		<div class="class-left">
+			{foreach from=$data.left_list item=item key=key name=left_list_name}
+			{if $smarty.foreach.left_list_name.iteration lte 1}
+			<a href="{$item.url}">
+				<div class="ification-combat">
+					<img src="{$item.img}" alt="{$item.name}">
+				</div>
+			</a>
+			{/if}
+			{/foreach}
+		</div>
+		<div class="class-right">
+			{foreach from=$data.right_list item=item key=key name=right_list_name}
+			{if $smarty.foreach.right_list_name.iteration lte 2}
+			<a href="{$item.url}">
+				<div class="ification-{if $key == 1}wechat{else}quiz{/if}">
+					<img src="{$item.img}" alt="{$item.name}">
+
+				</div>
+			</a>
+			{/if}
+			{/foreach}
+		</div>
+	</div> -->
+	<div class="content-block hot-live clearfix">
+		<div class="hot-title">
+			<span class="f13">热门播放</span>
+		</div>
+	    {foreach from=$data.recommend_list item=item  key=key name=recommend_list}
+		<div class="live-block">
+			<a href="{$item.url}">
+				<div class="live-block-img">
+					<img alt="{$item.name}" src="{$TMPL}/dist/statics/images/blank.gif" data-original="{$item.img}" class="lazyload">
+					<span class="f11">{$item.long_time}</span>
+					<p class="item-title">{$item.name}</p>
+				</div>
+			</a>
+		</div>
+		{foreachelse}
+		<div class="null-data">暂无数据</div>
+		{/foreach}
+	</div>
+	{if $data.recommend_list}
+	<!-- 加载提示符 -->
+	<div class="infinite-scroll-preloader data-null">
+	  	<span style="color:#999;font-size:0.75rem;">没有更多了</span>
+	</div>
+	{/if}
+</div>
+<div class="go-top">
+	<i class="iconfont"></i>
+</div>
+{include file="inc/footer.html"}

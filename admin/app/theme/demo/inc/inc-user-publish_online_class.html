@@ -1,0 +1,43 @@
+<style type="text/css">
+    .view-controller {
+        visibility: hidden
+    }
+</style>
+<div class="user-r-title clearfix">
+    <div class="common-title f-l">
+        <span class="field">我的约课</span>
+    </div>
+    <!--<a href="javascript:void(0)" class="btn btn-primary btn-m f-r" id="btn_upload">上传视频</a>-->
+</div>
+<div class="user-r-content clearfix j-ajax-page">
+    {if $data.booking_list}
+    <div class="m-live clearfix">
+        <ul class="m-live-list clearfix">
+            {foreach from=$data.booking_list item=item}
+            {foreach from=$item.sub_list item=foo}
+            <li class="block-live">
+                <a href="javascript:void(0)">
+                    <div class="block-live-info clearfix">
+                        <div class="live-name clearfix">
+                            <p title="{$foo.title}">课程名称：{$foo.title}</p>
+                            <p class="sub f-l">价格：{$foo.price}</p>
+                            <span class="watch-num f-r">开播时间：{$foo.begin_at}</span>
+                        </div>
+                    </div>
+                    <div class="btn btn-danger btn-xs f-r btn-del" style="margin:0 10px;" onclick="pop_book_live(0,{$foo.id})">开始直播
+                    </div>
+                </a>
+            </li>
+            {/foreach}
+            {/foreach}
+        </ul>
+    </div>
+    {else}
+    <p class="null-data">暂无数据</p>
+    {/if}
+    <!--<div class="m-page clearfix">-->
+    <!--<div class="m-page-con">-->
+    <!--{$data.page}-->
+    <!--</div>-->
+    <!--</div>-->
+</div>

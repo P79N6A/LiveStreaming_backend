@@ -1,0 +1,68 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<include file="Public:new" />
+<load href='__TMPL__Common/js/jquery.bgiframe.js' />
+<load href='__TMPL__Common/js/jquery.weebox.js' />
+<load href='__TMPL__Common/js/user.js' />
+<load href='__TMPL__Common/js/deal.js' />
+<load href='__TMPL__Common/style/weebox.css' />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<div class="main">
+<div class="main_title_list"><div class="list-line-ico"></div>错误码列表</div>
+<div class="search_row">
+	<form name="search" action="__APP__" method="get" >
+	<div>错误码：
+        <input type="text" class="textbox" name="err_code" value="{:trim($_REQUEST['err_code'])}" style="width:100px;" />
+    </div>
+    <input type="hidden" value="Dolls" name="m" />
+    <input type="hidden" value="err_code" name="a" />
+    <input type="submit" class="button" value="{%SEARCH}" />
+	</form>
+</div>
+        <html:list
+        id="dataTable"
+        style="dataTable"
+        name="err_code"
+        action="true"
+        datasource="list"
+        show="id:ID
+        ,err_code:错误码
+        ,des:错误描述"
+        actionlist="err_edit:{%EDIT},delete_err:{%DEL}" />
+        <table class="dataTable">
+            <tbody>
+                <td colspan="10">
+                    <input type="button" class="button button-add" value="新增" onclick="err_add();" />
+                </td>
+            </tbody>
+        </table>
+
+<div class="page">{$page}</div>
+
+<script type="text/javascript">
+
+    function err_edit(id)
+    {
+        location.href = ROOT+"?"+VAR_MODULE+"=Dolls&"+VAR_ACTION+"=err_edit&id="+id;
+    }
+
+    function delete_err(id)
+    {
+        if (confirm('确定要删除该条记录？'))
+        {
+            location.href = ROOT+"?"+VAR_MODULE+"=Dolls&"+VAR_ACTION+"=delete_err&id="+id;
+        } 
+    }
+
+    function err_add()
+    {
+        location.href = ROOT+"?"+VAR_MODULE+"="+MODULE_NAME+"&"+VAR_ACTION+"=err_add";
+    }
+
+</script>
+
+</div>
+<include file="Public:footer" />

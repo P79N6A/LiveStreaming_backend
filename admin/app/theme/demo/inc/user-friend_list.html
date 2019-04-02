@@ -1,0 +1,71 @@
+<?php
+	$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/family-family_list.css";
+?>
+<link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$dpagecss"}" />
+<style type="text/css">
+    .table{
+        margin-bottom: 0;
+    }
+    .table .family_logo{
+        width:40px;
+        height:40px;
+        overflow:hidden;
+        border-radius:50%;
+    }
+    .ms-controller{
+        visibility: hidden
+    }
+    .table .m-page-con{padding:0;}
+    .table>thead>tr>th{border-bottom: 2px solid #eee;}
+    .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{text-align:center;border-top: 1px solid #eee;}
+    .table>tbody>tr>td{color:#666;line-height:40px;}
+    .common-select input{width:228px;padding:3px 10px;box-sizing:content-box;-moz-box-sizing:content-box;border:1px solid #ddd;line-height:22px;height:22px;font-size:12px}
+</style>
+<div class="ms-controller" ms-controller="friends_list">
+<div class="common-select">
+    <input type="text" name="" id="" value="" ms-duplex='@search_val' ms-change='@search' placeholder="请输入好友名称搜索" class="btn-search"/>
+</div>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-hover" ms-visible="@items.length>0">
+    <thead>
+    <tr>
+        <th width="15%">头像</th>
+        <th width="25%">昵称</th>
+        <th width="20%">操作</th>
+    </tr>
+    </thead>
+    <tbody class="j-ajax-page">
+    <tr ms-for="($index,item) in @items | filterBy(@search) | limitBy(@page_size,@begin)" >
+        <td class="lf">
+            <img ms-attr="{alt:item.nick_name,src:item.head_image}" class="family_logo" />
+        </td>
+        <td>
+            <span ms-attr="{title:item.nick_name}" class="member-name" ms-text="item.nick_name"></span>
+        </td>
+        <td>
+            <span ms-on-click="@submit(item.user_id)"  class="btn btn-primary btn-md">邀请</span>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="5">
+            <div class="m-page clearfix">
+                <div class="m-page-con" ms-visible="@pages.length > 1 && !@search_val">
+                    <a href="javascript:void(0);" ms-visible="@page > 1" ms-on-click="@prev()">上一页</a>
+                    <a href="javascript:void(0);" ms-class="[@page == p && 'page-on']" ms-for="p in @pages"  ms-on-click="@current(p)" ms-text="p">1</a>
+                    <a href="javascript:void(0);" ms-visible="@page < @pages.length" ms-on-click="@next()">下一页</a>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+    <p class="null-data" ms-visible="@items.length==0">您还未关注过好友哦</p>
+</div>
+<script type="text/javascript">
+var friends_list = JSON.parse('<?php echo json_encode($this->_var['data']['friends']); ?>');
+</script>
+<?php
+	$this->_var['dpagejs'][] = $this->_var['TMPL_REAL']."/js/friend-list.js";
+    $this->_var['dcpagejs'][] = $this->_var['TMPL_REAL']."/js/friend-list.js";
+?>
+<script type="text/javascript" src="{function name="parse_script" v="$dpagejs" c="$dcpagejs"}"></script>

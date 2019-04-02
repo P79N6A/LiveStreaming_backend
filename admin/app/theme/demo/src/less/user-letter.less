@@ -1,0 +1,38 @@
+@import (once) "public/variable.less";
+@import (once) "public/csstree.less";
+@import (once) "modules/m-letter_chat.less";
+.block-list {
+    margin-left: 10px;
+    .icon-letter {
+        font-size: 25px;
+        top: -40px;
+        position: relative;
+        right: 10px;
+        background: @bgcolor-theme;
+        border-radius: 50px;
+        text-align: center;
+        line-height: 24px;
+        color: #fff;
+        font-family: arial;
+    }
+    .member-name {
+        width: 90px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: center
+    }
+    .user-img {
+        .block-list-img {
+            width: 100px;
+            height: 100px;
+        }
+    }
+}
+
+.user-r-title {
+    & input {
+        border: 1px solid #ddd;
+        padding: 3px 10px;
+    }
+}

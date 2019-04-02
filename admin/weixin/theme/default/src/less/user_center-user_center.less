@@ -1,0 +1,99 @@
+@import (once) "public/variable.less";
+.page-user_center-user_center{
+	nav{
+		display: none;
+	}
+	.list-block{
+		margin: 0.5rem 0;
+		font-size: @fs-normal;
+		.item-inner{
+			min-height: 2.4rem;
+		}
+		.item-content{
+		    overflow: hidden;
+			a{
+				width: 100%;
+			}
+			&:last-child{
+				&:after{
+					display: none;
+				}
+			}
+		}
+		.item-after{
+			font-size: 0.6rem;
+		    max-width: 80%;
+		    white-space: nowrap;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    display: block;
+		    color: #898989;
+		}
+		.pic{
+			background: none;
+			padding: 0;
+			padding-right: 0.5rem;
+			.item-after{
+				display: -webkit-flex;
+				display: flex;
+			}
+		}
+		.avatar .item-after{
+			max-height: initial;
+			img{
+				border:0;
+				border-radius: 50px;
+			}
+		}
+		ul{
+			&:before{
+				height: 0;
+			}
+			&:after{
+				height: 0;
+			}
+		}
+		input{
+			height:inherit;
+			text-align:right;
+			font-size:0.6rem;
+			color: #898989;
+		}
+	}
+	.popup-setting{
+		.content-block{
+			margin: 0 0 .5rem;
+    		padding: 0;
+		}
+		.content-block-title{
+			display: -webkit-box;
+		    display: -webkit-flex;
+		    display: flex;
+		    -webkit-box-pack: justify;
+		    -webkit-justify-content: space-between;
+		    justify-content: space-between;
+		    -webkit-box-align: center;
+		    -webkit-align-items: center;
+		    align-items: center;
+		}
+
+		.close-popup{
+			display: inline-block;
+			height:1.35rem;
+			line-height:1.35rem;
+			font-size:0.7rem;
+		}
+		.iconfont{
+			color: @color-theme-sub;
+		}
+		.list-block .item-title.label{
+			width: initial;
+		}
+		.list-block ul:after, .list-block ul:before{
+			height:1px;
+		}
+		input{
+			font-size:0.7rem;
+		}
+	}
+}

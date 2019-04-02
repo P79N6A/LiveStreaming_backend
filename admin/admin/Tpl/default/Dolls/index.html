@@ -1,0 +1,84 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<div class="main">
+<div class="main_title_list"><div class="list-line-ico"></div>娃娃机列表</div>
+<div class="search_row">
+	<form name="search" action="__APP__" method="get">
+		{%KEYWORD}：<input type="text" class="textbox" name="name" value="{:trim($_REQUEST['name'])}" />
+		<input type="hidden" value="Dolls" name="m" /><input type="hidden" value="index" name="a" />
+		<input type="submit" class="button" value="{%SEARCH}" />
+	</form>
+</div>
+<PHP>
+	function get_cate_img($cate_id){
+		$src = M("DollCate")->where("id=".$cate_id)->getField("img");
+		return "<img style='width: 40px; height: 40px;' src='$src' />";
+    }
+	function get_cate_name($cate_id)
+	{
+		return M("DollCate")->where("id=".$cate_id)->getField("title");
+	}
+	function get_doll_status($status) {
+		switch($status) {
+			case "0":
+				return "空闲中";
+			case "1":
+				return "使用中";
+			case "2":
+				return "维护中";
+		}
+	}
+	//获取错误码描述
+    function get_err_des($errCode){
+        $sql = "select des from ".DB_PREFIX."dolls_err_code where err_code = $errCode ";
+        return emoji_decode($GLOBALS['db']->getOne($sql));
+    }
+    //时间戳转时间格式
+    function time_format($timestamp){
+        if($timestamp)
+        return to_date($timestamp,'Y-m-d H:i:s');
+        else
+        return '';
+    }
+    //获取分类名称
+    function get_classified_id($room_id)
+    {
+    	$sql = "select t2.title from ".DB_PREFIX."video t1 left join ".DB_PREFIX."video_classified t2 on t1.classified_id = t2.id where t1.id = $room_id ";
+        return emoji_decode($GLOBALS['db']->getOne($sql));
+    }
+</PHP>
+<html:list
+	id="dataTable"
+	style="dataTable"
+	name="doll"
+	checkbox="true"
+	action="true"
+	datasource="list"
+	show="id:{%ID}|90px,cate_id|get_cate_name:娃娃名称:edit,cate_id|get_cate_img:娃娃图片,room_id:直播间ID,price:价格,update_time|time_format:心跳时间,play_user_id:当前玩家ID,begin_time|time_format:当前玩家开始时间,room_id|get_classified_id:分类,status|get_doll_status:状态,is_recommend|get_recommend=$doll['id']:上线,sort|get_sort=$doll['id']:{%SORT},err_code:错误码,err_code|get_err_des:错误码描述"
+	actionlist="edit:{%EDIT},push_url:{%PUSH_URL},status_log:查看状态日志,del:{%DEL}" />
+	<table class="dataTable">
+		<tbody>
+			<td colspan="10">
+				<input type="button" class="button button-add" value="{%ADD}" onclick="add();" />
+			</td>
+		</tbody>
+	</table>
+<div class="page">{$page}</div>
+</div>
+<script type="text/javascript">
+	//推送地址
+	function push_url(id)
+	{
+		$.weeboxs.open(ROOT+'?'+VAR_MODULE+'='+MODULE_NAME+'&'+VAR_ACTION+'=push_url&id='+id, {contentType:'ajax',showButton:false,title:'推流地址',width:1024,height:300});
+	}
+	//查看状态日志
+	function status_log(id)
+	{
+		location.href = ROOT+"?"+VAR_MODULE+"=Dolls&"+VAR_ACTION+"=status_log&id="+id;
+	}
+</script>
+<include file="Public:footer" />

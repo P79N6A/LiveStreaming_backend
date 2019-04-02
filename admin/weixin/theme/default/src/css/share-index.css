@@ -1,0 +1,309 @@
+/*界面主题色*/
+/*背景色*/
+/*背景色（深）*/
+/*模块背景色*/
+/*主题风格色*/
+/*主题辅助风格色*/
+/*字体颜色*/
+/*主要字色*/
+/*浅色*/
+/*更浅色（适用：二级标题、简介）*/
+/*更更浅色（适用：icon图标）*/
+/*标题*/
+/*字体大小*/
+/*线条颜色*/
+/*主要线条颜色*/
+/*更深线条颜色*/
+/*更浅线条颜色*/
+/*文本输入框边框颜色*/
+/*各类间距，高度*/
+/*横向间距*/
+/*纵向间距*/
+.page-share-index .pull-to-refresh-layer {
+  height: 2.5rem;
+}
+.page-share-index .cate-tab {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  z-index: 999;
+}
+.page-share-index .cate-tab .swiper-container {
+  padding: 0;
+  margin: 0;
+}
+.page-share-index .cate-tab:after {
+  display: none;
+}
+.page-share-index .cate-tab .swiper-slide {
+  width: auto;
+  margin: 0 0.75rem;
+}
+.page-share-index .cate-tab .swiper-slide .button {
+  height: 2.5rem;
+  line-height: 2.5rem;
+  font-size: 0.65rem;
+}
+.page-share-index .cate-tab .swiper-slide .button.active {
+  color: #f1383f;
+  border-color: #f1383f;
+}
+.page-share-index .cate-tab .swiper-scrollbar {
+  display: none;
+}
+.page-share-index .content-block {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 0.5rem;
+}
+.page-share-index .content-block .card {
+  margin-top: 0.5rem;
+  background: #fff;
+}
+.page-share-index .content-block .card .card-content-inner {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding: .5rem 0 0.5rem 0.5rem;
+}
+.page-share-index .content-block .card .card-content-inner .user-pic {
+  width: 12vw;
+  height: 12vw;
+  overflow: hidden;
+  border-radius: 5rem;
+}
+.page-share-index .content-block .card .card-content-inner .user-pic img {
+  width: 100%;
+  height: 100%;
+}
+.page-share-index .content-block .card .card-content-inner .user-inner {
+  width: 85%;
+  margin-left: 0.4rem;
+}
+.page-share-index .content-block .card .card-content-inner .user-inner .inner-user {
+  padding-right: 0.5rem;
+}
+.page-share-index .content-block .card .card-content-inner .user-inner .inner-user p {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  line-height: 1.2rem;
+  color: #333;
+}
+.page-share-index .content-block .card .card-content-inner .user-inner .inner-user p span {
+  font-size: 0.6rem;
+  color: #999;
+  line-height: 1rem;
+}
+.page-share-index .content-block .card .card-content-inner .user-inner .inner-text {
+  position: relative;
+  padding-right: 0.5rem;
+  margin-top: 0.5rem;
+}
+.page-share-index .content-block .card .card-content-inner .user-inner .inner-text:before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  border-top: 1px solid #ececec;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(0.5, 0.5);
+  -ms-transform: scale(0.5, 0.5);
+  -o-transform: scale(0.5, 0.5);
+  transform: scale(0.5, 0.5);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  top: 0;
+  pointer-events: none;
+}
+.page-share-index .content-block .card .card-content-inner .user-inner .inner-text .text-top h3 {
+  line-height: 1.8rem;
+  color: #333;
+}
+.page-share-index .content-block .card .card-content-inner .user-inner .inner-text .text-top p {
+  color: #666;
+  font-size: 0.6rem;
+  line-height: 0.8rem;
+}
+.page-share-index .content-block .card .card-content-inner .user-inner .inner-text .text-top .list-img {
+  margin-top: 0.5rem;
+}
+.page-share-index .content-block .card .card-content-inner .user-inner .inner-text .text-top .list-img img {
+  max-width: 100%;
+  display: block;
+}
+.page-share-index .content-block .card .card-content-inner .user-inner .inner-text .text-top .state {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  font-size: 0.6rem;
+  margin-top: 0.2rem;
+  line-height: 1.6rem;
+}
+.page-share-index .content-block .card .card-content-inner .user-inner .inner-text .text-top .state .details,
+.page-share-index .content-block .card .card-content-inner .user-inner .inner-text .text-top .state .details a {
+  color: #f1383f;
+}
+.page-share-index .content-block .card .card-content-inner .user-inner .inner-text .text-top .state .link {
+  display: -webkit-flex;
+  display: flex;
+}
+.page-share-index .content-block .card .card-content-inner .user-inner .inner-text .text-top .state .link span {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  color: #999;
+  margin-left: 1rem;
+}
+.page-share-index .content-block .card .card-content-inner .user-inner .inner-text .text-top .state .link span i {
+  color: #cfcfcf;
+  margin-right: 0.2rem;
+  font-size: 0.7rem;
+}
+.page-share-index .content-block .card .card-content-inner .user-inner .inner-text .text-top .state .link .look i {
+  font-size: 0.9rem;
+}
+.page-share-index .content-block .card .card-content-inner .user-inner .inner-text .text-top .state .link .active {
+  color: #f1383f;
+}
+.page-share-index .content-block .card .card-content-inner .user-inner .inner-text .text-comment {
+  background: #f7f7f7;
+}
+.page-share-index .content-block .card .card-content-inner .user-inner .inner-text .text-comment .praise {
+  padding: 0.5rem;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 0.6rem;
+  color: #586b96;
+  -webkit-justify-content: flex-end;
+  position: relative;
+  line-height: 0.7rem;
+}
+.page-share-index .content-block .card .card-content-inner .user-inner .inner-text .text-comment .praise:after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  border-bottom: 1px solid #d8d8d8;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(0.5, 0.5);
+  -ms-transform: scale(0.5, 0.5);
+  -o-transform: scale(0.5, 0.5);
+  transform: scale(0.5, 0.5);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+.page-share-index .content-block .card .card-content-inner .user-inner .inner-text .text-comment .praise p {
+  white-space: nowrap;
+}
+.page-share-index .content-block .card .card-content-inner .user-inner .inner-text .text-comment .praise .praise-name {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.page-share-index .content-block .card .card-content-inner .user-inner .inner-text .text-comment .comment-area {
+  padding: 0.5rem;
+}
+.page-share-index .content-block .card .card-content-inner .user-inner .inner-text .text-comment .comment-area p {
+  font-size: 0.6rem;
+  line-height: 0.9rem;
+  margin-bottom: 0.2rem;
+  color: #333;
+}
+.page-share-index .content-block .card .card-content-inner .user-inner .inner-text .text-comment .comment-area p span {
+  color: #586b96;
+}
+.page-share-index .content-block .card .card-content-inner .user-inner .inner-text .text-comment .comment-area a.button {
+  border: 0;
+  color: #586b96;
+  margin-top: 0.3rem;
+  border-radius: 0;
+  font-size: 0.6rem;
+  height: auto;
+  line-height: 1rem;
+}
+.page-share-index .float-add-share {
+  position: fixed;
+  bottom: 4rem;
+  right: 0.75rem;
+}
+.page-share-index .float-add-share .add-share {
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  border-radius: 50%;
+  background: #f1383f;
+  color: #fff;
+  display: block;
+  text-align: center;
+  font-size: 2rem;
+  font-family: 'arial';
+}
+.float-comment {
+  position: fixed;
+  left: 0;
+  bottom: -2.5rem;
+  z-index: 0;
+  opacity: 0;
+  padding: 0.5rem;
+  width: 100%;
+  background-color: #f4f4f4;
+  text-align: right;
+  -moz-transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+.float-comment textarea {
+  width: 100%;
+  border: 0;
+  padding: 0.5rem;
+}
+.float-comment .button {
+  width: 3.25rem;
+  height: 1.25rem;
+  line-height: 1.25rem;
+  border-radius: 0.625rem;
+  display: inline-block;
+  font-size: 0.7rem;
+}
+.float-comment.show {
+  opacity: 1;
+  bottom: 0;
+  z-index: 99999;
+}
+.float-comment-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background-color: rgba(0, 0, 0, 0.15);
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+.float-comment-mask.show {
+  opacity: 1;
+  z-index: 9999;
+  visibility: visible;
+}

@@ -1,0 +1,76 @@
+<div class="user-r-title clearfix">
+    <div class="common-title f-l">
+        <span class="field">主播直播时长</span>
+    </div>
+    <!--         <div class="block-font f-r">
+<span class="operation mr-20">标记为已读</span>
+<span class="operation">删除消息</span>
+</div> -->
+</div>
+<div class="user-r-content clearfix j-ajax-page">
+    <div class="search clearfix">
+        <input type="text" name="reservation" style="width: 170px;" id="reservation" class="form-control" value="2017-01-19 - 2017-01-19">
+        <span>主播昵称/主播ID:</span>
+        <span class="select2 select2-container" dir="ltr" style="width: 240px;">
+            <span class="selection">
+                <span class="select2-selection" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-bvo0-container">
+                    <span class="select2-selection_rendered" id="select2-bvo0-container" data-id="0">全部主播</span>
+                    <span class="select2-selection_arrow" role="presentation"><b role="presentation"></b></span>
+                </span>
+            </span>
+            <span class="dropdown-wrapper" aria-hidden="true"></span>
+            <span class="select2-container clearfix select2-container--default select2-container--open">
+                <span class="select2-dropdown" dir="ltr" style="width: 220px;">
+                    <span class="select2-search">
+                        <input class="select2-search_field" id="selectByName" name="selectByName" type="search">
+                    </span>
+                    <span class="select2-results">
+                        <ul class="select2-results_options" role="tree" id="select2-sewd-results" aria-expanded="true" aria-hidden="false">
+                            <li class="select2-results_option" role="treeitem" aria-selected="true" data-id="0">全部主播</li>
+                            {foreach from=$data.list item=item key=key name=list}
+                            <li class="select2-results_option" role="treeitem" aria-selected="false" data-id="{$item.user_id}">{$item.user_id} - {$item.nick_name}</li>
+                            {/foreach}
+                        </ul>
+                    </span>
+                </span>
+            </span>
+        </span>
+        <a href="javascript:void(0)" class="btn btn-primary btn-circle J-data-user_id">查询</a>
+        <a href="javascript:void(0)" class="btn btn-primary btn-circle J-data-export">导出</a>
+    </div>
+    <div class="ajax-block">
+        <table>
+            <thead>
+                <tr class="form-head">
+                    <th>主播ID</th>
+                    <th>主播昵称</th>
+                    <th>直播总时长</th>
+                </tr>
+            </thead>
+            {if $data.list}
+            <tbody>
+                {foreach from=$data.list item=item key=key name=list}
+                <tr class="form-body">
+                    <td class="content-font">{$item.user_id}</td>
+                    <td class="content-font">{$item.nick_name}</td>
+                    <td class="content-font">{$item.timelen}</td>
+                </tr>
+                {/foreach}
+            </tbody>
+            {else}
+            <tbody>
+                <tr>
+                    <td colspan="3">
+                        <p class="null-data">暂无数据</p>
+                    </td>
+                </tr>
+            </tbody>
+            {/if}
+        </table>
+        <div class="m-page clearfix">
+            <div class="m-page-con">
+                {$data.page}
+            </div>
+        </div>
+    </div>
+</div>

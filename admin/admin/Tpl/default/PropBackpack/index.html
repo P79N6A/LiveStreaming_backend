@@ -1,0 +1,42 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<php>
+    function nick_name($user_id)
+    {
+        return $GLOBALS['db']->getOne("select `nick_name` from ".DB_PREFIX."user where id = ".$user_id);
+    }
+</php>
+<div class="main">
+<div class="main_title_list"><div class="list-line-ico"></div>背包列表</div>
+    <div class="search_row">
+        <form name="search" action="__APP__" method="get">
+            用户ID：<input type="text" class="textbox" name="user_id" value="{:trim($_REQUEST['user_id'])}" />
+            道具：<input type="text" class="textbox" name="name" value="{:trim($_REQUEST['name'])}" />
+            <input type="hidden" value="PropBackpack" name="m" />
+            <input type="hidden" value="index" name="a" />
+            <input type="submit" class="button" value="{%SEARCH}" />
+        </form>
+    </div>
+	<html:list
+			id="dataTable"
+			style="dataTable"
+			name="prop_backpack"
+			checkbox="true"
+			action="true"
+			datasource="list"
+			show="id:{%ID},user_id:用户ID,user_id|nick_name:用户昵称,name:道具,num:数量,update_time:更新时间"
+			actionlist="edit:编辑,foreverdel:删除" />
+
+	<table class="dataTable">
+		<tbody>
+			<td colspan="9">
+				<input type="button" class="button button-add" value="{%ADD}" onclick="add();" />
+				<input type="button" class="button button-del" value="{%DEL}" onclick="foreverdel();" />
+			</td>
+		</tbody>
+	</table>
+<div class="blank5"></div>
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

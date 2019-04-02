@@ -1,0 +1,52 @@
+<div class="m-common-item m-common-list">
+	<div class="m-common-title clearfix">
+		<div class="common-title f-l">
+			<span class="field">我的直播</span>
+		</div>
+		<a href="javascript:void(0)" class="btn btn-primary btn-m f-r" id="btn_upload">上传视频</a>
+	</div>
+	<div class="common-content clearfix j-ajax-page">
+		{if $data.list}
+		<div class="m-live clearfix">
+			<ul class="m-live-list clearfix">
+				{foreach from=$data.list item=item key=key name=list}
+				<li class="block-live" live-status="{$item.live_in}">
+					{if $item.live_in eq 2}
+					<a href="javascript:$.showToast('此视频正在处理...')">
+					{else}
+					<a href="{$item.video_url}">
+					{/if}
+						<span class="block-live-img">
+							<img alt="" src="{$item.live_image}" class="block-live-img" />
+							{if $item.live_in eq 1}
+							<span class="live-img-txt">直播</span>
+							{elseif $item.live_in eq 2}
+							<span class="live-img-txt">处理中</span>
+							{else}
+							<span class="live-img-txt">录播</span>
+							{/if}
+						</span>
+						<div class="block-live-info clearfix">
+							<div class="live-name clearfix">
+								<img alt="" src="{$item.head_image}" class="avatar-normal" />
+								<p title="{$item.title}">{$item.title}</p>
+								<p class="sub f-l">{$item.nick_name}</p>
+								<span class="watch-num f-r">{$item.begin_time_format}</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				{/foreach}
+			</ul>
+		</div>
+		{else}
+			<p class="null-data">暂无数据</p>
+		{/if}
+		<div class="m-page clearfix">
+			<div class="m-page-con">
+			{$data.page}
+			</div>
+		</div>
+	</div>
+	</div>
+</div>

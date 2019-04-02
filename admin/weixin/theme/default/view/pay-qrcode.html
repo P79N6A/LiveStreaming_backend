@@ -1,0 +1,26 @@
+{include file="inc/header.html"}
+<script type="text/javascript">
+ 	var paramets = {
+        vip_id: GetQueryString("vip_id"),
+        qrcode_id: GetQueryString("qrcode_id"),
+        pay_id: GetQueryString("pay_id"),
+        is_completed: false,
+        is_fail: false,
+        sec: 0
+    };
+</script>
+<div class="content">
+	<div id="vscope-pay_qrcode" class="content-block" style="text-align:center;padding">
+		<div class="qrcode_title"><i class="icon iconfont">&#xe625;</i> 扫码成功！</div>
+		<div class="qrcode_text" v-cloak>
+			<div v-if="is_fail">
+				<span>请求失败，请重新刷新页面</span>
+			</div>
+			<div v-else>
+				<span v-if="is_completed">跳转支付页面...<span class="after">({{sec}}s<span v-show="sec>5">，<a class="refresh" @click="refresh()">手动刷新</a></span>)</span></span>
+				<span v-else>数据跳转中...</span>
+			</div>
+		</div>
+	</div>
+</div>
+{include file="inc/footer.html"}

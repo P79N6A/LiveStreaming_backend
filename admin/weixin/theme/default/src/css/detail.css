@@ -1,0 +1,361 @@
+/*界面主题色*/
+/*背景色*/
+/*背景色（深）*/
+/*模块背景色*/
+/*主题风格色*/
+/*主题辅助风格色*/
+/*字体颜色*/
+/*主要字色*/
+/*浅色*/
+/*更浅色（适用：二级标题、简介）*/
+/*更更浅色（适用：icon图标）*/
+/*标题*/
+/*字体大小*/
+/*线条颜色*/
+/*主要线条颜色*/
+/*更深线条颜色*/
+/*更浅线条颜色*/
+/*文本输入框边框颜色*/
+/*各类间距，高度*/
+/*横向间距*/
+/*纵向间距*/
+.page-course-detail .v-hide {
+  visibility: hidden;
+}
+.page-course-detail .tran-hide {
+  transform: translateX(-100%);
+}
+.page-course-detail .detail-head {
+  height: 2.2rem;
+  line-height: 2.2rem;
+  background: #000;
+  color: #fff;
+  font-size: .95rem;
+  text-align: center;
+  padding: 0 2rem;
+}
+.page-course-detail .detail-head .head-btn {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  padding-right: 1rem;
+  z-index: 10;
+}
+.page-course-detail .video-box {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+.page-course-detail .video-box .control-bar.z-open {
+  bottom: 0;
+}
+.page-course-detail .video-box .video-cover {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+.page-course-detail .video-box .video-cover.isErr,
+.page-course-detail .video-box .video-cover.isAudio {
+  display: block;
+  background: #000;
+}
+.page-course-detail .video-box .change-audio {
+  position: absolute;
+  right: .5rem;
+  bottom: .5rem;
+  width: 3.75rem;
+  height: 1rem;
+  line-height: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  text-align: center;
+  color: #fff;
+  font-size: 0.6rem;
+  border-radius: 5px;
+  z-index: 1;
+}
+.page-course-detail .video-box .jw-controlbar {
+  z-index: 1001;
+}
+.page-course-detail .other-con {
+  position: absolute;
+  top: 270px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+}
+.page-course-detail .m-video-list {
+  position: relative;
+  background: #fff;
+}
+.page-course-detail .m-video-list .list-tit {
+  position: relative;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  font-size: .65rem;
+  color: #333;
+  padding: 0 .5rem;
+}
+.page-course-detail .m-video-list .list-tit .update-to {
+  font-size: .55rem;
+  color: #999;
+}
+.page-course-detail .m-video-list .vedio-list {
+  background: #fff;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.page-course-detail .m-video-list .vedio-list .list-con {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.page-course-detail .m-video-list .vedio-list .vedio-item {
+  width: 3.25rem;
+  height: 3.25rem;
+  line-height: 3.25rem;
+  text-align: center;
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.page-course-detail .m-video-list .vedio-list .vedio-item:last-child:after {
+  display: none;
+}
+.page-course-detail .m-video-list .vedio-list .vedio-item.active {
+  background: #f9f9f9;
+  color: #f1383f;
+}
+.page-course-detail .m-video-list .list-tit:before {
+  content: " ";
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 0;
+  width: .1rem;
+  height: .8rem;
+  background: #f1383f;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.page-course-detail .m-class-bief {
+  background: #fff;
+  margin: .5rem 0;
+}
+.page-course-detail .m-class-bief .bief-tit {
+  padding: 0 .5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  color: #333;
+  font-size: .65rem;
+}
+.page-course-detail .m-class-bief .bief-tit .show-more {
+  font-size: .55rem;
+  color: #999;
+  text-align: right;
+}
+.page-course-detail .m-class-bief .bief-con {
+  display: -webkit-box;
+  line-height: 1.2rem;
+  padding: .5rem;
+  font-size: .65rem;
+  color: #888;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+.page-course-detail .m-class-bief .bief-con.show-more {
+  -webkit-line-clamp: inherit;
+  -webkit-overflow-scrolling: touch;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.page-course-detail .pop-up {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  z-index: 100;
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+  -webkit-transition: transform .3s;
+  transition: transform .3s;
+}
+.page-course-detail .pop-up.z-open {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+.page-course-detail .m-all-vedio .all-vedio-tit {
+  padding: 0 .5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  color: #333;
+  font-size: .65rem;
+}
+.page-course-detail .m-all-vedio .all-vedio-tit .close-all-vedio {
+  display: block;
+  width: 1rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  padding-left: 1rem;
+}
+.page-course-detail .m-all-vedio .all-vedio-con {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 2.5rem;
+  bottom: 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.page-course-detail .m-all-vedio .all-vedio-con:after {
+  content: " ";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+.page-course-detail .m-all-vedio .all-vedio-con .all-vedio-item {
+  position: relative;
+  width: -webkit-calc(16.66666667%);
+  width: calc(16.66666667%);
+  float: left;
+}
+.page-course-detail .m-all-vedio .all-vedio-con .all-vedio-item:before {
+  content: " ";
+  display: block;
+  padding-top: 100%;
+}
+.page-course-detail .m-all-vedio .all-vedio-con .all-vedio-item .item-con-pos {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.page-course-detail .m-all-vedio .all-vedio-con .all-vedio-item .item-con-pos:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  background: #dfdfdd;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  z-index: 5;
+}
+.page-course-detail .m-all-vedio .all-vedio-con .all-vedio-item .item-con-pos:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: #dfdfdd;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  z-index: 5;
+}
+.page-course-detail .m-all-vedio .all-vedio-con .all-vedio-item .item-con {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.page-course-detail .m-all-vedio .all-vedio-con .all-vedio-item.active {
+  background: #f9f9f9;
+  color: #f1383f;
+}
+.page-course-detail .err-pop {
+  position: absolute;
+  top: 2.2rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  visibility: hidden;
+  z-index: 1000;
+}
+.page-course-detail .err-pop .err-con {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translate3D(-50%, 0, 0);
+  transform: translate3D(-50%, 0, 0);
+  background: #fff;
+  width: 80%;
+  text-align: center;
+  border-radius: 3px;
+  -webkit-transition: transform .3s;
+  transition: transform .3s;
+}
+.page-course-detail .err-pop .err-con .err-txt {
+  padding: .5rem;
+}
+.page-course-detail .err-pop .err-con .err-txt .err-tip {
+  font-size: .6rem;
+  color: #666;
+  line-height: 1.65rem;
+}
+.page-course-detail .err-pop .err-con .err-txt .err-op {
+  line-height: 1.85rem;
+  font-size: .85rem;
+  color: #f1383f;
+}
+.page-course-detail .err-pop .err-con .btn-list {
+  background: #efeff4;
+  padding: .25rem;
+  border-radius: 0 0 3px 3px;
+}
+.page-course-detail .err-pop .err-con .btn-list .err-btn {
+  height: 2rem;
+  line-height: 2rem;
+  border-radius: 2px;
+  font-size: .7rem;
+}
+.page-course-detail .err-pop .err-con .btn-list .btn-cannel {
+  margin-right: .25rem;
+  background: #d0d0d0;
+  color: #333;
+}
+.page-course-detail .err-pop .err-con .btn-list .btn-ok {
+  background: #f1383f;
+  color: #fff;
+}
+.page-course-detail .err-pop.z-open {
+  background: rgba(0, 0, 0, 0.5);
+  visibility: visible;
+}
+.page-course-detail .err-pop.z-open .err-con {
+  top: -webkit-calc(47.8%);
+  top: calc(47.8%);
+  left: 50%;
+  -webkit-transform: translate3D(-50%, -50%, 0);
+  transform: translate3D(-50%, -50%, 0);
+}

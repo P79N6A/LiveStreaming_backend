@@ -1,0 +1,113 @@
+<?php
+	$this->_var['dpagecss'][] = $this->_var['TMPL_REAL']."/css/live-tipoff.css";
+?>
+<link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$dpagecss"}" />
+{include file="inc/upload-config.html"}
+<div class="m-content-off" ms-controller="tipoff" id="tipoff">
+	<div class="title">
+	    <h3>房间举报</h3>
+	    <span>带<i>*</i>的项必填，如果您需要进行版权投诉，请点击《<a href="javascript:void(0)" target="_blank">版权投诉专属通道</a>》。</span>
+	</div>
+	<form action="" method="" enctype="">
+        <ul>
+            <li class="clearfix">
+                <div class="tit f-l">
+                    <i>*</i><span>房间ID </span>
+                </div>
+                <div class="cont f-l">
+                    <p>
+                        <input type="text" value="{$data.room_title}" disabled="disabled" class="txt1 disable" />
+                        <input type="text" name="room_id" readonly="readonly" value="{$data.id}" class="txt2 disable" />
+                    </p>
+                    <p class="err">被举报人房间与ID </p>
+                </div>
+            </li>
+            <li class="clearfix">
+                <div class="tit f-l">
+                    <i>*</i><span>添加截图</span>
+                </div>
+                <div class="cont f-l mar">
+                    <div class="u-upload f-l" id="screenshot">
+                        <button type="button" class="mr-5">选择截图</button>
+                        <input type="hidden" value="" id="screenshot-url" name="screenshot" ms-duplex="@data.screenshot" />
+                    </div>
+                    <img id="screenshot-image" src="" width="76" height="32" />
+                    <p class="err">一张，大小限制1M</p>
+                </div>
+            </li>
+            <li>
+                <div class="clearfix">
+                    <div class="tit f-l">
+                        <i>*</i><span>举报类型</span>
+                    </div>
+                    <div class="cont f-l">
+                        <select name="card_type" class="card-type" ms-duplex="@data.card_type">
+                            <option value="">请选择举报类型</option>
+                            {foreach from=$data.type_list item=item}
+                            <option value="{$item.id}">{$item.name}</option>
+                            {/foreach}
+                        </select>
+                    </div>
+                </div>
+                <div class="clearfix">
+                    <div class="tit f-l">
+                        <i>*</i><span>举报原因</span>
+                    </div>
+                    <div class="cont f-l">
+                        <p>
+                            <textarea name="reason" cols="" rows="" placeholder="请输入详细说明" maxlength="200" ms-duplex="@data.reason"></textarea>
+                        </p>
+                        <p class="err">详细细节描述，最大200字符。</p>
+                    </div>
+                </div>
+            </li>
+
+            <li class="clearfix">
+                <div class="tit f-l">
+                    <i>*</i><span>验证码</span>
+                </div>
+                <div class="cont f-l">
+                    <input type="text" id="captcha_input" name="verify_code" class="txt3" placeholder="请输入验证码" ms-duplex="@data.verify_code">
+                    <img id="v_code" style="cursor:pointer;" title="点击刷新" src="/verify.php?name=tipoff_verify" alt="/verify.php?name=tipoff_verify" ms-click="@refresh_verify">
+                </div>
+            </li>
+
+            <li class="clearfix">
+                <div class="tit f-l">
+                    <span>举报人</span>
+                </div>
+                <div class="cont f-l">
+                    <input type="text" value="{$data.user.nick_name}" name="tipoffer_name" disabled="disabled" class="txt4 disable">
+                </div>
+                <div class="tit f-l tit_mar">
+                    <i>*</i><span>QQ</span>
+                </div>
+                <div class="cont f-l">
+                    <input type="text" name="qq" class="txt5" ms-duplex="@data.qq">
+                </div>
+            </li>
+
+        </ul>
+        <div class="inf_btn">
+            <input type="button" value="提交" class="btn btn-primary sub" ms-click="@submit">
+            <a href='{url r="index#index"}'>返回首页</a>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    get_file_fun('screenshot');
+    var data_tipoff={
+        "room_id": $("input[name='room_id']").val(),
+        "screenshot": "",
+        "card_type": "",
+        "reason": "",
+        "verify_code": "",
+        "tipoffer_name": $("input[name='tipoffer_name']").val(),
+        "qq": "",
+    }
+</script>
+<?php
+    $this->_var['dpagejs'][] = $this->_var['TMPL_REAL']."/js/live-tipoff.js";
+    $this->_var['dcpagejs'][] = $this->_var['TMPL_REAL']."/js/live-tipoff.js";
+?>
+<script type="text/javascript" src="{function name="parse_script" v="$dpagejs" c="$dcpagejs"}"></script>

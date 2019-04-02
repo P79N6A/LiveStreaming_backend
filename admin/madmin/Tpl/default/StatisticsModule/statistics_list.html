@@ -1,0 +1,136 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<include file="Public:new" />
+<load href='__TMPL__Common/js/jquery.bgiframe.js' />
+<load href='__TMPL__Common/js/jquery.weebox.js' />
+<load href='__TMPL__Common/js/user.js' />
+<load href='__TMPL__Common/style/weebox.css' />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<PHP>
+	function to_money($money){
+		return format_price($money);
+	}
+	function get_refund_user_name($uid)
+	{
+		return M("User")->where("id=".$uid)->getField("nick_name");
+	}
+	function get_lastpay($uid)
+	{
+		return to_date(M("PaymentNotice")->where("is_paid=1 and user_id=".$uid)->order('pay_time desc')->getField("pay_time"));
+	}
+	function jump_to_list($uid)
+	{
+		return "$uid";
+	}
+
+
+	function parent_tid($id){
+		$re = M("user")->where("id = ".$id)->find();
+		return $re['parent_id'];
+	}
+
+	function get_payment_name($id,$notice)
+	{
+	$str = "";
+	$payment = M("Payment")->getById($notice['payment_id']);
+	if($payment)
+	{
+	$str .= "通过";
+	$class_name = $payment['class_name']."_payment";
+	$str.=$payment['name'];
+	if($notice['bank_id']!="")
+	{
+	require_once APP_ROOT_PATH."/system/payment/".$class_name.".php";
+	$str.=$payment_lang[$notice['bank_id']];
+	}
+	}
+	else
+	{
+	$str = "管理员收款";
+	}
+
+	return $str;
+	}
+
+</PHP>
+<div class="main">
+<div class="main_title_list"><div class="list-line-ico"></div>数据报表&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<div class="search_row">
+	<form name="search" action="__APP__" method="get">
+		<!--<div>昵称：<input type="text" class="textbox" name="nick_name" value="{$nick_name}" style="width:100px;" /></div>
+		<div>推荐人ID：<input type="text" class="textbox" name="parent_id" value="{$parent_id}" style="width:100px;" /></div>-->
+		<div>日期 ：
+		<input style="margin: 0;width:130px" type="text" class="textbox" size="8" name="start_time" id="start_time" value="{$start_time}" onfocus="return showCalendar('start_time', '%Y-%m-%d %H:%M:%S', false, false, 'start_time');" /> - <input type="text" style="width:130px" class="textbox" size="8" name="end_time" id="end_time" value="{$end_time}" onfocus="return showCalendar('end_time', '%Y-%m-%d %H:%M:%S', false, false, 'end_time');" />
+		<input type="hidden" value="StatisticsModule" name="m" />
+			<input type="hidden" value="statistics_analysis" name="a" />
+			<input type="submit" class="button" value="{%SEARCH}" />
+			<!--<input type="button" class="button" value="{%EXPORT}" onclick="export_csv(1);" />-->
+		</div>
+
+
+	</form>
+</div>
+<table id="dataTable" class="dataTable" cellpadding="0" cellspacing="0">
+	<tbody>
+	<tr>
+		<td colspan="8" class="topTd"></td>
+	</tr>
+	<tr class="row">
+		<th><a href="javascript:sortBy('id','','StatisticsModule','statistics_analysis')" title="按照ID    ">ID </a></th>
+		<th><a href="javascript:sortBy('user_id','','StatisticsModule','statistics_analysis')" title="按照分销商名    ">分销商名</a></th>
+		<th><a href="javascript:sortBy('notice_sn','','StatisticsModule','statistics_analysis')" title="按照注册用户数    ">注册用户数 </a></th>
+		<th><a href="javascript:sortBy('money','','StatisticsModule','statistics_analysis')" title="按照充值金额    ">充值人数 </a></th>
+		<th><a href="javascript:sortBy('pay_time','','StatisticsModule','statistics_analysis')" title="按照最后充值时间    ">总充值金额 </a></th>
+		<!--<th><a href="javascript:sortBy('payment_id','','StatisticsModule','statistics_analysis')" title="按照支付方式    ">靓号座驾VIP消费 </a></th>-->
+		<th><a href="javascript:sortBy('user_id','','StatisticsModule','statistics_analysis')" title="按照推荐人    ">明细 </a></th>
+	</tr>
+
+	<volist name="user" id="vo">
+	<tr class="row">
+
+		<td>{$vo['id']}</td>
+		<td>{$vo['nick_name']}</td>
+		<td>{$vo['user_count_num']}</td>
+		<td>{$vo['c_pay_num']}</td>
+		<td>{$vo['sum_money']}</td>
+		<!--<td>100</td>-->
+		<td>
+			<a href="/madmin.php?m=StatisticsModule&a=statistics_subordinate">推广用户</a>
+			<if condition="$vo['user_iden_id'] gt 1">
+			<a href="/madmin.php?m=StatisticsModule&a=statistics_list&user_id={$vo['id']}">下级</a>
+			</if>
+		</td>
+	</tr>
+	</volist>
+	<tr>
+		<td colspan="8" class="bottomTd"> &nbsp;</td>
+	</tr>
+	</tbody>
+</table>
+
+
+
+
+
+
+
+	<div>
+
+		<!--<a href="">上一页</a>-->
+		<?php for($i=1;$i<=$number_pages;$i++){ ?>
+		<a href="/madmin.php?m=StatisticsModule&a=statistics_recharge&page={$i}&nick_name={$nick_name}&parent_id={$parent_id}&start_time={$start_time}&end_time={$end_time}"><?php echo $i; ?></a>
+		<?php } ?>
+
+		<!--<a href="">下一页</a>-->
+
+	</div>
+
+
+
+<div class="page">{$page}</div>
+<!--<div align="center"><b style="font-size:16px;">充值总人数：{:number_format($count)} &nbsp;&nbsp;&nbsp;&nbsp; 充值总金额：￥{:number_format($user_refund,2)}</b></div>-->
+</div>
+<include file="Public:footer" />

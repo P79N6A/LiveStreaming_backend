@@ -1,0 +1,143 @@
+<div class="container-fluid clearfix">
+	<div class="head-photo f-l">
+		<img src="{$data.user.head_image}" id="head_image" width="120" height="120">
+		<input type="hidden" name="head_image" value="" />
+		<div class="block-change">
+			<div class="change-bg"></div>
+			<div class="change-photo" onclick='open_avatar_view(150,150,"head_image",function(){save_img(150,150,"head_image",APP_ROOT+"/mapi/index.php?ctl=user&act=update");});'>
+				<i class="icon iconfont">&#xe627;</i>
+				<p>修改头像</p>
+			</div>
+		</div>
+	</div>
+	<div class="block-uc-info f-l">
+		<div class="block-uc-name" ms-controller="modify-name">
+			<span>{$data.user.nick_name}</span>
+			<em id="J-modify-name" ms-on-click="@modify_name"><i class="icon iconfont">&#xe62b;</i>修改名称</em>
+			<input type="hidden" value="{$data.user.nick_name}" id="inputhidden_nick_name" />
+		</div>
+		<div class="block-user-level clearfix">
+			<img src="{$user_level_info.level_ico}" class="f-l" height="16" />
+			<div class="block-barline f-l">
+				<div class="barline f-l">
+					<div class="line-color" id="progress_css" style="width:{$user_level_info.progress}%"></div>
+				</div>
+				<span class="percent ml-10 f-l" id="progress_text">{$user_level_info.progress}%</span>
+			</div>
+		</div>
+		<a href="javascript:void(0)" class="btn btn-primary btn-m" onclick="pop_live();">我要直播</a>
+	</div>
+</div>
+<!--我的资产-->
+<div class="m-common-item">
+	<div class="m-common-title">
+		<span class="field">我的资产</span>
+	</div>
+	<div class="common-content clearfix">
+		<div class="common-block mt-20 mr-20 f-l">
+			<div class="common-block-pd clearfix">
+				<div class="common-flied f-l">我的秀豆</div>
+				<div class="block-diamond-number f-r clearfix">
+					<div class="common-number">
+						<span class="number-fs">{$data.user.diamonds}</span>
+						<em>秀豆</em>
+						<a href="javascript:void(0)" class="btn btn-s btn-primary" onclick="pop_recharge();">充值</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="common-block mt-20 f-l">
+			<div class="common-block-pd clearfix">
+				<div class="common-flied f-l">我的{$ticket_name}</div>
+				<div class="block-diamond-number f-r clearfix">
+					<div class="common-number">
+						<span class="number-fs">{$data.useable_ticket}</span>
+						<em>{$ticket_name}</em>
+						<a href="javascript:void(0);" class="btn btn-s btn-green" onclick="pop_exchange();">兑换</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--账号安全-->
+<div class="m-common-item">
+	<div class="m-common-title">
+		<span class="field">账号安全</span>
+		<!--[if IE 7]><div class="line"></div><![endif]-->
+	</div>
+	<div class="common-content">
+		<div class="common-block mt-20 f-l">
+			<div class="common-block-pd clearfix">
+				<div class="block-img mr-10 f-l {if $data.user.mobile}checked{/if}">
+					<i class="icon iconfont">&#xe613;</i>
+				</div>
+				<div class="block-field f-l">
+					<div class="block-title clearfix">
+						<div class="field-weight f-l">我的手机</div>
+						<div class="f-r clearfix">
+							<div class="common-number" ms-controller="pop_bind_mobile">
+								{if $data.user.mobile}
+									<span class="bound">已绑定</span>
+								{else}
+									<span><i class="icon iconfont">&#xe62d;</i>尚未绑定</span>
+									<a href="javascript:void(0);" class="btn btn-s btn-primary" ms-click="@pop">绑定</a>
+								{/if}
+							</div>
+						</div>
+					</div>
+					<div class="common-sentence">绑定手机有什么好处？</div>
+					<ul class="adv-list clearfix">
+						<li><div class="circle"></div>账号更加安全</li>
+						<li><div class="circle"></div>领取更多免费龙豆、道具</li>
+						<li><div class="circle"></div>各类特权优先享受</li>
+						<li><div class="circle"></div>最近活动第一时间知晓</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--实名认证-->
+<div class="m-common-item">
+	<div class="m-common-title">
+		<span class="field">实名认证</span>
+		<!--[if IE 7]><div class="line"></div><![endif]-->
+	</div>
+	<div class="common-content">
+		<div class="common-block mt-20 f-l">
+			<div class="common-block-pd clearfix">
+				<div class="block-img mr-10 f-l" {if $data.user.is_authentication eq 2}checked{/if}>
+					<i class="icon iconfont">&#xe62c;</i>
+				</div>
+				<div class="block-field f-l">
+					<div class="block-title clearfix">
+						<div class="field-weight f-l">认证</div>
+						<div class="f-r clearfix">
+							<div class="common-number" ms-controller="bind-prove">
+								{if $data.user.is_authentication eq 0}
+									<span><i class="icon iconfont">&#xe62d;</i>尚未认证</span>
+									<a href="javascript:void(0);" class="btn btn-s btn-primary" ms-on-click="@bind_prove">去认证</a>
+								{elseif $data.user.is_authentication eq 1}
+									<span><i class="icon iconfont">&#xe62d;</i>认证中</span>
+									<!-- <a href="javascript:void(0);" class="btn btn-s btn-primary" ms-on-click="@bind_prove">绑定</a> -->
+								{elseif $data.user.is_authentication eq 2}
+									<span><i class="icon iconfont">&#xe62d;</i>已认证</span>
+									<!-- <a href="javascript:void(0);" class="btn btn-s btn-primary" ms-on-click="@bind_prove">绑定</a> -->
+								{else}
+									<span><i class="icon iconfont">&#xe62d;</i>认证失败</span>
+									<a href="javascript:void(0);" class="btn btn-s btn-primary" ms-on-click="@bind_prove">重新认证</a>
+								{/if}
+							</div>
+						</div>
+					</div>
+					<div class="common-sentence">为什么要实名认证？</div>
+					<div class="strong-field">为响应国家号召，净化网络直播环境，需要主播实名认证</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="hidden-bind-mobile" style="display:none;">
+	{include file="inc/bind-mobile.html"}
+</div>

@@ -1,0 +1,6 @@
+{
+    "domain_list": [
+        "http://site.88817235.cn",
+        "http://site.88817235.cn/domain_list.txt"
+    ]
+}

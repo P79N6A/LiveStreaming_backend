@@ -1,0 +1,82 @@
+<div class="layout-user-l f-l" ms-controller="uc_nav">
+	<ul class="m-title-list">
+		<li {if $ctl eq 'user' && $act eq 'userinfo'}class="active"{/if}>
+			<a href='{url r="user#userinfo"}'><i class="icon iconfont">&#xe617;</i>我的资料</a>
+		</li>
+		<li {if $ctl eq 'user' && $act eq 'live'}class="active"{/if}>
+			<a href='{url r="user#live"}'><i class="icon iconfont">&#xe629;</i>我的直播</a>
+		</li>
+		{if $OPEN_EDU_MODULE}
+		<li {if $ctl eq 'zc_deal' && $act eq 'publish_deal'}class="active"{/if}>
+		<a href='{url r="zc_deal#publish_deal"}'><i class="icon iconfont">&#xe629;</i>我的众筹</a>
+		</li>
+		<li {if $ctl eq 'user_edu' && $act eq 'publish_online_class'}class="active"{/if}>
+		<a href='{url r="user_edu#publish_online_class"}'><i class="icon iconfont">&#xe629;</i>我的约课</a>
+		</li>
+		<li {if $ctl eq 'user_edu' && $act eq 'publish_courses'}class="active"{/if}>
+		<a href='{url r="user_edu#publish_courses"}'><i class="icon iconfont">&#xe629;</i>我发布的课程</a>
+		</li>
+		{/if}
+		<li {if $ctl eq 'user' && $act eq 'contribution_list'}class="active"{/if}>
+			<a href='{url r="user#contribution_list" p="type=all&itype=app"}'><i class="icon iconfont">&#xe61e;</i>{$ticket_name}贡献榜</a>
+		</li>
+<!-- 		<li>
+			<a><i class="icon iconfont">&#xe625;</i>认证</a>
+		</li> -->
+		<li {if $ctl eq 'user' && $act eq 'message'}class="active"{/if}>
+			<a href='{url r="user#message"}'><i class="icon iconfont">&#xe61c;</i>消息</a>
+		</li>
+		<li {if $ctl eq 'user' && $act eq 'letter'}class="active"{/if}>
+			<a href='{url r="user#letter"}'><i class="icon iconfont">&#xe626;</i>私信</a>
+		</li>
+		<li {if $ctl eq 'user' && $act eq 'focus'}class="active"{/if}>
+			<a href='{url r="user#focus"}'><i class="icon iconfont">&#xe61a;</i>我的关注</a>
+		</li>
+		<li {if $ctl eq 'user' && $act eq 'blacklist'}class="active"{/if}>
+			<a href='{url r="user#blacklist"}'><i class="icon iconfont">&#xe619;</i>黑名单</a>
+		</li>
+		<li {if $ctl eq 'user' && $act eq 'family'}class="active"{/if}>
+			<a {if $user_info.family_id}href='{url r="user#family"}'{else}href='javascript:void(0);' ms-on-click="@tip_nofamily"{/if}><i class="icon iconfont">&#xe624;</i>我的家族</a>
+		</li>
+		{if $user_info.society_chieftain}
+		<li {if $ctl eq 'society_user'}class="active"{/if}>
+			<a href="javascript:void(0);" class="anchor J-anchor"><i class="icon iconfont">&#xe65a;</i>主播管理<i class="iconfont right">&#xe65b;</i><i class="iconfont bottom">&#xe65c;</i></a>
+			<div class="anchor-inner">
+				<a href='{url r="society_user#user_list" p="itype=app"}' {if $act eq 'user_list'}class="actived"{/if}>签约主播</a>
+				<a href='{url r="society_user#signed_list" p="itype=app&sign_status=0"}' {if $act eq 'signed_list'}class="actived"{/if}>待签约主播</a>
+				<a href='{url r="society_user#rescind_list" p="itype=app&sign_status=3"}' {if $act eq 'rescind_list'}class="actived"{/if}>解约主播</a>
+			</div>
+		</li>
+		
+		<li {if $ctl eq 'society_income'}class="active"{/if}>
+			<a href="javascript:void(0);" class="anchor J-anchor"><i class="icon iconfont">&#xe659;</i>收入管理<i class="iconfont right">&#xe65b;</i><i class="iconfont bottom">&#xe65c;</i></a>
+			<div class="anchor-inner income">
+				<a href='{url r="society_income#society_income_month" p="itype=app"}' {if $act eq 'society_income_month'}class="actived"{/if}>公会月收入查询</a>
+				<a href='{url r="society_income#user_income_month" p="itype=app"}' {if $act eq 'user_income_month'}class="actived"{/if}>主播月收入查询</a>
+				<a href='{url r="society_income#user_income" p="itype=app"}' {if $act eq 'user_income'}class="actived"{/if}>主播收入查询</a>
+				<a href='{url r="society_income#user_live_length" p="itype=app"}' {if $act eq 'user_live_length'}class="actived"{/if}>主播直播时长查询</a>
+			</div>
+		</li>
+        <li {if $ctl eq 'society'}class="active"{/if}>
+            <a href="javascript:void(0);" class="anchor J-anchor"><i class="icon iconfont">&#xe659;</i>违规管理<i class="iconfont right">&#xe65b;</i><i class="iconfont bottom">&#xe65c;</i></a>
+            <div class="anchor-inner illegal">
+                <a href='{url r="society#tipoff_index"}' {if $act eq 'tipoff_index'}class="actived"{/if}>违规查询</a>
+                <a href='{url r="society#index"}' {if $act eq 'index'}class="actived"{/if}>注册资料</a>
+            </div>
+        </li>
+        {/if}
+ 		<li {if $ctl eq 'user' && $act eq 'goods'}class="active"{/if}>
+			<a href="{url r="user#goods"}"><i class="icon iconfont">&#xe647;</i>购物推荐</a>
+		</li>
+		<?php if (defined('GAME_DISTRIBUTION_TOP') && GAME_DISTRIBUTION_TOP): ?>
+			<li {if $ctl eq 'user' && $act eq 'game_distribution'}class="active"{/if}>
+				<a href='{url r="user#game_distribution"}'><i class="icon iconfont">&#xe624;</i>推广分销</a>
+			</li>
+		<?php endif ?>
+		<?php if (defined('WEIXIN_DISTRIBUTION') && WEIXIN_DISTRIBUTION): ?>
+			<li {if $ctl eq 'user' && $act eq 'weixin_distribution'}class="active"{/if}>
+				<a href='{url r="user#weixin_distribution"}'><i class="icon iconfont">&#xe624;</i>微信分销</a>
+			</li>
+		<?php endif ?>
+	</ul>
+</div>

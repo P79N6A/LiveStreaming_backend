@@ -1,0 +1,64 @@
+<div class="user-r-title clearfix">
+    <div class="common-title f-l">
+        <span class="field">待签约主播</span>
+    </div>
+    <!--         <div class="block-font f-r">
+<span class="operation mr-20">标记为已读</span>
+<span class="operation">删除消息</span>
+</div> -->
+</div>
+<div class="user-r-content clearfix j-ajax-page">
+    <div class="search clearfix">
+        <input type="number" name="" class="anchor-id" placeholder="请输入主播ID">
+        <a href="javascript:void(0)" class="btn btn-primary btn-circle J-signed-search">搜索</a>
+    </div>
+    <div class="slideBox">
+        <div class="hd">
+            <ul>
+                <li {if $data.sign_status==0 }class="on" {/if}><a href='{url r="society_user#signed_list" p="sign_status=0"}'>待签约申请</a></li>
+                <li {if $data.sign_status==2 }class="on" {/if}><a href='{url r="society_user#signed_list" p="sign_status=2"}'>拒绝申请</a></li>
+            </ul>
+        </div>
+        <div class="ajax-block">
+            <table>
+                <thead>
+                    <tr class="form-head">
+                        <th>主播ID</th>
+                        <th>主播昵称</th>
+                        <th>主播公会名称</th>
+                        <th>申请时间</th>
+                        <th>{if $data.sign_status == 0}操作{elseif $data.sign_status == 2}拒绝理由{/if}</th>
+                    </tr>
+                </thead>
+                {if $data.list}
+                <tbody>
+                    {foreach from=$data.list item=item key=key name=list}
+                    <tr class="form-body">
+                        <td class="content-font">{$item.user_id}</td>
+                        <td class="content-font">{$item.nick_name}</td>
+                        <td class="content-font">{$item.name}</td>
+                        <td class="content-font">{$item.create_time}</td>
+                        <td class="content-font">
+                            <div class="font-link">{if $data.sign_status == 0}<span class="J-agree" data-id="{$item.user_id}" style="margin-right:15px">通过</span><span class="J-refuse" data-id="{$item.user_id}">拒绝</span>{elseif $data.sign_status == 2}加入申请被拒绝{/if}</div>
+                        </td>
+                    </tr>
+                    {/foreach}
+                </tbody>
+                {else}
+                <tbody>
+                    <tr>
+                        <td colspan="8">
+                            <p class="null-data">暂无数据</p>
+                        </td>
+                    </tr>
+                </tbody>
+                {/if}
+            </table>
+            <div class="m-page clearfix">
+                <div class="m-page-con">
+                    {$data.page}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

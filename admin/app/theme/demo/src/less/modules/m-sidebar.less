@@ -1,0 +1,55 @@
+@import (once) "../public/variable.less";
+.m-sidebar{
+    position: fixed;
+    right: 50px;
+    bottom: 20%;
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    border-radius: 50%;
+    background: @bgcolor-theme;
+    text-align: center;
+    display: block;
+    border: 2px solid @bgcolor-theme;
+    cursor: pointer;
+    overflow: hidden;
+    &:hover .top-block{
+        -webkit-transform: translate(-42px);
+        transform: translate(-42px);
+    }
+    .top-block{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        -webkit-transition: all .3s cubic-bezier(.22,.58,.12,.98);
+        transition: all .3s cubic-bezier(.22,.58,.12,.98);
+        white-space: nowrap;
+        .go-top{
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 38px;
+            .icon-top{
+                color: #fff;
+            }
+        }
+        .go-top-white{
+            display: inline-block;
+            width: 100%;
+            color: @bgcolor-theme;
+            height: 100%;
+            background: #fff;
+            border-radius: 50%;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            .icon-top{
+                color: @bgcolor-theme;
+            }
+        }
+    }
+}

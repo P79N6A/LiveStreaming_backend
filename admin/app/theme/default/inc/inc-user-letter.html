@@ -1,0 +1,38 @@
+<style type="text/css">
+	.block-list{
+		display:none;
+	}
+	.ms-controller{
+		visibility: hidden
+	}
+</style>
+<div class="m-common-item m-common-list ms-controller" ms-controller="letter">
+	<div class="m-common-title clearfix">
+		<div class="common-title f-l">
+			<span class="field">我的好友（<em id="friend_num">0</em>）</span>
+		</div>
+		<input type="text" name="" id="" value="" ms-duplex='@search_val' ms-change='@search' placeholder="请输入好友名称搜索" class="f-r"/>
+	</div>
+	<div class="common-content clearfix">
+		<div class="common-block mt-20 mr-20">
+			<ul class="common-block-list clearfix">
+				<li class="block-list f-l" ms-for="($index,item) in @items | filterBy(@search) | limitBy(@page_size,@begin)" ms-visible="@items.length>0">
+					<a href="javascript:void(0);" class="user-img" ms-on-click="@show_letter(item)">
+                        <img ms-attr="{alt:item.nick_name,src:item.head_image}" class="block-list-img">
+                    </a>
+					<a href="javascript:void(0);" class="btn-icon icon-letter" ms-visible="item.unread" ms-text="item.unread"></a>
+					<p ms-attr="{title:item.nick_name}" class="member-name" ms-text="item.nick_name"></p>
+				</li>
+			</ul>
+			<p class="null-data" ms-visible="@items.length==0">暂无私信</p>
+		</div>
+		<div class="m-page clearfix">
+			<div class="m-page-con" ms-visible="@pages.length > 1 && !@search_val">
+				<a href="javascript:void(0);" ms-visible="@page > 1"  ms-on-click="@prev()">上一页</a>
+				<a href="javascript:void(0);" ms-class="[@page == p && 'page-on']" ms-for="p in @pages"  ms-on-click="@current(p)" ms-text="p">1</a>
+				<a href="javascript:void(0);" ms-visible="@page < @pages.length"  ms-on-click="@next()">下一页</a>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+</div>

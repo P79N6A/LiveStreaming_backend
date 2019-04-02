@@ -1,0 +1,72 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<include file="Public:new" />
+<load href='__TMPL__Common/js/jquery.bgiframe.js' />
+<load href='__TMPL__Common/js/jquery.weebox.js' />
+<load href='__TMPL__Common/js/user.js' />
+<load href='__TMPL__Common/js/deal.js' />
+<load href='__TMPL__Common/style/weebox.css' />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<php>
+	function get_is_pay($is_pay)
+    {
+   		if($is_pay == 1)
+        {
+        	return "支付";
+        }
+        else
+        {
+        	return "未支付";
+        }
+    }
+</php>
+<div class="main">
+    <div class="main_title_list"><div class="list-line-ico"></div>会员充值报表</div>
+    <div class="search_row">
+        <form name="search" action="__APP__" method="get" class="clearfix">
+            <div>时间:
+            	<input type="text" class="textbox" name="begin_time" id="begin_time" onfocus="this.blur(); return showCalendar('begin_time', '%Y-%m-%d', false, false, 'btn_begin_time');" value="{$begin_time}"/>
+                <input type="button" class="button" id="btn_begin_time" value="{%SELECT_TIME}" onclick="return showCalendar('begin_time', '%Y-%m-%d', false, false, 'btn_begin_time');" />
+                <span>-</span> 
+                <input type="text" class="textbox" name="end_time" id="end_time" onfocus="this.blur(); return showCalendar('end_time', '%Y-%m-%d', false, false, 'btn_end_time');" value="{$end_time}" value="{$end_time}"/>
+                <input type="button" class="button" id="btn_end_time" value="{%SELECT_TIME}" onclick="return showCalendar('end_time', '%Y-%m-%d', false, false, 'btn_end_time');" />
+            </div>
+            <div>会员ID:<input type="text" class="textbox" name="user_id" value="{:trim($_REQUEST['user_id'])}"></div>
+            <div>机构编号：<input type="text" class="textbox" name="login_name" value="{:trim($_REQUEST['login_name'])}"></div>
+            <div>
+            	充值状态<select name="is_paid" style="width: 100px">
+				<option value="0" >全部</option>
+					<option value="1" <if condition="$_REQUEST['is_paid'] eq 1">selected="selected"</if>>未充值</option>
+                    <option value="2" <if condition="$_REQUEST['is_paid'] eq 2">selected="selected"</if>>充值</option>
+			</select>
+            </div>
+            <input type="hidden" value="BmRechargeList" name="m" />
+            <input type="hidden" value="index" name="a" />
+            <input type="submit" class="button" value="{%SEARCH}" />
+        </form>
+    </div>
+    汇总：<span style="padding-right:10px;">充值金额 {$total_money} </span><span style="padding-right:10px;">充值秀豆 {$total_diamonds} </span>
+    <br/>
+    <br/>
+<html:list
+    id="dataTable"
+    style="dataTable"
+    name="user"
+    datasource="list"
+    show="create_time|to_date:充值时间
+    ,user_id:会员ID
+    ,payment_name:充值渠道
+    ,r_name:项目名称
+    ,money:充值金额
+    ,diamonds:充值秀豆
+    ,is_paid|get_is_pay:充值状态
+    ,login_name:所属鱼商编号
+    ,bm_promoter_id:所属代理商编号
+    ,bm_qrcode_id:所属业务员ID
+    "/>
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

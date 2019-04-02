@@ -1,0 +1,54 @@
+{// 引入标签库 }
+<tagLib name="html"/>
+<include file="Public:header"/>
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn"></script>
+<load href='__TMPL__Common/js/calendar/calendar.css'/>
+<load href='__TMPL__Common/js/calendar/calendar.js'/>
+<div class="main">
+    <div class="main_title_list">
+        <div class="list-line-ico"></div>
+        采集列表
+    </div>
+
+
+    <table class="dataTable">
+        <tbody>
+        <tr>
+            <td>ID</td>
+            <td>LOGO</td>
+            <td>名称</td>
+            <td>操作</td>
+        </tr>
+        <?php foreach($data as $k=>$v){ ?>
+        <tr>
+            <td><?php echo $v['room_id'] ?></td>
+            <td><img src="<?php echo $v['img'] ?>" width="40" height="40"
+                     onerror="this.src='/public/images/live_img12.jpg'"/></td>
+            <td><?php echo $v['name'] ?></td>
+            <td>
+                <a class="button" href="javascript:showChangeRoomType('{$v['url']}','{$v['img']}','{$v['name']}')">加入直播</a>
+            </td>
+        </tr>
+
+
+        <?php }?>
+        </tbody>
+    </table>
+</div>
+<script type="text/javascript">
+    function showChangeRoomType(playurl, logourl, nickname) {
+        var url = ROOT + "?" + VAR_MODULE + "=VideoCollect1&" + VAR_ACTION + "=change_roomtype&playurl=" + playurl + "&logourl=" + logourl + "&nickname=" + nickname;
+
+        $.weeboxs.open(url, {
+            contentType: 'ajax',
+            showButton: false,
+            title: '选择房间类型',
+            width: 600,
+            height: 260
+        });
+
+    }
+</script>
+
+
+<include file="Public:footer"/>

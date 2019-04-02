@@ -1,0 +1,182 @@
+@import (once) "public/variable.less";
+.dialog-content{
+	& .m-content-off{
+		margin-top: -20px;
+		& textarea {
+		    box-shadow: 0 1px 1px rgba(0,0,0,0.1) inset,0 0 1px rgba(0,0,0,0.05) inset,0 1px 0 rgba(255,255,255,0.65);
+		    font: inherit;
+		    height: 20px;
+		    letter-spacing: inherit;
+		    margin: 0 0 30px;
+		    transition: all .2s ease-in-out 0s;
+		    vertical-align: top;
+		    padding: 2px 4px;
+		    background: #FFF;
+		    outline: 0;
+		    border: 1px solid #d8d8d8;
+		    font-size: @fs-small;
+		    color: @fcolor-main;
+		    line-height: 24px;
+		}
+		& #v_code {
+		    display: inline-block;
+		    float: left;
+		    padding-left: 15px;
+		    width: 105px;
+		    height: 37px;
+		    text-align: center;
+			line-height: 34px;
+		}
+		& .title {
+		    padding-left: 48px;
+		    height: 76px;
+		    border-bottom: 1px solid #ebebeb;
+		    line-height: 76px;
+		    & h3 {
+			    display: inline-block;
+			    float: left;
+			    font-size: 28px;
+			    color: #757575;
+			    line-height: 76px;
+			}
+			& span {
+			    display: inline-block;
+			    padding-left: 10px;
+			    font-size: @fs-small;
+			    color: #888;
+			}
+		}
+		& i {
+		    color: #f6000a;
+		}
+		& li {
+		    display: block;
+		    _height: 70px;
+		    padding-top: 17px;
+		    border-bottom: 1px solid #ebebeb;
+		    overflow: hidden;
+		    clear: both;
+		    & .tit {
+			    padding: 0 15px 0 48px;
+			    display: block;
+			    float: left;
+			    width: 78px;
+			    text-align: right;
+			    line-height: 34px;
+			    & span {
+				    font-size: @fs-main;
+				    color: #757575;
+				}
+			}
+			& .tit_mar {
+			    padding: 0 15px 0 0;
+			    margin-left: -26px;
+			}
+			& .cont{
+				& input {
+				    height: 30px;
+				    border: 1px solid #dbe2e6;
+				    background: #FFF;
+				    line-height: 32px;
+				    font-size: 14px;
+				    color: #5b5a5a;
+				    padding: 0 12px;
+				    outline: 0;
+				    box-shadow: none;
+				}
+				& .txt1 {
+				    width: 318px;
+				    margin-right: 14px;
+				}
+				& .txt2 {
+				    width: 152px;
+				}
+				& .txt3 {
+				    width: 130px;
+				    margin-bottom: 17px;
+				    float: left;
+				    display: inline-block;
+				}
+				& .txt4 {
+				    width: 180px;
+				    margin-bottom: 17px;
+				}
+				.cont .txt5 {
+				    width: 128px;
+				    margin-bottom: 17px;
+				}
+				& .err {
+				    font-size: 12px;
+				    color: #969696;
+				    line-height: 32px;
+				}
+				& b {
+				    display: inline-block;
+				    float: left;
+				    padding-left: 10px;
+				    font-weight: normal;
+				    line-height: 32px;
+				    color: #b2b2b2;
+				    font-size: 12px;
+				}
+				& textarea {
+				    padding: 12px;
+				    width: 510px;
+				    height: 76px;
+				    border: 1px solid #dbe2e6;
+				    box-shadow: none;
+				    background-color: #fff;
+				}
+				& .card-type{
+					margin: 6px 0 17px;
+				}
+				& img[src=""]{
+	                opacity: 0;
+	            }
+			}
+			& .mar {
+			    padding-bottom: 18px;
+			}
+		}
+		& .u-upload {
+		    display: inline-block;
+		    position: relative;
+		    overflow: hidden;
+		    & button {
+			    height: 32px;
+			    padding: 0 10px;
+			    border: 0;
+			    overflow: visible;
+			    font-size: 14px;
+			    color: #FFF;
+			    background: #9f9f9f;
+			}
+			& input {
+			    position: absolute;
+			    top: 0;
+			    right: -1px;
+			    font-size: 100px;
+			    cursor: pointer;
+			    opacity: 0;
+			    filter: alpha(opacity=0);
+			}
+		}
+		& .inf_btn {
+		    padding-left: 137px;
+		    margin-top: 20px;
+		    & a {
+			    display: inline-block;
+			    margin-left: 20px;
+			    color: #999;
+			    font-size: 14px;
+			    line-height: 32px;
+			}
+			& .sub{
+				padding: 0 50px;
+			    line-height: 40px;
+			    border: 0;
+			    font-size: 18px;
+			}
+		}
+	}
+}

@@ -1,0 +1,13 @@
+<ul class="m-title-list">
+	<li {if $data.cate_id eq 'news'}class="active"{/if} data-src="{$APP_ROOT}/index.php?ctl=article&act=news">
+		<a href="{$APP_ROOT}/index.php?ctl=article&act=news">新闻公告</a>
+	</li>
+	<li {if $data.cate_id eq 'faq'}class="active"{/if} data-src="{$APP_ROOT}/index.php?ctl=article&act=faq">
+		<a href="{$APP_ROOT}/index.php?ctl=article&act=faq">帮助中心</a>
+	</li>
+	{foreach from=$data.article_cates item=item}
+	<li {if $data.cate_id eq $item.id}class="active"{/if}>
+		<a href="{$item.url}">{$item.title}</a>
+	</li>
+	{/foreach}
+</ul>

@@ -1,0 +1,170 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<load href='__TMPL__Common/js/conf.js' />
+<script type="text/javascript" src="__ROOT__/public/region.js"></script>
+<load href='__TMPL__Common/js/user_edit.js' />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<div class="main">
+<div class="main_title">{%EDIT} 
+	<if condition="$vo['type'] eq 'imagetext' ">
+		<a href="{:u("WeiboList/imagetext")}" class="back_list">
+			{%BACK_LIST}
+		</a>
+	<elseif condition="$vo['type'] eq 'video'" />
+		<a href="{:u("WeiboList/video")}" class="back_list">
+			{%BACK_LIST}
+		</a>
+	<elseif condition="$vo['type'] eq 'photo'" />
+		<a href="{:u("WeiboList/photo")}" class="back_list">
+			{%BACK_LIST}
+		</a>
+	<elseif condition="$vo['type'] eq 'goods'" />
+		<a href="{:u("WeiboList/goods")}" class="back_list">
+			{%BACK_LIST}
+		</a>
+	<elseif condition="$vo['type'] eq 'red_photo'" />
+		<a href="{:u("WeiboList/red_photo")}" class="back_list">
+			{%BACK_LIST}
+		</a>
+	<else />	
+		<a href="{:u("WeiboList/index")}" class="back_list">
+			{%BACK_LIST}
+		</a>
+	</if>
+</div>
+<div class="blank5"></div>
+<form name="edit" action="__APP__" method="post" enctype="multipart/form-data" onsubmit="return submit_check();">
+<table class="form conf_tab" cellpadding=0 cellspacing=0 >
+	<tr>
+		<td colspan=2 class="topTd"></td>
+	</tr>
+    <tr>
+        <td class="item_title">{%ID}:</td>
+        <td class="item_input">{$vo.id}</td>
+    </tr>
+	<tr>
+		<td class="item_title">	发布内容:</td>
+		<td class="item_input">{$vo.content}</td>
+	</tr>
+	<if condition="$vo['type'] eq 'imagetext' ">
+		
+		<tr>
+			<td class="item_title">图片:</td>
+			<td class="item_input">
+				<volist name="data" id="data_item">
+					<a href="{$data_item.url}" target="_blank">
+						<img src="{$data_item.url}" height="100" width="100" />
+					</a>
+					
+				</volist>
+			</td>
+		</tr>
+	<elseif condition="$vo['type'] eq 'video'" />
+		<tr>
+			<td class="item_title">视频:</td>
+			<td class="item_input">
+				<video id="video" controls="controls" src="{$vo.data}" class="img-thumbnail" style="max-height: 300px;">
+			</td>
+		</tr>
+	<elseif condition="$vo['type'] eq 'photo'" />
+		<tr>
+			<td class="item_title">图片:</td>
+			<td class="item_input">
+				<volist name="data" id="data_item">
+						<div style=" width:100px;float:left; margin:5px 5px;">
+							<a href="{$data_item.url}" target="_blank">
+								<img src="{$data_item.url}" height="100" width="100" />
+							</a>
+							<p style="text-align:center;">
+								<if condition="$data_item.is_model eq 1 ">
+									收费
+								<else />
+									免费
+								</if>
+							</p>
+						</div>
+				</volist>
+			</td>
+		</tr>
+		<tr>
+			<td class="item_title">价格:</td>
+			<td class="item_input">
+				{$vo.price}元
+			</td>
+		</tr>
+	<elseif condition="$vo['type'] eq 'goods'" />
+		<tr>
+			<td class="item_title">图片:</td>
+			<td class="item_input">
+				<volist name="data" id="data_item">
+					<a href="{$data_item.url}" target="_blank">
+						<img src="{$data_item.url}" height="100" width="100" />
+					</a>
+				</volist>
+			</td>
+		</tr>
+		<tr>
+			<td class="item_title">价格:</td>
+			<td class="item_input">
+				{$vo.price}元
+			</td>
+		</tr>
+		<tr style=" display:none;">
+			<td class="item_title">买家商品获取方式</td>
+			<td class="item_input">
+				
+			</td>
+		</tr>
+	<elseif condition="$vo['type'] eq 'red_photo'" />
+		<tr>
+			<td class="item_title">图片:</td>
+			<td class="item_input">
+				<volist name="data" id="data_item">
+					<a href="{$data_item.url}" target="_blank">
+						<img src="{$data_item.url}" height="100" width="100" />
+					</a>
+				</volist>
+			</td>
+		</tr>
+	<else />	
+	
+	</if>
+	<tr>
+		<td class="item_title">是否通过:</td>
+		<td class="item_input">
+			<label>通过<input type="radio" name="status" value="1" <if condition="$vo['status'] eq 1">checked="checked"</if>  /></label>
+			<label>不通过<input type="radio" name="status" value="0" <if condition="$vo['status'] eq 0">checked="checked"</if> /></label>
+		</td>
+	</tr>
+	
+	<tr>
+		<td colspan=2 class="bottomTd"></td>
+	</tr>
+</table>
+<div class="blank5"></div>
+	<table class="form" cellpadding=0 cellspacing=0>
+		<tr>
+			<td colspan=2 class="topTd"></td>
+		</tr>
+		<tr>
+			<td class="item_title"></td>
+			<td class="item_input">
+			<!--隐藏元素-->
+			<input type="hidden" name="{:conf("VAR_MODULE")}" value="WeiboList" />
+			<input type="hidden" name="{:conf("VAR_ACTION")}" value="update" />
+			<input type="hidden" name="id" value="{$vo.id}" />
+			<!--隐藏元素-->
+			<input type="submit" class="button" value="{%EDIT}" />
+			<input type="reset" class="button" value="{%RESET}" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 class="bottomTd"></td>
+		</tr>
+	</table>
+</form>
+</div>
+<include file="Public:footer" />

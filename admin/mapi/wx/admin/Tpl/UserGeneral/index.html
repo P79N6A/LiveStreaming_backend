@@ -1,0 +1,111 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<include file="Public:new" />
+<load href='__TMPL__Common/js/jquery.bgiframe.js' />
+<load href='__TMPL__Common/js/jquery.weebox.js' />
+<load href='__TMPL__Common/js/user.js' />
+<load href='__TMPL__Common/js/deal.js' />
+<load href='__TMPL__Common/style/weebox.css' />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<div class="main">
+<div class="main_title_list"><div class="list-line-ico"></div>会员列表</div>
+<php>
+	function get_level($level){
+		$user_level = $GLOBALS['db']->getOne("select `name` from ".DB_PREFIX."user_level where level = '".intval($level)."'");
+		return $user_level;
+	}
+	function head_image($head_image){
+		return "<img src='".$head_image."' style='height:35px;width:35px;'/>";
+	}
+    function get_online($is_online){
+        if($is_online==1){
+            return '是';
+        }else{
+            return '否';
+        }
+    }
+    function get_member_type($member_type){
+        if($member_type == 1){
+            return '注册会员';
+        }elseif($member_type == 2){
+            return '普通会员';
+        }else{
+            return '';
+        }
+    }
+
+    function get_is_star_share($is_star_share){
+        if($is_star_share == 1){
+            return '是';
+        }else{
+            return '否';
+        }
+    }
+</php>
+<!-- <div class="button_row">
+	<input type="button" class="button" value="{%ADD}" onclick="add();" />
+</div>
+ -->
+<div class="search_row">
+	<form name="search" action="__APP__" method="get">
+        会员ID：<input type="text" class="textbox" name="id" value="{:trim($_REQUEST['id'])}" style="width:100px;" />
+        会员名称：<input type="text" class="textbox" name="nick_name" value="{:trim($_REQUEST['nick_name'])}" style="width:100px;" />
+        是否认证：<select name="is_authentication">
+            <option value="-1" selected="selected">所有</option>
+            <option value="0,1,3" <if condition="$_REQUEST['is_authentication'] eq 0 "> selected="selected"</if>>未认证</option>
+            <option value="2"<if condition="$_REQUEST['is_authentication'] eq 2"> selected="selected"</if>>已认证</option>
+        </select>
+        会员类型：<select name="member_type">
+            <option value="0" selected="selected">所有</option>
+            <option value="1" <if condition="$_REQUEST['member_type'] eq 1 "> selected="selected"</if>>注册会员</option>
+            <option value="2"<if condition="$_REQUEST['member_type'] eq 2"> selected="selected"</if>>普通会员</option>
+            <!-- <option value="3"<if condition="$_REQUEST['member_type'] eq 3"> selected="selected"</if>>VIP会员</option> -->
+        </select>
+        是否个人代理：<select name="is_agent">
+            <option value="" selected="selected">所有</option>
+            <option value="0" <if condition="$_REQUEST['is_agent'] eq 0 and $_REQUEST['is_agent'] neq ''"> selected="selected"</if>>否</option>
+            <option value="1"<if condition="$_REQUEST['is_agent'] eq 1"> selected="selected"</if>>是</option>
+        </select><br/><br/>
+        是否渠道：<select name="is_canal">
+            <option value="" selected="selected">所有</option>
+            <option value="0" <if condition="$_REQUEST['is_canal'] eq 0 and $_REQUEST['is_canal'] neq ''"> selected="selected"</if>>否</option>
+            <option value="1"<if condition="$_REQUEST['is_canal'] eq 1"> selected="selected"</if>>是</option>
+        </select>
+        是否群星分享：<select name="is_star_share">
+            <option value="" selected="selected">所有</option>
+            <option value="0" <if condition="$_REQUEST['is_star_share'] eq 0 and $_REQUEST['is_star_share'] neq ''"> selected="selected"</if>>否</option>
+            <option value="1"<if condition="$_REQUEST['is_star_share'] eq 1"> selected="selected"</if>>是</option>
+        </select>
+	    注册时间：<span><input type="text" class="textbox" name="create_time_1" id="create_time_1" value="{$_REQUEST['create_time_1']}" onfocus="this.blur(); return showCalendar('create_time_1', '%Y-%m-%d', false, false, 'btn_create_time_1');" /><input type="button" class="button" id="btn_create_time_1" value="{%SELECT_TIME}" onclick="return showCalendar('create_time_1', '%Y-%m-%d', false, false, 'btn_create_time_1');" /></span> - <span><input type="text" class="textbox" name="create_time_2" id="create_time_2" value="{$_REQUEST['create_time_2']}" onfocus="this.blur(); return showCalendar('create_time_2', '%Y-%m-%d', false, false, 'btn_create_time_2');" /><input type="button" class="button" id="btn_create_time_2" value="{%SELECT_TIME}" onclick="return showCalendar('create_time_2', '%Y-%m-%d', false, false, 'btn_create_time_2');" /></span><input type="hidden" value="UserGeneral" name="m" /><input type="hidden" value="index" name="a" /><input type="submit" class="button" value="{%SEARCH}" />
+	</form>
+</div>
+<html:list
+	id="dataTable"
+	style="dataTable"
+	name="user"
+	action="true"
+	datasource="list"
+	show="id:{%ID}
+			,nick_name:{%NICK_NAME}:edit
+			,head_image|head_image:{%USER_HEADIMAGE}
+			,money:余额
+			,u_score:{%USER_SCORE}
+			,is_star_share|get_is_star_share:群星分享
+			,member_type|get_member_type:会员类型
+			,create_time|to_date:{%CREATE_TIME}
+			,is_effect|get_is_effect=$user['id']:{%IS_EFFECT}"
+	actionlist="edit:{%EDIT}, account:{%USER_ACCOUNT},account_detail:{%USER_ACCOUNT_DETAIL}" />
+    <!-- del:{%DEL}, -->
+	<!--<table class="dataTable">
+		<tbody>
+			<td colspan="14">
+				<input type="button" class="button button-del" value="{%DEL}" onclick="del();" />
+			</td>
+		</tbody>
+	</table>-->
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

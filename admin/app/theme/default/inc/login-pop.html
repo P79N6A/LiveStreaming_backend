@@ -1,0 +1,75 @@
+<style type="text/css">
+	.errortip{
+		color:red;
+		font-size:12px;
+		padding-left:3px;
+	}
+	.errortip i{
+		margin: 0 3px;
+		font-size:13px;
+	}
+	.errortip i:before{
+		content: "\e62d";
+	}
+	input.errorinput{
+		border-color: red;
+	}
+	.m-login .block-login-content .left .send-code{
+		width: 111px;
+		padding: 0;
+	}
+	.m-login .block-login-content .left .send-code.disabled{
+		background-color: #ECECEC;
+		color: #999;
+	}
+</style>
+<div class="m-login">
+	<div class="block-login-content clearfix">
+		<div class="left f-l" ms-controller="login" id="login">
+			<form role="form" action="" id="j-form-loginmobile">
+				<div class="form-group form-vertical">
+					<label for="mobile" class="control-label">手机号登录<span class="errortip"></span></label>
+					<div class="control-content control-content-auto">
+						<input id="mobile" type="text" :class="[@is_errorinput && 'errorinput']" class="form-control mb-20" name="mobile" placeholder="请输入您的手机号码" ms-duplex="@mobile" ms-blur="@check($event)" />
+						<div class="verify clearfix">
+							<input id="yzm" type="text" class="form-control input-verify f-l" name="verify_coder" placeholder="请输入验证码" ms-duplex="@verify_coder" />
+							<a :class="[@is_disabled && 'disabled']" class="send-code f-l" id="j-send-code" href="javascript:void(0)" ms-on-click="@send_code">发送验证码</a>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="submit-group t-c">
+					<a href="javascript:void(0)" class="btn btn-primary" ms-on-click="@login">登录</a>
+				</div>
+			</form>
+		</div>
+		<div class="right f-l">
+			<div class="form-group form-vertical">
+				<label class="control-label">合作账号登录</label>
+				<div class="control-content control-content-auto">
+					<div onclick="weixin_login()" class="part-account green">
+						<i class="iconfont">&#xe621;</i>
+						微信账号登录
+					</div>
+					<a href="{$APP_ROOT}/index.php?ctl=login&act=qq_login">
+						<div class="part-account blue">
+							<i class="iconfont">&#xe620;</i>
+							QQ账号登录
+						</div>
+					</a>
+					<a href="{$APP_ROOT}/index.php?ctl=login&act=sina_login">
+						<div class="part-account pink">
+							<i class="iconfont">&#xe622;</i>
+							微博账号登录
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<?php
+   	$this->_var['login_pagejs'][] = $this->_var['TMPL_REAL']."/js/login-pop.js";
+   	$this->_var['login_cpagejs'][] = $this->_var['TMPL_REAL']."/js/login-pop.js";
+?>
+<script type="text/javascript" src="{function name="parse_script" v="$login_pagejs" c="login_cpagejs"}"></script>

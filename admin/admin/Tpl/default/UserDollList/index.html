@@ -1,0 +1,182 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<include file="Public:new" />
+<load href='__TMPL__Common/js/jquery.bgiframe.js' />
+<load href='__TMPL__Common/js/jquery.weebox.js' />
+<load href='__TMPL__Common/js/user.js' />
+<load href='__TMPL__Common/js/deal.js' />
+<load href='__TMPL__Common/style/weebox.css' />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<div class="main">
+<div class="main_title_list"><div class="list-line-ico"></div>待发货订单</div>
+<php>
+    //获取娃娃图片
+	function wawa_image($wawa_image){
+		 if($wawa_image==''){
+			return "<a style='height:35px;width:35px;'/>娃娃图片不存在</a>";
+		}else{
+            $wawa_image = get_spec_image($wawa_image);
+			return "<img src='".$wawa_image."' style='height:35px;width:35px;'/>";
+		}
+	}
+    //获取领取状态名称
+    function get_status_name($status){
+        switch($status)
+        {
+            case 0:
+                return "未领取";
+                break;
+            case 1:
+                return "领取中";
+                break;
+            case 2:
+                return "已领取";
+                break;
+            default:
+            return "未领取";
+            break;
+
+        }
+    }
+    //时间戳转时间格式
+    function time_format($timestamp){
+        if($timestamp)
+        return to_date($timestamp,'Y-m-d H:i:s');
+        else
+        return '';
+    }
+    //获取用户昵称
+    function get_nick_name($uid)
+    {
+        return emoji_decode(M("User")->where("id=".$uid)->getField("nick_name"));
+    }
+    //获取邮费
+    function get_freight($doll_id)
+    {
+        $sql = "select freight from ".DB_PREFIX."dolls where id = ".$doll_id;
+        return $GLOBALS['db']->getOne($sql);
+    }
+    //跳转到娃娃详情
+    function doll_detail($id){
+        return "<a href=\"javascript:doll_detail('".$id."')\">$id</a>";
+    }
+</php>
+<div class="search_row">
+	<form name="search" action="__APP__" method="get" >
+	<div>用户ID：
+        <input type="text" class="textbox" name="user_id" value="{:trim($_REQUEST['user_id'])}" style="width:100px;" />
+    </div>
+	<div>订单号：
+        <input type="text" class="textbox" name="order_sn" value="{:trim($_REQUEST['order_sn'])}" style="width:100px;" />
+    </div>
+    <div>支付时间：<span><input type="text" class="textbox" name="pay_time_1" id="pay_time_1" value="{$_REQUEST['pay_time_1']}" onfocus="this.blur(); return showCalendar('pay_time_1', '%Y-%m-%d %H:%M:%S', false, false, 'btn_pay_time_1');" /><input type="button" class="button" id="btn_pay_time_1" value="{%SELECT_TIME}" onclick="return showCalendar('pay_time_1', '%Y-%m-%d  %H:%M:%S', false, false, 'btn_pay_time_1');" /></span> - <span><input type="text" class="textbox" name="pay_time_2" id="pay_time_2" value="{$_REQUEST['pay_time_2']}" onfocus="this.blur(); return showCalendar('pay_time_2', '%Y-%m-%d %H:%M:%S', false, false, 'btn_pay_time_2');" /><input type="button" class="button" id="btn_pay_time_2" value="{%SELECT_TIME}" onclick="return showCalendar('pay_time_2', '%Y-%m-%d %H:%M:%S', false, false, 'btn_pay_time_2');" /></span></div>
+    <input type="hidden" value="UserDollList" name="m" />
+    <input type="hidden" value="index" name="a" />
+    <input type="submit" class="button" value="{%SEARCH}" />
+    <input type="button" class="button" value="{%EXPORT}" onclick="export_out('index');" />
+	</form>
+</div>
+    <if condition="($sendType eq 1)">
+        <html:list
+        id="dataTable"
+        style="dataTable"
+        name="userDollList"
+        action="true"
+        datasource="list"
+        show="id:ID
+        ,order_sn:订单序列号
+        ,user_id:用户ID
+        ,user_id|get_nick_name:用户昵称
+        ,doll_id|doll_detail:娃娃ID
+        ,doll_name:娃娃名称
+        ,img|wawa_image:娃娃图片
+        ,status|get_status_name:领取状态
+        ,freight:邮费(元)
+        ,grab_time|time_format:抓取时间
+        ,pay_time|time_format:支付时间"
+            actionlist="auto_send:发货,dispatching:配送详情,deleteOne:删除,same_cate:获取同组商品" />
+    <else/>
+        <html:list
+        id="dataTable"
+        style="dataTable"
+        name="userDollList"
+        action="true"
+        datasource="list"
+        show="id:ID
+        ,order_sn:订单序列号
+        ,user_id:用户ID
+        ,user_id|get_nick_name:用户昵称
+        ,doll_id|doll_detail:娃娃ID
+        ,doll_name:娃娃名称
+        ,img|wawa_image:娃娃图片
+        ,status|get_status_name:领取状态
+        ,freight:邮费(元)
+        ,grab_time|time_format:抓取时间
+        ,pay_time|time_format:支付时间"
+            actionlist="logistics_edit:发货,dispatching:配送详情,close_order:关闭订单,same_cate:获取同组商品" />
+    </if>
+
+<script type="text/javascript">
+    function dispatching(id)
+    {
+        location.href = ROOT+"?"+VAR_MODULE+"="+MODULE_NAME+"&"+VAR_ACTION+"=dispatching&id="+id;
+    }
+    function deleteOne(id)
+    {
+        if(confirm("确定要删除该记录？"))
+        {
+            location.href = ROOT+"?"+VAR_MODULE+"="+MODULE_NAME+"&"+VAR_ACTION+"=delete&id="+id;
+        }
+    }
+    function logistics_edit(id)
+    {
+        //跳转页面，手动输入单号
+        location.href = ROOT+"?"+VAR_MODULE+"="+MODULE_NAME+"&"+VAR_ACTION+"=logistics_edit&id="+id;
+    }
+    function auto_send(id)
+    {
+        if(confirm("确认要发货？"))
+        {
+            location.href = ROOT+"?"+VAR_MODULE+"="+MODULE_NAME+"&"+VAR_ACTION+"=send&id="+id;
+        }
+    }
+    function doll_detail(doll_id)
+    {
+        location.href = ROOT+"?"+VAR_MODULE+"=DollCate&"+VAR_ACTION+"=detail&id="+doll_id;
+    }
+    function same_cate(id)
+    {
+        //过滤，只显示同类商品
+        location.href = ROOT+"?"+VAR_MODULE+"="+MODULE_NAME+"&"+VAR_ACTION+"="+ACTION_NAME+"&cate_id="+id;
+    }
+    function close_order(id)
+    {
+        location.href = ROOT+"?"+VAR_MODULE+"="+MODULE_NAME+"&"+VAR_ACTION+"=close_order&from=index&id="+id;
+    }
+    function export_out(type)
+    {
+        type = type || 'noType';
+        var inputs = $(".search_row").find("input");
+        var selects = $(".search_row").find("select");
+        var param = '';
+        for(i=0;i<inputs.length;i++)
+        {
+            if(inputs[i].name!='m'&&inputs[i].name!='a')
+            param += "&"+inputs[i].name+"="+$(inputs[i]).val();
+        }
+        for(i=0;i<selects.length;i++)
+        {
+            param += "&"+selects[i].name+"="+$(selects[i]).val();
+        }
+        var url= ROOT+"?"+VAR_MODULE+"="+MODULE_NAME+"&"+VAR_ACTION+"=export_out&type="+type;
+        location.href = url+param;
+    }
+
+</script>
+
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

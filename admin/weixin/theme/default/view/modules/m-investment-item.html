@@ -1,0 +1,45 @@
+<ul class="investment-item-list">
+	{if $data.items}
+		{foreach from=$data.items item=item}
+		<li class="m-investment-item" id="investment-item-{$item.id}">
+			<a href='{url_wap r="task#info"}&id={$item.id}' data-no-cache="true">
+				<div class="item-header">
+					{if $item.type == 1 && $item.credit >= 10000}
+					<label class="contract b">承包招商</label>
+					{elseif $item.type == 2}
+					<label class="b">推荐招商</label>
+					{else}
+					<label class="b">普通招商</label>
+					{/if}
+					<span>{$item.title}</span>
+					{if $ctl eq 'user_center' && $act eq 'favorites'}
+					<a class="delete_favor J-delete_favor" data-id="{$item.id}"><i class="icon iconfont">&#xe91f;</i>取消收藏</a>
+					{/if}
+				</div>
+				<div class="item-content">
+					<div class="item-media">
+						<img src="{$item.logo}">
+					</div>
+					<div class="item-inner">
+						<div class="item-title">{$item.description}</div>
+						<div class="item-subtitle">
+							{if $item.credit}
+							<span class="f-money">{$item.credit}万诚信金</span>
+							{/if}
+						</div>
+					</div>
+				</div>
+				<div class="item-footer">
+					<div class="inner inner-l">
+						<span><i class="icon iconfont">&#xe914;</i>{$item.view_num}</span>
+						<span>参加人次 {$item.join_num}</span>
+					</div>
+					<div class="inner inner-r f-number">￥<span>{$item.commission}</span></div>
+				</div>
+			</a>
+		</li>
+		{/foreach}
+	{else}
+		<li class="null-data">暂无数据</li>
+	{/if}
+</ul>

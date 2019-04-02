@@ -1,0 +1,78 @@
+{include file="inc/header.html"}
+<div class="content pull-to-refresh-content infinite-scroll">
+	<!-- 默认的下拉刷新层 -->
+    <div class="pull-to-refresh-layer">
+        <div class="preloader"></div>
+        <div class="pull-to-refresh-arrow"></div>
+    </div>
+	<div class="content-block m-user">
+		<div class="block-user">
+			<div class="user-pic">
+				<img src="{$data.head_img}" alt="" />
+			</div>
+			<div class="user-text">
+				<p class="name">“华人管理教育第一人。”——余老师</p>
+				<p class="txt f11">为您解答所有问题</p>
+			</div>
+		</div>
+		<div class="block-button">
+      		<a href='{url r="date#index" p="itype=wx"}' class="button button-big below-line">线下预约</a>
+      		<a href='{url r="question#form_question" p="itype=wx"}' class="button button-big on-line">在线咨询</a>
+	    </div>
+	</div>
+	<div class="content-block m-tab">
+		<div class="buttons-tab">
+		    <a href='{url r="question#index" p="itype=wx&type=new"}' class="{if $data.type eq 'new'}active{/if} button"><span class="f13">最新</span></a>
+		    <a href='{url r="question#index" p="itype=wx&type=hot"}' class="{if $data.type eq 'hot'}active{/if}  button"><span class="f13">热门</span></a>
+		    <a href='{url r="question#index" p="itype=wx&type=mine"}' class="{if $data.type eq 'mine'}active{/if}  button"><span class="f13">我的提问</span></a>
+	  	</div>
+	  	<div class="content-block">
+	  		<div class="question-list">
+				{foreach from=$data.question_list item=item key=key name=question_list}
+				<div class="card">
+						<a href='{url r="question#detail" p="itype=wx&id=$item.id"}'>
+						<div class="card-content">
+							<div class="card-content-inner">
+								<p class="f13">{$item.title}</p>
+							</div>
+						</div>
+						<div class="card-footer">
+							<div class="answered">
+								{if $item.is_answered eq 1}
+								<span class="da">答</span><span class="f11">已回答</span>
+								{/if}
+							</div>
+							<div class="look-time f11">
+								<span><i class="iconfont">&#xe95e;</i><em class="view-counts">{$item.count}</em></span>&nbsp;
+								<span>{$item.create_time}</span>
+							</div>
+						</div>
+					</a>
+				</div>
+				{foreachelse}
+				<div class="null-data">暂无数据</div>
+				{/foreach}
+				<input type="hidden" name="total_page" value="{$data.total_page}" />
+			</div>
+	  	</div>
+	</div>
+	{if $data.question_list}
+	<div id="vscope-paging">
+	  	<!-- 加载提示符 -->
+	    <div class="infinite-scroll-preloader" v-if="total_page>1 && page<=total_page">
+	        <div class="preloader"></div>
+	    </div>
+	    <div class="infinite-scroll-preloader data-null" v-if="page>total_page">
+	        <span style="color:#999;font-size:0.75rem;">无更多数据</span>
+	    </div>
+    </div>
+    {/if}
+</div>
+<script type="text/javascript">
+    
+    var paramet = {
+        type: GetQueryString("type"),
+    },ajax_url,new_paramet,page=2,loading=false,total_page=Number('{$data.total_page}');
+
+</script>
+{include file="inc/footer.html"}

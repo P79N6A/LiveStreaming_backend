@@ -1,0 +1,71 @@
+{include file="inc/header.html"}
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+	// 微信分享
+	var wx_title = '{$data.share.wx_title}';
+	var wx_desc = '{$data.share.wx_desc}'; // 分享描述
+	var wx_link = '{$data.share.wx_link}';
+	var wx_img = '{$data.share.img}'; // 分享图标
+		
+    var signature = '{$data.signPackage.signature}';
+    var nonceStr = '{$data.signPackage.nonceStr}';
+    var timestamp = '{$data.signPackage.timestamp}';
+    var url = '{$data.signPackage.url}';
+    var appid = '{$data.signPackage.appId}';
+
+	wx.config({
+        //debug: true,
+		appId:appid,
+		timestamp:timestamp,
+		nonceStr:nonceStr,
+		signature:signature,
+		url:url,
+		jsApiList:[
+			//'checkJsApi',
+			'onMenuShareTimeline',
+			'onMenuShareAppMessage'
+		]
+	});
+</script>
+<div class="content">
+	<div class="block-vip-card">
+		<div class="m-vip-card">
+			<img src="{$TMPL}/dist/statics/images/bg_vip.png" class="vip-card-bg" />
+			<div class="vip-card">
+				<div class="vip-card-title">
+					<div class="sp-l"><span>维品客</span></div>
+					<!-- <span class="sp-r">到期时间：<span class="f-number">{$data.code_info.effect_time}</span></span> -->
+				</div>
+				<div class="vip-card-content">
+					<div class="logo">
+						<img src="{$data.app_logo}" />
+					</div>
+					<div class="name">线上会员会员卡</div>
+					<div class="code">激活码：<span class="f-number">{$data.code_info.code}</span></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="block-vip-liberty">
+		<div class="card m-vip-liberty">
+		    <div class="card-header no-border f13">会员特权模块</div>
+	    	<div class="card-content">
+	      		<div class="card-content-inner">
+	      			<div>
+	      				<img src="/weixin/theme/default/dist/statics/images/privilege.jpg" width="714" height="200" title="" align="" alt="">
+	      			</div>
+	      		</div>
+    		</div>
+	  	</div>
+	</div>
+	<div class="m-button">
+		<a class="button J-share">分享</a>
+	</div>
+</div>
+<div class="m-share-tip share-tip">
+	<div class="icon">
+		<i></i>
+	</div>
+	<span>点击右上角分享</span>
+</div>
+{include file="inc/footer.html"}

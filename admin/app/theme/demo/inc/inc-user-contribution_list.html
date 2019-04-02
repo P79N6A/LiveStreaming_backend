@@ -1,0 +1,51 @@
+<div class="m-Top clearfix" id="J-ranking-charm">
+	<h2 class="m-common-title">
+		<span class="field f-l mr-20 ml-20">{$ticket_name}贡献榜</span>
+		<div class="container-fluid f-l">
+			<span class="top-selects hd">
+				<a href="{url r="user#contribution_list" p="type=day&itype=app"}"{if $data.type eq 'day'}class="active"{/if}>日榜</a>
+				<a href="{url r="user#contribution_list" p="type=week&itype=app"}" {if $data.type eq 'week'}class="active"{/if}>周榜</a>
+				<a href="{url r="user#contribution_list" p="type=month&itype=app"}" {if $data.type eq 'month'}class="active"{/if}>月榜</a>
+				<a href="{url r="user#contribution_list" p="type=all&itype=app"}" {if $data.type eq 'all'}class="active"{/if}>总榜</a>
+			</span>
+		</div>
+	</h2>
+	<div class="bd j-ajax-page">
+		{if $data.list}
+		<ul class="m-Top-list clearfix">
+		{foreach from=$data.list item=item key=key name=list}
+			{if  $smarty.foreach.list.iteration lt 11 }
+			<li>
+				<a href="{$item.video_url}" title="{$item.nick_name}" class="clearfix">
+					<div class="Top-list f-l">
+						{if $data.sort_num eq "0"}
+						<i class="star {if $smarty.foreach.list.iteration lt 4 }star-{$smarty.foreach.list.iteration}{else}star-other{/if}">{if $smarty.foreach.list.iteration gt 3 }{$smarty.foreach.list.iteration}{/if}</i>
+						{else}
+						<i class="star star-other">{$data.sort_num}{$smarty.foreach.list.iteration}</i>
+						{/if}
+						<div class="info f-l">
+							<img src="{$item.head_image}" class="avatar-normal" atl=""/>
+							<span>{$item.nick_name}</span>
+							<i class="icon iconfont {if $item.live_in eq 1}living{else}livend{/if}">&#xe608;</i>
+						</div>
+						<div class="grade f-r">
+							<img src="{$item.user_level_ico}" class="ui-grade-img" />
+						</div>
+					</div>
+					<span class="devote-numb f-r">{$item.use_ticket}{$ticket_name}</span>
+				</a>
+			</li>
+			{/if}
+		{/foreach}
+		</ul>
+		<div class="m-page clearfix">
+			<div class="m-page-con">
+			{$data.page}
+			</div>
+		</div>
+		<!--分页结束-->
+		{else}
+		<p class="null-data">暂无数据</p>
+		{/if}
+	</div>
+</div>

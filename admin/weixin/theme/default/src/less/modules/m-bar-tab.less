@@ -1,0 +1,49 @@
+@import (once) "../public/variable.less";
+.bar-tab .tab-item.active, .bar-tab .tab-item:active{
+  color: @color-theme;
+}
+.bar-tab:before{
+  background-color: #b2b2b2;
+}
+
+.bar-tab .tab-item:before{
+    position: relative;
+    z-index: 20;
+    padding: .5rem .1rem;
+	display: block;
+	font-family: 'iconfont';
+    top: .15rem;
+    height: 1.2rem;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.bar-tab .tab-item-1:before{
+  content: '\e913';
+}
+.bar-tab .tab-item-2:before{
+  content: '\e912';
+}
+.bar-tab .tab-item-3:before{
+  content: '\e911';
+}
+.bar-tab .tab-item-4:before{
+  content: '\e910';
+}
+.bar-tab .tab-item-1.active:before{
+  content: '\e90b';
+}
+.bar-tab .tab-item-2.active:before{
+  content: '\e90e';
+}
+.bar-tab .tab-item-3.active:before{
+  content: '\e90c';
+}
+.bar-tab .tab-item-4.active:before{
+  content: '\e90f';
+}
+
+.bar-tab .tab-item .tab-label{
+	font-size: @fs-small;
+}

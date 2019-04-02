@@ -1,0 +1,96 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<div class="main">
+<div class="main_title">{%EDIT} <a href="{:u("Vip/index")}" class="back_list">{%BACK_LIST}</a></div>
+<div class="blank5"></div>
+<form name="edit" action="__APP__" method="post" enctype="multipart/form-data">
+<table class="form" cellpadding=0 cellspacing=0>
+	<tr>
+		<td colspan=2 class="topTd"></td>
+	</tr>
+    <tr>
+        <td class="item_title">VIP配置编号:</td>
+        <td class="item_input">{$vo.id}</td>
+    </tr>
+    <tr>
+        <td class="item_title">VIP配置名称:</td>
+        <td class="item_input">
+            <input type="text" class="textbox require" name="name" value="{$vo.name}"/>
+        </td>
+    </tr>
+    <tr>
+        <td class="item_title">价格（元）:</td>
+        <td class="item_input">
+            <input type="number" class="textbox require" name="cost" value="{$vo.cost}"/>
+        </td>
+    </tr>
+    <tr>
+        <td class="item_title">时长（月）:</td>
+        <td class="item_input">
+            <input type="number" class="textbox require" name="month" value="{$vo.month}"/>
+        </td>
+    </tr>
+    <tr>
+        <td class="item_title">会员等级:</td>
+        <td class="item_input">
+            <select name="vip_lv">
+                <option value="1" <if condition="$vo['vip_lv'] eq 1">selected="selected"</if>>线上会员</option>
+                <option value="2" <if condition="$vo['vip_lv'] eq 2">selected="selected"</if>>余友会会员</option>
+                <option value="3" <if condition="$vo['vip_lv'] eq 3">selected="selected"</if>>渠道会员</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td class="item_title">购买规则:</td>
+        <td class="item_input">
+        <label>可以多次购买<input type="radio" name="is_repeatedly" value="1"  <if condition="$vo['is_repeatedly'] eq 1">checked="checked"</if> /></label>
+        <label>不可多次购买<input type="radio" name="is_repeatedly" value="0"  <if condition="$vo['is_repeatedly'] eq 0">checked="checked"</if> /></label>
+        </td>
+    </tr>
+    <tr>
+        <td class="item_title">赠送兑换码数量:</td>
+        <td class="item_input">
+            <input type="number" class="textbox" name="gift_num" value="{$vo.gift_num}" min="0" step="1"/>
+        </td>
+    </tr>
+    <tr>
+        <td class="item_title">赠送兑换码有效时间（单位：月）:</td>
+        <td class="item_input">
+            <input type="number" class="textbox" name="gift_num_time" value="{$vo.gift_num_time}" min="0" step="1"/>
+        </td>
+    </tr>
+    <tr>
+        <td class="item_title">赠送兑换码VIP类型:</td>
+        <td class="item_input">
+            <select name="gift_vip_id">
+                <?php foreach ($vip as $key => $value): ?>
+                    <option value="<?php echo $value['id']; ?>"<?php if ($value['id']==$vo['gift_vip_id']): ?> selected="selected"<?php endif ?>><?php echo $value['name']; ?></option>
+                <?php endforeach ?>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td class="item_title">是否有效:</td>
+        <td class="item_input">
+        <label>是<input type="radio" name="is_effect" value="1"  <if condition="$vo['is_effect'] eq 1">checked="checked"</if> /></label>
+        <label>否<input type="radio" name="is_effect" value="0"  <if condition="$vo['is_effect'] eq 0">checked="checked"</if> /></label>
+        </td>
+    </tr>
+    <tr>
+        <td class="item_title"></td>
+        <td class="item_input">
+            <!--隐藏元素-->
+            <input type="hidden" name="{:conf("VAR_MODULE")}" value="Vip" />
+            <input type="hidden" name="{:conf("VAR_ACTION")}" value="update" />
+            <input type="hidden" name="id" value="{$vo.id}" />
+            <!--隐藏元素-->
+            <input type="submit" class="button" value="{%EDIT}" />
+            <input type="reset" class="button" value="{%RESET}" />
+        </td>
+    </tr>
+</table>
+
+</form>
+</div>
+<include file="Public:footer" />

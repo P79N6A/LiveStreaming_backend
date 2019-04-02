@@ -1,0 +1,37 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<load href='__TMPL__Common/js/paigoods.js' />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<php>
+	function get_nickname($id){
+        $get_nickname=$GLOBALS['db']->getOne("select nick_name from ".DB_PREFIX."user where id=".$id);
+		return emoji_decode($get_nickname);
+    }
+	function get_content($id){
+        $content=$GLOBALS['db']->getOne("select content from ".DB_PREFIX."weibo where id=".$id);
+		return emoji_decode($content);
+    }
+</php>
+<div class="main">
+<div class="main_title_list"><div class="list-line-ico"></div>打赏明细</div>
+<html:list
+	id="dataTable"
+	style="dataTable"
+	name="weibo_reward"
+	action="true"
+	datasource="list"
+	show="id:{%ID}|90px
+	,weibo_id|get_content:动态内容|270px
+	,to_user_id|get_nickname:被打赏用户名字
+	,from_user_id|get_nickname:打赏用户名字
+	,ticket:秀票数
+	,create_time|to_date:打赏时间"
+	actionlist="foreverdel:{%FOREVERDEL}"/>
+	
+	
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

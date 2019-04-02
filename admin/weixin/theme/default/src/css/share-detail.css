@@ -1,0 +1,257 @@
+/*界面主题色*/
+/*背景色*/
+/*背景色（深）*/
+/*模块背景色*/
+/*主题风格色*/
+/*主题辅助风格色*/
+/*字体颜色*/
+/*主要字色*/
+/*浅色*/
+/*更浅色（适用：二级标题、简介）*/
+/*更更浅色（适用：icon图标）*/
+/*标题*/
+/*字体大小*/
+/*线条颜色*/
+/*主要线条颜色*/
+/*更深线条颜色*/
+/*更浅线条颜色*/
+/*文本输入框边框颜色*/
+/*各类间距，高度*/
+/*横向间距*/
+/*纵向间距*/
+.page-share-detail .audit_status {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 0.6rem;
+}
+.page-share-detail nav {
+  display: none;
+}
+.page-share-detail .content-block {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 0.5rem;
+}
+.page-share-detail .m-user {
+  padding: 0.625rem 0.5rem;
+  background: #fff;
+}
+.page-share-detail .m-user .block-user {
+  display: flex;
+}
+.page-share-detail .m-user .block-user .user-pic {
+  margin-right: 0.5rem;
+  width: 2.25rem;
+  height: 2.25rem;
+}
+.page-share-detail .m-user .block-user .user-pic img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5rem;
+}
+.page-share-detail .m-user .block-user .user-text .name {
+  color: #333;
+  line-height: 1.2rem;
+}
+.page-share-detail .m-user .block-user .user-text .txt {
+  color: #999;
+  line-height: 1.1rem;
+}
+.page-share-detail .m-content-text {
+  background: #fff;
+  padding: 0.5rem;
+  margin-bottom: 0;
+}
+.page-share-detail .m-content-text .block-content h3 {
+  display: flex;
+  justify-content: space-between;
+  line-height: 1.8rem;
+  margin-bottom: 0.15rem;
+}
+.page-share-detail .m-content-text .block-content h3 .click {
+  color: #f1383f;
+}
+.page-share-detail .m-content-text .block-content img {
+  width: 100%;
+  height: 64vw;
+  margin-top: 0.2rem;
+}
+.page-share-detail .m-content-text .block-content p {
+  line-height: 1.15rem;
+  font-size: 0.6rem;
+  color: #666;
+}
+.page-share-detail .m-content-text .block-content .inner-text {
+  position: relative;
+}
+.page-share-detail .m-content-text .block-content .inner-text .text-top .state {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.6rem;
+  line-height: 1.6rem;
+}
+.page-share-detail .m-content-text .block-content .inner-text .text-top .state .details {
+  color: #999;
+}
+.page-share-detail .m-content-text .block-content .inner-text .text-top .state .link {
+  display: flex;
+}
+.page-share-detail .m-content-text .block-content .inner-text .text-top .state .link span {
+  display: flex;
+  align-items: center;
+  color: #999;
+  margin-left: 1rem;
+}
+.page-share-detail .m-content-text .block-content .inner-text .text-top .state .link span i {
+  color: #cfcfcf;
+  margin-right: 0.2rem;
+  font-size: 0.7rem;
+}
+.page-share-detail .m-content-text .block-content .inner-text .text-top .state .link .look i {
+  font-size: 0.9rem;
+}
+.page-share-detail .m-content-text .block-content .inner-text .text-top .state .link .active {
+  color: #f1383f;
+}
+.page-share-detail .m-content-text .block-content .inner-text .text-comment {
+  background: #f7f7f7;
+}
+.page-share-detail .m-content-text .block-content .inner-text .text-comment .praise {
+  padding: 0.5rem;
+  display: flex;
+  font-size: 0.6rem;
+  position: relative;
+  justify-content: flex-end;
+  line-height: 0.7rem;
+}
+.page-share-detail .m-content-text .block-content .inner-text .text-comment .praise:after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  border-bottom: 1px solid #d8d8d8;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(0.5, 0.5);
+  -ms-transform: scale(0.5, 0.5);
+  -o-transform: scale(0.5, 0.5);
+  transform: scale(0.5, 0.5);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+.page-share-detail .m-content-text .block-content .inner-text .text-comment .praise p {
+  white-space: nowrap;
+  line-height: 0.7rem;
+  color: #586b96;
+}
+.page-share-detail .m-content-text .block-content .inner-text .text-comment .praise .praise-name {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.page-share-detail .m-content-text .block-content .inner-text .text-comment .comment-area {
+  padding: 0.35rem 0.5rem;
+}
+.page-share-detail .m-content-text .block-content .inner-text .text-comment .comment-area p {
+  font-size: 0.6rem;
+  line-height: 0.9rem;
+  margin-bottom: 0.2rem;
+  color: #333;
+}
+.page-share-detail .m-content-text .block-content .inner-text .text-comment .comment-area p:last-child {
+  margin-bottom: 0;
+}
+.page-share-detail .m-content-text .block-content .inner-text .text-comment .comment-area p span {
+  color: #586b96;
+}
+.page-share-detail .m-content-text .block-content .inner-text .text-comment .comment-area a {
+  border: 0;
+  color: #586b96;
+  margin-top: 0.3rem;
+  border-radius: 0;
+  font-size: 0.6rem;
+  height: auto;
+  line-height: 1rem;
+}
+.page-share-detail .suggest-button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2.5rem;
+  display: flex;
+  background: #fff;
+}
+.page-share-detail .suggest-button:before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  border-top: 1px solid #e7e7e7;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(0.5, 0.5);
+  -ms-transform: scale(0.5, 0.5);
+  -o-transform: scale(0.5, 0.5);
+  transform: scale(0.5, 0.5);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  top: 0;
+  pointer-events: none;
+}
+.page-share-detail .suggest-button .input {
+  width: 74%;
+  padding: 0.375rem 0.5rem;
+  height: 100%;
+}
+.page-share-detail .suggest-button .input input {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border: 1px solid #e7e7e7;
+  padding: 0 1rem;
+  font-size: 1.2rem;
+  color: #333;
+  -webkit-appearance: none;
+  width: 200%;
+  height: 200%;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(0.5, 0.5);
+  -ms-transform: scale(0.5, 0.5);
+  -o-transform: scale(0.5, 0.5);
+  transform: scale(0.5, 0.5);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  top: 0;
+  pointer-events: none;
+  border-radius: 0.2rem;
+}
+.page-share-detail .suggest-button .block-button {
+  width: 26%;
+}
+.page-share-detail .suggest-button .block-button a {
+  width: 100%;
+  height: 100%;
+  background: #f1383f;
+  border: 0;
+  color: #fff;
+  border-radius: 0;
+  line-height: 2.5rem;
+}

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="renderer" content="webkit" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>{if $data.page_title neq ''}{$data.page_title}{/if}{$data.site_name } {$data.seo_title}</title>
+    <?php
+        $this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/dist/Bootstrap/css/bootstrap.min.css";
+        $this->_var['cpagecss'][] = $this->_var['TMPL_REAL']."/dist/Bootstrap/css/bootstrap.min.css";
+        $this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/dist/Weebox/weebox.css";
+        $this->_var['cpagecss'][] = $this->_var['TMPL_REAL']."/dist/Weebox/weebox.css";
+        $this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/dist/cropper/cropper.min.css";
+        $this->_var['cpagecss'][] = $this->_var['TMPL_REAL']."/dist/cropper/cropper.min.css";
+        $this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/dist/cropper/main.css";
+        $this->_var['cpagecss'][] = $this->_var['TMPL_REAL']."/dist/cropper/main.css";
+        $this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/css/public.css";
+        $this->_var['cpagecss'][] = $this->_var['TMPL_REAL']."/css/public.css";
+        $this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/css/public-units.css";
+        $this->_var['cpagecss'][] = $this->_var['TMPL_REAL']."/css/public-units.css";
+        $this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/css/banner.css";
+        $this->_var['cpagecss'][] = $this->_var['TMPL_REAL']."/css/banner.css";
+        $this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/css/header.css";
+        $this->_var['cpagecss'][] = $this->_var['TMPL_REAL']."/css/header.css";
+        $this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/css/footer.css";
+        $this->_var['cpagecss'][] = $this->_var['TMPL_REAL']."/css/footer.css";
+        $this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/css/css-hack.css";        
+        $this->_var['cpagecss'][] = $this->_var['TMPL_REAL']."/css/css-hack.css";        
+        $this->_var['pagejs'][] = $this->_var['TMPL_REAL']."/dist/Bootstrap/js/jquery.min.js";
+        $this->_var['cpagejs'][] = $this->_var['TMPL_REAL']."/dist/Bootstrap/js/jquery.min.js";
+        $this->_var['pagejs'][] = $this->_var['TMPL_REAL']."/dist/fanweUI.js";
+        $this->_var['cpagejs'][] = $this->_var['TMPL_REAL']."/dist/fanweUI.js";
+        $this->_var['pagejs'][] = $this->_var['TMPL_REAL']."/dist/jquery.SuperSlide.2.1.js";
+        $this->_var['cpagejs'][] = $this->_var['TMPL_REAL']."/dist/jquery.SuperSlide.2.1.js";
+        $this->_var['pagejs'][] = $this->_var['TMPL_REAL']."/dist/plupload/plupload.full.min.js";
+        $this->_var['cpagejs'][] = $this->_var['TMPL_REAL']."/dist/plupload/plupload.full.min.js";
+        $this->_var['pagejs'][] = $this->_var['TMPL_REAL']."/js/common.js";
+        $this->_var['cpagejs'][] = $this->_var['TMPL_REAL']."/js/common.js";
+        $this->_var['pagejs'][] = $this->_var['TMPL_REAL']."/js/auto-layout.js";
+        $this->_var['cpagejs'][] = $this->_var['TMPL_REAL']."/js/auto-layout.js";
+
+		$this->_var['avalonjs'][] = $this->_var['TMPL_REAL']."/dist/avalon.min.js";
+		$this->_var['SITE_LICENSE']=app_conf('SITE_LICENSE');
+		$this->_var['NETWORK_FOR_RECORD']=app_conf('NETWORK_FOR_RECORD');
+		$m_config = load_auto_cache("m_config");
+		$this->_var['ticket_name'] = empty($m_config['ticket_name']) ? '秀票' : $m_config['ticket_name'];
+    ?>
+    <script type="text/javascript" src="{function name="parse_script" v="$avalonjs"}"></script>
+    <script type="text/javascript">
+        var TMPL = '{$TMPL}';
+        var APP_ROOT = '{$APP_ROOT}';
+        var __HASH_KEY__ = "{$hash_key}";
+		var TICKET_NAME = "{$ticket_name}";
+    </script>
+    <link rel="stylesheet" type="text/css" href="{function name="parse_css" v="$pagecss" c="$cpagecss"}" />
+    <script type="text/javascript" src="{function name="parse_script" v="$pagejs" c="cpagejs"}"></script>
+    <!--[if lt IE 9]>
+        <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div id="headerwrapper">
+        <div class="header">
+            <div class="wrapper" id="mainheader">
+                <div class="block-logo">
+                    <a href='{url r="index#index"}'>
+                        <img src="{$TMPL}/images/logo.png" />
+                    </a>
+                </div>
+                <div class="block-menu">
+                    <a href='{url r="index#index"}' {if $ctl eq 'index' && $act eq 'index'}class="active"{/if}>首页</a>
+                    <a href='{url r="video#video_list"}' {if $ctl eq 'video' && $act eq 'video_list'}class="active"{/if}>直播</a>
+                    <a href='{url r="user#rank"}' {if $ctl eq 'user' && $act eq 'rank'}class="active"{/if}>排行榜</a>
+                    <a href='{url r="family#index"}' {if $ctl eq 'family' && $act eq 'index'}class="active"{/if}>家族</a>
+                    <a href='{url r="app_download#index"}' {if $ctl eq 'app_download' && $act eq 'index'}class="active"{/if}>APP下载</a>
+                </div>
+                <div class="block-search" ms-controller="login_tip" id="login_tip">
+                    <input type="text" placeholder="昵称/房间号" name="search_key" ms-duplex="@search_key" class="header-input" /><a href="javascript:void(0);" class="btn-search" ms-click="@search"><i class="icon iconfont">&#xe600;</i></a>
+                    {if $user_info.id}
+                	<div class="block-search-user">
+                		<a href='{url r="user#userinfo"}' class="search-user-name">
+                			<img src="{$user_info.head_image}" class="avatar-normal mr-5"/>
+	                		<span>{$user_info.nick_name}
+	                			<i class="icon iconfont down">&#xe610;</i>
+	                			<i class="icon iconfont up">&#xe611;</i>
+	                		</span>
+                		</a>
+                		<div class="search-user">
+                			<div class="null"></div>
+                			<img src="{$TMPL}/images/icon-top.png" class="search-user-top"/>
+                			<div class="search-user-info clearfix">
+                				<div class="user-info-img">
+                					<img src="{$user_info.head_image}" class="avatar-middle"/>
+                				</div>
+                				<div class="user-info-txt">
+	                				<div class="logname clearfix">
+	                					<a href="javascript:void(0);" class="user-name">{$user_info.nick_name}</a>
+	                					<a href="javascript:void(0);" class="btn-out" onclick="login_out();">登出</a>
+	                				</div>
+	                				<div class="user-authenticate clearfix">
+	                					<a href="javascript:void(0);"title="{if $user_info.is_authentication eq 0}尚未认证{elseif $user_info.is_authentication eq 1}认证中{elseif $user_info.is_authentication eq 2}已认证{else}认证失败{/if}"  class="uname-aut">
+		                                    <i class="icon iconfont {if $user_info.is_authentication eq 2}uname{/if}">&#xe614;</i>
+	                					</a>
+	                					<a href="javascript:void(0);" title="{if $user_info.mobile}已绑定手机{else}未绑定手机{/if}" class="mobile-aut">
+	                						<i class="icon iconfont {if $user_info.mobile}uname{/if}">&#xe613;</i>
+	                					</a>
+	                				</div>
+                				</div>
+                			</div>
+                			<div class="search-user-grade">
+                				<p>我的等级</p>
+                				<div class="grade clearfix">
+                					<span class="icon-grade mr-5 f-l">
+                                        <img src="{$user_level_info.level_ico}" width="34" height="16" art="当前等级" />
+                                    </span>
+                					<div class="progress-grade mr-5 f-l">
+                						<div class="progress-grade-num" style="width:{$user_level_info.progress}%">{$user_level_info.progress}%</div>
+                					</div>
+                					<span class="icon-grade f-l">
+										{if $user_level_info.next_level}
+                                        <img src="{$user_level_info.next_level_ico}" width="34" height="16" art="下一等级" class="img-gray" />
+										{/if}
+                                    </span>
+                                    <div class="clear"></div>
+                				</div>
+                			</div>
+                			<div class="search-user-money">
+                				<p>我的钱包
+                					<a href="javascript:void(0);" onclick="pop_recharge();">充值</a>
+                				</p>
+                				<div class="money">
+                					<div class="gift">
+                						<i class="icon iconfont jewel">&#xe615;</i>
+                						<span>秀豆<em>{$user_info.diamonds}</em></span>
+                					</div>
+                					<div class="gift">
+                						<i class="icon iconfont ticket">&#xe616;</i>
+                						<span>{$ticket_name}<em>{$user_info.useable_ticket}</em></span>
+                					</div>
+                				</div>
+                			</div>
+                			<div class="search-user-data clearfix">
+                				<a href='{url r="user#userinfo"}'>
+                					<dl>
+	                					<dt>
+	                						<i class="icon iconfont initial">&#xe617;</i>
+	                						<i class="icon iconfont final">&#xe618;</i>
+	                					</dt>
+	                					<dd>个人中心</dd>
+	                				</dl>
+                				</a>
+                				<a href='{url r="user#focus"}'>
+	            					<dl>
+	                					<dt>
+	                						<i class="icon iconfont initial">&#xe61a;</i>
+	                						<i class="icon iconfont final">&#xe61b;</i>
+	                					</dt>
+	                					<dd>我的关注</dd>
+	                				</dl>
+	                			</a>
+	                			<a href='{url r="user#message"}'>
+	                				<dl>
+	                					<dt>
+	                						<i class="icon iconfont initial">&#xe61c;</i>
+	                						<i class="icon iconfont final">&#xe61d;</i>
+	                					</dt>
+	                					<dd>我的消息</dd>
+	                				</dl>
+	                			</a>
+	                			<a href="javascript:pop_live();">
+	                				<dl>
+	                					<dt>
+	                						<i class="icon iconfont initial">&#xe629;</i>
+	                						<i class="icon iconfont final">&#xe628;</i>
+	                					</dt>
+	                					<dd>我要直播</dd>
+	                				</dl>
+	                			</a>
+                			</div>
+                		</div>
+                	</div>
+                    {else}
+                    <a href="javascript:void(0)" class="btn btn-primary btn-circle" onclick="login();">登录</a>
+                    {/if}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="bodywrapper">

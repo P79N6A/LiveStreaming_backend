@@ -1,0 +1,87 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<include file="Public:new" />
+<load href='__TMPL__Common/js/jquery.bgiframe.js' />
+<load href='__TMPL__Common/js/jquery.weebox.js' />
+<load href='__TMPL__Common/js/user.js' />
+<load href='__TMPL__Common/js/deal.js' />
+<load href='__TMPL__Common/style/weebox.css' />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<div class="main">
+<div class="main_title_list"><div class="list-line-ico"></div>娃娃机{$id}状态日志   <a href="{:u("Dolls/index")}" class="back_list">{%BACK_LIST}</a></div>
+<php>
+
+    //获取娃娃机状态名称
+    function get_status_name($status){
+        switch($status)
+        {
+            case 0:
+                return "空闲中";
+                break;
+            case 1:
+                return "使用中";
+                break;
+            case 2:
+                return "维护中";
+                break;
+            default:
+            return "空闲中";
+            break;
+        }
+    }
+    //获取错误码描述
+    function get_err_des($errCode){
+        $sql = "select des from ".DB_PREFIX."dolls_err_code where err_code = $errCode ";
+        return emoji_decode($GLOBALS['db']->getOne($sql));
+    }
+    //时间戳转时间格式
+    function time_format($timestamp){
+        if($timestamp)
+        return to_date($timestamp,'Y-m-d H:i:s');
+        else
+        return '';
+    }
+
+
+</php>
+<div class="search_row">
+	<form name="search" action="__APP__" method="get" >
+    <div>娃娃机ID：
+        <input type="text" class="textbox" name="machine_id" value="{:trim($_REQUEST['machine_id'])}" style="width:100px;" />
+    </div>
+    <div>在玩用户ID：
+        <input type="text" class="textbox" name="play_user_id" value="{:trim($_REQUEST['play_user_id'])}" style="width:100px;" />
+    </div>
+    <div>更新动作：
+        <input type="text" class="textbox" name="update_action" value="{:trim($_REQUEST['update_action'])}" style="width:100px;" />
+    </div>
+    <div>更新时间：<span><input type="text" class="textbox" name="update_time_1" id="update_time_1" value="{$_REQUEST['update_time_1']}" onfocus="this.blur(); return showCalendar('update_time_1', '%Y-%m-%d %H:%M:%S', false, false, 'btn_update_time_1');" /><input type="button" class="button" id="btn_update_time_1" value="{%SELECT_TIME}" onclick="return showCalendar('update_time_1', '%Y-%m-%d %H:%M:%S', false, false, 'btn_update_time_1');" /></span> - <span><input type="text" class="textbox" name="update_time_2" id="update_time_2" value="{$_REQUEST['update_time_2']}" onfocus="this.blur(); return showCalendar('update_time_2', '%Y-%m-%d %H:%M:%S', false, false, 'btn_update_time_2');" /><input type="button" class="button" id="btn_update_time_2" value="{%SELECT_TIME}" onclick="return showCalendar('update_time_2', '%Y-%m-%d %H:%M:%S', false, false, 'btn_update_time_2');" /></span></div>
+
+    <input type="hidden" value="Dolls" name="m" />
+    <input type="hidden" value="status_log" name="a" />
+    <input type="submit" class="button" value="{%SEARCH}" />
+	</form>
+</div>
+        <html:list
+        id="dataTable"
+        style="dataTable"
+        name="userDollList"
+        action="true"
+        datasource="list"
+        show="id:ID
+        ,machine_id:娃娃机ID
+        ,status|get_status_name:娃娃机状态
+        ,play_user_id:在玩用户ID
+        ,update_time|time_format:状态更新时间
+        ,update_action:更新动作
+        ,action_status:更新动作状态
+        ,err_code:错误码
+        ,err_code|get_err_des:错误码描述"
+            actionlist="tips:无" />
+
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

@@ -1,0 +1,72 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<script>
+    function del_article(id)
+    {
+        if(!id)
+        {
+            idBox = $(".key:checked");
+            if(idBox.length == 0)
+            {
+                alert(LANG['DELETE_EMPTY_WARNING']);
+                return;
+            }
+            idArray = new Array();
+            $.each( idBox, function(i, n){
+                idArray.push($(n).val());
+            });
+            id = idArray.join(",");
+        }
+        if(confirm(LANG['CONFIRM_DELETE']))
+            $.ajax({
+                url: ROOT+"?"+VAR_MODULE+"="+MODULE_NAME+"&"+VAR_ACTION+"=delete&id="+id,
+                data: "ajax=1",
+                dataType: "json",
+                success: function(obj){
+                    alert(obj.info);
+                    func();
+                    function func(){
+                        if(obj.status==1){
+                            location.href=location.href;
+                        }
+                    }
+                }
+            });
+    }
+</script>
+<div class="main">
+<div class="main_title_list"><div class="list-line-ico"></div>发现列表</div>
+<div class="search_row">
+	<form name="search" action="__APP__" method="get">
+		活动标题：<input type="text" class="textbox" name="title" value="{:trim($_REQUEST['title'])}" />
+		活动类型：
+			<select name="status">
+			<option value="-1" selected="selected">所有</option>
+			<option value="1" <if condition="$_REQUEST['status'] eq 1 "> selected="selected"</if>>过期</option>
+			<option value="2"<if condition="$_REQUEST['status'] eq 2"> selected="selected"</if>>未过期</option>
+			</select>
+		<input type="hidden" value="ActiveList" name="m" /><input type="hidden" value="index" name="a" /><input type="submit" class="button" value="{%SEARCH}" />
+			
+	</form>
+</div>
+<html:list
+	id="dataTable"
+	style="dataTable"
+	name="activelist"
+	checkbox="true"
+	action="true"
+	datasource="list"
+	show="id:{%ID}|50px,title:活动标题:edit,end_time|to_date:活动截止日期"
+	actionlist="edit:{%EDIT}, del_article:{%DEL}" />
+	<table class="dataTable">
+		<tbody>
+			<td colspan="9">
+				<input type="button" class="button button-add" value="{%ADD}" onclick="add();" />
+				<input type="button" class="button button-del" value="{%DEL}" onclick="del_article();" />
+			</td>
+		</tbody>
+	</table>
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

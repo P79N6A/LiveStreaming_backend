@@ -1,0 +1,115 @@
+<style type="text/css">
+	.m-modify-live{
+	    margin-top: -2px;
+	}
+	.m-modify-live div{margin-bottom: 18px;}
+	.m-modify-live .modify-end-btn{
+	 	padding: 12px 0 0;
+		margin-left: 70px;
+    	/*text-align: center;*/
+		display: inline-block;
+    	margin-bottom: 10px;
+	}
+	.m-modify-live .modify-room-btn{
+		padding: 12px 0 0;
+		margin-left: 20px;
+		/*text-align: center;*/
+		display: inline-block;
+		margin-bottom: 10px;
+	}
+	.m-modify-live .modify-end-btn a{
+		padding:9px 46px;
+	}
+	.m-modify-live .modify-room-btn a{
+		padding:9px 46px;
+	}
+	.m-modify-live p{
+	 	font-size: 14px;
+        font-weight: bold;
+        text-align: left;
+        line-height: 14px;
+        margin-bottom: 8px;
+	}
+	.m-modify-live input{
+		width: 548px;
+        padding:6px 10px ;
+        border: 1px solid #cdcdcd;
+        box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        border-radius: 5px;
+        -moz-box-shadow: inset 0px 1px 1px #f2f2f2;
+        -webkit-box-shadow: inset 0px 1px 1px #f2f2f2;
+        box-shadow: inset 0px 1px 1px #f2f2f2;
+        color: #6e6e6e;
+	}
+	.m-modify-live .image-live-box{
+		position:relative;
+		width:100px;
+		height:56px;
+		line-height: 50px;
+		border:1px solid #dedede;
+		color:#aaa;
+		cursor:pointer;
+		text-align:center;
+	}
+	.m-modify-live .image-live-box span{font-size:70px;font-family:airal;}
+	.m-modify-live .image-live-box img{
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+	}
+	.m-modify-live .image-live-box img[src=""]{
+		opacity:0;
+	}
+</style>
+<?php
+$puth_rtmp = $this->_var['data']['push_rtmp'];
+if($puth_rtmp){
+	$i = strrpos($puth_rtmp, "/") + 1;
+	$this->_var['push_url'] = substr($puth_rtmp, 0, $i);
+	$this->_var['push_code'] = substr($puth_rtmp, $i);
+}
+if(empty($this->_var['user_info']['room_title'])){
+	$this->_var['user_info']['room_title'] = $this->_var['user_info']['nick_name'] . '的直播间';
+}
+?>
+
+{if $data.status}
+<div class="m-modify-live">
+	<div class="modify-live-FMS">
+		<p>直播间名称</p>
+		<input type="text" value="{$user_info.room_title}" name="room_name" maxlength="20" placeholder="请输入直播间名称" class="FMS-URL" style="width:480px;margin-right:10px;">
+		<a href="javascript:edit_room_title({$data.room_id});" class="btn btn-primary">保存</a>
+	</div>
+	<div class="playback-path">
+		<p>直播间封面</p>
+		<div class="image-live-box" style="width:285px;height:160px;" onclick='open_avatar_view(285,160, "live_image", function(){save_img(285,160,"live_image",APP_ROOT+"/mapi/index.php?ctl=user&act=update_live_image&room_id={$data.room_id}");});'>
+			<img src="{$data.live_image}" id="live_image" />
+			<input type="hidden" name="live_image" />
+			<span>+</span>
+		</div>
+	</div>
+	<div class="modify-live-FMS">
+		<p>FMS&nbsp;URL</p>
+		<input type="text" readonly="readonly" value="{$push_url}" class="FMS-URL">
+	</div>
+	<div class="playback-path">
+		<p>播放路径</p>
+		<input type="text" readonly="readonly" value="{$push_code}" class="playback">
+	</div>
+	<div class="modify-end-btn">
+		<a href="javascript:end_live({$data.room_id});" class="btn btn-primary">结束直播</a>
+	</div>
+	<div class="modify-room-btn">
+		{if $data.live_in neq 1}
+		<a href="javascript:get_live({$data.room_id});" class="btn btn-green">进入直播间</a>
+		{else}
+		<a href="{$data.video_url}" target="_blank" class="btn btn-green">进入直播间</a>
+		{/if}
+	</div>
+</div>
+{else}
+{$data.error}
+{/if}

@@ -1,0 +1,96 @@
+@import (once) "public/variable.less";
+
+.wrapper{
+    .m-wrapper-top{
+        margin-bottom: 0;
+        .m-live{
+            width: 895px;
+            & .m-live-list{
+                margin: -10px -10px 0;
+                overflow: hidden;
+                height: auto;
+                padding: 0;
+                & .block-live{
+                    background: #fff;
+                    width: 285px;
+                    &:hover{
+                        box-shadow: 0 0 10px #e5e6e8;
+                    }
+                    & a{
+                        & .block-live-img{
+                            border-radius: 0;
+                            height: 160px;
+                            &:after{
+                                border-radius: 0;
+                            }
+                        }
+                        & .block-live-info{
+                            margin: 0;
+                            padding: 10px 10px 9px;
+                            & .live-name{
+                                & .avatar-normal{
+                                    height: 42px;
+                                }
+                                & p.sub{
+                                    width: 125px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .layout-3{
+            width: 305px;
+            .layout-3-list{
+                width: 305px;
+            }
+        }
+    }
+}
+
+.m-live {
+    margin-top: 0;
+   .m-live-list {
+       margin: -10px -10px 0 -10px;
+       height: 600px;
+       overflow: hidden;
+       .block-live {
+           width: 224px;
+           & a{
+               .block-live-img{
+                   height:224px;
+               }
+               .block-live-info{
+                   .family-title{
+                       text-align: center;
+                       color: @fcolor-main;
+                       font-size: 15px;
+                       line-height: 20px;
+                       overflow: hidden;
+                       white-space: nowrap;
+                       text-overflow: ellipsis;
+                   }
+                   .family-leader{
+                       width: 150px;
+                       overflow: hidden;
+                       white-space: nowrap;
+                       text-overflow: ellipsis;
+                   }
+                   .watch-num{
+                       font-size: @fs-small;
+                       color: @fcolor-lighter;
+                   }
+
+               }
+               &:hover .block-live-info .family-title{
+                   color: @bgcolor-theme;
+                   -webkit-transition: color .3s;
+                   -moz-transition: color .3s;
+                   -o-transition: color .3s;
+                   transition: color .3s;
+               }
+           }
+       }
+   }
+}

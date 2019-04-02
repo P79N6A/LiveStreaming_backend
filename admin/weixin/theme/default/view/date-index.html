@@ -1,0 +1,94 @@
+{include file="inc/header.html"}
+<div id="vscope-meet">
+	<nav class="bar bar-tab date-index-bar flex-box">
+		<div class="add-collect" @click="wanna">
+			<i class="iconfont collected" v-if="has_wanna">&#xe98c;</i>
+			<i class="iconfont" v-else>&#xe969;</i>
+		</div>
+		<div class="flex-1 now-date j-now-date" @click="open_date">立即预约</div>
+		<a href='{url r="question#form_question" p="itype=wx"}' class="flex-1 now-date j-now-date right">在线咨询</a>
+	</nav>
+	<div class="content">
+		<div class="m-business-card">
+			<img src="{$TMPL}/dist/statics/images/date_index_banner.png" alt="" width="100%">
+
+			<div class="business-card-con">
+				<div class="card-con-portrait">
+					<img src="{$data.reservation_config.head_image}" alt="">
+					<p class="portrait-name">{$data.reservation_config.name}</p>
+					<!-- <p class="portrait-introduce">{$data.reservation_config.desc}</p> -->
+				</div>
+				<div class="flex-box date-info">
+					<div class="location flex-1"><i class="iconfont">&#xe961;</i>{$data.reservation_config.region}</div>
+					<div class="flex-box">
+						<div class="looked"><i class="iconfont">&#xe965;</i>{$data.reservation_config.seen_count}人见过</div>
+						<div class="want-look"><i class="iconfont">&#xe962;</i><span v-html="wanna_count"></span>人想见</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="m-character-bief" :class="{isShow: is_more_bief}">
+			<div class="m-tit flex-box b-line">人物简介
+				<div class="show-more flex-1" @click="show_more_bief" v-if="has_more_character_bief">展开更多</div>
+			</div>
+			<div class="character-bief">
+				<span>{$data.reservation_config.desc}</span>
+			</div>
+		</div>
+		{foreach from=$data.date_list item=item key=key name=date_list}
+		<div class="m-course-price">
+			<a href='{url r="date#detail" p="id=$item.id"}'>
+				<div class="course-tit">{$item.title}</div>
+				<div class="course-info flex-box">
+					<div class="course-price flex-1">&yen;{$item.price}/{$item.unit}</div>
+					<div class="course-num">{$item.seen_count}人见过</div>
+				</div>
+			</a>
+		</div>
+		{/foreach}
+		<div class="m-meet-ensure">
+			<div class="m-tit b-line">约见保障</div>
+			<div class="meet-ensure-con">
+				{$data.reservation_config.security}
+			</div>
+		</div>
+	</div>
+	<div class="pop-bespeak-meet" :class="[is_open_date ? 'z-open' : '']">
+		<div class="bespeak-meet-con">
+			<div class="bespeak-meet-tit b-line">预约需要您填写以下信息哦</div>
+			<div class="bespeak-input">
+				<div class="input-box b-line l-line">
+					<span class="line t-line r-line"></span>
+					<input type="text" placeholder="请输入您的真实姓名" class="bespeaker-name" v-model="name">
+				</div>
+				<div class="verify-box input-box flex-box b-line l-line">
+					<span class="line t-line r-line"></span>
+					<input type="number" placeholder="请输入您的电话号码" class="bespeaker-phone flex-1" maxlength="11" v-model="mobile">
+					<div class="send-verify j-send-verify" id="j-send-code" @click="send_code">发送验证码</div>
+				</div>
+				<div class="input-box b-line l-line">
+					<span class="line t-line r-line"></span>
+					<input type="number" placeholder="验证码" class="bespeaker-verify" v-model="verify">
+				</div>
+				<div class="input-box b-line l-line">
+					<span class="line t-line r-line"></span>
+					<input type="text" :value="date_text" readonly="readonly" placeholder="请选择预约项目" class="bespeaker-con">
+					<select name="date_id" v-model="date_id" @change="select_date">
+						{foreach from=$data.date_list item=item key=key name=date_list}
+						<option value="{$item.id}">{$item.title}</option>
+						{/foreach}
+					</select>
+				</div>
+			</div>
+			<div class="bespeak-btn-list flex-box">
+				<div class="bespeak-btn btn-cannel j-cannel flex-1" @click="cancel_date">取消</div>
+				<div class="bespeak-btn btn-ok j-bespeak-meet flex-1" @click="submit">确认</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	var has_wanna = {$data.has_wanna};
+	var wanna_count = {$data.reservation_config.wanna_count};
+</script>
+{include file="inc/footer.html"}

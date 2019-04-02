@@ -1,0 +1,46 @@
+<div class="m-common-item m-common-list">
+	<div class="m-common-title clearfix">
+		<div class="common-title f-l">
+			<span class="field">我的关注</span>
+		</div>
+	</div>
+	<div class="common-content clearfix j-ajax-page">
+		{if $data.list}
+		<div class="m-live clearfix">
+			<ul class="m-live-list clearfix">
+				{foreach from=$data.list item=item key=key name=list}
+				<li class="block-live" live-status="{$item.live_in}">
+					{if $item.live_in eq "1"}
+					<div class="living">正在直播</div>
+					{elseif $item.live_in eq "3"}
+					<div class="living">录播</div>
+					{else}
+					<div class="living" style="background-color:#ccc;">暂无直播</div>
+					{/if}
+					<a href="{if $item.video_url}{$item.video_url}{else}javascript:void(0);{/if}">
+						<span class="block-live-img">
+							<img alt="" src="{$item.head_image}" class="block-live-img" />
+						</span>
+						<div class="block-live-info clearfix">
+							<div class="live-name clearfix">
+								<img alt="" src="{$item.head_image}" class="avatar-normal" />
+								<p title="{$item.title}">{$item.title}</p>
+								<p class="sub f-l">{$item.nick_name}</p>
+								<span class="watch-num f-r"><i class="icon iconfont">&#xe60a;</i>{if $item.watch_number}{$item.watch_number}{else}0{/if}</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				{/foreach}
+			</ul>
+		</div>
+		{else}
+		<p class="null-data">暂无关注信息</p>
+		{/if}
+		<div class="m-page clearfix">
+			<div class="m-page-con">
+				{$data.page}
+			</div>
+		</div>
+	</div>
+</div>

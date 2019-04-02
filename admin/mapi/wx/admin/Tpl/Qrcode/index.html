@@ -1,0 +1,57 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<php>
+function createTime($time){
+	return date('Y-m-d H:i:s',$time);
+}
+function image($img){
+	return "<img src='".$img."' style='height:35px;'/>";
+}
+</php>
+
+<script>
+    //编辑跳转
+    function edit(id) {
+    	location.href = ROOT+"?"+VAR_MODULE+"=Qrcode&"+VAR_ACTION+"=edit&id="+id;
+    }
+    
+  //编辑跳转
+    function add() {
+    	location.href = ROOT+"?"+VAR_MODULE+"=Qrcode&"+VAR_ACTION+"=add";
+    }
+  //查看
+    function Open(img) {
+    	$.weeboxs.open('<img src="'+img+'">', {contentType:'text',showButton:false,title:'查看二维码',width:260,height:260});
+    }
+  //查看生成订单
+    function Open_payment_notice(id) {
+    	location.href = ROOT+"?"+VAR_MODULE+"=Qrcode&"+VAR_ACTION+"=payment_notice&id="+id;
+    }
+</script>
+<div class="main">
+<div class="main_title_list"><div class="list-line-ico"></div>销售二维码</div>
+	<html:list
+			id="dataTable"
+			style="dataTable"
+			name="qrcode"
+			action="true"
+			datasource="list"
+			show="id:{%ID}
+			,name:标题
+			,address:销售场地
+			,user_id:归属用户id
+			,img:二维码地址
+			,create_time|to_date:创建时间"
+			actionlist="img|Open|查看,id|Open_payment_notice|查看订单" />
+            <table class="dataTable">
+                <tbody>
+                    <td colspan="11">
+                        <input type="button" class="button button-add" value="{%ADD}" onclick="add();" />
+                    </td>
+                </tbody>
+            </table>
+<div class="blank5"></div>
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

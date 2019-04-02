@@ -1,0 +1,67 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<include file="Public:new" />
+<load href='__TMPL__Common/js/jquery.bgiframe.js' />
+<load href='__TMPL__Common/js/jquery.weebox.js' />
+<load href='__TMPL__Common/js/user.js' />
+<load href='__TMPL__Common/js/deal.js' />
+<load href='__TMPL__Common/style/weebox.css' />
+<script type="text/javascript" src="__TMPL__Common/js/calendar/calendar.php?lang=zh-cn" ></script>
+<load href='__TMPL__Common/js/calendar/calendar.css' />
+<load href='__TMPL__Common/js/calendar/calendar.js' />
+<php>
+	function get_coin($is_coin)
+    {
+   		if($is_coin == 1)
+        {
+        	return "游戏币礼物";
+        }
+        else
+        {
+        	return "秀豆礼物";
+        }
+    }
+</php>
+<div class="main">
+    <div class="main_title_list"><div class="list-line-ico"></div>会员送礼报表</div>
+    <div class="search_row">
+        <form name="search" action="__APP__" method="get" class="clearfix">
+            <div>时间:
+            	<input type="text" class="textbox" name="begin_time" id="begin_time" onfocus="this.blur(); return showCalendar('begin_time', '%Y-%m-%d', false, false, 'btn_begin_time');" value="{$begin_time}"/>
+                <input type="button" class="button" id="btn_begin_time" value="{%SELECT_TIME}" onclick="return showCalendar('begin_time', '%Y-%m-%d', false, false, 'btn_begin_time');" />
+                <span>-</span> 
+                <input type="text" class="textbox" name="end_time" id="end_time" onfocus="this.blur(); return showCalendar('end_time', '%Y-%m-%d', false, false, 'btn_end_time');" value="{$end_time}" value="{$end_time}"/>
+                <input type="button" class="button" id="btn_end_time" value="{%SELECT_TIME}" onclick="return showCalendar('end_time', '%Y-%m-%d', false, false, 'btn_end_time');" />
+            </div>
+            <div>会员ID:<input type="text" class="textbox" name="to_user_id" value="{:trim($_REQUEST['to_user_id'])}"></div>
+            <div>主播ID:<input type="text" class="textbox" name="from_user_id" value="{:trim($_REQUEST['from_user_id'])}"></div>
+            <div>礼物ID:<input type="text" class="textbox" name="prop_id" value="{:trim($_REQUEST['prop_id'])}"></div>
+            <div>机构编号：<input type="text" class="textbox" name="login_name" value="{:trim($_REQUEST['login_name'])}">          </div>
+            <input type="hidden" value="BmSendProp" name="m" />
+            <input type="hidden" value="index" name="a" />
+            <input type="submit" class="button" value="{%SEARCH}" />
+        </form>
+    </div>
+    汇总：<span style="padding-right:10px;">消费秀豆 {$total_diamonds} </span><span style="padding-right:10px;">消费游戏币 {$total_coins} </span>
+    <br/><br/>
+<html:list
+    id="dataTable"
+    style="dataTable"
+    name="user"
+    datasource="list"
+    show="to_user_id:会员ID
+    ,from_user_id:送礼主播ID
+    ,prop_id:礼物ID
+    ,prop_name:礼物名称
+    ,total_diamonds:消费秀豆
+    ,total_coins:消费游戏币
+    ,create_time|to_date:消费时间
+    ,login_name:所属鱼商编号
+    ,bm_promoter_id:所属代理商编号
+    ,bm_qrcode_id:所属业务员ID
+    ,is_coin|get_coin:礼物类型
+    "/>
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />

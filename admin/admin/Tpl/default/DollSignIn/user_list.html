@@ -1,0 +1,47 @@
+{// 引入标签库 }
+<tagLib name="html" />
+<include file="Public:header" />
+<PHP>
+    //时间戳转时间格式
+    function time_format($timestamp){
+        if($timestamp)
+        return to_date($timestamp,'Y-m-d H:i:s');
+        else
+        return '';
+    }
+    function getGameName($id)
+	{
+	return M("User")->where("id=".$id)->getField("nick_name");
+	}
+</PHP>
+<div class="main">
+<div class="main_title_list"><div class="list-line-ico"></div>签到奖励</div>
+<div class="search_row">
+	<form name="search" action="__APP__" method="get">
+		用户id：<input type="text" class="textbox" name="user_id" value="{:trim($_REQUEST['user_id'])}" /><input type="hidden" value="DollSignIn" name="m" /><input type="hidden" value="user_list" name="a" /><input type="submit" class="button" value="{%SEARCH}" />
+	</form>
+</div>
+<html:list
+	id="dataTable"
+	style="dataTable"
+	name="dollcate"
+	checkbox="true"
+	action="true"
+	datasource="list"
+	show="id:{%ID}|50px
+	,user_id:用户
+	,user_id|getGameName:用户昵称
+	,create_time|time_format:签到时刻
+	,create_date:签到日期
+	,days:连续签到天数
+	,diamonds:奖励秀豆数
+	,score:奖励积分数"/>
+	<table class="dataTable">
+		<tbody>
+			<td colspan="9">
+			</td>
+		</tbody>
+	</table>
+<div class="page">{$page}</div>
+</div>
+<include file="Public:footer" />
